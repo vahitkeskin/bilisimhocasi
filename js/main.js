@@ -489,10 +489,28 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
       copyToClipboard(snippet);
     });
   }
-  // --- DYNAMIC OPEN-CLOSE HEADLINE ROTATOR (vahitkeskinweb effect) ---
+  // --- TYPEWRITER HEADLINE CONTROLLER (Character-by-Character Dynamic Slogans) ---
+  const cuteRobotSvg = `<svg class="cute-robot-icon" viewBox="0 0 36 36" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g class="cute-bot-inner">
+      <path d="M18 4V8" stroke="#fed136" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="18" cy="3.5" r="2.5" fill="#fed136"/>
+      <rect x="5.5" y="8" width="25" height="21" rx="6.5" fill="#111827" stroke="#fed136" stroke-width="2"/>
+      <rect x="2.5" y="14" width="3" height="8" rx="1.5" fill="#fed136"/>
+      <rect x="30.5" y="14" width="3" height="8" rx="1.5" fill="#fed136"/>
+      <rect x="8.5" y="11" width="19" height="15" rx="4" fill="#030712"/>
+      <ellipse cx="13.5" cy="16.5" rx="2.8" ry="3.2" fill="#00e5ff"/>
+      <circle cx="14.3" cy="15.2" r="1.1" fill="#ffffff"/>
+      <ellipse cx="22.5" cy="16.5" rx="2.8" ry="3.2" fill="#00e5ff"/>
+      <circle cx="23.3" cy="15.2" r="1.1" fill="#ffffff"/>
+      <circle cx="11" cy="21.5" r="1.5" fill="#ff7675" opacity="0.85"/>
+      <circle cx="25" cy="21.5" r="1.5" fill="#ff7675" opacity="0.85"/>
+      <path d="M15.5 21.5 Q 18 24.5 20.5 21.5" stroke="#fed136" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+  </svg>`;
+
   const dynamicItems = [
     {
-      leftIcon: 'fas fa-robot',
+      leftHtml: cuteRobotSvg,
       rightIcon: 'fas fa-brain',
       text: 'Yapay Zeka ve Geleceği Kodluyoruz'
     },
@@ -508,7 +526,7 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
     },
     {
       leftIcon: 'fas fa-laptop-code',
-      rightIcon: 'fas fa-code',
+      rightIcon: 'fas fa-microchip',
       text: 'Teknoloji ve İnovasyonun Öncüsü'
     },
     {
@@ -521,37 +539,100 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
   const middleTextEl = document.getElementById('headline-text-middle');
   const leftIconEl = document.getElementById('headline-icon-left');
   const rightIconEl = document.getElementById('headline-icon-right');
+  const cardContainer = document.getElementById('dynamic-headline-container');
+  const cursorEl = document.getElementById('typewriter-cursor');
 
-  let currentItemIndex = 0;
-  let isHeadlineAnimating = false;
+  if (middleTextEl && leftIconEl && rightIconEl) {
+    let itemIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let typingTimeout = null;
 
-  function cycleHeadline() {
-    if (!middleTextEl || !leftIconEl || !rightIconEl) return;
-    if (isHeadlineAnimating) return;
-    isHeadlineAnimating = true;
+    function applyIcons(item) {
+      if (item.leftHtml) {
+        leftIconEl.innerHTML = item.leftHtml;
+      } else {
+        leftIconEl.innerHTML = `<i class="${item.leftIcon}" aria-hidden="true"></i>`;
+      }
 
-    // 1. Close smoothly (collapse width to 0)
-    middleTextEl.classList.add('closed');
+      if (item.rightHtml) {
+        rightIconEl.innerHTML = item.rightHtml;
+      } else {
+        rightIconEl.innerHTML = `<i class="${item.rightIcon}" aria-hidden="true"></i>`;
+      }
 
-    // 2. Wait for close transition to finish (750ms)
-    setTimeout(() => {
-      currentItemIndex = (currentItemIndex + 1) % dynamicItems.length;
-      const nextItem = dynamicItems[currentItemIndex];
+      // Pop animation on badges
+      leftIconEl.classList.remove('badge-pop');
+      rightIconEl.classList.remove('badge-pop');
+      void leftIconEl.offsetWidth; // Reflow
+      void rightIconEl.offsetWidth;
+      leftIconEl.classList.add('badge-pop');
+      rightIconEl.classList.add('badge-pop');
+    }
 
-      // Update text and icons while hidden
-      middleTextEl.textContent = nextItem.text;
-      leftIconEl.innerHTML = `<i class="${nextItem.leftIcon}" aria-hidden="true"></i>`;
-      rightIconEl.innerHTML = `<i class="${nextItem.rightIcon}" aria-hidden="true"></i>`;
+    // Auto-detect multi-line vs single-line layout
+    function checkMultilineLayout() {
+      if (!cardContainer || !middleTextEl) return;
+      const textWrapper = middleTextEl.parentElement;
+      if (!textWrapper) return;
+      if (textWrapper.clientHeight > 48) {
+        cardContainer.classList.add('is-multiline');
+      } else {
+        cardContainer.classList.remove('is-multiline');
+      }
+    }
 
-      // 3. Open smoothly (expand width back to full)
-      middleTextEl.classList.remove('closed');
-      isHeadlineAnimating = false;
-    }, 750);
-  }
+    window.addEventListener('resize', checkMultilineLayout);
 
-  // Cycle every 4 seconds
-  if (middleTextEl) {
-    setInterval(cycleHeadline, 4200);
+    function typeTick() {
+      const current = dynamicItems[itemIdx];
+      const targetText = current.text;
+
+      if (!isDeleting) {
+        // TYPING FORWARD (harf harf yazma)
+        charIdx++;
+        middleTextEl.textContent = targetText.slice(0, charIdx);
+        checkMultilineLayout();
+
+        if (charIdx >= targetText.length) {
+          // Finished typing sentence: pause to let user read
+          if (cursorEl) cursorEl.classList.add('paused');
+          typingTimeout = setTimeout(() => {
+            if (cursorEl) cursorEl.classList.remove('paused');
+            isDeleting = true;
+            typeTick();
+          }, 2800);
+          return;
+        }
+
+        // Realistic typing speed with subtle variation
+        const speed = 48 + Math.floor(Math.random() * 22);
+        typingTimeout = setTimeout(typeTick, speed);
+      } else {
+        // ERASING BACKWARD (harf harf silme)
+        charIdx--;
+        middleTextEl.textContent = targetText.slice(0, charIdx);
+        checkMultilineLayout();
+
+        if (charIdx <= 0) {
+          // Erased completely: switch to next slogan
+          isDeleting = false;
+          itemIdx = (itemIdx + 1) % dynamicItems.length;
+          applyIcons(dynamicItems[itemIdx]);
+
+          typingTimeout = setTimeout(typeTick, 380);
+          return;
+        }
+
+        const eraseSpeed = 22;
+        typingTimeout = setTimeout(typeTick, eraseSpeed);
+      }
+    }
+
+    // Initial setup: start typing immediately
+    middleTextEl.textContent = '';
+    applyIcons(dynamicItems[0]);
+    setTimeout(typeTick, 350);
   }
 });
 
