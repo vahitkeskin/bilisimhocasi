@@ -60,6 +60,11 @@ const I18N = (() => {
       en: 'CONTACT',
       ar: 'اتصل بنا'
     },
+    'nav.location': {
+      tr: 'KONUM',
+      en: 'LOCATION',
+      ar: 'الموقع'
+    },
 
     // ── THEME DROPDOWN ──
     'theme.title': {
@@ -620,6 +625,48 @@ const I18N = (() => {
       tr: '📍 Şanlıurfa / Viranşehir • K12 Tüm Kademeler',
       en: '📍 Şanlıurfa / Viranşehir • All K12 Stages',
       ar: '📍 شانلي أورفا / فيران شهير • جميع مراحل K12'
+    },
+
+    // ── LOCATION & STAGES ──
+    'location.title': {
+      tr: 'KAMPÜS KONUMU & ULAŞIM',
+      en: 'CAMPUS LOCATION & DIRECTIONS',
+      ar: 'موقع الحرم والوصول'
+    },
+    'location.subtitle': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşkesi',
+      en: 'Uğur Schools Viranşehir Campus Grounds',
+      ar: 'مقر مدارس أوغور حرم فيران شهير'
+    },
+    'location.map.name': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü',
+      en: 'Uğur Schools Viranşehir Campus',
+      ar: 'مدارس أوغور حرم فيران شهير'
+    },
+    'location.map.badge': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü (Google Haritalar)',
+      en: 'Uğur Schools Viranşehir Campus (Google Maps)',
+      ar: 'مدارس أوغور حرم فيران شهير (خرائط Google)'
+    },
+    'location.directions.btn': {
+      tr: 'Google Haritalar\'da Yol Tarifi Al',
+      en: 'Get Directions on Google Maps',
+      ar: 'الحصول على الاتجاهات في خرائط Google'
+    },
+    'location.stages.text': {
+      tr: '• Okul Öncesi • İlkokul • Ortaokul • Anadolu Lisesi • Fen Lisesi',
+      en: '• Preschool • Primary • Middle School • Anatolian High • Science High',
+      ar: '• رياض الأطفال • الابتدائي • المتوسط • الثانوي العام • الثانوي العلمي'
+    },
+    'contact.stages.title': {
+      tr: 'Eğitim Kademelerimiz',
+      en: 'Our Education Stages',
+      ar: 'مراحلنا التعليمية'
+    },
+    'contact.phone.title': {
+      tr: 'İletişim & Danışma',
+      en: 'Contact & Info Line',
+      ar: 'الاتصال والاستعلامات'
     },
 
     // ── MODAL DETAILS ──

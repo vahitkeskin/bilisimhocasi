@@ -119,6 +119,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact" data-i18n="nav.contact">İLETİŞİM</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#location" data-i18n="nav.location">KONUM</a>
+            </li>
             <li class="nav-item ml-lg-2">
               <div class="nav-actions-group">
                 <!-- Theme Mode Dropdown (Icon Only on Bar, Compact & Space-Saving) -->
@@ -274,8 +277,19 @@
             Ana sınıfından 12. sınıfa kadar algoritmik düşünce, Scratch, 3D modelleme, Arduino robotik, Python ve yapay
             zeka ile <strong>kesintisiz K12 bilişim serüveni</strong>.
           </p>
+          <div class="campus-levels-banner">
+            <span class="level-item" data-i18n="location.stages.text">• Okul Öncesi • İlkokul • Ortaokul • Anadolu Lisesi • Fen Lisesi</span>
+          </div>
+          <div class="my-3">
+            <a href="tel:05449694919" class="hero-phone-badge mr-2">
+              <i class="fas fa-phone-alt"></i> <span>0544 969 49 19</span>
+            </a>
+            <a href="#location" class="hero-phone-badge">
+              <i class="fas fa-map-marker-alt"></i> <span data-i18n="location.map.name">Uğur Okulları Viranşehir Kampüsü</span>
+            </a>
+          </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mt-2">
           <a href="#portfolio" class="btn btn-primary btn-lg">
             <span data-i18n="hero.cta.curriculum">MÜFREDATI KEŞFET</span>
             <i class="fas fa-arrow-down ml-2"></i>
@@ -813,26 +827,119 @@
 
         <!-- Kampüs İletişim Detayları -->
         <div class="row mt-5 pt-4 text-center">
-          <div class="col-md-4 mb-4 mb-md-0">
+          <div class="col-lg-3 col-md-6 mb-4">
             <div class="contact-info-card">
-              <i class="fas fa-map-marker-alt fa-2x" style="color: var(--primary-gold);"></i>
-              <h5 data-i18n="contact.address.title">Kampüs Adresi</h5>
-              <p data-i18n="contact.address.value">Viranşehir / Şanlıurfa</p>
+              <i class="fas fa-graduation-cap fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <h5 data-i18n="contact.stages.title">Eğitim Kademelerimiz</h5>
+              <p class="mb-0 text-muted" style="font-size: 13px; line-height: 1.7;" data-i18n="location.stages.text">
+                • Okul Öncesi • İlkokul<br>• Ortaokul • Anadolu Lisesi<br>• Fen Lisesi
+              </p>
             </div>
           </div>
-          <div class="col-md-4 mb-4 mb-md-0">
+          <div class="col-lg-3 col-md-6 mb-4">
             <div class="contact-info-card">
-              <i class="fas fa-school fa-2x" style="color: var(--primary-gold);"></i>
-              <h5 data-i18n="contact.institution.title">Kurum</h5>
-              <p data-i18n="contact.institution.value">Uğur Okulları Viranşehir Kampüsü</p>
+              <i class="fas fa-phone-alt fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <h5 data-i18n="contact.phone.title">İletişim & Danışma</h5>
+              <p class="mb-0">
+                <a href="tel:05449694919" style="color: var(--primary-gold); font-weight: 800; font-size: 16px; text-decoration: none;">
+                  📞 0544 969 49 19
+                </a>
+              </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-3 col-md-6 mb-4">
             <div class="contact-info-card">
-              <i class="fas fa-envelope fa-2x" style="color: var(--primary-gold);"></i>
+              <i class="fas fa-envelope fa-2x mb-3" style="color: var(--primary-gold);"></i>
               <h5 data-i18n="contact.email.title">E-Posta</h5>
-              <p>bilisim@viransehir.ugurokullari.k12.tr</p>
+              <p class="mb-0">
+                <a href="mailto:bilisim@viransehir.ugurokullari.k12.tr" style="color: inherit; font-size: 13px;">
+                  bilisim@viransehir.ugurokullari.k12.tr
+                </a>
+              </p>
             </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="contact-info-card">
+              <i class="fas fa-map-marked-alt fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <h5 data-i18n="contact.address.title">Kampüs Konumu</h5>
+              <p class="mb-0">
+                <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" style="color: var(--primary-gold); font-weight: 800; font-size: 14px; text-decoration: none;">
+                  Uğur Okulları Viranşehir Kampüsü
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       7.5. LOCATION & GOOGLE MAPS SECTION (#location)
+       Sayfanın En Altında Konum, Harita, Kademeler ve İletişim Bilgileri
+       ==================================================================== -->
+  <section id="location">
+    <div class="container">
+      <div class="location-top text-center">
+        <h3 data-i18n="location.title">KAMPÜS KONUMU & ULAŞIM</h3>
+        <p data-i18n="location.subtitle">Uğur Okulları Viranşehir Kampüsü Yerleşkesi</p>
+      </div>
+
+      <div class="row align-items-stretch">
+        <!-- Sol Kolon: Kurumsal Detaylar, Kademeler ve Telefon -->
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <div class="location-info-card">
+            <div>
+              <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" class="location-name-link" title="Google Haritalar'da Aç">
+                <i class="fas fa-map-marker-alt" style="color: var(--primary-gold); font-size: 24px;"></i>
+                <span data-i18n="location.map.name">Uğur Okulları Viranşehir Kampüsü</span>
+              </a>
+              <div class="location-address-sub">
+                <i class="fas fa-compass" style="color: var(--primary-gold);"></i>
+                <span>Viranşehir / Şanlıurfa Yerleşkesi</span>
+              </div>
+
+              <!-- Eğitim Kademelerimiz -->
+              <div style="margin-bottom: 8px;">
+                <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="contact.stages.title">Eğitim Kademelerimiz:</span>
+              </div>
+              <div class="location-stages-pills">
+                <span class="location-stage-pill">• Okul Öncesi</span>
+                <span class="location-stage-pill">• İlkokul</span>
+                <span class="location-stage-pill">• Ortaokul</span>
+                <span class="location-stage-pill">• Anadolu Lisesi</span>
+                <span class="location-stage-pill">• Fen Lisesi</span>
+              </div>
+
+              <!-- Telefon Kutusu -->
+              <div class="location-phone-box">
+                <span class="location-phone-label" data-i18n="contact.phone.title">📞 İletişim / Danışma Hattı:</span>
+                <a href="tel:05449694919" class="location-phone-link" aria-label="Kampüsü Ara">
+                  <i class="fas fa-phone-alt"></i> 0544 969 49 19
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block py-3" style="font-weight: 800; font-size: 14px; letter-spacing: 0.5px; border-radius: 8px;">
+                <i class="fas fa-directions mr-2"></i>
+                <span data-i18n="location.directions.btn">Google Haritalar'da Yol Tarifi Al</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sağ Kolon: İnteraktif Harita Çerçevesi -->
+        <div class="col-lg-7">
+          <div class="location-map-wrapper">
+            <iframe class="location-map-iframe"
+              src="https://maps.google.com/maps?q=37.2188711,39.7809496+(U%C4%9Fur+Okullar%C4%B1+Viran%C5%9Fehir+Kamp%C3%BCs%C3%BC)&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+              title="Uğur Okulları Viranşehir Kampüsü Google Haritalar Konumu"
+              allowfullscreen="" loading="lazy"></iframe>
+            <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" class="location-map-floating-badge">
+              <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="location.map.badge">Uğur Okulları Viranşehir Kampüsü (Google Haritalar)</span>
+            </a>
           </div>
         </div>
       </div>
@@ -844,6 +951,19 @@
        ==================================================================== -->
   <section id="footer">
     <div class="container">
+      <div class="row align-items-center mb-3">
+        <div class="col-12 text-center">
+          <div class="footer-stages-row" data-i18n="location.stages.text">
+            • Okul Öncesi • İlkokul • Ortaokul • Anadolu Lisesi • Fen Lisesi
+          </div>
+          <div class="footer-contact-details">
+            <a href="tel:05449694919" class="mr-3">📞 0544 969 49 19</a>
+            <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-map-marker-alt mr-1"></i> <span data-i18n="location.map.name">Uğur Okulları Viranşehir Kampüsü</span>
+            </a>
+          </div>
+        </div>
+      </div>
       <div class="row align-items-center">
         <div class="col-md-4 text-center text-md-left">
           <p data-i18n="footer.copyright">&copy; 2026 Uğur Okulları Viranşehir Kampüsü</p>
