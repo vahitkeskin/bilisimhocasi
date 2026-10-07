@@ -643,10 +643,15 @@ const I18N = (() => {
       en: 'Uğur Schools Viranşehir Campus',
       ar: 'مدارس أوغور حرم فيران شهير'
     },
+    'location.directions.badge': {
+      tr: 'Yol Tarifi',
+      en: 'Directions',
+      ar: 'الاتجاهات'
+    },
     'location.map.badge': {
-      tr: 'Uğur Okulları Viranşehir Kampüsü (Google Haritalar)',
-      en: 'Uğur Schools Viranşehir Campus (Google Maps)',
-      ar: 'مدارس أوغور حرم فيران شهير (خرائط Google)'
+      tr: 'Yol Tarifi',
+      en: 'Directions',
+      ar: 'الاتجاهات'
     },
     'location.directions.btn': {
       tr: 'Google Haritalar\'da Yol Tarifi Al',
