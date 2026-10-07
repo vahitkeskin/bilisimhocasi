@@ -115,6 +115,142 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2800);
   }
 
+  // --- THEME MODE CONTROLLER (Açık, Kapalı, Sistem - Memory Persisted) ---
+  class ThemeController {
+    constructor() {
+      this.STORAGE_KEY = 'ugur_theme_mode';
+      this.currentMode = localStorage.getItem(this.STORAGE_KEY) || 'system'; // Default: 'system'
+      this.mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+      this.menuBtn = document.getElementById('theme-menu-btn');
+      this.dropdown = document.getElementById('theme-dropdown-menu');
+      this.activeIcon = document.getElementById('theme-current-icon');
+      this.choiceButtons = document.querySelectorAll('[data-theme-choice]');
+
+      this.init();
+    }
+
+    init() {
+      // 1. Synchronize UI & apply theme
+      this.applyTheme(this.currentMode, false);
+
+      // 2. React dynamically if OS theme changes while in system mode
+      if (this.mediaQuery && this.mediaQuery.addEventListener) {
+        this.mediaQuery.addEventListener('change', () => {
+          if (this.currentMode === 'system') {
+            this.applyTheme('system', false);
+          }
+        });
+      }
+
+      // 3. Dropdown button toggle
+      if (this.menuBtn && this.dropdown) {
+        this.menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          sfx.playClick();
+          const isOpen = this.dropdown.classList.contains('show');
+          this.toggleDropdown(!isOpen);
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+          if (this.dropdown && !this.dropdown.contains(e.target) && e.target !== this.menuBtn) {
+            this.toggleDropdown(false);
+          }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.toggleDropdown(false);
+          }
+        });
+      }
+
+      // 4. Choice buttons click listeners (both dropdown and mobile segmented)
+      this.choiceButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const choice = btn.getAttribute('data-theme-choice');
+          if (choice) {
+            this.setTheme(choice);
+            this.toggleDropdown(false);
+          }
+        });
+      });
+    }
+
+    toggleDropdown(show) {
+      if (!this.dropdown) return;
+      if (show) {
+        this.dropdown.classList.add('show');
+        if (this.menuBtn) this.menuBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        this.dropdown.classList.remove('show');
+        if (this.menuBtn) this.menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    setTheme(mode) {
+      sfx.playClick();
+      this.currentMode = mode;
+      localStorage.setItem(this.STORAGE_KEY, mode);
+      this.applyTheme(mode, true);
+    }
+
+    applyTheme(mode, notifyUser = false) {
+      let isDark = false;
+      if (mode === 'dark') {
+        isDark = true;
+      } else if (mode === 'light') {
+        isDark = false;
+      } else {
+        // system mode
+        isDark = this.mediaQuery ? this.mediaQuery.matches : false;
+      }
+
+      // Update HTML root attributes
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme-mode', mode);
+
+      // Update main icon & aria-label
+      if (this.activeIcon) {
+        if (mode === 'light') {
+          this.activeIcon.className = 'fas fa-sun';
+          if (this.menuBtn) this.menuBtn.title = 'Tema: Açık Mod';
+        } else if (mode === 'dark') {
+          this.activeIcon.className = 'fas fa-moon';
+          if (this.menuBtn) this.menuBtn.title = 'Tema: Kapalı Mod';
+        } else {
+          this.activeIcon.className = 'fas fa-desktop';
+          if (this.menuBtn) this.menuBtn.title = 'Tema: Sistem Modu (Otomatik)';
+        }
+      }
+
+      // Synchronize active classes on all buttons with data-theme-choice
+      this.choiceButtons.forEach((btn) => {
+        const choice = btn.getAttribute('data-theme-choice');
+        if (choice === mode) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // User notification toast
+      if (notifyUser) {
+        const labels = {
+          light: 'Açık Mod aktif edildi',
+          dark: 'Kapalı Mod aktif edildi',
+          system: 'Sistem Modu aktif edildi (Otomatik)'
+        };
+        showToast(labels[mode] || 'Görünüm modu güncellendi');
+      }
+    }
+  }
+
+  const themeController = new ThemeController();
+
   // --- SCROLL PROGRESS & NAVBAR STYLE ---
   const scrollProgressBar = document.getElementById('scroll-progress');
   const navbar = document.querySelector('.glass-navbar');
