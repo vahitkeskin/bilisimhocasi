@@ -20,13 +20,13 @@ const I18N = (() => {
     // ── META / TITLE ──
     'meta.title': {
       tr: 'Uğur Okulları Viranşehir Kampüsü | Bilişim Teknolojileri Müfredatı',
-      en: 'Uğur Schools Viranşehir Campus | IT Curriculum',
-      ar: 'مدارس أوغور حرم فيران شهير | منهج تكنولوجيا المعلومات'
+      en: 'Uğur Okulları Viranşehir Kampüsü | IT Curriculum',
+      ar: 'Uğur Okulları Viranşehir Kampüsü | منهج تكنولوجيا المعلومات'
     },
     'meta.description': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri K12 Akademik Müfredatı. Ana sınıfından 12. sınıfa kadar algoritmik düşünce, Scratch, 3D modelleme, Arduino, Python ve Yapay Zeka serüveni.',
-      en: 'Uğur Schools Viranşehir Campus Information Technologies K12 Academic Curriculum. From kindergarten to 12th grade: algorithmic thinking, Scratch, 3D modeling, Arduino, Python, and AI journey.',
-      ar: 'منهج تكنولوجيا المعلومات الأكاديمي K12 لمدارس أوغور حرم فيران شهير. من الروضة إلى الصف الثاني عشر: التفكير الخوارزمي، سكراتش، النمذجة ثلاثية الأبعاد، أردوينو، بايثون ورحلة الذكاء الاصطناعي.'
+      en: 'Uğur Okulları Viranşehir Kampüsü Information Technologies K12 Academic Curriculum. From kindergarten to 12th grade: algorithmic thinking, Scratch, 3D modeling, Arduino, Python, and AI journey.',
+      ar: 'منهج تكنولوجيا المعلومات الأكاديمي K12 لUğur Okulları Viranşehir Kampüsü. من الروضة إلى الصف الثاني عشر: التفكير الخوارزمي، سكراتش، النمذجة ثلاثية الأبعاد، أردوينو، بايثون ورحلة الذكاء الاصطناعي.'
     },
 
     // ── NAVBAR ──
@@ -96,8 +96,8 @@ const I18N = (() => {
     // ── HERO / COVER ──
     'hero.title.line1': {
       tr: 'Uğur Okulları',
-      en: 'Uğur Schools',
-      ar: 'مدارس أوغور'
+      en: 'Uğur Okulları',
+      ar: 'Uğur Okulları'
     },
     'hero.title.line2': {
       tr: 'Viranşehir Kampüsü',
@@ -527,8 +527,8 @@ const I18N = (() => {
     },
     'team.summary': {
       tr: 'Uğur Okulları Viranşehir Kampüsü olarak; öğrencilerimize sadece teknoloji tüketicisi olmayı değil, algoritmik düşünen, problem çözen, etik değerlerle donanmış ve geleceğin dijital dünyasını inşa eden liderler olma vizyonunu kazandırıyoruz.',
-      en: 'At Uğur Schools Viranşehir Campus, we equip our students not just to be technology consumers, but to become leaders who think algorithmically, solve problems, are armed with ethical values, and build the digital world of the future.',
-      ar: 'في مدارس أوغور حرم فيران شهير، نزود طلابنا ليس فقط ليكونوا مستهلكين للتكنولوجيا، بل ليصبحوا قادة يفكرون خوارزمياً ويحلون المشكلات ومسلحين بالقيم الأخلاقية ويبنون العالم الرقمي للمستقبل.'
+      en: 'At Uğur Okulları Viranşehir Kampüsü, we equip our students not just to be technology consumers, but to become leaders who think algorithmically, solve problems, are armed with ethical values, and build the digital world of the future.',
+      ar: 'في Uğur Okulları Viranşehir Kampüsü، نزود طلابنا ليس فقط ليكونوا مستهلكين للتكنولوجيا، بل ليصبحوا قادة يفكرون خوارزمياً ويحلون المشكلات ومسلحين بالقيم الأخلاقية ويبنون العالم الرقمي للمستقبل.'
     },
 
     // ── CONTACT ──
@@ -539,8 +539,8 @@ const I18N = (() => {
     },
     'contact.subtitle': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Bölümü İletişim Formu',
-      en: 'Uğur Schools Viranşehir Campus IT Department Contact Form',
-      ar: 'نموذج الاتصال بقسم تكنولوجيا المعلومات في مدارس أوغور حرم فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü IT Department Contact Form',
+      ar: 'نموذج الاتصال بقسم تكنولوجيا المعلومات في Uğur Okulları Viranşehir Kampüsü'
     },
     'contact.form.name': {
       tr: 'ADINIZ SOYADINIZ *',
@@ -589,8 +589,8 @@ const I18N = (() => {
     },
     'contact.institution.value': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Schools Viranşehir Campus',
-      ar: 'مدارس أوغور حرم فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü',
+      ar: 'Uğur Okulları Viranşehir Kampüsü'
     },
     'contact.email.title': {
       tr: 'E-Posta',
@@ -601,8 +601,8 @@ const I18N = (() => {
     // ── FOOTER ──
     'footer.copyright': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Schools Viranşehir Campus',
-      ar: 'مدارس أوغور حرم فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü',
+      ar: 'Uğur Okulları Viranşehir Kampüsü'
     },
     'footer.dept': {
       tr: 'Bilişim Teknolojileri ve İnovasyon',
@@ -613,8 +613,8 @@ const I18N = (() => {
     // ── CAMPUS MODAL ──
     'campus.modal.title': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşkesi',
-      en: 'Uğur Schools Viranşehir Campus Grounds',
-      ar: 'حرم مدارس أوغور فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü Grounds',
+      ar: 'Uğur Okulları Viranşehir Kampüsü'
     },
     'campus.modal.subtitle': {
       tr: 'Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı Eğitim Binası (Tam Görünüm)',
@@ -635,13 +635,13 @@ const I18N = (() => {
     },
     'location.subtitle': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşkesi',
-      en: 'Uğur Schools Viranşehir Campus Grounds',
-      ar: 'مقر مدارس أوغور حرم فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü Grounds',
+      ar: 'مقر Uğur Okulları Viranşehir Kampüsü'
     },
     'location.map.name': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Schools Viranşehir Campus',
-      ar: 'مدارس أوغور حرم فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü',
+      ar: 'Uğur Okulları Viranşehir Kampüsü'
     },
     'location.directions.badge': {
       tr: 'Yol Tarifi',
@@ -855,13 +855,13 @@ const I18N = (() => {
     },
     'nav.brand.label': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Schools Viranşehir Campus',
-      ar: 'مدارس أوغور حرم فيران شهير'
+      en: 'Uğur Okulları Viranşehir Kampüsü',
+      ar: 'Uğur Okulları Viranşehir Kampüsü'
     },
     'nav.brand.name': {
       tr: 'UĞUR OKULLARI',
-      en: 'UĞUR SCHOOLS',
-      ar: 'مدارس أوغور'
+      en: 'UĞUR OKULLARI',
+      ar: 'Uğur Okulları'
     },
     'nav.brand.campus': {
       tr: 'Viranşehir Kampüsü',
