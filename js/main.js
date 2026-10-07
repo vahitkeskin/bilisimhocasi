@@ -1341,7 +1341,7 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
         'Yapay Zeka ve Geleceği Kodluyoruz',
         "Geleceğin Gücü Uğur'da Başlar",
         "Viranşehir'de Başarıyı Zirveye Taşıyoruz",
-        'Teknoloji ve İnovasyonun Öncüsü',
+        "Teknoloji ve İnovasyonun Öncüsü, Geleceğin Gücü Uğur'da Başlar",
         "Siz Hayal Edin, Viranşehir Uğur'da Gerçekleştirelim"
       ];
 

@@ -837,9 +837,9 @@ const I18N = (() => {
       ar: 'ننقل النجاح إلى القمة في فيران شهير'
     },
     'typewriter.3': {
-      tr: 'Teknoloji ve İnovasyonun Öncüsü',
-      en: 'Pioneer of Technology and Innovation',
-      ar: 'رائد التكنولوجيا والابتكار'
+      tr: "Teknoloji ve İnovasyonun Öncüsü, Geleceğin Gücü Uğur'da Başlar",
+      en: "Pioneer of Technology and Innovation, The Power of the Future Starts at Uğur",
+      ar: "رائد التكنولوجيا والابتكار، قوة المستقبل تبدأ في أوغور"
     },
     'typewriter.4': {
       tr: "Siz Hayal Edin, Viranşehir Uğur'da Gerçekleştirelim",

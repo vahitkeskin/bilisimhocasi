@@ -975,7 +975,7 @@ html, body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1040px;
+  max-width: 1300px;
   padding: 0 10px;
 }
 
@@ -1073,7 +1073,7 @@ html, body {
   word-break: normal;
   overflow-wrap: break-word;
   min-height: 2.7em; /* Guarantees zero vertical layout jumping while typing */
-  max-width: 780px;
+  max-width: 100%;
 }
 
 .typewriter-text {
