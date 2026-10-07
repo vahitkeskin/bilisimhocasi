@@ -77,7 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
       this.muted = !this.muted;
       localStorage.setItem('ugur_sound_muted', this.muted);
       this.updateToggleButton();
-      showToast(this.muted ? 'Ses efektleri kapatıldı' : 'Ses efektleri açıldı');
+      const msg = window.I18N
+        ? window.I18N.t(this.muted ? 'toast.sound.off' : 'toast.sound.on')
+        : (this.muted ? 'Ses efektleri kapatıldı' : 'Ses efektleri açıldı');
+      showToast(msg);
       if (!this.muted) this.playChime();
     }
 
@@ -93,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const sfx = new SoundFX();
+  window._sfxPlayClick = () => sfx.playClick();
+
   const soundToggleBtn = document.getElementById('sound-toggle-btn');
   if (soundToggleBtn) {
     soundToggleBtn.addEventListener('click', () => sfx.toggle());
@@ -114,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.classList.remove('show');
     }, 2800);
   }
+
+  window._showToastFn = showToast;
 
   // --- THEME MODE CONTROLLER (Açık, Kapalı, Sistem - Memory Persisted) ---
   class ThemeController {
@@ -239,12 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // User notification toast
       if (notifyUser) {
-        const labels = {
-          light: 'Açık Mod aktif edildi',
-          dark: 'Kapalı Mod aktif edildi',
-          system: 'Sistem Modu aktif edildi (Otomatik)'
-        };
-        showToast(labels[mode] || 'Görünüm modu güncellendi');
+        const themeKey = 'toast.theme.' + mode;
+        const msg = window.I18N ? window.I18N.t(themeKey) : (
+          mode === 'light' ? 'Açık Mod aktif edildi' :
+          mode === 'dark' ? 'Kapalı Mod aktif edildi' :
+          'Sistem Modu aktif edildi (Otomatik)'
+        );
+        showToast(msg);
       }
     }
   }
@@ -490,14 +498,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalToolsListEl = document.getElementById('modal-tools-list');
   const modalProjectEl = document.getElementById('modal-project');
 
+  let currentOpenStageId = null;
+
   function openCurriculumModal(stageId) {
-    const data = curriculumDetailsData[stageId];
+    currentOpenStageId = stageId;
+    const data = (window.I18N && window.I18N.getCurriculumData(stageId)) || curriculumDetailsData[stageId];
     if (!data) return;
 
     if (modalStageEl) modalStageEl.textContent = data.stage;
     if (modalTitleEl) modalTitleEl.textContent = data.title;
     if (modalAgeEl) modalAgeEl.textContent = data.age;
     if (modalDescEl) modalDescEl.textContent = data.desc;
+
+    const outcomeHeader = (window.I18N && window.I18N.t('modal.outcome.label')) || 'Öğrenme Çıktısı';
 
     if (modalOutcomesListEl) {
       modalOutcomesListEl.innerHTML = data.outcomes
@@ -506,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="outcome-item-card">
             <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.25rem;">
               <span style="color:var(--ugur-cyan); font-weight:bold;">✦</span>
-              <strong style="color:#ffffff; font-size:0.875rem;">Öğrenme Çıktısı</strong>
+              <strong style="color:#ffffff; font-size:0.875rem;">${outcomeHeader}</strong>
             </div>
             <div>${item}</div>
           </div>
@@ -533,12 +546,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeCurriculumModal() {
+    currentOpenStageId = null;
     if (modalBackdrop) {
       modalBackdrop.classList.remove('open');
       document.body.style.overflow = '';
       sfx.playClick();
     }
   }
+
+  // Re-render modal in real-time if language changes while open
+  window._reRenderModalIfOpen = () => {
+    if (currentOpenStageId && modalBackdrop && modalBackdrop.classList.contains('open')) {
+      openCurriculumModal(currentOpenStageId);
+    }
+  };
 
   // Bind all detail buttons
   document.querySelectorAll('.open-details-btn').forEach((btn) => {
@@ -580,16 +601,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (shareBtn) {
     shareBtn.addEventListener('click', async () => {
       sfx.playClick();
+      const shareTitle = window.I18N ? window.I18N.t('meta.title') : 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Müfredatı';
       const shareData = {
-        title: 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Müfredatı',
-        text: 'Ana Sınıfından 12. Sınıfa Kadar Bilişim Serüveni - Uğur Okulları Viranşehir Kampüsü',
+        title: shareTitle,
+        text: shareTitle,
         url: window.location.href
       };
 
       if (navigator.share && window.isSecureContext) {
         try {
           await navigator.share(shareData);
-          showToast('Müfredat bağlantısı paylaşıldı!');
+          showToast(window.I18N ? window.I18N.t('toast.share') : 'Müfredat bağlantısı paylaşıldı!');
         } catch (err) {
           // Fallback to clipboard
           copyToClipboard(window.location.href);
@@ -601,12 +623,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function copyToClipboard(text) {
+    const successMsg = window.I18N ? window.I18N.t('toast.clipboard') : 'Bağlantı panoya kopyalandı! 📋';
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(() => {
-        showToast('Bağlantı panoya kopyalandı! 📋');
+        showToast(successMsg);
       });
     } else {
-      showToast('Bağlantı kopyalandı! 📋');
+      showToast(successMsg);
     }
   }
 
@@ -644,33 +667,48 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
     </g>
   </svg>`;
 
-  const dynamicItems = [
-    {
-      leftHtml: cuteRobotSvg,
-      rightIcon: 'fas fa-brain',
-      text: 'Yapay Zeka ve Geleceği Kodluyoruz'
-    },
-    {
-      leftIcon: 'fas fa-bolt',
-      rightIcon: 'fas fa-fire',
-      text: "Geleceğin Gücü Uğur'da Başlar"
-    },
-    {
-      leftIcon: 'fas fa-chart-line',
-      rightIcon: 'fas fa-trophy',
-      text: "Viranşehir'de Başarıyı Zirveye Taşıyoruz"
-    },
-    {
-      leftIcon: 'fas fa-laptop-code',
-      rightIcon: 'fas fa-microchip',
-      text: 'Teknoloji ve İnovasyonun Öncüsü'
-    },
-    {
-      leftIcon: 'fas fa-school',
-      rightIcon: 'fas fa-rocket',
-      text: "Siz Hayal Edin, Viranşehir Uğur'da Gerçekleştirelim"
-    }
-  ];
+  function getDynamicItems() {
+    const lang = (window.I18N && window.I18N.currentLang) ? window.I18N.currentLang() : 'tr';
+    const texts = (window.I18N && window.I18N.getTypewriterTexts)
+      ? window.I18N.getTypewriterTexts(lang)
+      : [
+        'Yapay Zeka ve Geleceği Kodluyoruz',
+        "Geleceğin Gücü Uğur'da Başlar",
+        "Viranşehir'de Başarıyı Zirveye Taşıyoruz",
+        'Teknoloji ve İnovasyonun Öncüsü',
+        "Siz Hayal Edin, Viranşehir Uğur'da Gerçekleştirelim"
+      ];
+
+    return [
+      {
+        leftHtml: cuteRobotSvg,
+        rightIcon: 'fas fa-brain',
+        text: texts[0]
+      },
+      {
+        leftIcon: 'fas fa-bolt',
+        rightIcon: 'fas fa-fire',
+        text: texts[1]
+      },
+      {
+        leftIcon: 'fas fa-chart-line',
+        rightIcon: 'fas fa-trophy',
+        text: texts[2]
+      },
+      {
+        leftIcon: 'fas fa-laptop-code',
+        rightIcon: 'fas fa-microchip',
+        text: texts[3]
+      },
+      {
+        leftIcon: 'fas fa-school',
+        rightIcon: 'fas fa-rocket',
+        text: texts[4]
+      }
+    ];
+  }
+
+  let dynamicItems = getDynamicItems();
 
   const middleTextEl = document.getElementById('headline-text-middle');
   const leftIconEl = document.getElementById('headline-icon-left');
@@ -722,6 +760,7 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
 
     function typeTick() {
       const current = dynamicItems[itemIdx];
+      if (!current) return;
       const targetText = current.text;
 
       if (!isDeleting) {
@@ -764,6 +803,19 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
         typingTimeout = setTimeout(typeTick, eraseSpeed);
       }
     }
+
+    // Dynamic typewriter restart when language switches
+    window._typewriterRestart = () => {
+      clearTimeout(typingTimeout);
+      dynamicItems = getDynamicItems();
+      itemIdx = 0;
+      charIdx = 0;
+      isDeleting = false;
+      middleTextEl.textContent = '';
+      applyIcons(dynamicItems[0]);
+      checkMultilineLayout();
+      typingTimeout = setTimeout(typeTick, 200);
+    };
 
     // Initial setup: start typing immediately
     middleTextEl.textContent = '';
