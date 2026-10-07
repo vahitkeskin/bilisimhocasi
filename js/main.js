@@ -489,4 +489,69 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
       copyToClipboard(snippet);
     });
   }
+  // --- DYNAMIC OPEN-CLOSE HEADLINE ROTATOR (vahitkeskinweb effect) ---
+  const dynamicItems = [
+    {
+      leftIcon: 'fas fa-robot',
+      rightIcon: 'fas fa-brain',
+      text: 'Yapay Zeka ve Geleceği Kodluyoruz'
+    },
+    {
+      leftIcon: 'fas fa-bolt',
+      rightIcon: 'fas fa-fire',
+      text: "Geleceğin Gücü Uğur'da Başlar"
+    },
+    {
+      leftIcon: 'fas fa-chart-line',
+      rightIcon: 'fas fa-trophy',
+      text: "Viranşehir'de Başarıyı Zirveye Taşıyoruz"
+    },
+    {
+      leftIcon: 'fas fa-laptop-code',
+      rightIcon: 'fas fa-code',
+      text: 'Teknoloji ve İnovasyonun Öncüsü'
+    },
+    {
+      leftIcon: 'fas fa-school',
+      rightIcon: 'fas fa-rocket',
+      text: "Siz Hayal Edin, Viranşehir Uğur'da Gerçekleştirelim"
+    }
+  ];
+
+  const middleTextEl = document.getElementById('headline-text-middle');
+  const leftIconEl = document.getElementById('headline-icon-left');
+  const rightIconEl = document.getElementById('headline-icon-right');
+
+  let currentItemIndex = 0;
+  let isHeadlineAnimating = false;
+
+  function cycleHeadline() {
+    if (!middleTextEl || !leftIconEl || !rightIconEl) return;
+    if (isHeadlineAnimating) return;
+    isHeadlineAnimating = true;
+
+    // 1. Close smoothly (collapse width to 0)
+    middleTextEl.classList.add('closed');
+
+    // 2. Wait for close transition to finish (750ms)
+    setTimeout(() => {
+      currentItemIndex = (currentItemIndex + 1) % dynamicItems.length;
+      const nextItem = dynamicItems[currentItemIndex];
+
+      // Update text and icons while hidden
+      middleTextEl.textContent = nextItem.text;
+      leftIconEl.innerHTML = `<i class="${nextItem.leftIcon}" aria-hidden="true"></i>`;
+      rightIconEl.innerHTML = `<i class="${nextItem.rightIcon}" aria-hidden="true"></i>`;
+
+      // 3. Open smoothly (expand width back to full)
+      middleTextEl.classList.remove('closed');
+      isHeadlineAnimating = false;
+    }, 750);
+  }
+
+  // Cycle every 4 seconds
+  if (middleTextEl) {
+    setInterval(cycleHeadline, 4200);
+  }
 });
+
