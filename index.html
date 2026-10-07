@@ -2,23 +2,28 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Uğur Okulları Viranşehir Kampüsü | Bilişim Teknolojileri Müfredatı</title>
-  <meta name="description" content="Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Öğretmeni K12 Akademik Müfredatı. Ana sınıfından 12. sınıfa kadar algoritmik düşünce, Scratch, 3D modelleme, Arduino, Python ve Yapay Zeka serüveni.">
+  <meta name="description" content="Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri K12 Akademik Müfredatı. Ana sınıfından 12. sınıfa kadar algoritmik düşünce, Scratch, 3D modelleme, Arduino, Python ve Yapay Zeka serüveni.">
   <meta name="keywords" content="Uğur Okulları, Viranşehir Kampüsü, Bilişim Teknolojileri, Kodlama, Robotik, Arduino, Python, Yapay Zeka, Scratch, Tinkercad, STEM">
-  <meta name="author" content="Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Öğretmeni">
-  
+  <meta name="author" content="Uğur Okulları Viranşehir Kampüsü">
+
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Uğur Okulları Viranşehir Kampüsü | Bilişim Teknolojileri Müfredatı">
-  <meta property="og:description" content="Geleceğin teknolojilerini bugünden inşa eden Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri K12 müfredat platformu.">
+  <meta property="og:description" content="Geleceğin teknolojilerini bugünden inşa eden Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri K12 platformu.">
   <meta property="og:image" content="assets/schoolfullimage.webp">
-  
+
   <!-- Favicon (ugurokullariviransehirkampusu.jpg) -->
   <link rel="icon" type="image/jpeg" href="assets/ugurokullariviransehirkampusu.jpg">
   <link rel="apple-touch-icon" href="assets/ugurokullariviransehirkampusu.jpg">
-  
-  <!-- Stylesheets -->
+
+  <!-- Bootstrap 4.3.1 & Libraries (Matching Begendigim Sayfa) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+  <!-- Custom Golden OnePage & Glassmorphism Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,1098 +33,760 @@
     <div class="scroll-progress-bar" id="scroll-progress"></div>
   </div>
 
-  <!-- Ambient Glowing Orbs Background -->
-  <div class="ambient-glow-container" aria-hidden="true">
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
-    <div class="glow-orb glow-orb-3"></div>
-    <div class="glow-orb glow-orb-4"></div>
-  </div>
-
-  <!-- High-Tech Grid & Dynamic Particle Network Canvas -->
-  <div class="grid-pattern-overlay" aria-hidden="true"></div>
-  <canvas id="tech-canvas" aria-hidden="true"></canvas>
-
-  <div class="page-wrapper">
-
-    <!-- ====================================================================
-         APPLE VISIONOS FLOATING DOCK NAVBAR
-         ==================================================================== -->
-    <header>
-      <nav class="glass-navbar" id="main-navbar" aria-label="Ana Gezinti Menüsü">
-        <a href="#campus-showcase" class="nav-brand" aria-label="Uğur Okulları Viranşehir Kampüsü Anasayfa">
-          <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Uğur Okulları Viranşehir Kampüsü İkonu" class="brand-campus-logo-img">
+  <!-- ====================================================================
+       1. HERO / COVER SECTION (#cover)
+       Matches Begendigim Sayfa Golden cover, schoolfullimage.webp backdrop
+       with background-position: center bottom so the bottom of the campus
+       and the wall/ground are 100% visible!
+       ==================================================================== -->
+  <section id="cover">
+    <!-- Navbar (Fixed-top with smooth transition to .change-fixed-top) -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="main-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#cover" aria-label="Uğur Okulları Viranşehir Kampüsü">
+          <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Viranşehir Kampüsü Logosu" class="brand-campus-logo-img">
           <div class="brand-text-col">
             <span class="brand-name">UĞUR OKULLARI</span>
             <span class="brand-campus-sub">Viranşehir Kampüsü</span>
           </div>
         </a>
 
-        <div class="nav-links" id="nav-links">
-          <a href="#hero" class="nav-pill-link active" id="nav-home">Giriş</a>
-          <a href="#kademe-1" class="nav-pill-link" id="nav-stage-1">İlkokul</a>
-          <a href="#kademe-3" class="nav-pill-link" id="nav-stage-2">Ortaokul</a>
-          <a href="#kademe-5" class="nav-pill-link" id="nav-stage-3">Lise</a>
-          <a href="#vizyon" class="nav-pill-link" id="nav-vision">Öğretmen Vizyonu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Gezinti Menüsünü Aç/Kapat">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#cover">ANA SAYFA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">HİZMETLER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">MÜFREDAT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutUs">HİKAYEMİZ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">KADRO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">İLETİŞİM</a>
+            </li>
+            <li class="nav-item ml-lg-2">
+              <div class="nav-actions-group">
+                <button type="button" class="nav-icon-action" id="sound-toggle-btn" aria-label="Ses Efektlerini Kapat/Aç" title="Ses Efektleri">
+                  <i class="fas fa-volume-up"></i>
+                </button>
+                <button type="button" class="nav-icon-action" id="share-page-btn" aria-label="Sayfayı Paylaş" title="Bağlantıyı Paylaş">
+                  <i class="fas fa-share-alt"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <div class="nav-actions">
-          <button type="button" class="nav-icon-btn" id="sound-toggle-btn" aria-label="Ses Efektlerini Kapat/Aç" title="Ses Efektleri">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-            </svg>
-          </button>
-
-          <button type="button" class="nav-icon-btn" id="share-page-btn" aria-label="Müfredatı Paylaş" title="Bağlantıyı Paylaş">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-          </button>
-
-          <a href="#mufredat" class="nav-cta-btn" id="nav-cta-mufredat">
-            <span>Müfredatı İncele</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+    <!-- Center Hero Typography (Golden Style) -->
+    <div class="container cover-container">
+      <div class="row text-center justify-content-center">
+        <div class="col-12">
+          <h1>Uğur Okulları <br class="d-block d-md-none">Viranşehir Kampüsü</h1>
+        </div>
+        <div class="col-12">
+          <h2>GELECEĞİ KODLAYAN <br class="d-block d-md-none">NESİLLER</h2>
+        </div>
+        <div class="col-12">
+          <p class="cover-subtitle">
+            Ana sınıfından 12. sınıfa kadar algoritmik düşünce, Scratch, 3D modelleme, Arduino robotik, Python ve yapay zeka ile <strong>kesintisiz K12 bilişim serüveni</strong>.
+          </p>
+        </div>
+        <div class="col-12">
+          <a href="#portfolio" class="btn btn-primary btn-lg">
+            <span>MÜFREDATI KEŞFET</span>
+            <i class="fas fa-arrow-down ml-2"></i>
           </a>
-
-          <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menüyü Aç/Kapat">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
+          <a href="#campus-modal" class="btn btn-outline-golden btn-lg ml-md-3 mt-3 mt-md-0" id="hero-campus-photo-btn">
+            <i class="fas fa-camera mr-2"></i>
+            <span>KAMPÜS FOTOĞRAFI</span>
+          </a>
         </div>
-      </nav>
-    </header>
-
-    <!-- ====================================================================
-         GRAND CAMPUS HERO SHOWCASE (schoolfullimage.webp • %100 UX/UI)
-         ==================================================================== -->
-    <main>
-      <section class="campus-hero-showcase" id="campus-showcase" aria-label="Uğur Okulları Viranşehir Kampüsü Yerleşkesi">
-        <div class="content-container">
-          <div class="campus-banner-card">
-            <div class="campus-image-wrapper">
-              <img 
-                src="assets/schoolfullimage.webp" 
-                alt="Uğur Okulları Viranşehir Kampüsü Eğitim Binası ve Yerleşkesi" 
-                class="campus-hero-img"
-                fetchpriority="high"
-                loading="eager"
-              >
-              <div class="campus-banner-overlay" aria-hidden="true"></div>
-            </div>
-
-            <!-- Üst Cam Rozetler -->
-            <div class="campus-banner-top-bar">
-              <div class="campus-pill-tag">
-                <span class="campus-live-dot" aria-hidden="true"></span>
-                <span>📍 Şanlıurfa / Viranşehir</span>
-              </div>
-              <div class="campus-pill-tag">
-                <span>🏫 Ana Sınıfı • İlkokul • Ortaokul • Anadolu Lisesi</span>
-              </div>
-            </div>
-
-            <!-- Alt Cam Bilgi ve Eylem Paneli -->
-            <div class="campus-banner-bottom-bar">
-              <div class="campus-banner-brand">
-                <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Viranşehir Kampüsü Amblemi" class="campus-banner-badge-img">
-                <div>
-                  <h2 class="campus-banner-title">Uğur Okulları Viranşehir Kampüsü</h2>
-                  <p class="campus-banner-sub">Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı</p>
-                </div>
-              </div>
-              <div class="campus-banner-cta-group">
-                <a href="#mufredat" class="campus-banner-btn-primary">
-                  <span>Müfredatı İncele</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           HERO SECTION: FUTURISTIC PORTAL & LOGO SHOWCASE
-           ==================================================================== -->
-      <section class="hero-section" id="hero">
-        <div class="content-container">
-          <div class="hero-content">
-
-            <!-- Fütüristik Logo Vitrini (README kuralı) -->
-            <div class="hero-logo-badge">
-              <div class="hero-logo-frame">
-                <img src="assets/ugur-logo.svg" alt="Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Amblemi" class="hero-logo-svg">
-              </div>
-            </div>
-
-            <!-- Rozet / Duyuru Şeridi -->
-            <div class="announcement-badge">
-              <span class="pulse-dot" aria-hidden="true"></span>
-              <span>2026 - 2027 K12 Bilişim Vizyonu</span>
-            </div>
-
-            <!-- Ana Başlık -->
-            <h1 class="hero-title" id="main-curriculum-heading">
-              Uğur Okulları Viranşehir Kampüsü<br>
-              <span class="hero-title-highlight">Bilişim Serüveni</span>
-            </h1>
-
-            <p class="hero-subtitle">
-              <strong>Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Öğretmeni</strong> rehberliğinde; temel bilgisayar okuryazarlığından blok tabanlı kodlamaya, 3D tasarımdan Arduino robotiğe, Python programlamadan yapay zeka ve siber güvenliğe uzanan <strong>kesintisiz, uygulamalı ve geleceğe yön veren</strong> eğitim yolculuğu.
-            </p>
-
-            <!-- Öğretmen & Vizyon Hapı -->
-            <div class="teacher-spotlight-pill">
-              <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Uğur Okulları Viranşehir Kampüsü" class="teacher-campus-badge">
-              <span><strong>Uğur Okulları Viranşehir Kampüsü</strong> • Bilişim Teknolojileri Zümresi</span>
-            </div>
-
-            <!-- Hızlı İstatistik Kartları -->
-            <div class="hero-stats-grid">
-              <div class="stat-card">
-                <div class="stat-number stat-number-blue">6</div>
-                <div class="stat-label">Akademik Kademe</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number stat-number-red">14+</div>
-                <div class="stat-label">Modern Yazılım & Araç</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number stat-number-blue">100%</div>
-                <div class="stat-label">Uygulamalı Laboratuvar</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number stat-number-red">K12</div>
-                <div class="stat-label">Kesintisiz İlerleme</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           KONTROL MERKEZİ: KADEME FİLTRELERİ & CANLI ARAMA ÇUBUĞU
-           ==================================================================== -->
-      <section class="content-container" aria-label="Müfredat Filtreleme ve Arama">
-        <div class="control-center-wrapper">
-          <div class="control-center-dock">
-            
-            <!-- Kademe Filtre Butonları -->
-            <div class="filter-tabs-group" role="tablist" aria-label="Eğitim Kademeleri">
-              <button type="button" class="filter-pill-btn active" data-filter="all" id="filter-all" role="tab" aria-selected="true">
-                <span>Tüm Kademeler</span>
-                <span class="filter-count-badge">6</span>
-              </button>
-              <button type="button" class="filter-pill-btn" data-filter="primary" id="filter-primary" role="tab" aria-selected="false">
-                <span>🧸 Ana Sınıfı - 4. Sınıf</span>
-                <span class="filter-count-badge">2</span>
-              </button>
-              <button type="button" class="filter-pill-btn" data-filter="middle" id="filter-middle" role="tab" aria-selected="false">
-                <span>🤖 Ortaokul (5-8. Sınıf)</span>
-                <span class="filter-count-badge">2</span>
-              </button>
-              <button type="button" class="filter-pill-btn" data-filter="high" id="filter-high" role="tab" aria-selected="false">
-                <span>💻 Lise (9-12. Sınıf)</span>
-                <span class="filter-count-badge">2</span>
-              </button>
-            </div>
-
-            <!-- Canlı Arama Input -->
-            <div class="search-box-wrapper">
-              <span class="search-icon-inside" aria-hidden="true">🔍</span>
-              <input 
-                type="search" 
-                id="curriculum-search" 
-                class="search-input" 
-                placeholder="Konu, araç veya sınıf ara (örn. Python, Arduino)..."
-                aria-label="Müfredat konularında ara"
-              >
-              <button type="button" class="clear-search-btn" id="clear-search-btn" aria-label="Aramayı Temizle">✕</button>
-            </div>
-
-          </div>
-
-          <!-- Arama Sonuç Durumu -->
-          <div class="results-status-bar">
-            <span>Gösterilen Seviye Sayısı: <strong id="results-count">6</strong></span>
-            <span>Uğur Okulları Bilişim Teknolojileri Müfredatı</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           MÜFREDAT KARTLARI (6 YAŞ GRUBU - GLASSMORPHISM KARTLI TASARIM)
-           ==================================================================== -->
-      <section class="content-container section-spacing" id="mufredat" aria-label="K12 Bilişim Müfredatı Kartları">
-        <div class="curriculum-flow-container">
-
-          <!-- ----------------------------------------------------------------
-               1. KART: ANA SINIFI - 2. SINIF (BİLİŞİMLE TANIŞMA)
-               ---------------------------------------------------------------- -->
-          <div class="curriculum-card-wrapper" data-category="primary" id="kademe-1">
-            <article class="glass-curriculum-card card-grade-1">
-              
-              <!-- Sol İçerik Kolonu -->
-              <div class="card-content-col">
-                <div class="card-meta-header">
-                  <div class="stage-badge-group">
-                    <div class="stage-number-pill">1</div>
-                    <span class="grade-level-pill">Ana Sınıfı - 2. Sınıf</span>
-                  </div>
-                  <span class="school-tier-pill">Okul Öncesi & İlkokul</span>
-                </div>
-
-                <div class="card-title-group">
-                  <h2 class="card-title">1. Ana Sınıfı - 2. Sınıf</h2>
-                  <div class="card-subtitle">
-                    <span>🌱 Bilişimle Tanışma</span>
-                  </div>
-                </div>
-
-                <!-- İkonlar & Görseller (README kuralı) -->
-                <div class="card-icons-showcase">
-                  <span class="card-icons-label">Görsel Dünyamız:</span>
-                  <div class="card-emojis-cluster">
-                    <span title="Oyuncak & Keşif">🧸</span>
-                    <span title="Dijital Sanat & Çizim">🎨</span>
-                    <span title="Mantık Bulmacaları">🧩</span>
-                    <span title="Sevimli Robot Arkadaşlar">🤖</span>
-                  </div>
-                </div>
-
-                <!-- Konular (README kuralı) -->
-                <div class="card-topics-section">
-                  <div class="card-topics-heading">
-                    <span>✦ İşlenen Ana Konular</span>
-                  </div>
-                  <ul class="card-topics-list">
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Fare ve Klavye Kullanımı:</strong> Tıklama, çift tıklama, sürükle-bırak el-göz koordinasyonu ve temel yön tuşları.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Ekran Okuryazarlığı:</strong> Dijital cihazlarda doğru duruş, ergonomi ve ekran başında sağlıklı zaman yönetimi.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Temel Algoritma Mantığı:</strong> Code.org görsel bulmacaları ile sıralı komut dizilimi ve mantıksal problem çözme.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Etiketler & Beceriler -->
-                <div class="card-tags-cloud">
-                  <span class="skill-badge">Code.org</span>
-                  <span class="skill-badge">Görsel Algoritma</span>
-                  <span class="skill-badge">Motor Beceriler</span>
-                  <span class="skill-badge">Ekran Ergonomisi</span>
-                </div>
-
-                <!-- Aksiyon Butonları -->
-                <div class="card-action-row">
-                  <button type="button" class="card-action-btn-primary open-details-btn" data-stage="1" id="details-btn-1">
-                    <span>Ders Kazanımlarını İncele</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="16" x2="12" y2="12"></line>
-                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                  </button>
-                  <a href="#kademe-2" class="card-action-btn-secondary">
-                    <span>Sonraki Seviye</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Sağ Video Kolonu (README kuralı) -->
-              <div class="card-media-col">
-                <div class="video-glass-container">
-                  <iframe 
-                    class="responsive-iframe"
-                    src="https://www.youtube.com/embed/nKIu9yen5nc" 
-                    title="Code.org: Bilgisayar Bilimi ve Kodlama ile Tanışma" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div class="video-meta-bar">
-                  <div class="video-meta-tag">
-                    <span class="video-pulse-indicator"></span>
-                    <span>Code.org • Kodlama ile Tanışma</span>
-                  </div>
-                  <span>1080p HD • Uğur TV</span>
-                </div>
-              </div>
-
-            </article>
-          </div>
-
-          <!-- ----------------------------------------------------------------
-               2. KART: 3. SINIF - 4. SINIF (BLOKLARLA KODLAMA)
-               ---------------------------------------------------------------- -->
-          <div class="curriculum-card-wrapper" data-category="primary" id="kademe-2">
-            <article class="glass-curriculum-card card-grade-2">
-              
-              <!-- Sol İçerik Kolonu -->
-              <div class="card-content-col">
-                <div class="card-meta-header">
-                  <div class="stage-badge-group">
-                    <div class="stage-number-pill">2</div>
-                    <span class="grade-level-pill">3. Sınıf - 4. Sınıf</span>
-                  </div>
-                  <span class="school-tier-pill">İlkokul Kodlama</span>
-                </div>
-
-                <div class="card-title-group">
-                  <h2 class="card-title">2. 3. Sınıf - 4. Sınıf</h2>
-                  <div class="card-subtitle">
-                    <span>🎮 Bloklarla Kodlama</span>
-                  </div>
-                </div>
-
-                <!-- İkonlar & Görseller (README kuralı) -->
-                <div class="card-icons-showcase">
-                  <span class="card-icons-label">Görsel Dünyamız:</span>
-                  <div class="card-emojis-cluster">
-                    <span title="Piksel Canavarı">👾</span>
-                    <span title="Oyun Konsolu & Joystick">🕹️</span>
-                    <span title="Roket & Üretim">🚀</span>
-                    <span title="Scratch Kedisi">🐱</span>
-                  </div>
-                </div>
-
-                <!-- Konular (README kuralı) -->
-                <div class="card-topics-section">
-                  <div class="card-topics-heading">
-                    <span>✦ İşlenen Ana Konular</span>
-                  </div>
-                  <ul class="card-topics-list">
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Scratch ile Kendi Oyununu Yapma:</strong> MIT Scratch platformunda blokları birleştirerek hikayeler, animasyonlar ve oyun mekanikleri tasarlama.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Algoritmik Kontrol:</strong> Sürekli tekrarlar (döngüler), eğer-ise mantıksal koşulları ve değişkenler ile puan sistemi oluşturma.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Dijital Vatandaşlık:</strong> Güvenli şifre belirleme, siber zorbalıkla mücadele ve saygılı çevrim içi iletişim kültürü.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Etiketler & Beceriler -->
-                <div class="card-tags-cloud">
-                  <span class="skill-badge">Scratch 3.0</span>
-                  <span class="skill-badge">Oyun Programlama</span>
-                  <span class="skill-badge">Döngüler & Koşullar</span>
-                  <span class="skill-badge">Dijital Vatandaşlık</span>
-                </div>
-
-                <!-- Aksiyon Butonları -->
-                <div class="card-action-row">
-                  <button type="button" class="card-action-btn-primary open-details-btn" data-stage="2" id="details-btn-2">
-                    <span>Ders Kazanımlarını İncele</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="16" x2="12" y2="12"></line>
-                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                  </button>
-                  <a href="#kademe-3" class="card-action-btn-secondary">
-                    <span>Sonraki Seviye</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Sağ Video Kolonu (README kuralı) -->
-              <div class="card-media-col">
-                <div class="video-glass-container">
-                  <iframe 
-                    class="responsive-iframe"
-                    src="https://www.youtube.com/embed/jXUZaf5D12A" 
-                    title="Scratch ile Blok Tabanlı Kodlama ve Oyun Tasarımı Dersi Videosu" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div class="video-meta-bar">
-                  <div class="video-meta-tag">
-                    <span class="video-pulse-indicator"></span>
-                    <span>MIT Scratch • Oyun & Blok Kodlama</span>
-                  </div>
-                  <span>1080p HD • İnteraktif</span>
-                </div>
-              </div>
-
-            </article>
-          </div>
-
-          <!-- ----------------------------------------------------------------
-               3. KART: 5. SINIF - 6. SINIF (3D TASARIM VE DONANIMA GİRİŞ)
-               ---------------------------------------------------------------- -->
-          <div class="curriculum-card-wrapper" data-category="middle" id="kademe-3">
-            <article class="glass-curriculum-card card-grade-3">
-              
-              <!-- Sol İçerik Kolonu -->
-              <div class="card-content-col">
-                <div class="card-meta-header">
-                  <div class="stage-badge-group">
-                    <div class="stage-number-pill">3</div>
-                    <span class="grade-level-pill">5. Sınıf - 6. Sınıf</span>
-                  </div>
-                  <span class="school-tier-pill">Ortaokul Giriş</span>
-                </div>
-
-                <div class="card-title-group">
-                  <h2 class="card-title">3. 5. Sınıf - 6. Sınıf</h2>
-                  <div class="card-subtitle">
-                    <span>🧊 3D Tasarım ve Donanıma Giriş</span>
-                  </div>
-                </div>
-
-                <!-- İkonlar & Görseller (README kuralı) -->
-                <div class="card-icons-showcase">
-                  <span class="card-icons-label">Görsel Dünyamız:</span>
-                  <div class="card-emojis-cluster">
-                    <span title="3 Boyutlu Küp">🧊</span>
-                    <span title="Araç & Üretim Çantası">🛠️</span>
-                    <span title="Yaratıcı Fikir">💡</span>
-                    <span title="3D Baskı Teknolojisi">🖨️</span>
-                  </div>
-                </div>
-
-                <!-- Konular (README kuralı) -->
-                <div class="card-topics-section">
-                  <div class="card-topics-heading">
-                    <span>✦ İşlenen Ana Konular</span>
-                  </div>
-                  <ul class="card-topics-list">
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Tinkercad ile 3D Tasarım:</strong> Uzamsal düşünme becerisi, geometrik modelleme, katı ve delik gruplama ile 3D yazıcı prototiplemesi.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Bilgisayarın İç Donanım Parçaları:</strong> Anakart, İşlemci (CPU), RAM bellek, Ekran Kartı (GPU), Sabit Disk/SSD ve güç kaynağının incelenmesi.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Veri Mimarisi:</strong> Verilerin bilgisayarda ikili sistemde (0 ve 1) saklanma prensipleri ve depolama birimleri hiyerarşisi.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Etiketler & Beceriler -->
-                <div class="card-tags-cloud">
-                  <span class="skill-badge">Autodesk Tinkercad</span>
-                  <span class="skill-badge">3D Modelleme</span>
-                  <span class="skill-badge">Donanım Mimarisi</span>
-                  <span class="skill-badge">3D Yazıcı Üretimi</span>
-                </div>
-
-                <!-- Aksiyon Butonları -->
-                <div class="card-action-row">
-                  <button type="button" class="card-action-btn-primary open-details-btn" data-stage="3" id="details-btn-3">
-                    <span>Ders Kazanımlarını İncele</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="16" x2="12" y2="12"></line>
-                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                  </button>
-                  <a href="#kademe-4" class="card-action-btn-secondary">
-                    <span>Sonraki Seviye</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Sağ Video Kolonu (README kuralı) -->
-              <div class="card-media-col">
-                <div class="video-glass-container">
-                  <iframe 
-                    class="responsive-iframe"
-                    src="https://www.youtube.com/embed/OD1mMdezrWA" 
-                    title="Tinkercad 3D Tasarım ve Bilgisayar Donanım Parçaları Dersi Videosu" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div class="video-meta-bar">
-                  <div class="video-meta-tag">
-                    <span class="video-pulse-indicator"></span>
-                    <span>Tinkercad 3D • Tasarım & Modelleme</span>
-                  </div>
-                  <span>1080p HD • Modelleme Lab</span>
-                </div>
-              </div>
-
-            </article>
-          </div>
-
-          <!-- ----------------------------------------------------------------
-               4. KART: 7. SINIF - 8. SINIF (MAKER RUHU VE ARDUINO DÜNYASI)
-               ---------------------------------------------------------------- -->
-          <div class="curriculum-card-wrapper" data-category="middle" id="kademe-4">
-            <article class="glass-curriculum-card card-grade-4">
-              
-              <!-- Sol İçerik Kolonu -->
-              <div class="card-content-col">
-                <div class="card-meta-header">
-                  <div class="stage-badge-group">
-                    <div class="stage-number-pill">4</div>
-                    <span class="grade-level-pill">7. Sınıf - 8. Sınıf</span>
-                  </div>
-                  <span class="school-tier-pill">Ortaokul Maker</span>
-                </div>
-
-                <div class="card-title-group">
-                  <h2 class="card-title">4. 7. Sınıf - 8. Sınıf</h2>
-                  <div class="card-subtitle">
-                    <span>🤖 Maker Ruhu ve Arduino Dünyası</span>
-                  </div>
-                </div>
-
-                <!-- İkonlar & Görseller (README kuralı) -->
-                <div class="card-icons-showcase">
-                  <span class="card-icons-label">Görsel Dünyamız:</span>
-                  <div class="card-emojis-cluster">
-                    <span title="Robotik Kol & Zeka">🤖</span>
-                    <span title="Elektrik & Bağlantı">🔌</span>
-                    <span title="Çark & Mekanizma">⚙️</span>
-                    <span title="Elektronik Devre Çipi">💡</span>
-                  </div>
-                </div>
-
-                <!-- Konular (README kuralı) -->
-                <div class="card-topics-section">
-                  <div class="card-topics-heading">
-                    <span>✦ İşlenen Ana Konular</span>
-                  </div>
-                  <ul class="card-topics-list">
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Arduino ile Tanışma:</strong> Mikrodenetleyici kartının çalışma prensibi, giriş/çıkış (I/O) pinleri ve Arduino IDE ortamı.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Breadboard & Devre Elemanları:</strong> Devre tahtası bağlantı yolları, dirençler, kutup yönleri ve Jumper kabloların yapısı.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>İlk Devremiz & Motor Kontrolü:</strong> LED yakıp söndürme (Blink), potansiyometre ile parlaklık ayarı ve Servo Motor açı kontrolü.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Etiketler & Beceriler -->
-                <div class="card-tags-cloud">
-                  <span class="skill-badge">Arduino UNO</span>
-                  <span class="skill-badge">Breadboard</span>
-                  <span class="skill-badge">Jumper Kablolar</span>
-                  <span class="skill-badge">LED & Servo Motor</span>
-                </div>
-
-                <!-- Aksiyon Butonları -->
-                <div class="card-action-row">
-                  <button type="button" class="card-action-btn-primary open-details-btn" data-stage="4" id="details-btn-4">
-                    <span>Ders Kazanımlarını İncele</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="16" x2="12" y2="12"></line>
-                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                  </button>
-                  <a href="#kademe-5" class="card-action-btn-secondary">
-                    <span>Sonraki Seviye</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Sağ Video Kolonu (README kuralı) -->
-              <div class="card-media-col">
-                <div class="video-glass-container">
-                  <iframe 
-                    class="responsive-iframe"
-                    src="https://www.youtube.com/embed/nL34zDTPkcs" 
-                    title="Arduino Temelleri ve LED Yakma Dersi Eğitimi" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div class="video-meta-bar">
-                  <div class="video-meta-tag">
-                    <span class="video-pulse-indicator"></span>
-                    <span>Arduino Temelleri & LED Devresi</span>
-                  </div>
-                  <span>1080p HD • Robotik Lab</span>
-                </div>
-              </div>
-
-            </article>
-          </div>
-
-          <!-- ----------------------------------------------------------------
-               5. KART: 9. SINIF - 10. SINIF (GERÇEK DÜNYADA PROGRAMLAMA)
-               ---------------------------------------------------------------- -->
-          <div class="curriculum-card-wrapper" data-category="high" id="kademe-5">
-            <article class="glass-curriculum-card card-grade-5">
-              
-              <!-- Sol İçerik Kolonu -->
-              <div class="card-content-col">
-                <div class="card-meta-header">
-                  <div class="stage-badge-group">
-                    <div class="stage-number-pill">5</div>
-                    <span class="grade-level-pill">9. Sınıf - 10. Sınıf</span>
-                  </div>
-                  <span class="school-tier-pill">Lise Yazılım</span>
-                </div>
-
-                <div class="card-title-group">
-                  <h2 class="card-title">5. 9. Sınıf - 10. Sınıf</h2>
-                  <div class="card-subtitle">
-                    <span>💻 Gerçek Dünyada Programlama</span>
-                  </div>
-                </div>
-
-                <!-- İkonlar & Görseller (README kuralı) -->
-                <div class="card-icons-showcase">
-                  <span class="card-icons-label">Görsel Dünyamız:</span>
-                  <div class="card-emojis-cluster">
-                    <span title="Dizüstü Bilgisayar & Kod Editörü">💻</span>
-                    <span title="Python Dili Sembolü">🐍</span>
-                    <span title="Veri Grafiği & Analiz">📊</span>
-                    <span title="Terminal & Konsol">⌨️</span>
-                  </div>
-                </div>
-
-                <!-- Konular (README kuralı) -->
-                <div class="card-topics-section">
-                  <div class="card-topics-heading">
-                    <span>✦ İşlenen Ana Konular</span>
-                  </div>
-                  <ul class="card-topics-list">
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Python Diline Giriş:</strong> Metin tabanlı kodlama sözdizimi, modern IDE kullanımı ve temiz kod (Clean Code) standartları.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Veri Tipleri ve Yapıları:</strong> Metinler (String), Tam Sayılar (Integer), Kayan Noktalı Sayılar (Float), Listeler ve Sözlükler.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Algoritmik Düşünce & Fonksiyonlar:</strong> Modüler programlama, fonksiyon tanımlama, hata ayıklama (Debugging) ve temel veri analizi.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Etiketler & Beceriler -->
-                <div class="card-tags-cloud">
-                  <span class="skill-badge">Python 3</span>
-                  <span class="skill-badge">Veri Tipleri</span>
-                  <span class="skill-badge">Algoritmik Düşünce</span>
-                  <span class="skill-badge">Metin Tabanlı Kodlama</span>
-                </div>
-
-                <!-- Aksiyon Butonları -->
-                <div class="card-action-row">
-                  <button type="button" class="card-action-btn-primary open-details-btn" data-stage="5" id="details-btn-5">
-                    <span>Ders Kazanımlarını İncele</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="16" x2="12" y2="12"></line>
-                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                  </button>
-                  <button type="button" class="card-action-btn-secondary" id="copy-code-btn">
-                    <span>Örnek Kodu Kopyala</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Sağ Video Kolonu (README kuralı) -->
-              <div class="card-media-col">
-                <div class="video-glass-container">
-                  <iframe 
-                    class="responsive-iframe"
-                    src="https://www.youtube.com/embed/x7X9w_GIm1s" 
-                    title="Python Diline Giriş ve Metin Tabanlı Kodlama Dersi Videosu" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div class="video-meta-bar">
-                  <div class="video-meta-tag">
-                    <span class="video-pulse-indicator"></span>
-                    <span>Python ile Programlamaya Giriş</span>
-                  </div>
-                  <span>1080p HD • Profesyonel</span>
-                </div>
-              </div>
-
-            </article>
-          </div>
-
-          <!-- ----------------------------------------------------------------
-               6. KART: 11. SINIF - 12. SINIF (GELECEĞİN TEKNOLOJİLERİ)
-               ---------------------------------------------------------------- -->
-          <div class="curriculum-card-wrapper" data-category="high" id="kademe-6">
-            <article class="glass-curriculum-card card-grade-6">
-              
-              <!-- Sol İçerik Kolonu -->
-              <div class="card-content-col">
-                <div class="card-meta-header">
-                  <div class="stage-badge-group">
-                    <div class="stage-number-pill">6</div>
-                    <span class="grade-level-pill">11. Sınıf - 12. Sınıf</span>
-                  </div>
-                  <span class="school-tier-pill">Lise İleri Düzey</span>
-                </div>
-
-                <div class="card-title-group">
-                  <h2 class="card-title">6. 11. Sınıf - 12. Sınıf</h2>
-                  <div class="card-subtitle">
-                    <span>🧠 Geleceğin Teknolojileri</span>
-                  </div>
-                </div>
-
-                <!-- İkonlar & Görseller (README kuralı) -->
-                <div class="card-icons-showcase">
-                  <span class="card-icons-label">Görsel Dünyamız:</span>
-                  <div class="card-emojis-cluster">
-                    <span title="Yapay Zeka & Nöronlar">🧠</span>
-                    <span title="Küresel Siber Ağ & İnternet">🌐</span>
-                    <span title="Siber Güvenlik Kalkanı">🛡️</span>
-                    <span title="Akıllı Nesnelerin İnterneti">📡</span>
-                  </div>
-                </div>
-
-                <!-- Konular (README kuralı) -->
-                <div class="card-topics-section">
-                  <div class="card-topics-heading">
-                    <span>✦ İşlenen Ana Konular</span>
-                  </div>
-                  <ul class="card-topics-list">
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Yapay Zeka Temelleri:</strong> Makine öğrenmesi modelleri, sinir ağları, üretken yapay zeka ve etik algoritma prensipleri.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Siber Güvenlik:</strong> Veri gizliliği, kriptografi, ağ güvenliği mimarisi ve etik hackerlık vizyonu.</span>
-                    </li>
-                    <li class="topic-item">
-                      <span class="topic-check-icon">✓</span>
-                      <span><strong>Nesnelerin İnterneti (IoT) & İleri Robotik:</strong> Bulut bağlantılı akıllı sensörler, otonom sistemler ve endüstri 4.0 çözümleri.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Etiketler & Beceriler -->
-                <div class="card-tags-cloud">
-                  <span class="skill-badge">Yapay Zeka (AI)</span>
-                  <span class="skill-badge">Siber Güvenlik</span>
-                  <span class="skill-badge">IoT Sistemleri</span>
-                  <span class="skill-badge">İleri Robotik</span>
-                </div>
-
-                <!-- Aksiyon Butonları -->
-                <div class="card-action-row">
-                  <button type="button" class="card-action-btn-primary open-details-btn" data-stage="6" id="details-btn-6">
-                    <span>Ders Kazanımlarını İncele</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="16" x2="12" y2="12"></line>
-                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                    </svg>
-                  </button>
-                  <a href="#vizyon" class="card-action-btn-secondary">
-                    <span>Bilişim Vizyonu</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Sağ Video Kolonu (README kuralı) -->
-              <div class="card-media-col">
-                <div class="video-glass-container">
-                  <iframe 
-                    class="responsive-iframe"
-                    src="https://www.youtube.com/embed/ad79nYk2keg" 
-                    title="Yapay Zeka, Siber Güvenlik ve Geleceğin Teknolojileri Dersi Videosu" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-                <div class="video-meta-bar">
-                  <div class="video-meta-tag">
-                    <span class="video-pulse-indicator"></span>
-                    <span>Yapay Zeka & Gelecek Videosu</span>
-                  </div>
-                  <span>1080p HD • Gelecek Vizyonu</span>
-                </div>
-              </div>
-
-            </article>
-          </div>
-
-          <!-- Arama Sonucu Bulunamadı Kutusu -->
-          <div id="no-results-state" style="display:none; text-align:center; padding: 4rem 2rem; background: var(--glass-bg-subtle); border-radius: var(--radius-xl); border: 1px solid var(--glass-border);">
-            <div style="font-size:3rem; margin-bottom:1rem;">🔍</div>
-            <h3 style="color:#ffffff; font-size:1.4rem; margin-bottom:0.5rem;">Aradığınız Kriterlere Uygun Konu Bulunamadı</h3>
-            <p style="color:var(--text-muted); max-width:480px; margin:0 auto 1.5rem;">Lütfen arama teriminizi kontrol ediniz veya filtreleri sıfırlayınız.</p>
-            <button type="button" class="card-action-btn-primary" onclick="document.getElementById('filter-all').click(); document.getElementById('clear-search-btn').click();">
-              Tüm Kademeleri Göster
-            </button>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           ÖĞRETMEN PROFİLİ & UĞUR OKULLARI BİLİŞİM VİZYONU BÖLÜMÜ
-           ==================================================================== -->
-      <section class="content-container section-spacing" id="vizyon" aria-label="Bilişim Vizyonu ve Eğitim Felsefesi">
-        <div class="vision-glass-banner">
-          
-          <div class="vision-left-col">
-            <span class="vision-badge">UĞUR OKULLARI FELSEFESİ</span>
-            <h2 class="vision-title">Teknoloji Tüketen Değil, Geleceği Üreten Bireyler</h2>
-            <p class="vision-desc">
-              Uğur Okulları Bilişim Teknolojileri Öğretmeni olarak misyonumuz; öğrencilerimize yalnızca yazılım dillerini ezberletmek değil, <strong>algoritmik düşünceyi, analitik problem çözmeyi ve etik teknoloji liderliğini</strong> bir yaşam becerisi haline getirmektir.
-            </p>
-            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
-              <div class="teacher-spotlight-pill">
-                <span>📍 Türkiye Geneli Uğur Kampüsleri</span>
-              </div>
-              <div class="teacher-spotlight-pill">
-                <span>⚡ 5C Becerileri Odaklı STEM+A Laboratuvarları</span>
-              </div>
-            </div>
-
-            <div class="campus-showcase-card">
-              <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Uğur Okulları Viranşehir Kampüsü" class="campus-showcase-img">
-              <div>
-                <strong style="color:#ffffff; font-size:1rem; display:block;">Uğur Okulları Viranşehir Kampüsü</strong>
-                <span style="color:var(--ugur-cyan); font-size:0.8125rem; font-weight:600;">Bilişim Teknolojileri ve İnovasyon Laboratuvarı</span>
-                <p style="color:var(--text-muted); font-size:0.8125rem; margin-top:0.35rem; line-height:1.45;">Robotik kodlama kitleri, 3D baskı istasyonu ve yüksek performanslı yazılım laboratuvarımızla öğrencilerimizi geleceğe hazırlıyoruz.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="pillars-grid">
-            <div class="pillar-card">
-              <div class="pillar-icon-box">🧠</div>
-              <h3 class="pillar-title">Hesaplamalı Düşünme</h3>
-              <p class="pillar-text">Karmaşık problemleri küçük parçalara ayırarak algoritmik çözümler üretme becerisi.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon-box">💡</div>
-              <h3 class="pillar-title">Yaratıcı Tasarım & 3D</h3>
-              <p class="pillar-text">Hayal gücünü uzamsal modelleme ve 3 boyutlu prototiplerle somut nesnelere dönüştürme.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon-box">🤖</div>
-              <h3 class="pillar-title">Fiziksel Robotik & Maker</h3>
-              <p class="pillar-text">Arduino, sensörler ve devrelerle nesnelerin internetini ve akıllı cihazları inşa etme.</p>
-            </div>
-
-            <div class="pillar-card">
-              <div class="pillar-icon-box">🛡️</div>
-              <h3 class="pillar-title">Etik Yapay Zeka & Siber Bilinç</h3>
-              <p class="pillar-text">Yapay zekayı insanlığın yararına kullanma ve dijital dünyada güvenle var olma yetkinliği.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </main>
-
-    <!-- ====================================================================
-         MÜFREDAT DETAYLARI MODAL PENCERESİ (APPLE GLASS DIALOG)
-         ==================================================================== -->
-    <div class="glass-modal-backdrop" id="curriculum-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="glass-modal-dialog">
-        
-        <div class="modal-header">
-          <div class="modal-title-group">
-            <span class="modal-subtitle" id="modal-stage-pill">Aşama Detayları</span>
-            <h3 class="modal-title" id="modal-title">Ders Kazanımları ve Öğrenme Çıktıları</h3>
-          </div>
-          <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Pencereyi Kapat">✕</button>
-        </div>
-
-        <div class="modal-body">
-          <div>
-            <div class="modal-section-title">
-              <span>🎯 Yaş Grubu & Genel Yaklaşım</span>
-            </div>
-            <p id="modal-desc" style="color:var(--text-secondary); line-height:1.6;"></p>
-          </div>
-
-          <div>
-            <div class="modal-section-title">
-              <span>📚 Temel Akademik Kazanımlar</span>
-            </div>
-            <div class="modal-outcomes-grid" id="modal-outcomes-list">
-              <!-- Dinamik olarak JS ile doldurulur -->
-            </div>
-          </div>
-
-          <div>
-            <div class="modal-section-title">
-              <span>🛠️ Kullanılan Yazılımlar ve Araçlar</span>
-            </div>
-            <div class="modal-tools-list" id="modal-tools-list">
-              <!-- Dinamik olarak JS ile doldurulur -->
-            </div>
-          </div>
-
-          <div>
-            <div class="modal-section-title">
-              <span>🏆 Dönem Sonu Proje Hedefi</span>
-            </div>
-            <div style="padding:1rem; border-radius:var(--radius-md); background:rgba(26,102,255,0.12); border:1px solid rgba(0,210,255,0.3); color:#ffffff; font-weight:600;" id="modal-project">
-              <!-- Dinamik olarak JS ile doldurulur -->
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="card-action-btn-primary" onclick="document.getElementById('modal-close-btn').click();">
-            Anladım, Kapat
-          </button>
-        </div>
-
       </div>
     </div>
 
-    <!-- ====================================================================
-         FOOTER BÖLÜMÜ
-         ==================================================================== -->
-    <footer class="site-footer">
-      <div class="content-container">
-        <div class="footer-grid">
-          
-          <div class="footer-brand-col">
-            <div style="display:flex; align-items:center; gap:0.85rem;">
-              <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Uğur Okulları Viranşehir Kampüsü" class="brand-campus-logo-img" style="width:50px; height:50px;">
-              <div>
-                <strong style="color:#ffffff; font-size:1.15rem; display:block; font-family:var(--font-heading);">UĞUR OKULLARI</strong>
-                <span style="color:var(--ugur-cyan); font-size:0.8125rem; font-weight:700;">VİRANŞEHİR KAMPÜSÜ</span>
-              </div>
+    <!-- Floating Scenic Campus Pill (Does not obscure image) -->
+    <div class="campus-scenic-pill" id="scenic-pill-click">
+      <span class="pulse-dot"></span>
+      <span>📍 Viranşehir Kampüsü • Yerleşke Detayları</span>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       2. SERVICES SECTION (#services)
+       Matches Begendigim Sayfa 3 iconic circles with golden hover
+       ==================================================================== -->
+  <section id="services">
+    <div class="container">
+      <div class="services-top text-center">
+        <h3>HİZMETLERİMİZ & BİLİŞİM VİZYONUMUZ</h3>
+        <p>21. Yüzyıl Yetkinlikleri ve Teknoloji Odaklı Eğitim Anlayışımız</p>
+      </div>
+
+      <div class="services-content text-center">
+        <div class="row">
+          <!-- Pillar 1 -->
+          <div class="col-md-4 mb-5 mb-md-0">
+            <div class="item-circle">
+              <i class="fas fa-code fa-3x"></i>
             </div>
-            <p class="footer-tagline">
-              Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri K12 Akademik Müfredatı. Kodlayan, üreten ve geleceğe yön veren nesiller için.
+            <h4>Kodlama & Algoritmik Düşünme</h4>
+            <p>
+              Erken yaşta blok tabanlı kodlama (Scratch) ile başlayan mantıksal problem çözme becerileri, ortaokul ve lisede Python ve nesne yönelimli programlama temellerine dönüşür.
             </p>
           </div>
 
-          <div>
-            <h4 class="footer-col-title">İlkokul Kademesi</h4>
-            <ul class="footer-nav-list">
-              <li><a href="#kademe-1" class="footer-nav-link">Ana Sınıfı - 2. Sınıf</a></li>
-              <li><a href="#kademe-1" class="footer-nav-link">Fare & Klavye Becerileri</a></li>
-              <li><a href="#kademe-2" class="footer-nav-link">3. Sınıf - 4. Sınıf</a></li>
-              <li><a href="#kademe-2" class="footer-nav-link">Scratch ile Kodlama</a></li>
-            </ul>
+          <!-- Pillar 2 -->
+          <div class="col-md-4 mb-5 mb-md-0">
+            <div class="item-circle">
+              <i class="fas fa-robot fa-3x"></i>
+            </div>
+            <h4>Robotik & Fiziksel Bilişim</h4>
+            <p>
+              Arduino, mikrodenetleyiciler, sensör devreleri, Tinkercad ile 3D modelleme ve maker projeleriyle öğrencilerimiz teorik bilgiyi somut inovasyon ürünlerine dönüştürür.
+            </p>
           </div>
 
-          <div>
-            <h4 class="footer-col-title">Ortaokul Kademesi</h4>
-            <ul class="footer-nav-list">
-              <li><a href="#kademe-3" class="footer-nav-link">5. Sınıf - 6. Sınıf</a></li>
-              <li><a href="#kademe-3" class="footer-nav-link">Tinkercad & Donanım</a></li>
-              <li><a href="#kademe-4" class="footer-nav-link">7. Sınıf - 8. Sınıf</a></li>
-              <li><a href="#kademe-4" class="footer-nav-link">Arduino & Maker Lab</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="footer-col-title">Lise Kademesi</h4>
-            <ul class="footer-nav-list">
-              <li><a href="#kademe-5" class="footer-nav-link">9. Sınıf - 10. Sınıf (Python)</a></li>
-              <li><a href="#kademe-5" class="footer-nav-link">Metin Tabanlı Kodlama</a></li>
-              <li><a href="#kademe-6" class="footer-nav-link">11. - 12. Sınıf (AI & IoT)</a></li>
-              <li><a href="#kademe-6" class="footer-nav-link">Siber Güvenlik Eğitimi</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="footer-bottom-bar">
-          <div>
-            © 2026 - 2027 Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Öğretmeni. Tüm hakları saklıdır.
-          </div>
-          <div class="footer-ugur-motto">
-            GELECEĞE UĞURLU ADIMLAR • BİLİŞİMİN GÜCÜYLE
+          <!-- Pillar 3 -->
+          <div class="col-md-4">
+            <div class="item-circle">
+              <i class="fas fa-shield-alt fa-3x"></i>
+            </div>
+            <h4>Yapay Zeka & Siber Güvenlik</h4>
+            <p>
+              Üretken yapay zeka (GenAI) okuryazarlığı, makine öğrenmesi modelleri, veri etiği, dijital ayak izi yönetimi ve güvenli internet ekosistemi bilinci kazandırılır.
+            </p>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- Back to Top Button -->
-    <button type="button" class="back-to-top-btn" id="back-to-top" aria-label="Yukarı Çık">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <line x1="12" y1="19" x2="12" y2="5"></line>
-        <polyline points="5 12 12 5 19 12"></polyline>
-      </svg>
-    </button>
+  <!-- ====================================================================
+       3. PORTFOLIO SECTION (#portfolio)
+       K12 Curriculum with 6 Stages, responsive video embeds & modal triggers
+       ==================================================================== -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="portfolio-top text-center">
+        <h3>MÜFREDAT VE KADEMELERİMİZ</h3>
+        <p>Ana Sınıfından Liseye Adım Adım Bilişim Serüveni ve İnteraktif Video Dersleri</p>
+      </div>
 
+      <!-- Kademe Filtreleme Butonları -->
+      <div class="portfolio-filters text-center">
+        <button type="button" class="filter-btn active" data-filter="all">Tüm Kademeler (6)</button>
+        <button type="button" class="filter-btn" data-filter="okuloncesi">Okul Öncesi</button>
+        <button type="button" class="filter-btn" data-filter="ilkokul">İlkokul (1-4)</button>
+        <button type="button" class="filter-btn" data-filter="ortaokul">Ortaokul (5-8)</button>
+        <button type="button" class="filter-btn" data-filter="lise">Lise (9-12)</button>
+      </div>
+
+      <!-- K12 Curriculum Cards Grid -->
+      <div class="portfolio-content">
+        <div class="row" id="curriculum-cards-container">
+
+          <!-- KADEME 1: Okul Öncesi - 2. Sınıf -->
+          <div class="col-md-6 col-lg-4 curriculum-card-wrapper" data-category="okuloncesi">
+            <div class="curriculum-card">
+              <div class="card-video-wrapper">
+                <iframe 
+                  class="card-video-iframe" 
+                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&rel=0" 
+                  title="Okul Öncesi Bilişimle Tanışma Dersi" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="card-body">
+                <span class="card-grade-badge">1. Aşama • 5-8 Yaş</span>
+                <h4 class="card-title">Bilişimle Tanışma & İlk Adımlar</h4>
+                <p class="card-subtitle">Ana Sınıfı - 2. Sınıf Kademesi</p>
+                <div class="card-competencies-list">
+                  <span class="competency-tag">Fare ve Klavye Becerisi</span>
+                  <span class="competency-tag">Sıralı Komutlar</span>
+                  <span class="competency-tag">Ergonomi & Güvenlik</span>
+                </div>
+                <button type="button" class="card-btn-action open-details-btn" data-stage="1">
+                  <span>Müfredat Detayları</span>
+                  <i class="fas fa-external-link-alt ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KADEME 2: 3 - 4. Sınıf -->
+          <div class="col-md-6 col-lg-4 curriculum-card-wrapper" data-category="ilkokul">
+            <div class="curriculum-card">
+              <div class="card-video-wrapper">
+                <iframe 
+                  class="card-video-iframe" 
+                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&rel=0" 
+                  title="İlkokul Scratch Kodlama Dersi" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="card-body">
+                <span class="card-grade-badge">2. Aşama • 8-10 Yaş</span>
+                <h4 class="card-title">Blok Kodlama & Oyun Tasarımı</h4>
+                <p class="card-subtitle">İlkokul 3. ve 4. Sınıf</p>
+                <div class="card-competencies-list">
+                  <span class="competency-tag">Scratch 3.0</span>
+                  <span class="competency-tag">Döngüler & Şartlar</span>
+                  <span class="competency-tag">2D Karakter Hareketi</span>
+                </div>
+                <button type="button" class="card-btn-action open-details-btn" data-stage="2">
+                  <span>Müfredat Detayları</span>
+                  <i class="fas fa-external-link-alt ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KADEME 3: 5 - 6. Sınıf -->
+          <div class="col-md-6 col-lg-4 curriculum-card-wrapper" data-category="ortaokul">
+            <div class="curriculum-card">
+              <div class="card-video-wrapper">
+                <iframe 
+                  class="card-video-iframe" 
+                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&rel=0" 
+                  title="Ortaokul 3D Tasarım Dersi" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="card-body">
+                <span class="card-grade-badge">3. Aşama • 10-12 Yaş</span>
+                <h4 class="card-title">3D Tasarım & Donanım Mimarisi</h4>
+                <p class="card-subtitle">Ortaokul 5. ve 6. Sınıf</p>
+                <div class="card-competencies-list">
+                  <span class="competency-tag">Tinkercad 3D</span>
+                  <span class="competency-tag">3D Yazıcı Üretimi</span>
+                  <span class="competency-tag">Bilgisayar Donanımı</span>
+                </div>
+                <button type="button" class="card-btn-action open-details-btn" data-stage="3">
+                  <span>Müfredat Detayları</span>
+                  <i class="fas fa-external-link-alt ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KADEME 4: 7 - 8. Sınıf -->
+          <div class="col-md-6 col-lg-4 curriculum-card-wrapper" data-category="ortaokul">
+            <div class="curriculum-card">
+              <div class="card-video-wrapper">
+                <iframe 
+                  class="card-video-iframe" 
+                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&rel=0" 
+                  title="Ortaokul Arduino Robotik Dersi" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="card-body">
+                <span class="card-grade-badge">4. Aşama • 12-14 Yaş</span>
+                <h4 class="card-title">Maker & Arduino Dünyası</h4>
+                <p class="card-subtitle">Ortaokul 7. ve 8. Sınıf</p>
+                <div class="card-competencies-list">
+                  <span class="competency-tag">Arduino UNO</span>
+                  <span class="competency-tag">Sensör Devreleri</span>
+                  <span class="competency-tag">Servo Motor & Robotik</span>
+                </div>
+                <button type="button" class="card-btn-action open-details-btn" data-stage="4">
+                  <span>Müfredat Detayları</span>
+                  <i class="fas fa-external-link-alt ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KADEME 5: 9 - 10. Sınıf -->
+          <div class="col-md-6 col-lg-4 curriculum-card-wrapper" data-category="lise">
+            <div class="curriculum-card">
+              <div class="card-video-wrapper">
+                <iframe 
+                  class="card-video-iframe" 
+                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&rel=0" 
+                  title="Lise Python Programlama Dersi" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="card-body">
+                <span class="card-grade-badge">5. Aşama • 14-16 Yaş</span>
+                <h4 class="card-title">Metin Tabanlı Kodlama: Python</h4>
+                <p class="card-subtitle">Lise 9. ve 10. Sınıf</p>
+                <div class="card-competencies-list">
+                  <span class="competency-tag">Python 3 Sözdizimi</span>
+                  <span class="competency-tag">Fonksiyonlar & Listeler</span>
+                  <span class="competency-tag">Veri Analitiği Temeli</span>
+                </div>
+                <button type="button" class="card-btn-action open-details-btn" data-stage="5">
+                  <span>Müfredat Detayları</span>
+                  <i class="fas fa-external-link-alt ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KADEME 6: 11 - 12. Sınıf -->
+          <div class="col-md-6 col-lg-4 curriculum-card-wrapper" data-category="lise">
+            <div class="curriculum-card">
+              <div class="card-video-wrapper">
+                <iframe 
+                  class="card-video-iframe" 
+                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=1&rel=0" 
+                  title="Lise Yapay Zeka ve Siber Güvenlik Dersi" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="card-body">
+                <span class="card-grade-badge">6. Aşama • 16-18 Yaş</span>
+                <h4 class="card-title">Yapay Zeka, IoT & Siber Güvenlik</h4>
+                <p class="card-subtitle">Lise 11. ve 12. Sınıf</p>
+                <div class="card-competencies-list">
+                  <span class="competency-tag">Machine Learning</span>
+                  <span class="competency-tag">IoT & Bulut Sistemleri</span>
+                  <span class="competency-tag">Siber Savunma Etiği</span>
+                </div>
+                <button type="button" class="card-btn-action open-details-btn" data-stage="6">
+                  <span>Müfredat Detayları</span>
+                  <i class="fas fa-external-link-alt ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       4. ABOUT US / TIMELINE SECTION (#aboutUs)
+       The iconic Golden alternating timeline with center yellow circle
+       ==================================================================== -->
+  <section id="aboutUs">
+    <div class="container">
+      <div class="aboutUs-top text-center">
+        <h3>EĞİTİM YOLCULUĞUMUZ</h3>
+        <p>Ana Sınıfından Üniversite Kapısına Uzanan Teknoloji Basamakları</p>
+      </div>
+
+      <div class="aboutUs-content">
+        <!-- Milestone 1 -->
+        <div class="row">
+          <div class="col-lg-4 text-lg-right text-center">
+            <h4>Okul Öncesi (4-6 Yaş)</h4>
+            <h4 class="subheading">Temellerin Atıldığı İlk Adım</h4>
+            <p>
+              Bilgisayarsız kodlama (Unplugged Coding) oyunları, algoritma mantığı, yön kavramları ve güvenli dijital alışkanlıklarla teknolojiyi tüketen değil üreten birey olma yolunda ilk tohumlar atılır.
+            </p>
+          </div>
+          <div class="col-lg-4 text-center my-3 my-lg-0">
+            <div class="timeline-image-circle">
+              <i class="fas fa-shapes fa-3x"></i>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-block"></div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="row">
+          <div class="col-lg-4 d-none d-lg-block"></div>
+          <div class="col-lg-4 text-center my-3 my-lg-0">
+            <div class="timeline-image-circle">
+              <i class="fas fa-puzzle-piece fa-3x"></i>
+            </div>
+          </div>
+          <div class="col-lg-4 text-lg-left text-center">
+            <h4>İlkokul (1-4. Sınıf)</h4>
+            <h4 class="subheading">Yaratıcılığın Kodlanması</h4>
+            <p>
+              Scratch ile kendi hikayelerini ve 2D oyunlarını kodlayan öğrencilerimiz, Tinkercad ile 3D modelleme yaparak hayal ettikleri nesneleri üretmenin ve somutlaştırmanın heyecanını yaşarlar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="row">
+          <div class="col-lg-4 text-lg-right text-center">
+            <h4>Ortaokul (5-8. Sınıf)</h4>
+            <h4 class="subheading">Robotik ve Mühendislik</h4>
+            <p>
+              Elektronik devreler, sensörler, micro:bit ve Arduino ile fiziksel bilişim projeleri geliştirilir; blok tabanlı mantıktan metin tabanlı Python dünyasına ilk profesyonel adım atılır.
+            </p>
+          </div>
+          <div class="col-lg-4 text-center my-3 my-lg-0">
+            <div class="timeline-image-circle">
+              <i class="fas fa-microchip fa-3x"></i>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-block"></div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="row">
+          <div class="col-lg-4 d-none d-lg-block"></div>
+          <div class="col-lg-4 text-center my-3 my-lg-0">
+            <div class="timeline-image-circle">
+              <i class="fas fa-laptop-code fa-3x"></i>
+            </div>
+          </div>
+          <div class="col-lg-4 text-lg-left text-center">
+            <h4>Lise (9-12. Sınıf)</h4>
+            <h4 class="subheading">Geleceğin Yazılım Mühendisleri</h4>
+            <p>
+              Nesne yönelimli programlama, web teknolojileri (HTML/CSS/JS), yapay zeka algoritmaları ve veri analitiği ile üniversite ve uluslararası teknoloji kariyerine tam donanımlı hazırlık sağlanır.
+            </p>
+          </div>
+        </div>
+
+        <!-- Big Center Yellow Circle -->
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="about-circle">
+              <p class="yellow-text">
+                GELECEK <br>
+                BURADA <br>
+                KODLANIYOR <br>
+                ...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       5. TEAM SECTION (#team)
+       Viranşehir Kampüsü Bilişim & İnovasyon Kadrosu
+       ==================================================================== -->
+  <section id="team">
+    <div class="container">
+      <div class="team-top text-center">
+        <h3>BİLİŞİM & İNOVASYON KADROMUZ</h3>
+        <p>Geleceğin Teknolojisine Yön Veren ve Öğrencilerini İlhamla Büyüten Dinamik Kadromuz</p>
+      </div>
+
+      <div class="team-content">
+        <div class="row">
+          <!-- Member 1 -->
+          <div class="col-md-4 text-center mb-5 mb-md-0">
+            <div class="team-circle">
+              <i class="fas fa-chalkboard-teacher fa-4x"></i>
+            </div>
+            <h4>Bilişim Teknolojileri Zümresi</h4>
+            <h5>K12 Müfredat & Kodlama Koordinatörlüğü</h5>
+            <ul class="social-icons">
+              <li class="social-icon"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+              <li class="social-icon"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="social-icon"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="col-md-4 text-center mb-5 mb-md-0">
+            <div class="team-circle">
+              <i class="fas fa-robot fa-4x"></i>
+            </div>
+            <h4>Robotik & STEM Mentorluğu</h4>
+            <h5>Fiziksel Bilişim, Sensörler & Maker Lab</h5>
+            <ul class="social-icons">
+              <li class="social-icon"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+              <li class="social-icon"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="social-icon"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="col-md-4 text-center">
+            <div class="team-circle">
+              <i class="fas fa-brain fa-4x"></i>
+            </div>
+            <h4>Yapay Zeka & İnovasyon Ekibi</h4>
+            <h5>TEKNOFEST, Yarışmalar & Proje Yönetimi</h5>
+            <ul class="social-icons">
+              <li class="social-icon"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+              <li class="social-icon"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="social-icon"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-12">
+            <p class="team-summary-text">
+              Uğur Okulları Viranşehir Kampüsü olarak; öğrencilerimize sadece teknoloji tüketicisi olmayı değil, algoritmik düşünen, problem çözen, etik değerlerle donanmış ve geleceğin dijital dünyasını inşa eden liderler olma vizyonunu kazandırıyoruz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       6. PARTNER SECTION (#partner)
+       Teknolojiler & Platformlar
+       ==================================================================== -->
+  <section id="partner">
+    <div class="container">
+      <div class="row text-center justify-content-center align-items-center">
+        <div class="col-6 col-md-2 mb-3">
+          <span class="partner-badge"><i class="fab fa-python fa-2x text-warning mr-2"></i> Python</span>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <span class="partner-badge"><i class="fas fa-cat fa-2x text-warning mr-2"></i> Scratch</span>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <span class="partner-badge"><i class="fas fa-microchip fa-2x text-warning mr-2"></i> Arduino</span>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <span class="partner-badge"><i class="fas fa-cube fa-2x text-warning mr-2"></i> Tinkercad</span>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <span class="partner-badge"><i class="fab fa-raspberry-pi fa-2x text-warning mr-2"></i> Raspberry Pi</span>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <span class="partner-badge"><i class="fas fa-robot fa-2x text-warning mr-2"></i> OpenAI / AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       7. CONTACT SECTION (#contact)
+       Golden Contact Form & Viranşehir Kampüsü İletişim Bilgileri
+       ==================================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-top text-center">
+        <h3>BİZE ULAŞIN</h3>
+        <p>Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Bölümü İletişim Formu</p>
+      </div>
+
+      <div class="contact-content">
+        <form class="golden-form" id="contact-form" role="form" onsubmit="event.preventDefault(); alert('Mesajınız başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.');">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-element mb-4">
+                <input type="text" class="golden-form-element" id="name" name="name" placeholder="ADINIZ SOYADINIZ *" required>
+              </div>
+              <div class="form-element mb-4">
+                <input type="email" class="golden-form-element" id="email" name="email" placeholder="E-POSTA ADRESİNİZ *" required>
+              </div>
+              <div class="form-element mb-4">
+                <input type="text" class="golden-form-element" id="subject" name="subject" placeholder="KONU (Örn: Müfredat Bilgisi, Robotik Kulübü) *" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-element">
+                <textarea class="golden-form-element" id="message" name="message" placeholder="MESAJINIZ *" required></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-4 text-center">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg" id="submit">MESAJ GÖNDER</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Kampüs İletişim Detayları -->
+        <div class="row mt-5 pt-4 text-center">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="contact-info-card">
+              <i class="fas fa-map-marker-alt fa-2x" style="color: var(--primary-gold);"></i>
+              <h5>Kampüs Adresi</h5>
+              <p>Viranşehir / Şanlıurfa</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="contact-info-card">
+              <i class="fas fa-school fa-2x" style="color: var(--primary-gold);"></i>
+              <h5>Kurum</h5>
+              <p>Uğur Okulları Viranşehir Kampüsü</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-info-card">
+              <i class="fas fa-envelope fa-2x" style="color: var(--primary-gold);"></i>
+              <h5>E-Posta</h5>
+              <p>bilisim@viransehir.ugurokullari.k12.tr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       8. FOOTER SECTION (#footer)
+       ==================================================================== -->
+  <section id="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center text-md-left">
+          <p>&copy; 2026 Uğur Okulları Viranşehir Kampüsü</p>
+        </div>
+        <div class="col-md-4 text-center my-3 my-md-0">
+          <ul class="company-social-icons">
+            <li class="company-social-icon"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li class="company-social-icon"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="company-social-icon"><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li class="company-social-icon"><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+            <li class="company-social-icon"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center text-md-right">
+          <p>Bilişim Teknolojileri ve İnovasyon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       MODAL 1: K12 CURRICULUM DETAILS MODAL DIALOG
+       ==================================================================== -->
+  <div class="modal-backdrop-custom" id="curriculum-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card-custom">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Kapat">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <span class="card-grade-badge mb-2" id="modal-stage-pill">1. Aşama</span>
+      <h3 id="modal-title" style="font-family: var(--font-heading); font-weight: 800; color: #FFFFFF; font-size: 24px; margin-bottom: 6px;">
+        Müfredat Başlığı
+      </h3>
+      <p id="modal-age" style="font-family: var(--font-serif); font-style: italic; color: var(--primary-gold); font-size: 15px; margin-bottom: 16px;">
+        Yaş Grubu
+      </p>
+
+      <p id="modal-desc" style="color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+        Detaylı açıklama...
+      </p>
+
+      <div style="margin-bottom: 24px;">
+        <h5 style="font-family: var(--font-heading); font-weight: 700; color: var(--primary-gold); font-size: 16px; margin-bottom: 12px;">
+          ✦ Temel Öğrenme Kazanımları
+        </h5>
+        <div id="modal-outcomes-list"></div>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h5 style="font-family: var(--font-heading); font-weight: 700; color: var(--primary-gold); font-size: 16px; margin-bottom: 12px;">
+          ⚡ Kullanılan Yazılım ve Araçlar
+        </h5>
+        <div id="modal-tools-list"></div>
+      </div>
+
+      <div>
+        <h5 style="font-family: var(--font-heading); font-weight: 700; color: var(--primary-gold); font-size: 16px; margin-bottom: 8px;">
+          🏆 Dönem Sonu Projesi
+        </h5>
+        <div id="modal-project" style="background: rgba(254, 209, 54, 0.08); border: 1px solid var(--border-gold); padding: 14px 18px; border-radius: 8px; font-weight: 600; color: #FFFFFF;">
+          Proje Bilgisi
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/canvas-bg.js"></script>
-  <script src="js/tilt-effect.js"></script>
+  <!-- ====================================================================
+       MODAL 2: 100% FULL-RES CAMPUS PHOTO LIGHTBOX (schoolfullimage.webp)
+       Shows the ENTIRE uncropped photo: building, sky, entrance, ground and wall!
+       ==================================================================== -->
+  <div class="modal-backdrop-custom" id="campus-modal" role="dialog" aria-modal="true" aria-labelledby="campus-modal-title">
+    <div class="modal-card-custom" style="max-width: 1080px;">
+      <button type="button" class="modal-close-btn" id="campus-modal-close-btn" aria-label="Kapat">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <h3 id="campus-modal-title" style="font-family: var(--font-heading); font-weight: 800; color: #FFFFFF; font-size: 22px; margin-bottom: 6px;">
+        Uğur Okulları Viranşehir Kampüsü Yerleşkesi
+      </h3>
+      <p style="font-family: var(--font-serif); font-style: italic; color: var(--primary-gold); font-size: 14px; margin-bottom: 18px;">
+        Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı Eğitim Binası (Tam Görünüm)
+      </p>
+
+      <img src="assets/schoolfullimage.webp" alt="Uğur Okulları Viranşehir Kampüsü Tam Görünüm" class="campus-modal-img">
+
+      <div style="margin-top: 16px; text-align: right;">
+        <span style="font-size: 13px; color: var(--text-muted); font-family: var(--font-heading);">
+          📍 Şanlıurfa / Viranşehir • K12 Tüm Kademeler
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: jQuery, Popper, Bootstrap (matching Begendigim Sayfa) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Custom Main Controller -->
   <script src="js/main.js"></script>
+
+  <!-- Golden Scroll & Modal Wire-up Script -->
+  <script>
+    $(document).ready(function() {
+      // Sticky navbar on scroll
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 100) {
+          $(".fixed-top").addClass("change-fixed-top");
+        } else {
+          $(".fixed-top").removeClass("change-fixed-top");
+        }
+      });
+
+      // Smooth scroll for nav anchors
+      $('a.nav-link, a.btn-primary[href^="#"], a.btn-outline-golden[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').stop().animate({
+            scrollTop: target.offset().top - 80
+          }, 800);
+          $('.navbar-collapse').collapse('hide');
+        }
+      });
+
+      // Campus Lightbox Modal Triggers
+      $('#hero-campus-photo-btn, #scenic-pill-click').on('click', function(e) {
+        e.preventDefault();
+        $('#campus-modal').addClass('open');
+        $('body').css('overflow', 'hidden');
+      });
+
+      $('#campus-modal-close-btn, #campus-modal').on('click', function(e) {
+        if (e.target === this || $(e.target).closest('#campus-modal-close-btn').length) {
+          $('#campus-modal').removeClass('open');
+          $('body').css('overflow', '');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
