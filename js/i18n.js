@@ -65,6 +65,11 @@ const I18N = (() => {
       en: 'LOCATION',
       ar: 'الموقع'
     },
+    'nav.share': {
+      tr: 'Sayfayı Paylaş',
+      en: 'Share Page',
+      ar: 'مشاركة الصفحة'
+    },
 
     // ── THEME DROPDOWN ──
     'theme.title': {

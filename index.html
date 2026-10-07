@@ -122,7 +122,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#location" data-i18n="nav.location">KONUM</a>
             </li>
-            <li class="nav-item ml-lg-2">
+            <li class="nav-item ml-lg-2 d-none d-lg-block">
               <div class="nav-actions-group">
                 <!-- Theme Mode Dropdown (Icon Only on Bar, Compact & Space-Saving) -->
                 <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
@@ -196,9 +196,12 @@
             </li>
           </ul>
 
+          <!-- Mobile Menu Divider -->
+          <div class="mobile-menu-divider d-lg-none"></div>
+
           <!-- Mobile Theme Switcher Bar (Quick Access) -->
           <div class="mobile-theme-bar d-lg-none">
-            <span class="mobile-theme-label" data-i18n="theme.label">Görünüm Modu:</span>
+            <span class="mobile-theme-label" data-i18n="theme.title">GÖRÜNÜM MODU</span>
             <div class="theme-segmented-control">
               <button type="button" class="theme-segment-btn" data-theme-choice="light">
                 <i class="fas fa-sun mr-1"></i> <span data-i18n="theme.light">Açık</span>
@@ -226,6 +229,14 @@
                 <span class="lang-segment-flag">🇸🇦</span> العربية
               </button>
             </div>
+          </div>
+
+          <!-- Mobile Share Bar -->
+          <div class="mobile-share-bar d-lg-none">
+            <button type="button" class="mobile-share-btn" id="mobile-share-page-btn" aria-label="Sayfayı Paylaş">
+              <i class="fas fa-share-alt mr-2"></i>
+              <span data-i18n="nav.share">Sayfayı Paylaş</span>
+            </button>
           </div>
         </div>
       </div>

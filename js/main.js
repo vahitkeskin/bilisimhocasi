@@ -1294,6 +1294,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- MOBILE SHARE BUTTON HOOK ---
+  const mobileShareBtn = document.getElementById('mobile-share-page-btn');
+  if (mobileShareBtn && shareBtn) {
+    mobileShareBtn.addEventListener('click', () => {
+      shareBtn.click();
+    });
+  }
+
+  // --- AUTO-CLOSE MOBILE MENU ON NAV-LINK CLICK ---
+  const navBarCollapse = document.getElementById('navbarNav');
+  if (navBarCollapse) {
+    navBarCollapse.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992 && window.jQuery && window.jQuery(navBarCollapse).hasClass('show')) {
+          window.jQuery(navBarCollapse).collapse('hide');
+        }
+      });
+    });
+  }
+
   function copyToClipboard(text) {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).catch(() => {});

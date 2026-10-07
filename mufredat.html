@@ -120,7 +120,7 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html#location" data-i18n="nav.location">KONUM</a>
           </li>
-          <li class="nav-item ml-lg-2">
+          <li class="nav-item ml-lg-2 d-none d-lg-block">
             <div class="nav-actions-group">
               <!-- Theme Mode Dropdown -->
               <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
@@ -194,6 +194,49 @@
             </div>
           </li>
         </ul>
+
+        <!-- Mobile Menu Divider -->
+        <div class="mobile-menu-divider d-lg-none"></div>
+
+        <!-- Mobile Theme Switcher Bar (Quick Access) -->
+        <div class="mobile-theme-bar d-lg-none">
+          <span class="mobile-theme-label" data-i18n="theme.title">GÖRÜNÜM MODU</span>
+          <div class="theme-segmented-control">
+            <button type="button" class="theme-segment-btn" data-theme-choice="light">
+              <i class="fas fa-sun mr-1"></i> <span data-i18n="theme.light">Açık</span>
+            </button>
+            <button type="button" class="theme-segment-btn" data-theme-choice="dark">
+              <i class="fas fa-moon mr-1"></i> <span data-i18n="theme.dark">Kapalı</span>
+            </button>
+            <button type="button" class="theme-segment-btn active" data-theme-choice="system">
+              <i class="fas fa-desktop mr-1"></i> <span data-i18n="theme.system">Sistem</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Language Switcher Bar -->
+        <div class="mobile-lang-bar d-lg-none">
+          <span class="mobile-lang-label" data-i18n="lang.label">DİL</span>
+          <div class="lang-segmented-control">
+            <button type="button" class="lang-segment-btn active" data-lang-choice="tr">
+              <span class="lang-segment-flag">🇹🇷</span> Türkçe
+            </button>
+            <button type="button" class="lang-segment-btn" data-lang-choice="en">
+              <span class="lang-segment-flag">🇬🇧</span> English
+            </button>
+            <button type="button" class="lang-segment-btn" data-lang-choice="ar">
+              <span class="lang-segment-flag">🇸🇦</span> العربية
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Share Bar -->
+        <div class="mobile-share-bar d-lg-none">
+          <button type="button" class="mobile-share-btn" id="mobile-share-page-btn" aria-label="Sayfayı Paylaş">
+            <i class="fas fa-share-alt mr-2"></i>
+            <span data-i18n="nav.share">Sayfayı Paylaş</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
