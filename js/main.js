@@ -445,8 +445,8 @@ document.addEventListener('DOMContentLoaded', () => {
     shareBtn.addEventListener('click', async () => {
       sfx.playClick();
       const shareData = {
-        title: 'Uğur Okulları Bilişim Teknolojileri Müfredatı',
-        text: 'Ana Sınıfından 12. Sınıfa Kadar Bilişim Serüveni - Uğur Okulları',
+        title: 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Müfredatı',
+        text: 'Ana Sınıfından 12. Sınıfa Kadar Bilişim Serüveni - Uğur Okulları Viranşehir Kampüsü',
         url: window.location.href
       };
 
@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (copyCodeBtn) {
     copyCodeBtn.addEventListener('click', () => {
       sfx.playClick();
-      const snippet = `# Uğur Okulları Bilişim Teknolojileri
+      const snippet = `# Uğur Okulları Viranşehir Kampüsü • Bilişim Teknolojileri
 def ugur_gelecege_hazirlik(ogrenci):
     yetenekler = ["Algoritmik Düşünce", "Python", "Robotik", "Yapay Zeka"]
     print(f"Tebrikler {ogrenci}! Geleceğin mimarısın.")
