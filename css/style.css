@@ -2459,13 +2459,92 @@ textarea.golden-form-element {
   cursor: pointer;
 }
 
-/* High-Res Campus Image in Lightbox Modal */
+/* ==========================================================================
+   HIGH-RES CAMPUS IMAGE LIGHTBOX MODAL (schoolfullimagehd.jpg)
+   ========================================================================== */
+.campus-modal-card {
+  max-width: 1080px;
+  width: 100%;
+  padding: 28px 32px 24px;
+  position: relative;
+}
+
+.campus-modal-header {
+  padding-right: 48px; /* Safe space to prevent overlap with modal-close-btn */
+  margin-bottom: 14px;
+}
+
+[dir="rtl"] .campus-modal-header {
+  padding-right: 0;
+  padding-left: 48px;
+}
+
+.campus-modal-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(18px, 2.5vw, 24px);
+  line-height: 1.3;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+}
+
+.campus-modal-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--primary-gold);
+  font-size: clamp(12.5px, 1.8vw, 14.5px);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.campus-modal-img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(143, 72, 156, 0.45);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
 .campus-modal-img {
   width: 100%;
   height: auto;
+  aspect-ratio: 3480 / 1867;
+  object-fit: contain;
   display: block;
-  border-radius: 12px;
-  border: 1px solid rgba(143, 72, 156, 0.4);
+}
+
+.campus-modal-footer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.campus-modal-location-badge {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+
+/* Light mode overrides for campus modal */
+[data-theme="light"] .campus-modal-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .campus-modal-subtitle {
+  color: #8F489C !important;
+}
+
+[data-theme="light"] .campus-modal-img-wrapper {
+  border-color: rgba(143, 72, 156, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  background: #F1F5F9;
+}
+
+[data-theme="light"] .campus-modal-location-badge {
+  color: #475569 !important;
 }
 
 /* ==========================================================================
@@ -2544,7 +2623,58 @@ textarea.golden-form-element {
   }
   #cover {
     padding: 110px 18px 50px;
-    background-position: center bottom !important;
+    background-position: 28% bottom !important;
+  }
+
+  /* Mobile Campus Photo Lightbox Modal - UX/UI Optimized */
+  .modal-backdrop-custom {
+    padding: 12px 10px;
+  }
+  .campus-modal-card {
+    padding: 16px 14px 14px;
+    border-radius: 16px;
+    max-height: 92vh;
+  }
+  .campus-modal-header {
+    padding-right: 42px;
+    margin-bottom: 10px;
+  }
+  [dir="rtl"] .campus-modal-header {
+    padding-right: 0;
+    padding-left: 42px;
+  }
+  .campus-modal-title {
+    font-size: clamp(15.5px, 4.4vw, 18px);
+    line-height: 1.25;
+    margin-bottom: 3px;
+  }
+  .campus-modal-subtitle {
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .campus-modal-card .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  [dir="rtl"] .campus-modal-card .modal-close-btn {
+    right: auto;
+    left: 12px;
+  }
+  .campus-modal-img-wrapper {
+    border-radius: 10px;
+  }
+  .campus-modal-footer {
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+  .campus-modal-location-badge {
+    font-size: 11.5px;
+    text-align: center;
+    display: inline-block;
   }
   #cover h1 {
     font-size: 17px !important;
@@ -4619,5 +4749,20 @@ textarea.golden-form-element {
   }
   .curriculum-card {
     padding: 20px 15px;
+  }
+  .campus-modal-card {
+    padding: 14px 10px 12px;
+  }
+  .campus-modal-header {
+    padding-right: 36px;
+  }
+  .campus-modal-title {
+    font-size: 14px;
+  }
+  .campus-modal-subtitle {
+    font-size: 10.5px;
+  }
+  .campus-modal-location-badge {
+    font-size: 10.5px;
   }
 }

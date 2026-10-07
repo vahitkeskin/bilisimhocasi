@@ -1402,26 +1402,27 @@
        ==================================================================== -->
   <div class="modal-backdrop-custom" id="campus-modal" role="dialog" aria-modal="true"
     aria-labelledby="campus-modal-title">
-    <div class="modal-card-custom" style="max-width: 1080px;">
+    <div class="modal-card-custom campus-modal-card">
       <button type="button" class="modal-close-btn" id="campus-modal-close-btn" aria-label="Kapat">
         <i class="fas fa-times"></i>
       </button>
 
-      <h3 id="campus-modal-title"
-        style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin-bottom: 6px;">
-        <span data-i18n="campus.modal.title">Uğur Okulları Viranşehir Kampüsü Yerleşkesi</span>
-      </h3>
-      <p
-        style="font-family: var(--font-serif); font-style: italic; color: var(--primary-gold); font-size: 14px; margin-bottom: 18px;"
-        data-i18n="campus.modal.subtitle">
-        Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı Eğitim Binası (Tam Görünüm)
-      </p>
+      <div class="campus-modal-header">
+        <h3 id="campus-modal-title" class="campus-modal-title">
+          <span data-i18n="campus.modal.title">Uğur Okulları Viranşehir Kampüsü Yerleşkesi</span>
+        </h3>
+        <p class="campus-modal-subtitle" data-i18n="campus.modal.subtitle">
+          Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı Eğitim Binası (Tam Görünüm)
+        </p>
+      </div>
 
-      <img src="assets/schoolfullimagehd.jpg" alt="Uğur Okulları Viranşehir Kampüsü Tam Görünüm"
-        class="campus-modal-img">
+      <div class="campus-modal-img-wrapper">
+        <img src="assets/schoolfullimagehd.jpg" alt="Uğur Okulları Viranşehir Kampüsü Tam Görünüm"
+          class="campus-modal-img" loading="lazy" width="3480" height="1867">
+      </div>
 
-      <div style="margin-top: 16px; text-align: right;">
-        <span style="font-size: 13px; color: var(--text-muted); font-family: var(--font-heading);">
+      <div class="campus-modal-footer">
+        <span class="campus-modal-location-badge">
           <span data-i18n="campus.modal.location">📍 Şanlıurfa / Viranşehir • K12 Tüm Kademeler</span>
         </span>
       </div>
