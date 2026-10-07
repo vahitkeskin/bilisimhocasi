@@ -972,19 +972,19 @@ html, body {
   justify-content: center;
   gap: 16px;
   max-width: 100%;
-  background: rgba(8, 12, 24, 0.76);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(143, 72, 156, 0.5);
-  border-radius: 46px;
-  padding: 10px 24px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.65), inset 0 0 18px rgba(143, 72, 156, 0.15);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-radius: 0;
+  padding: 6px 0;
+  box-shadow: none !important;
 }
 
 .typewriter-headline-card:hover {
-  border-color: rgba(143, 72, 156, 0.85);
-  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.75), inset 0 0 25px rgba(143, 72, 156, 0.25);
+  border-color: transparent !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 /* Iconic Circle Badges */
@@ -1033,9 +1033,7 @@ html, body {
 
 /* Fluid 1-to-2 Line Text Wrapper */
 .typewriter-text-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   text-align: center;
   margin: 0;
   padding: 2px 4px;
@@ -1062,19 +1060,19 @@ html, body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Glowing Typewriter Cursor */
+/* Glowing Typewriter Cursor - Inline with text, stays strictly next to the last character */
 .typewriter-cursor {
-  display: inline-block;
+  display: inline;
   color: var(--primary-gold);
   -webkit-text-fill-color: var(--primary-gold);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.05em;
-  line-height: 1;
-  margin-left: 3px;
+  line-height: inherit;
+  padding-left: 2px;
   text-shadow: 0 0 10px rgba(143, 72, 156, 0.8), 0 0 20px rgba(143, 72, 156, 0.4);
   animation: typewriterCursorBlink 0.85s infinite;
-  vertical-align: baseline;
   user-select: none;
+  white-space: nowrap;
 }
 
 .typewriter-cursor.paused {
@@ -1082,8 +1080,8 @@ html, body {
 }
 
 @keyframes typewriterCursorBlink {
-  0%, 100% { opacity: 1; transform: scaleY(1); }
-  50% { opacity: 0; transform: scaleY(0.9); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .cover-subtitle {
@@ -2238,7 +2236,7 @@ textarea.golden-form-element {
     letter-spacing: 0.3px !important;
   }
   .typewriter-cursor {
-    margin-left: 2px;
+    padding-left: 2px;
   }
   .cover-subtitle {
     font-size: 14px;
@@ -2592,6 +2590,11 @@ textarea.golden-form-element {
 [dir="rtl"] .typewriter-text-wrapper {
   order: 1;
   direction: rtl;
+}
+
+[dir="rtl"] .typewriter-cursor {
+  padding-left: 0;
+  padding-right: 2px;
 }
 
 /* RTL Scroll progress */
