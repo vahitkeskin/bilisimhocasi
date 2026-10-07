@@ -1199,38 +1199,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Bind all entire curriculum cards for instant clickability & keyboard access
+  // Bind all entire curriculum cards to navigate to dedicated full-page endpoint
   document.querySelectorAll('.curriculum-card').forEach((card) => {
     card.addEventListener('click', () => {
       const stage = card.dataset.stage;
-      if (stage) openCurriculumModal(stage);
+      if (stage) {
+        window.location.href = `mufredat.html?kademe=${encodeURIComponent(stage)}`;
+      }
     });
 
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         const stage = card.dataset.stage;
-        if (stage) openCurriculumModal(stage);
+        if (stage) {
+          window.location.href = `mufredat.html?kademe=${encodeURIComponent(stage)}`;
+        }
       }
     });
   });
 
-  // Also bind all detail buttons inside cards (stopping propagation to prevent double trigger)
+  // Also bind all detail buttons inside cards (stop propagation and navigate to endpoint)
   document.querySelectorAll('.open-details-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const stage = btn.dataset.stage;
-      if (stage) openCurriculumModal(stage);
+      if (stage) {
+        window.location.href = `mufredat.html?kademe=${encodeURIComponent(stage)}`;
+      }
     });
   });
 
-  // Support deep linking to specific stage modal via URL query (?modal=4)
+  // Support redirecting legacy modal query (?modal=4) to full page
   const urlParams = new URLSearchParams(window.location.search);
   const modalParam = urlParams.get('modal');
-  if (modalParam && curriculumDetailsData[modalParam]) {
-    setTimeout(() => {
-      openCurriculumModal(modalParam);
-    }, 400);
+  if (modalParam) {
+    window.location.href = `mufredat.html?kademe=${encodeURIComponent(modalParam)}`;
   }
 
   if (modalCloseBtn) {
