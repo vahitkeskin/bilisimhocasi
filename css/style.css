@@ -4395,4 +4395,68 @@ textarea.golden-form-element {
   }
 }
 
+/* =========================================================================
+   ULTRA-WIDE & TV RESPONSIVENESS (2K, 4K, 8K)
+   ========================================================================= */
+@media (min-width: 1920px) {
+  html {
+    font-size: 110%; /* Scale up base rem slightly */
+  }
+  .container {
+    max-width: 1400px;
+  }
+  .hero-content h2 {
+    font-size: 64px !important;
+  }
+  .hero-content p {
+    font-size: 24px !important;
+  }
+}
 
+@media (min-width: 2560px) {
+  html {
+    font-size: 130%; /* Scale up further for 4K */
+  }
+  .container {
+    max-width: 1800px;
+  }
+  .hero-content h2 {
+    font-size: 80px !important;
+  }
+  .hero-content p {
+    font-size: 28px !important;
+  }
+}
+
+@media (min-width: 3840px) {
+  html {
+    font-size: 160%; /* Scale up for 8K TVs */
+  }
+  .container {
+    max-width: 2400px;
+  }
+  .hero-content h2 {
+    font-size: 100px !important;
+  }
+  .hero-content p {
+    font-size: 36px !important;
+  }
+}
+
+/* =========================================================================
+   EXTRA SMALL MOBILE RESPONSIVENESS (< 360px)
+   ========================================================================= */
+@media (max-width: 359px) {
+  .hero-content h2 {
+    font-size: 28px !important;
+  }
+  .hero-content p {
+    font-size: 14px !important;
+  }
+  .services-card {
+    padding: 20px 15px;
+  }
+  .curriculum-card {
+    padding: 20px 15px;
+  }
+}
