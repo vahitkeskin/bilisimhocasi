@@ -3091,18 +3091,9 @@ const I18N = (() => {
     localStorage.setItem(STORAGE_KEY, lang);
     applyTranslations();
 
-    // Play sound if available
-    if (window._sfxPlayClick) {
-      window._sfxPlayClick();
-    }
-
     // Notify the typewriter system to restart with new language
     if (window._typewriterRestart) {
       window._typewriterRestart();
-    }
-
-    if (notify && window._showToastFn) {
-      window._showToastFn(t('toast.lang.' + lang));
     }
   }
 
@@ -3128,7 +3119,6 @@ const I18N = (() => {
     if (langBtn && langDropdown) {
       langBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (window._sfxPlayClick) window._sfxPlayClick();
         const isOpen = langDropdown.classList.contains('show');
         toggleLangDropdown(!isOpen);
       });

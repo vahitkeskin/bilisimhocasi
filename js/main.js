@@ -6,121 +6,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // --- AUDIO SYNTHESIZER (WEB AUDIO API - ZERO ASSETS NEEDED) ---
-  class SoundFX {
-    constructor() {
-      this.ctx = null;
-      this.muted = localStorage.getItem('ugur_sound_muted') === 'true';
-      this.updateToggleButton();
-    }
-
-    init() {
-      if (!this.ctx) {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (AudioCtx) {
-          this.ctx = new AudioCtx();
-        }
-      }
-    }
-
-    playClick() {
-      if (this.muted) return;
-      this.init();
-      if (!this.ctx) return;
-
-      try {
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(580, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(880, this.ctx.currentTime + 0.08);
-
-        gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.08);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-        osc.start();
-        osc.stop(this.ctx.currentTime + 0.08);
-      } catch (e) {
-        // Audio policy ignore
-      }
-    }
-
-    playChime() {
-      if (this.muted) return;
-      this.init();
-      if (!this.ctx) return;
-
-      try {
-        const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
-        notes.forEach((freq, idx) => {
-          const osc = this.ctx.createOscillator();
-          const gain = this.ctx.createGain();
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(freq, this.ctx.currentTime + idx * 0.06);
-
-          gain.gain.setValueAtTime(0.05, this.ctx.currentTime + idx * 0.06);
-          gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + idx * 0.06 + 0.25);
-
-          osc.connect(gain);
-          gain.connect(this.ctx.destination);
-          osc.start(this.ctx.currentTime + idx * 0.06);
-          osc.stop(this.ctx.currentTime + idx * 0.06 + 0.25);
-        });
-      } catch (e) {
-        // Audio policy ignore
-      }
-    }
-
-    toggle() {
-      this.muted = !this.muted;
-      localStorage.setItem('ugur_sound_muted', this.muted);
-      this.updateToggleButton();
-      const msg = window.I18N
-        ? window.I18N.t(this.muted ? 'toast.sound.off' : 'toast.sound.on')
-        : (this.muted ? 'Ses efektleri kapatıldı' : 'Ses efektleri açıldı');
-      showToast(msg);
-      if (!this.muted) this.playChime();
-    }
-
-    updateToggleButton() {
-      const btn = document.getElementById('sound-toggle-btn');
-      if (btn) {
-        btn.setAttribute('aria-label', this.muted ? 'Sesi Aç' : 'Sesi Kapat');
-        btn.innerHTML = this.muted
-          ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`
-          : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>`;
-      }
-    }
-  }
-
-  const sfx = new SoundFX();
-  window._sfxPlayClick = () => sfx.playClick();
-
-  const soundToggleBtn = document.getElementById('sound-toggle-btn');
-  if (soundToggleBtn) {
-    soundToggleBtn.addEventListener('click', () => sfx.toggle());
-  }
-
-  // --- TOAST NOTIFICATION UTILITY ---
-  function showToast(message) {
-    let toast = document.getElementById('site-toast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'site-toast';
-      toast.className = 'glass-toast';
-      document.body.appendChild(toast);
-    }
-    toast.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F489C" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${message}`;
-    toast.classList.add('show');
-    clearTimeout(toast._timeout);
-    toast._timeout = setTimeout(() => {
-      toast.classList.remove('show');
-    }, 2800);
-  }
-
-  window._showToastFn = showToast;
+  // Sound and notification features disabled per user request
+  window._sfxPlayClick = () => {};
+  window._showToastFn = () => {};
 
   // --- THEME MODE CONTROLLER (Açık, Kapalı, Sistem - Memory Persisted) ---
   class ThemeController {
@@ -154,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (this.menuBtn && this.dropdown) {
         this.menuBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          sfx.playClick();
           const isOpen = this.dropdown.classList.contains('show');
           this.toggleDropdown(!isOpen);
         });
@@ -199,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setTheme(mode) {
-      sfx.playClick();
       this.currentMode = mode;
       localStorage.setItem(this.STORAGE_KEY, mode);
       this.applyTheme(mode, true);
@@ -244,16 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // User notification toast
-      if (notifyUser) {
-        const themeKey = 'toast.theme.' + mode;
-        const msg = window.I18N ? window.I18N.t(themeKey) : (
-          mode === 'light' ? 'Açık Mod aktif edildi' :
-          mode === 'dark' ? 'Kapalı Mod aktif edildi' :
-          'Sistem Modu aktif edildi (Otomatik)'
-        );
-        showToast(msg);
-      }
+
     }
   }
 
@@ -291,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
-      sfx.playClick();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
@@ -359,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   filterButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      sfx.playClick();
       filterButtons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.dataset.filter;
@@ -1181,8 +1056,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalGradeTabsEl.querySelectorAll('[data-grade-tab]').forEach((tabBtn) => {
           tabBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            sfx.playClick();
-            const targetKey = tabBtn.dataset.gradeTab;
+              const targetKey = tabBtn.dataset.gradeTab;
             renderGradeContent(stageData, targetKey);
           });
         });
@@ -1294,7 +1168,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalBackdrop) {
       modalBackdrop.classList.add('open');
       document.body.style.overflow = 'hidden';
-      sfx.playChime();
     }
   }
 
@@ -1304,7 +1177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalBackdrop) {
       modalBackdrop.classList.remove('open');
       document.body.style.overflow = '';
-      sfx.playClick();
     }
   }
 
@@ -1322,7 +1194,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-stage-jump]').forEach((jumpBtn) => {
     jumpBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      sfx.playClick();
       const targetStage = jumpBtn.dataset.stageJump;
       openCurriculumModal(targetStage);
     });
@@ -1384,7 +1255,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const shareBtn = document.getElementById('share-page-btn');
   if (shareBtn) {
     shareBtn.addEventListener('click', async () => {
-      sfx.playClick();
       const shareTitle = window.I18N ? window.I18N.t('meta.title') : 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Müfredatı';
       const shareData = {
         title: shareTitle,
@@ -1395,7 +1265,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navigator.share && window.isSecureContext) {
         try {
           await navigator.share(shareData);
-          showToast(window.I18N ? window.I18N.t('toast.share') : 'Müfredat bağlantısı paylaşıldı!');
         } catch (err) {
           // Fallback to clipboard
           copyToClipboard(window.location.href);
@@ -1407,13 +1276,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function copyToClipboard(text) {
-    const successMsg = window.I18N ? window.I18N.t('toast.clipboard') : 'Bağlantı panoya kopyalandı! 📋';
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(successMsg);
-      });
-    } else {
-      showToast(successMsg);
+      navigator.clipboard.writeText(text).catch(() => {});
     }
   }
 
@@ -1421,7 +1285,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyCodeBtn = document.getElementById('copy-code-btn');
   if (copyCodeBtn) {
     copyCodeBtn.addEventListener('click', () => {
-      sfx.playClick();
       const snippet = `# Uğur Okulları Viranşehir Kampüsü • Bilişim Teknolojileri
 def ugur_gelecege_hazirlik(ogrenci):
     yetenekler = ["Algoritmik Düşünce", "Python", "Robotik", "Yapay Zeka"]
