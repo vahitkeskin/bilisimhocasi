@@ -844,13 +844,17 @@ html, body {
   color: #1E293B !important;
 }
 
-[data-theme="light"] .form-control {
+[data-theme="light"] .golden-form-element {
   background: #FFFFFF !important;
   border-color: #CBD5E1 !important;
   color: #0F172A !important;
 }
 
-[data-theme="light"] .form-control:focus {
+[data-theme="light"] .golden-form-element::placeholder {
+  color: #94A3B8 !important;
+}
+
+[data-theme="light"] .golden-form-element:focus {
   background: #FFFFFF !important;
   border-color: #8F489C !important;
   color: #0F172A !important;
@@ -1708,6 +1712,10 @@ html, body {
   background: rgba(16, 24, 42, 0.9);
   color: #FFFFFF;
   transition: all 0.3s ease;
+}
+
+.golden-form-element::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .golden-form-element:focus {
