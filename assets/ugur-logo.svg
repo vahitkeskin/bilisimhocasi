@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" fill="none">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="ugurRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A5F" />
+      <stop offset="50%" stop-color="#E63946" />
+      <stop offset="100%" stop-color="#9E0025" />
+    </linearGradient>
+
+    <linearGradient id="ugurBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="40%" stop-color="#1A66FF" />
+      <stop offset="100%" stop-color="#081E5B" />
+    </linearGradient>
+
+    <linearGradient id="glassShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.35)" />
+      <stop offset="40%" stop-color="rgba(26, 102, 255, 0.15)" />
+      <stop offset="100%" stop-color="rgba(230, 57, 70, 0.08)" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <linearGradient id="accentTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#FF3366" />
+    </linearGradient>
+
+    <!-- Filters for Futuristic Glow & Apple Glass -->
+    <filter id="neonGlowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="neonGlowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shieldShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#001845" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#00D2FF" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Futuristic Emblem Group (Left) -->
+  <g transform="translate(15, 10)">
+    <!-- Ambient Behind Glow -->
+    <circle cx="50" cy="50" r="42" fill="url(#ugurBlueGrad)" opacity="0.25" filter="url(#neonGlowBlue)" />
+    <circle cx="50" cy="50" r="28" fill="url(#ugurRedGrad)" opacity="0.2" filter="url(#neonGlowRed)" />
+
+    <!-- Glassmorphic Outer Hexagon / Shield Frame -->
+    <path d="M50 4 L90 27 L90 73 L50 96 L10 73 L10 27 Z" 
+          fill="url(#glassShieldGrad)" 
+          stroke="rgba(255, 255, 255, 0.4)" 
+          stroke-width="1.5"
+          filter="url(#shieldShadow)" />
+
+    <!-- High-Tech Circuit Traces -->
+    <path d="M50 4 L50 20 M90 27 L74 36 M90 73 L74 64 M50 96 L50 80 M10 73 L26 64 M10 27 L26 36" 
+          stroke="rgba(0, 210, 255, 0.6)" 
+          stroke-width="1.2" 
+          stroke-dasharray="2 3" />
+    <circle cx="50" cy="20" r="2" fill="#00D2FF" />
+    <circle cx="74" cy="36" r="2" fill="#00D2FF" />
+    <circle cx="74" cy="64" r="2" fill="#FF2A5F" />
+    <circle cx="50" cy="80" r="2" fill="#FF2A5F" />
+    <circle cx="26" cy="64" r="2" fill="#FF2A5F" />
+    <circle cx="26" cy="36" r="2" fill="#00D2FF" />
+
+    <!-- Uğur Okulları "U" & Future Tech Wings Symbol -->
+    <!-- Left Wing (Navy & Electric Blue) -->
+    <path d="M26 34 C34 32, 42 36, 42 56 C42 66, 44 72, 50 75 C42 75, 34 70, 30 60 C26 52, 24 42, 26 34 Z" 
+          fill="url(#ugurBlueGrad)" 
+          filter="url(#neonGlowBlue)" />
+
+    <!-- Right Wing (Crimson & Neon Red) -->
+    <path d="M74 34 C66 32, 58 36, 58 56 C58 66, 56 72, 50 75 C58 75, 66 70, 70 60 C74 52, 76 42, 74 34 Z" 
+          fill="url(#ugurRedGrad)" 
+          filter="url(#neonGlowRed)" />
+
+    <!-- Central Tech Core / Quantum Node -->
+    <circle cx="50" cy="48" r="9" fill="#0A1638" stroke="rgba(255, 255, 255, 0.8)" stroke-width="1.5" />
+    <circle cx="50" cy="48" r="4.5" fill="#00D2FF" />
+    <circle cx="50" cy="48" r="2" fill="#FFFFFF" />
+
+    <!-- Micro Orbit Rings -->
+    <ellipse cx="50" cy="48" rx="16" ry="7" fill="none" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1" stroke-dasharray="3 2" transform="rotate(-25 50 48)" />
+    <circle cx="63" cy="42" r="1.5" fill="#FF2A5F" />
+  </g>
+
+  <!-- Typography: UĞUR OKULLARI & BİLİŞİM TEKNOLOJİLERİ -->
+  <g transform="translate(130, 20)">
+    <!-- Top Micro Tagline -->
+    <rect x="0" y="4" width="148" height="18" rx="9" fill="rgba(255, 255, 255, 0.07)" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" />
+    <circle cx="10" cy="13" r="3" fill="#FF2A5F" />
+    <text x="20" y="16.5" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-size="9" font-weight="700" fill="#E2E8F0" letter-spacing="1.8">K12 AKADEMİK MÜFREDAT</text>
+
+    <!-- Brand Name: UĞUR OKULLARI -->
+    <text x="0" y="47" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" fill="url(#textGrad)" letter-spacing="2">UĞUR OKULLARI</text>
+
+    <!-- Sub-Brand: BİLİŞİM TEKNOLOJİLERİ -->
+    <text x="0" y="74" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-size="16" font-weight="700" fill="url(#accentTextGrad)" letter-spacing="3.5">BİLİŞİM TEKNOLOJİLERİ</text>
+  </g>
+</svg>

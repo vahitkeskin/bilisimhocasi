@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="favBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#1A66FF" />
+    </linearGradient>
+    <linearGradient id="favRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A5F" />
+      <stop offset="100%" stop-color="#E63946" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#060C1E" />
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+  <path d="M32 6 L56 19 L56 45 L32 58 L8 45 L8 19 Z" fill="rgba(26,102,255,0.12)" stroke="rgba(0,210,255,0.4)" stroke-width="1.5" />
+  <path d="M18 22 C24 20, 28 24, 28 36 C28 42, 29 45, 32 47 C28 47, 23 44, 20 38 C17 33, 16 26, 18 22 Z" fill="url(#favBlue)" filter="url(#glow)" />
+  <path d="M46 22 C40 20, 36 24, 36 36 C36 42, 35 45, 32 47 C36 47, 41 44, 44 38 C47 33, 48 26, 46 22 Z" fill="url(#favRed)" filter="url(#glow)" />
+  <circle cx="32" cy="31" r="5" fill="#0A1638" stroke="#FFFFFF" stroke-width="1.2" />
+  <circle cx="32" cy="31" r="2.5" fill="#00D2FF" />
+</svg>

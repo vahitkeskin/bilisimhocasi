@@ -1,0 +1,24 @@
+{
+  "name": "ugur-okullari-bilisim-mufredati",
+  "version": "1.0.0",
+  "description": "Uğur Okulları Bilişim Teknolojileri Öğretmeni K12 Müfredat Web Sitesi - Glassmorphism & Dark Mode",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  },
+  "keywords": [
+    "ugur-okullari",
+    "bilisim-teknolojileri",
+    "mufredat",
+    "k12",
+    "glassmorphism",
+    "dark-mode"
+  ],
+  "author": "Bilişim Teknolojileri Öğretmeni",
+  "license": "MIT"
+}
