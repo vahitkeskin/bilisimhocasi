@@ -3260,6 +3260,134 @@ textarea.golden-form-element {
   background: rgba(15, 23, 42, 0.05);
 }
 
+/* Sınıf Seviyesi Proje / Müfredat Hero Görseli (Title ile aynı genişlikte ve orantılı) */
+.active-grade-hero-banner-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  max-height: 420px;
+  min-height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border-glass);
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.active-grade-hero-banner-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+  border-color: rgba(200, 155, 60, 0.5);
+}
+
+.active-grade-hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.active-grade-hero-banner-wrap:hover .active-grade-hero-banner-img {
+  transform: scale(1.03);
+}
+
+.active-grade-hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 22px;
+  pointer-events: none;
+}
+
+.hero-banner-badge {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-banner-badge strong {
+  color: var(--primary-gold);
+}
+
+.hero-banner-zoom-pill {
+  background: rgba(200, 155, 60, 0.95);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s ease;
+}
+
+.active-grade-hero-banner-wrap:hover .hero-banner-zoom-pill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-theme="light"] .active-grade-hero-banner-wrap {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(15, 23, 42, 0.1);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .active-grade-hero-banner-wrap:hover {
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 768px) {
+  .active-grade-hero-banner-wrap {
+    aspect-ratio: 16 / 9;
+    max-height: 260px;
+    min-height: 180px;
+    border-radius: 14px;
+    margin-top: 14px;
+    margin-bottom: 16px;
+  }
+  .active-grade-hero-banner-overlay {
+    padding: 12px 14px;
+  }
+  .hero-banner-badge {
+    font-size: 11.5px;
+    padding: 6px 12px;
+    max-width: 100%;
+  }
+  .hero-banner-zoom-pill {
+    display: none;
+  }
+}
+
 .active-grade-title {
   font-family: var(--font-heading);
   font-size: 1.85rem;

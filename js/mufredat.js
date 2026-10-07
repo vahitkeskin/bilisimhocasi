@@ -286,6 +286,19 @@
             </div>
           </div>
 
+          <!-- Sınıf Seviyesi Proje Görseli (Title'ın tam üstünde, title genişliğinde ve orantılı) -->
+          <div class="active-grade-hero-banner-wrap" role="button" tabindex="0" title="Proje Görselini Tam Boyut İncele" data-img="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" data-title="${grade.project}" data-desc="${grade.projectDesc}">
+            <img src="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" alt="${grade.project} - ${grade.title}" class="active-grade-hero-banner-img" loading="eager">
+            <div class="active-grade-hero-banner-overlay">
+              <div class="hero-banner-badge">
+                <i class="fas fa-trophy mr-1"></i> ${grade.shortLabel} Seviye Projesi: <strong>${grade.project}</strong>
+              </div>
+              <span class="hero-banner-zoom-pill">
+                <i class="fas fa-search-plus mr-1"></i> Tam Boyut Görseli Aç
+              </span>
+            </div>
+          </div>
+
           <h2 class="active-grade-title">${grade.title}</h2>
           <div class="active-grade-scope-line">
             <i class="fas fa-shield-alt mr-1"></i> ${grade.scope}
@@ -478,6 +491,22 @@
     if (printBtn) {
       printBtn.addEventListener('click', () => {
         window.print();
+      });
+    }
+
+    // Hero Banner Image Click for Full-Res Lightbox
+    const heroBannerWrapper = document.querySelector('.active-grade-hero-banner-wrap');
+    if (heroBannerWrapper) {
+      heroBannerWrapper.addEventListener('click', () => {
+        const imgUrl = grade.projectImage || `assets/projects/${grade.id}.jpg`;
+        openProjectModal(imgUrl, grade.project, grade.projectDesc);
+      });
+      heroBannerWrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const imgUrl = grade.projectImage || `assets/projects/${grade.id}.jpg`;
+          openProjectModal(imgUrl, grade.project, grade.projectDesc);
+        }
       });
     }
 
