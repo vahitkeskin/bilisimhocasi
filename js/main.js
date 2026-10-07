@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.className = 'glass-toast';
       document.body.appendChild(toast);
     }
-    toast.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${message}`;
+    toast.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F489C" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${message}`;
     toast.classList.add('show');
     clearTimeout(toast._timeout);
     toast._timeout = setTimeout(() => {
@@ -628,11 +628,11 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
   // --- TYPEWRITER HEADLINE CONTROLLER (Character-by-Character Dynamic Slogans) ---
   const cuteRobotSvg = `<svg class="cute-robot-icon" viewBox="0 0 36 36" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g class="cute-bot-inner">
-      <path d="M18 4V8" stroke="#fed136" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="18" cy="3.5" r="2.5" fill="#fed136"/>
-      <rect x="5.5" y="8" width="25" height="21" rx="6.5" fill="#111827" stroke="#fed136" stroke-width="2"/>
-      <rect x="2.5" y="14" width="3" height="8" rx="1.5" fill="#fed136"/>
-      <rect x="30.5" y="14" width="3" height="8" rx="1.5" fill="#fed136"/>
+      <path d="M18 4V8" stroke="#8F489C" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="18" cy="3.5" r="2.5" fill="#8F489C"/>
+      <rect x="5.5" y="8" width="25" height="21" rx="6.5" fill="#111827" stroke="#8F489C" stroke-width="2"/>
+      <rect x="2.5" y="14" width="3" height="8" rx="1.5" fill="#8F489C"/>
+      <rect x="30.5" y="14" width="3" height="8" rx="1.5" fill="#8F489C"/>
       <rect x="8.5" y="11" width="19" height="15" rx="4" fill="#030712"/>
       <ellipse cx="13.5" cy="16.5" rx="2.8" ry="3.2" fill="#00e5ff"/>
       <circle cx="14.3" cy="15.2" r="1.1" fill="#ffffff"/>
@@ -640,7 +640,7 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
       <circle cx="23.3" cy="15.2" r="1.1" fill="#ffffff"/>
       <circle cx="11" cy="21.5" r="1.5" fill="#ff7675" opacity="0.85"/>
       <circle cx="25" cy="21.5" r="1.5" fill="#ff7675" opacity="0.85"/>
-      <path d="M15.5 21.5 Q 18 24.5 20.5 21.5" stroke="#fed136" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M15.5 21.5 Q 18 24.5 20.5 21.5" stroke="#8F489C" stroke-width="2" stroke-linecap="round" fill="none"/>
     </g>
   </svg>`;
 

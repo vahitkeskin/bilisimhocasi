@@ -104,36 +104,20 @@
             </li>
             <li class="nav-item ml-lg-2">
               <div class="nav-actions-group">
-                <!-- Theme Mode Selector (Açık, Kapalı, Sistem) -->
-                <div class="theme-switch-wrapper" id="theme-switch-wrapper">
-                  <button type="button" class="nav-icon-action theme-btn" id="theme-menu-btn"
-                    aria-label="Tema Seçimi (Açık, Kapalı, Sistem)" aria-haspopup="true" aria-expanded="false" title="Tema: Sistem">
-                    <i class="fas fa-desktop" id="theme-current-icon"></i>
+                <!-- Instant Theme Mode Switcher (Açık, Kapalı, Sistem) -->
+                <div class="theme-segmented-nav" id="desktop-theme-switcher" role="group" aria-label="Görünüm Modu Seçimi">
+                  <button type="button" class="theme-nav-btn" data-theme-choice="light" title="Açık Mod (Gündüz)" aria-label="Açık Mod">
+                    <i class="fas fa-sun"></i>
+                    <span class="theme-btn-text">Açık</span>
                   </button>
-                  <div class="theme-dropdown-menu" id="theme-dropdown-menu" role="menu">
-                    <div class="theme-dropdown-header">GÖRÜNÜM MODU</div>
-                    <button type="button" class="theme-dropdown-item" data-theme-choice="light" role="menuitem">
-                      <span class="theme-item-left">
-                        <i class="fas fa-sun theme-icon-sun"></i>
-                        <span>Açık</span>
-                      </span>
-                      <i class="fas fa-check theme-check-icon"></i>
-                    </button>
-                    <button type="button" class="theme-dropdown-item" data-theme-choice="dark" role="menuitem">
-                      <span class="theme-item-left">
-                        <i class="fas fa-moon theme-icon-moon"></i>
-                        <span>Kapalı</span>
-                      </span>
-                      <i class="fas fa-check theme-check-icon"></i>
-                    </button>
-                    <button type="button" class="theme-dropdown-item active" data-theme-choice="system" role="menuitem">
-                      <span class="theme-item-left">
-                        <i class="fas fa-desktop theme-icon-system"></i>
-                        <span>Sistem</span>
-                      </span>
-                      <i class="fas fa-check theme-check-icon"></i>
-                    </button>
-                  </div>
+                  <button type="button" class="theme-nav-btn" data-theme-choice="dark" title="Kapalı Mod (Gece)" aria-label="Kapalı Mod">
+                    <i class="fas fa-moon"></i>
+                    <span class="theme-btn-text">Kapalı</span>
+                  </button>
+                  <button type="button" class="theme-nav-btn active" data-theme-choice="system" title="Sistem Modu (Otomatik)" aria-label="Sistem Modu">
+                    <i class="fas fa-desktop"></i>
+                    <span class="theme-btn-text">Sistem</span>
+                  </button>
                 </div>
 
                 <button type="button" class="nav-icon-action" id="sound-toggle-btn"
@@ -180,12 +164,12 @@
                 <svg class="cute-robot-icon" viewBox="0 0 36 36" width="28" height="28" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <g class="cute-bot-inner">
-                    <path d="M18 4V8" stroke="#fed136" stroke-width="2.2" stroke-linecap="round" />
-                    <circle cx="18" cy="3.5" r="2.5" fill="#fed136" />
-                    <rect x="5.5" y="8" width="25" height="21" rx="6.5" fill="#111827" stroke="#fed136"
+                    <path d="M18 4V8" stroke="#8F489C" stroke-width="2.2" stroke-linecap="round" />
+                    <circle cx="18" cy="3.5" r="2.5" fill="#8F489C" />
+                    <rect x="5.5" y="8" width="25" height="21" rx="6.5" fill="#111827" stroke="#8F489C"
                       stroke-width="2" />
-                    <rect x="2.5" y="14" width="3" height="8" rx="1.5" fill="#fed136" />
-                    <rect x="30.5" y="14" width="3" height="8" rx="1.5" fill="#fed136" />
+                    <rect x="2.5" y="14" width="3" height="8" rx="1.5" fill="#8F489C" />
+                    <rect x="30.5" y="14" width="3" height="8" rx="1.5" fill="#8F489C" />
                     <rect x="8.5" y="11" width="19" height="15" rx="4" fill="#030712" />
                     <ellipse cx="13.5" cy="16.5" rx="2.8" ry="3.2" fill="#00e5ff" />
                     <circle cx="14.3" cy="15.2" r="1.1" fill="#ffffff" />
@@ -193,7 +177,7 @@
                     <circle cx="23.3" cy="15.2" r="1.1" fill="#ffffff" />
                     <circle cx="11" cy="21.5" r="1.5" fill="#ff7675" opacity="0.85" />
                     <circle cx="25" cy="21.5" r="1.5" fill="#ff7675" opacity="0.85" />
-                    <path d="M15.5 21.5 Q 18 24.5 20.5 21.5" stroke="#fed136" stroke-width="2" stroke-linecap="round"
+                    <path d="M15.5 21.5 Q 18 24.5 20.5 21.5" stroke="#8F489C" stroke-width="2" stroke-linecap="round"
                       fill="none" />
                   </g>
                 </svg>
@@ -820,7 +804,7 @@
           🏆 Dönem Sonu Projesi
         </h5>
         <div id="modal-project"
-          style="background: rgba(254, 209, 54, 0.08); border: 1px solid var(--border-gold); padding: 14px 18px; border-radius: 8px; font-weight: 600; color: #FFFFFF;">
+          style="background: var(--primary-brand-subtle); border: 1px solid var(--border-gold); padding: 14px 18px; border-radius: 8px; font-weight: 600; color: var(--text-heading);">
           Proje Bilgisi
         </div>
       </div>
