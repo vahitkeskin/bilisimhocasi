@@ -104,20 +104,36 @@
             </li>
             <li class="nav-item ml-lg-2">
               <div class="nav-actions-group">
-                <!-- Instant Theme Mode Switcher (Açık, Kapalı, Sistem) -->
-                <div class="theme-segmented-nav" id="desktop-theme-switcher" role="group" aria-label="Görünüm Modu Seçimi">
-                  <button type="button" class="theme-nav-btn" data-theme-choice="light" title="Açık Mod (Gündüz)" aria-label="Açık Mod">
-                    <i class="fas fa-sun"></i>
-                    <span class="theme-btn-text">Açık</span>
+                <!-- Theme Mode Dropdown (Icon Only on Bar, Compact & Space-Saving) -->
+                <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
+                  <button type="button" class="nav-icon-action theme-menu-btn" id="theme-menu-btn"
+                    aria-label="Görünüm Modu Seçimi" aria-haspopup="true" aria-expanded="false" title="Görünüm Modu (Açık / Kapalı / Sistem)">
+                    <i class="fas fa-desktop" id="theme-current-icon"></i>
                   </button>
-                  <button type="button" class="theme-nav-btn" data-theme-choice="dark" title="Kapalı Mod (Gece)" aria-label="Kapalı Mod">
-                    <i class="fas fa-moon"></i>
-                    <span class="theme-btn-text">Kapalı</span>
-                  </button>
-                  <button type="button" class="theme-nav-btn active" data-theme-choice="system" title="Sistem Modu (Otomatik)" aria-label="Sistem Modu">
-                    <i class="fas fa-desktop"></i>
-                    <span class="theme-btn-text">Sistem</span>
-                  </button>
+                  <div class="theme-dropdown-menu" id="theme-dropdown-menu" role="menu" aria-label="Görünüm Modu Menüsü">
+                    <div class="theme-dropdown-header">GÖRÜNÜM MODU</div>
+                    <button type="button" class="theme-dropdown-item" data-theme-choice="light" role="menuitem">
+                      <span class="theme-item-left">
+                        <i class="fas fa-sun theme-icon-sun"></i>
+                        <span>Açık</span>
+                      </span>
+                      <i class="fas fa-check theme-check-icon"></i>
+                    </button>
+                    <button type="button" class="theme-dropdown-item" data-theme-choice="dark" role="menuitem">
+                      <span class="theme-item-left">
+                        <i class="fas fa-moon theme-icon-moon"></i>
+                        <span>Kapalı</span>
+                      </span>
+                      <i class="fas fa-check theme-check-icon"></i>
+                    </button>
+                    <button type="button" class="theme-dropdown-item active" data-theme-choice="system" role="menuitem">
+                      <span class="theme-item-left">
+                        <i class="fas fa-desktop theme-icon-system"></i>
+                        <span>Sistem</span>
+                      </span>
+                      <i class="fas fa-check theme-check-icon"></i>
+                    </button>
+                  </div>
                 </div>
 
                 <button type="button" class="nav-icon-action" id="sound-toggle-btn"
