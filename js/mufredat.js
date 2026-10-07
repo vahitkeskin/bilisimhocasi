@@ -342,11 +342,30 @@
 
           <!-- Dönem Sonu Başarı Projesi -->
           <div class="capstone-project-card">
-            <div class="capstone-badge">
-              <i class="fas fa-trophy mr-1"></i> Dönem Sonu Başarı Projesi (Capstone)
+            <div class="row align-items-center">
+              <div class="col-lg-7">
+                <div class="capstone-badge">
+                  <i class="fas fa-trophy mr-1"></i> Dönem Sonu Başarı Projesi (Capstone)
+                </div>
+                <h3 class="capstone-title">${grade.project}</h3>
+                <p class="capstone-desc">${grade.projectDesc}</p>
+                <div class="capstone-meta-tags mt-3">
+                  <span class="capstone-tag"><i class="fas fa-laptop-code mr-1"></i> ${grade.shortLabel} Seviye Projesi</span>
+                  <span class="capstone-tag"><i class="fas fa-layer-group mr-1"></i> ${grade.categoryLabel}</span>
+                  <span class="capstone-tag"><i class="fas fa-calendar-check mr-1"></i> 2. Dönem Sonu</span>
+                </div>
+              </div>
+              <div class="col-lg-5 mt-4 mt-lg-0">
+                <div class="capstone-image-wrapper" role="button" tabindex="0" title="Proje Görselini Tam Boyut İncele" data-img="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" data-title="${grade.project}" data-desc="${grade.projectDesc}">
+                  <img src="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" alt="${grade.project}" class="capstone-project-img" loading="lazy">
+                  <div class="capstone-img-overlay">
+                    <span class="capstone-img-zoom-btn">
+                      <i class="fas fa-search-plus mr-1"></i> Projeyi Tam Boyut İncele
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="capstone-title">${grade.project}</h3>
-            <p class="capstone-desc">${grade.projectDesc}</p>
           </div>
 
           <!-- Ders Videosu & İnteraktif Atölye -->
@@ -462,6 +481,22 @@
       });
     }
 
+    // Capstone Image Click for Full-Res Lightbox
+    const capstoneImgWrapper = document.querySelector('.capstone-image-wrapper');
+    if (capstoneImgWrapper) {
+      capstoneImgWrapper.addEventListener('click', () => {
+        const imgUrl = grade.projectImage || `assets/projects/${grade.id}.jpg`;
+        openProjectModal(imgUrl, grade.project, grade.projectDesc);
+      });
+      capstoneImgWrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const imgUrl = grade.projectImage || `assets/projects/${grade.id}.jpg`;
+          openProjectModal(imgUrl, grade.project, grade.projectDesc);
+        }
+      });
+    }
+
     // Previous Grade Button
     const prevBtn = document.getElementById('btn-prev-grade');
     if (prevBtn && prevKey) {
@@ -495,6 +530,34 @@
         renderActiveGrade(grade);
       });
     }
+  }
+
+  /**
+   * Project Lightbox Modal Handlers
+   */
+  const projectModal = document.getElementById('project-modal');
+  const projectModalImg = document.getElementById('project-modal-img');
+  const projectModalTitle = document.getElementById('project-modal-title');
+  const projectModalDesc = document.getElementById('project-modal-desc');
+  const projectModalCloseBtn = document.getElementById('project-modal-close-btn');
+
+  function openProjectModal(imgUrl, title, desc) {
+    if (!projectModal) return;
+    if (projectModalImg) {
+      projectModalImg.src = imgUrl;
+      projectModalImg.alt = title;
+    }
+    if (projectModalTitle) projectModalTitle.textContent = title;
+    if (projectModalDesc) projectModalDesc.textContent = desc;
+
+    projectModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal() {
+    if (!projectModal) return;
+    projectModal.classList.remove('open');
+    document.body.style.overflow = '';
   }
 
   /**
@@ -545,7 +608,7 @@
   }
 
   /**
-   * Render the 13 grades bottom overview grid
+   * Render the 13 grades bottom overview grid with project images
    */
   function renderOverviewGrid() {
     if (!overviewGradesGrid || !window.CURRICULUM_GRADES_DATA) return;
@@ -563,18 +626,24 @@
       card.className = `overview-grade-mini-card ${key === activeGradeKey ? 'active' : ''}`;
       card.setAttribute('data-grade-key', key);
 
+      const projImg = grade.projectImage || `assets/projects/${key}.jpg`;
+
       card.innerHTML = `
+        <div class="overview-mini-card-img-wrap">
+          <img src="${projImg}" alt="${grade.project}" class="overview-mini-card-img" loading="lazy">
+          <span class="overview-mini-card-badge-floating">${grade.categoryLabel}</span>
+        </div>
         <div class="mini-card-top">
           <div class="mini-card-icon" style="background: ${grade.themeColor};">
             <i class="${grade.icon}"></i>
           </div>
-          <span class="mini-card-badge">${grade.categoryLabel}</span>
+          <span class="mini-card-badge">${grade.age}</span>
         </div>
         <h4 class="mini-card-title">${grade.shortLabel}</h4>
-        <p class="mini-card-sub">${grade.title.split(': ')[1] || grade.title}</p>
+        <p class="mini-card-sub">${grade.project}</p>
         <div class="mini-card-footer">
-          <span><i class="fas fa-user-clock mr-1"></i> ${grade.age}</span>
-          <span>İncele <i class="fas fa-arrow-right ml-1"></i></span>
+          <span><i class="fas fa-trophy mr-1"></i> Dönem Projesi</span>
+          <span>Müfredatı İncele <i class="fas fa-arrow-right ml-1"></i></span>
         </div>
       `;
 
@@ -615,6 +684,23 @@
     window.addEventListener('popstate', (e) => {
       parseUrlParams();
       selectGrade(activeGradeKey, false, true);
+    });
+
+    // Project Lightbox Modal Close Listeners
+    if (projectModalCloseBtn) {
+      projectModalCloseBtn.addEventListener('click', closeProjectModal);
+    }
+    if (projectModal) {
+      projectModal.addEventListener('click', (e) => {
+        if (e.target === projectModal) {
+          closeProjectModal();
+        }
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && projectModal && projectModal.classList.contains('open')) {
+        closeProjectModal();
+      }
     });
 
     // Scroll Progress Bar

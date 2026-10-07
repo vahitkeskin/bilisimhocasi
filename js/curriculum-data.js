@@ -7,6 +7,7 @@
 const CURRICULUM_GRADES_DATA = {
   "anasinifi": {
     id: "anasinifi",
+    projectImage: "assets/projects/anasinifi.jpg",
     stage: 1,
     category: "okuloncesi",
     categoryLabel: "Okul Öncesi",
@@ -68,6 +69,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif1": {
     id: "sinif1",
+    projectImage: "assets/projects/sinif1.jpg",
     stage: 1,
     category: "ilkokul",
     categoryLabel: "İlkokul",
@@ -129,6 +131,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif2": {
     id: "sinif2",
+    projectImage: "assets/projects/sinif2.jpg",
     stage: 1,
     category: "ilkokul",
     categoryLabel: "İlkokul",
@@ -190,6 +193,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif3": {
     id: "sinif3",
+    projectImage: "assets/projects/sinif3.jpg",
     stage: 2,
     category: "ilkokul",
     categoryLabel: "İlkokul",
@@ -251,6 +255,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif4": {
     id: "sinif4",
+    projectImage: "assets/projects/sinif4.jpg",
     stage: 2,
     category: "ilkokul",
     categoryLabel: "İlkokul",
@@ -312,6 +317,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif5": {
     id: "sinif5",
+    projectImage: "assets/projects/sinif5.jpg",
     stage: 3,
     category: "ortaokul",
     categoryLabel: "Ortaokul",
@@ -374,6 +380,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif6": {
     id: "sinif6",
+    projectImage: "assets/projects/sinif6.jpg",
     stage: 3,
     category: "ortaokul",
     categoryLabel: "Ortaokul",
@@ -435,6 +442,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif7": {
     id: "sinif7",
+    projectImage: "assets/projects/sinif7.jpg",
     stage: 4,
     category: "ortaokul",
     categoryLabel: "Ortaokul",
@@ -496,6 +504,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif8": {
     id: "sinif8",
+    projectImage: "assets/projects/sinif8.jpg",
     stage: 4,
     category: "ortaokul",
     categoryLabel: "Ortaokul",
@@ -557,6 +566,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif9": {
     id: "sinif9",
+    projectImage: "assets/projects/sinif9.jpg",
     stage: 5,
     category: "lise",
     categoryLabel: "Lise",
@@ -618,6 +628,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif10": {
     id: "sinif10",
+    projectImage: "assets/projects/sinif10.jpg",
     stage: 5,
     category: "lise",
     categoryLabel: "Lise",
@@ -679,6 +690,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif11": {
     id: "sinif11",
+    projectImage: "assets/projects/sinif11.jpg",
     stage: 6,
     category: "lise",
     categoryLabel: "Lise",
@@ -740,6 +752,7 @@ const CURRICULUM_GRADES_DATA = {
 
   "sinif12": {
     id: "sinif12",
+    projectImage: "assets/projects/sinif12.jpg",
     stage: 6,
     category: "lise",
     categoryLabel: "Lise",

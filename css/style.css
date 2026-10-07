@@ -3472,11 +3472,12 @@ textarea.golden-form-element {
 .capstone-project-card {
   background: linear-gradient(135deg, rgba(143, 72, 156, 0.12) 0%, rgba(245, 158, 11, 0.08) 100%);
   border: 1px solid var(--border-gold);
-  border-radius: 18px;
-  padding: 26px 28px;
+  border-radius: 20px;
+  padding: 28px 30px;
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .capstone-badge {
@@ -3485,9 +3486,9 @@ textarea.golden-form-element {
   gap: 6px;
   background: #F59E0B;
   color: #0F172A;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 800;
   font-family: var(--font-heading);
   text-transform: uppercase;
@@ -3497,17 +3498,206 @@ textarea.golden-form-element {
 
 .capstone-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-heading);
   margin-bottom: 10px;
+  line-height: 1.35;
 }
 
 .capstone-desc {
-  font-size: 14.5px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--text-body);
-  margin: 0;
+  margin-bottom: 14px;
+}
+
+.capstone-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.capstone-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+}
+
+[data-theme="light"] .capstone-tag {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.capstone-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 2px solid var(--border-gold);
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: #000;
+}
+
+.capstone-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.capstone-image-wrapper:hover .capstone-project-img {
+  transform: scale(1.05);
+}
+
+.capstone-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 22, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capstone-image-wrapper:hover .capstone-img-overlay {
+  opacity: 1;
+}
+
+.capstone-img-zoom-btn {
+  background: var(--primary-brand);
+  color: #FFFFFF;
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(6px);
+  transition: transform 0.25s ease;
+}
+
+.capstone-image-wrapper:hover .capstone-img-zoom-btn {
+  transform: translateY(0);
+}
+
+/* Overview Mini Card Image Wrap */
+.overview-mini-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 145px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-glass);
+  background: #000;
+}
+
+.overview-mini-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.overview-grade-mini-card:hover .overview-mini-card-img {
+  transform: scale(1.06);
+}
+
+.overview-mini-card-badge-floating {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(8, 12, 22, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[dir="rtl"] .overview-mini-card-badge-floating {
+  left: auto;
+  right: 8px;
+}
+
+/* Project Lightbox Modal */
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 14, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-gold);
+  border-radius: 20px;
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  padding: 26px;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.project-modal-img {
+  width: 100%;
+  border-radius: 14px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.project-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.project-modal-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 0;
 }
 
 /* Video & Workshop Card */
