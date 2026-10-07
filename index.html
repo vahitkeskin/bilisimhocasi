@@ -279,7 +279,7 @@
           </div>
           <div class="my-3">
             <a href="tel:05449694919" class="hero-phone-badge mr-2">
-              <i class="fas fa-phone-alt"></i> <span>0544 969 49 19</span>
+              <i class="fas fa-phone"></i> <span>0544 969 49 19</span>
             </a>
             <a href="#location" class="hero-phone-badge">
               <i class="fas fa-map-marker-alt"></i> <span data-i18n="location.map.name">Uğur Okulları Viranşehir Kampüsü</span>
@@ -1143,47 +1143,61 @@
         </form>
 
         <!-- Kampüs İletişim Detayları -->
-        <div class="row mt-5 pt-4 text-center">
-          <div class="col-lg-3 col-md-6 mb-4">
+        <div class="row mt-5 pt-4 text-center align-items-stretch">
+          <div class="col-lg-3 col-md-6 mb-4 d-flex">
             <div class="contact-info-card">
-              <i class="fas fa-graduation-cap fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <div class="contact-info-icon-box">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
               <h5 data-i18n="contact.stages.title">Eğitim Kademelerimiz</h5>
-              <p class="mb-0 text-muted" style="font-size: 13px; line-height: 1.7;" data-i18n="location.stages.text">
-                • Okul Öncesi • İlkokul<br>• Ortaokul • Anadolu Lisesi<br>• Fen Lisesi
-              </p>
+              <div class="contact-card-content">
+                <p class="mb-0 contact-stages-text" data-i18n="contact.stages.desc" data-i18n-html>
+                  • Okul Öncesi • İlkokul<br>• Ortaokul • Anadolu Lisesi<br>• Fen Lisesi
+                </p>
+              </div>
+              <span class="contact-card-hint" data-i18n="contact.stages.badge">K-12 Eğitimi</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-3 col-md-6 mb-4 d-flex">
             <div class="contact-info-card">
-              <i class="fas fa-phone-alt fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <div class="contact-info-icon-box">
+                <i class="fas fa-phone"></i>
+              </div>
               <h5 data-i18n="contact.phone.title">İletişim & Danışma</h5>
-              <p class="mb-0">
-                <a href="tel:05449694919" style="color: var(--primary-gold); font-weight: 800; font-size: 16px; text-decoration: none;">
-                  📞 0544 969 49 19
+              <div class="contact-card-content">
+                <a href="tel:05449694919" class="contact-card-link phone-link">
+                  0544 969 49 19
                 </a>
-              </p>
+              </div>
+              <span class="contact-card-hint" data-i18n="contact.phone.badge">Danışma Hattı</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-3 col-md-6 mb-4 d-flex">
             <div class="contact-info-card">
-              <i class="fas fa-envelope fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <div class="contact-info-icon-box">
+                <i class="fas fa-envelope"></i>
+              </div>
               <h5 data-i18n="contact.email.title">E-Posta</h5>
-              <p class="mb-0">
-                <a href="mailto:bilisim@viransehir.ugurokullari.k12.tr" style="color: inherit; font-size: 13px;">
+              <div class="contact-card-content">
+                <a href="mailto:bilisim@viransehir.ugurokullari.k12.tr" class="contact-card-link email-link">
                   bilisim@viransehir.ugurokullari.k12.tr
                 </a>
-              </p>
+              </div>
+              <span class="contact-card-hint" data-i18n="contact.email.badge">Kurumsal İletişim</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-4">
+          <div class="col-lg-3 col-md-6 mb-4 d-flex">
             <div class="contact-info-card">
-              <i class="fas fa-map-marked-alt fa-2x mb-3" style="color: var(--primary-gold);"></i>
+              <div class="contact-info-icon-box">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
               <h5 data-i18n="contact.address.title">Kampüs Konumu</h5>
-              <p class="mb-0">
-                <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" style="color: var(--primary-gold); font-weight: 800; font-size: 14px; text-decoration: none;">
+              <div class="contact-card-content">
+                <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" class="contact-card-link location-link">
                   Uğur Okulları Viranşehir Kampüsü
                 </a>
-              </p>
+              </div>
+              <span class="contact-card-hint" data-i18n="contact.address.badge">Haritada Aç ↗</span>
             </div>
           </div>
         </div>
@@ -1232,7 +1246,7 @@
               <div class="location-phone-box">
                 <span class="location-phone-label" data-i18n="contact.phone.title">📞 İletişim / Danışma Hattı:</span>
                 <a href="tel:05449694919" class="location-phone-link" aria-label="Kampüsü Ara">
-                  <i class="fas fa-phone-alt"></i> 0544 969 49 19
+                  <i class="fas fa-phone"></i> 0544 969 49 19
                 </a>
               </div>
             </div>

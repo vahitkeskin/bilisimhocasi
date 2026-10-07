@@ -668,10 +668,35 @@ const I18N = (() => {
       en: 'Our Education Stages',
       ar: 'مراحلنا التعليمية'
     },
+    'contact.stages.desc': {
+      tr: '• Okul Öncesi • İlkokul<br>• Ortaokul • Anadolu Lisesi<br>• Fen Lisesi',
+      en: '• Preschool • Primary<br>• Middle School • Anatolian High<br>• Science High',
+      ar: '• رياض الأطفال • الابتدائي<br>• المتوسط • الثانوي العام<br>• الثانوي العلمي'
+    },
+    'contact.stages.badge': {
+      tr: 'K-12 Eğitimi',
+      en: 'K-12 Education',
+      ar: 'تعليم K-12'
+    },
     'contact.phone.title': {
       tr: 'İletişim & Danışma',
       en: 'Contact & Info Line',
       ar: 'الاتصال والاستعلامات'
+    },
+    'contact.phone.badge': {
+      tr: 'Danışma Hattı',
+      en: 'Helpline',
+      ar: 'خط الاستعلامات'
+    },
+    'contact.email.badge': {
+      tr: 'Kurumsal İletişim',
+      en: 'Corporate Email',
+      ar: 'الاتصال المؤسسي'
+    },
+    'contact.address.badge': {
+      tr: 'Haritada Aç ↗',
+      en: 'Open in Maps ↗',
+      ar: 'فتح في الخرائط ↗'
     },
 
     // ── MODAL DETAILS ──

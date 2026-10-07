@@ -826,13 +826,22 @@ html, body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-[data-theme="light"] .contact-info-card h4 {
+[data-theme="light"] .contact-info-card h4,
+[data-theme="light"] .contact-info-card h5 {
   color: #0F172A !important;
 }
 
-[data-theme="light"] .contact-info-card p,
-[data-theme="light"] .contact-info-card a {
+[data-theme="light"] .contact-info-card p {
   color: #475569 !important;
+}
+
+[data-theme="light"] .contact-info-card a.phone-link,
+[data-theme="light"] .contact-info-card a.location-link {
+  color: var(--primary-gold) !important;
+}
+
+[data-theme="light"] .contact-info-card a.email-link {
+  color: #1E293B !important;
 }
 
 [data-theme="light"] .form-control {
@@ -1713,32 +1722,150 @@ textarea.golden-form-element {
 }
 
 .contact-info-card {
-  background: rgba(16, 24, 42, 0.7);
+  background: rgba(16, 24, 42, 0.75);
   border: 1px solid var(--border-glass);
-  border-radius: 12px;
-  padding: 24px;
-  transition: all 0.3s ease;
+  border-radius: 18px;
+  padding: 26px 18px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .contact-info-card:hover {
   border-color: var(--primary-gold);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(200, 155, 60, 0.15);
+}
+
+.contact-info-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(200, 155, 60, 0.12);
+  border: 1px solid rgba(200, 155, 60, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-gold);
+  font-size: 22px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-info-card:hover .contact-info-icon-box {
+  background: var(--primary-gold);
+  color: #FFFFFF;
+  transform: scale(1.08) rotate(3deg);
+  border-color: var(--primary-gold);
+  box-shadow: 0 6px 20px rgba(200, 155, 60, 0.35);
 }
 
 .contact-info-card h5 {
   font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15.5px;
+  font-weight: 800;
   color: #FFFFFF;
-  margin-top: 10px;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  min-height: 22px;
 }
 
-.contact-info-card p {
-  font-family: var(--font-body);
-  font-size: 14px;
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.contact-card-link {
+  color: var(--primary-gold);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.contact-card-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.contact-card-link.email-link {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #E2E8F0;
+  padding: 0 4px;
+}
+
+.contact-card-link.phone-link {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--primary-gold);
+  letter-spacing: 0.5px;
+}
+
+.contact-card-link.location-link {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--primary-gold);
+  line-height: 1.4;
+}
+
+.contact-stages-text {
+  font-size: 12px;
+  line-height: 1.65;
   color: var(--text-muted);
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-card-hint {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+[data-theme="light"] .contact-info-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .contact-info-card:hover {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .contact-info-card h5 {
+  color: #0F172A;
+}
+
+[data-theme="light"] .contact-card-link.email-link {
+  color: #334155;
+}
+
+[data-theme="light"] .contact-card-hint {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.08);
 }
 
 /* ==========================================================================
