@@ -6,6 +6,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  // Dynamic Year for Copyright
+  const currentYearSpan = document.getElementById('current-year');
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+  }
+
   // Sound and notification features disabled per user request
   window._sfxPlayClick = () => {};
   window._showToastFn = () => {};

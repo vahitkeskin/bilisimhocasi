@@ -600,9 +600,9 @@ const I18N = (() => {
 
     // ── FOOTER ──
     'footer.copyright': {
-      tr: '© 2026 Uğur Okulları Viranşehir Kampüsü',
-      en: '© 2026 Uğur Schools Viranşehir Campus',
-      ar: '© 2026 مدارس أوغور حرم فيران شهير'
+      tr: 'Uğur Okulları Viranşehir Kampüsü',
+      en: 'Uğur Schools Viranşehir Campus',
+      ar: 'مدارس أوغور حرم فيران شهير'
     },
     'footer.dept': {
       tr: 'Bilişim Teknolojileri ve İnovasyon',

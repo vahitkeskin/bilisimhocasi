@@ -349,7 +349,7 @@
       <div class="row align-items-center">
         <div class="col-md-4 text-center text-md-left">
           <p style="color: var(--text-muted); font-size: 13px; margin: 0;">
-            &copy; 2026 Uğur Okulları Viranşehir Kampüsü
+            &copy; <span id="current-year-mufredat"></span> Uğur Okulları Viranşehir Kampüsü
           </p>
         </div>
         <div class="col-md-4 text-center my-2 my-md-0">
@@ -532,6 +532,11 @@
             });
           }
         });
+      }
+      // Dynamic Year for Copyright
+      const yearSpan = document.getElementById('current-year-mufredat');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
       }
     })();
   </script>
