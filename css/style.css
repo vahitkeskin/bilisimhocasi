@@ -972,19 +972,30 @@ html, body {
   justify-content: center;
   gap: 16px;
   max-width: 100%;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
-  border-radius: 0;
-  padding: 6px 0;
+  background: rgba(8, 12, 24, 0.76);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(143, 72, 156, 0.5);
+  border-radius: 46px;
+  padding: 10px 24px;
   box-shadow: none !important;
+  transition: border-color 0.3s ease;
 }
 
 .typewriter-headline-card:hover {
-  border-color: transparent !important;
+  border-color: rgba(143, 72, 156, 0.85);
   box-shadow: none !important;
-  background: transparent !important;
+}
+
+[data-theme="light"] .typewriter-headline-card {
+  background: rgba(8, 12, 24, 0.76);
+  border-color: rgba(143, 72, 156, 0.5);
+  box-shadow: none !important;
+}
+
+[data-theme="light"] .typewriter-headline-card:hover {
+  border-color: rgba(143, 72, 156, 0.85);
+  box-shadow: none !important;
 }
 
 /* Iconic Circle Badges */
@@ -1000,7 +1011,7 @@ html, body {
   border: 2px solid var(--primary-gold);
   color: var(--primary-gold);
   font-size: 22px;
-  box-shadow: 0 0 18px rgba(143, 72, 156, 0.45);
+  box-shadow: none !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
   position: relative;
@@ -1023,7 +1034,7 @@ html, body {
   height: 32px;
   display: block;
   overflow: visible;
-  filter: drop-shadow(0 0 6px rgba(143, 72, 156, 0.5));
+  filter: none !important;
   transition: transform 0.3s ease;
 }
 
@@ -1043,7 +1054,7 @@ html, body {
   color: #FFFFFF !important;
   text-transform: uppercase !important;
   letter-spacing: 0.8px !important;
-  text-shadow: 0 0 20px rgba(143, 72, 156, 0.35), 0 3px 16px rgba(0, 0, 0, 0.95);
+  text-shadow: none !important;
   line-height: 1.32 !important;
   white-space: normal;
   word-break: normal;
@@ -1069,7 +1080,7 @@ html, body {
   font-size: 1.05em;
   line-height: inherit;
   padding-left: 2px;
-  text-shadow: 0 0 10px rgba(143, 72, 156, 0.8), 0 0 20px rgba(143, 72, 156, 0.4);
+  text-shadow: none !important;
   animation: typewriterCursorBlink 0.85s infinite;
   user-select: none;
   white-space: nowrap;
