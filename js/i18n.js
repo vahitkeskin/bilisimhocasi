@@ -179,9 +179,9 @@ const I18N = (() => {
       ar: 'رحلة تكنولوجيا المعلومات خطوة بخطوة من الروضة إلى الثانوية مع دروس فيديو تفاعلية'
     },
     'portfolio.filter.all': {
-      tr: 'Tüm Kademeler (6)',
-      en: 'All Stages (6)',
-      ar: 'جميع المراحل (6)'
+      tr: 'Tüm Sınıflar (13)',
+      en: 'All Grades (13)',
+      ar: 'جميع الصفوف (13)'
     },
     'portfolio.filter.preschool': {
       tr: 'Okul Öncesi',

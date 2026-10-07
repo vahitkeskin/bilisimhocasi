@@ -1202,8 +1202,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Bind all entire curriculum cards to navigate to dedicated full-page endpoint
   document.querySelectorAll('.curriculum-card').forEach((card) => {
     card.addEventListener('click', () => {
+      const grade = card.dataset.grade;
       const stage = card.dataset.stage;
-      if (stage) {
+      if (grade) {
+        window.location.href = `mufredat.html?sinif=${encodeURIComponent(grade)}`;
+      } else if (stage) {
         window.location.href = `mufredat.html?kademe=${encodeURIComponent(stage)}`;
       }
     });
@@ -1211,8 +1214,11 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
+        const grade = card.dataset.grade;
         const stage = card.dataset.stage;
-        if (stage) {
+        if (grade) {
+          window.location.href = `mufredat.html?sinif=${encodeURIComponent(grade)}`;
+        } else if (stage) {
           window.location.href = `mufredat.html?kademe=${encodeURIComponent(stage)}`;
         }
       }
@@ -1223,8 +1229,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.open-details-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
+      const grade = btn.dataset.grade;
       const stage = btn.dataset.stage;
-      if (stage) {
+      if (grade) {
+        window.location.href = `mufredat.html?sinif=${encodeURIComponent(grade)}`;
+      } else if (stage) {
         window.location.href = `mufredat.html?kademe=${encodeURIComponent(stage)}`;
       }
     });
