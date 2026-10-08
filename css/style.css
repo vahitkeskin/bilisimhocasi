@@ -2496,29 +2496,343 @@ textarea.golden-form-element {
   margin-bottom: 0;
 }
 
-.campus-modal-img-wrapper {
+/* ==========================================================================
+   CAMPUS VIEWPAGER & INSTAGRAM-STYLE DYNAMIC DOTS (dotexampel.gif referansı)
+   "görseli üstünde ama altta ve ortada olsun"
+   ========================================================================== */
+.campus-viewpager {
   position: relative;
   width: 100%;
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
+  background: #070A11;
   border: 1px solid rgba(143, 72, 156, 0.45);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
 }
 
-.campus-modal-img {
+.campus-vp-track-container {
+  overflow: hidden;
   width: 100%;
-  height: auto;
-  aspect-ratio: 3480 / 1867;
+  position: relative;
+  cursor: grab;
+}
+
+.campus-vp-track-container.is-dragging {
+  cursor: grabbing;
+}
+
+.campus-vp-track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.campus-vp-track.no-transition {
+  transition: none !important;
+}
+
+.campus-vp-slide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #070A11;
+  aspect-ratio: 16 / 9;
+  max-height: 65vh;
+  overflow: hidden;
+}
+
+.campus-vp-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: contain;
   display: block;
+  pointer-events: none;
 }
 
+/* Glassmorphism Header Tag Overlay (Top-Left of Image) */
+.campus-vp-badge-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  padding: 5px 14px;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  z-index: 12;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+[dir="rtl"] .campus-vp-badge-tag {
+  left: auto;
+  right: 14px;
+}
+
+.vp-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F23A7A;
+  box-shadow: 0 0 8px #F23A7A;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Slide Counter Overlay (Top-Right of Image) */
+.campus-vp-counter {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  padding: 5px 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 12;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+[dir="rtl"] .campus-vp-counter {
+  right: auto;
+  left: 14px;
+}
+
+.campus-vp-counter strong {
+  color: #F23A7A;
+  font-weight: 800;
+}
+
+/* Navigation Arrow Buttons */
+.campus-vp-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  padding: 0;
+  outline: none;
+}
+
+.campus-vp-prev-btn {
+  left: 14px;
+}
+
+.campus-vp-next-btn {
+  right: 14px;
+}
+
+[dir="rtl"] .campus-vp-prev-btn {
+  left: auto;
+  right: 14px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+[dir="rtl"] .campus-vp-next-btn {
+  right: auto;
+  left: 14px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.campus-vp-nav-btn:hover {
+  background: #F23A7A;
+  color: #FFFFFF;
+  border-color: #F23A7A;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(242, 58, 122, 0.55);
+}
+
+[dir="rtl"] .campus-vp-nav-btn:hover {
+  transform: translateY(-50%) rotate(180deg) scale(1.1);
+}
+
+.campus-vp-nav-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.campus-vp-nav-btn:disabled,
+.campus-vp-nav-btn.is-disabled {
+  opacity: 0.22;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ==========================================================================
+   DYNAMIC SLIDING DOTS OVERLAY (dotexampel.gif REFERANSI)
+   "ama görseli üstünde ama altta ve ortada olsun"
+   ========================================================================== */
+.campus-vp-dots-container {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 18;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 6px 16px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.campus-vp-dots-window {
+  width: 95px; /* Exactly 5 visible slots * 19px pitch */
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.campus-vp-dots-track {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.campus-vp-dot-slot {
+  width: 19px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.campus-vp-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #717BC6;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  transform: scale(0.62);
+  opacity: 0.8;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              opacity 0.3s ease;
+}
+
+.campus-vp-dot:focus-visible {
+  outline: 2px solid #F23A7A;
+  outline-offset: 2px;
+}
+
+/* Active Dot: Large Pink (#F23A7A / rgb(242,58,122)), Scale 1 (~14px diameter), Glowing */
+.campus-vp-dot.is-active {
+  background-color: #F23A7A;
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(242, 58, 122, 0.85);
+}
+
+/* Medium Dot: Lavender-purple (#717BC6), Scale ~0.62 (~8.5px diameter) */
+.campus-vp-dot.is-medium {
+  background-color: #717BC6;
+  transform: scale(0.62);
+  opacity: 0.85;
+}
+
+/* Tiny Dot (Edge of window): Scale ~0.32 (~4.5px diameter) */
+.campus-vp-dot.is-tiny {
+  background-color: #717BC6;
+  transform: scale(0.32);
+  opacity: 0.55;
+}
+
+/* Hidden Dot (Beyond window): Scale 0 */
+.campus-vp-dot.is-hidden {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Footer Section */
 .campus-modal-footer {
   margin-top: 14px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.campus-modal-curriculum-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #8F489C 0%, #EC4899 100%);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(143, 72, 156, 0.4);
+}
+
+.campus-modal-curriculum-btn:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(236, 72, 153, 0.5);
+  text-decoration: none;
 }
 
 .campus-modal-location-badge {
@@ -2536,10 +2850,46 @@ textarea.golden-form-element {
   color: #8F489C !important;
 }
 
-[data-theme="light"] .campus-modal-img-wrapper {
+[data-theme="light"] .campus-viewpager {
+  background: #F8FAFC;
   border-color: rgba(143, 72, 156, 0.35);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .campus-vp-slide {
   background: #F1F5F9;
+}
+
+[data-theme="light"] .campus-vp-dots-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(143, 72, 156, 0.25);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.15);
+}
+
+[data-theme="light"] .campus-vp-dot.is-medium,
+[data-theme="light"] .campus-vp-dot.is-tiny {
+  background-color: #6366F1;
+}
+
+[data-theme="light"] .campus-vp-badge-tag,
+[data-theme="light"] .campus-vp-counter {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(143, 72, 156, 0.25);
+  color: #0F172A;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .campus-vp-nav-btn {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(143, 72, 156, 0.25);
+  color: #0F172A;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .campus-vp-nav-btn:hover {
+  background: #F23A7A;
+  color: #FFFFFF;
+  border-color: #F23A7A;
 }
 
 [data-theme="light"] .campus-modal-location-badge {
@@ -3025,16 +3375,57 @@ textarea.golden-form-element {
     right: auto;
     left: 12px;
   }
-  .campus-modal-img-wrapper {
+  .campus-viewpager {
     border-radius: 10px;
+  }
+  .campus-vp-slide {
+    aspect-ratio: 16 / 9;
+    max-height: 52vh;
+  }
+  .campus-vp-nav-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+  .campus-vp-prev-btn { left: 8px; }
+  .campus-vp-next-btn { right: 8px; }
+  [dir="rtl"] .campus-vp-prev-btn { right: 8px; left: auto; }
+  [dir="rtl"] .campus-vp-next-btn { left: 8px; right: auto; }
+  .campus-vp-dots-container {
+    bottom: 10px;
+    padding: 4px 12px;
+  }
+  .campus-vp-badge-tag {
+    top: 8px;
+    left: 8px;
+    font-size: 10.5px;
+    padding: 3px 9px;
+  }
+  [dir="rtl"] .campus-vp-badge-tag {
+    right: 8px;
+    left: auto;
+  }
+  .campus-vp-counter {
+    top: 8px;
+    right: 8px;
+    font-size: 10.5px;
+    padding: 3px 9px;
+  }
+  [dir="rtl"] .campus-vp-counter {
+    left: 8px;
+    right: auto;
   }
   .campus-modal-footer {
     margin-top: 10px;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .campus-modal-curriculum-btn {
+    font-size: 11px;
+    padding: 5px 12px;
   }
   .campus-modal-location-badge {
-    font-size: 11.5px;
+    font-size: 11px;
     text-align: center;
     display: inline-block;
   }

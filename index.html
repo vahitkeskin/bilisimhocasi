@@ -1427,14 +1427,122 @@
         </p>
       </div>
 
-      <div class="campus-modal-img-wrapper">
-        <img src="assets/schoolfullimagehd.jpg" alt="Uğur Okulları Viranşehir Kampüsü Tam Görünüm"
-          class="campus-modal-img" loading="lazy" width="3480" height="1867">
+      <!-- 14-Slide Interactive ViewPager with Overlaid Dynamic Dots Indicator -->
+      <div class="campus-viewpager" id="campus-viewpager" role="region" aria-label="Uğur Okulları Viranşehir Kampüsü Yerleşke ve Sınıflar Galerisi">
+        <!-- ViewPager Track Container -->
+        <div class="campus-vp-track-container" id="campus-vp-track-container" title="Görseller arasında kaydırmak için sürükleyin">
+          <div class="campus-vp-track" id="campus-vp-track">
+            <!-- Slide 0: Kampüs Yerleşkesi (Mevcut Görsel) -->
+            <div class="campus-vp-slide" data-index="0" data-stage="campus">
+              <img src="assets/schoolfullimagehd.jpg" alt="Uğur Okulları Viranşehir Kampüsü Tam Görünüm"
+                class="campus-vp-img" loading="eager" width="3480" height="1867">
+            </div>
+            <!-- Slide 1: Ana Sınıfı -->
+            <div class="campus-vp-slide" data-index="1" data-stage="anasinifi">
+              <img src="assets/projects/anasinifi.jpg" alt="Ana Sınıfı Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 2: 1. Sınıf -->
+            <div class="campus-vp-slide" data-index="2" data-stage="sinif1">
+              <img src="assets/projects/sinif1.jpg" alt="1. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 3: 2. Sınıf -->
+            <div class="campus-vp-slide" data-index="3" data-stage="sinif2">
+              <img src="assets/projects/sinif2.jpg" alt="2. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 4: 3. Sınıf -->
+            <div class="campus-vp-slide" data-index="4" data-stage="sinif3">
+              <img src="assets/projects/sinif3.jpg" alt="3. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 5: 4. Sınıf -->
+            <div class="campus-vp-slide" data-index="5" data-stage="sinif4">
+              <img src="assets/projects/sinif4.jpg" alt="4. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 6: 5. Sınıf -->
+            <div class="campus-vp-slide" data-index="6" data-stage="sinif5">
+              <img src="assets/projects/sinif5.jpg" alt="5. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 7: 6. Sınıf -->
+            <div class="campus-vp-slide" data-index="7" data-stage="sinif6">
+              <img src="assets/projects/sinif6.jpg" alt="6. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 8: 7. Sınıf -->
+            <div class="campus-vp-slide" data-index="8" data-stage="sinif7">
+              <img src="assets/projects/sinif7.jpg" alt="7. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 9: 8. Sınıf -->
+            <div class="campus-vp-slide" data-index="9" data-stage="sinif8">
+              <img src="assets/projects/sinif8.jpg" alt="8. Sınıf Bilişim ve Kodlama Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 10: 9. Sınıf -->
+            <div class="campus-vp-slide" data-index="10" data-stage="sinif9">
+              <img src="assets/projects/sinif9.jpg" alt="9. Sınıf Bilgisayar Bilimi Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 11: 10. Sınıf -->
+            <div class="campus-vp-slide" data-index="11" data-stage="sinif10">
+              <img src="assets/projects/sinif10.jpg" alt="10. Sınıf Bilgisayar Bilimi Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 12: 11. Sınıf -->
+            <div class="campus-vp-slide" data-index="12" data-stage="sinif11">
+              <img src="assets/projects/sinif11.jpg" alt="11. Sınıf Bilgisayar Bilimi Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+            <!-- Slide 13: 12. Sınıf -->
+            <div class="campus-vp-slide" data-index="13" data-stage="sinif12">
+              <img src="assets/projects/sinif12.jpg" alt="12. Sınıf Bilgisayar Bilimi Laboratuvarı"
+                class="campus-vp-img" loading="lazy" width="1376" height="768">
+            </div>
+          </div>
+        </div>
+
+        <!-- Glass Badge Tag Overlay (Top-Left) -->
+        <div class="campus-vp-badge-tag" id="campus-vp-badge-tag" aria-hidden="true">
+          <span class="vp-tag-dot"></span>
+          <span id="campus-vp-badge-text">📍 Viranşehir Kampüsü • Ana Yerleşke</span>
+        </div>
+
+        <!-- Slide Counter Overlay (Top-Right) -->
+        <div class="campus-vp-counter" id="campus-vp-counter" aria-hidden="true">
+          <strong id="campus-vp-current-num">1</strong> / <span id="campus-vp-total-num">14</span>
+        </div>
+
+        <!-- Navigation Arrows (Left & Right) -->
+        <button type="button" class="campus-vp-nav-btn campus-vp-prev-btn" id="campus-vp-prev-btn" aria-label="Önceki Görsel">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button type="button" class="campus-vp-nav-btn campus-vp-next-btn" id="campus-vp-next-btn" aria-label="Sonraki Görsel">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Instagram-Style Dynamic Dots Sliding Window (dotexampel.gif referansı) -->
+        <!-- "ama görseli üstünde ama altta ve ortada olsun" -->
+        <div class="campus-vp-dots-container" id="campus-vp-dots-container" aria-label="Görsel Geçiş Göstergesi">
+          <div class="campus-vp-dots-window">
+            <div class="campus-vp-dots-track" id="campus-vp-dots-track">
+              <!-- Dynamically populated 14 dots with sliding window -->
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="campus-modal-footer">
+        <a href="mufredat.html" class="campus-modal-curriculum-btn" id="campus-modal-curriculum-link" style="display: none;">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="curriculum-link-text">Müfredatı İncele</span>
+          <i class="fas fa-arrow-right ml-1"></i>
+        </a>
         <span class="campus-modal-location-badge">
-          <span data-i18n="campus.modal.location">📍 Şanlıurfa / Viranşehir • K12 Tüm Kademeler</span>
+          <span id="campus-modal-location-text">📍 Şanlıurfa / Viranşehir • K12 Tüm Kademeler</span>
         </span>
       </div>
     </div>
@@ -1447,6 +1555,9 @@
 
   <!-- i18n Translations System -->
   <script src="js/i18n.js"></script>
+
+  <!-- Campus ViewPager & Dynamic Dots Controller -->
+  <script src="js/campus-viewpager.js"></script>
 
   <!-- Custom Main Controller -->
   <script src="js/main.js"></script>
@@ -1482,6 +1593,16 @@
         $('#campus-modal').addClass('open');
         $('body').css('overflow', 'hidden');
       });
+
+      if (window.location.search.indexOf('open_modal=1') !== -1) {
+        $('#campus-modal').addClass('open');
+        $('body').css('overflow', 'hidden');
+        const urlParams = new URLSearchParams(window.location.search);
+        const slideParam = urlParams.get('slide');
+        if (slideParam !== null && window.campusViewPager) {
+          window.campusViewPager.goToSlide(parseInt(slideParam, 10));
+        }
+      }
 
       $('#campus-modal-close-btn, #campus-modal').on('click', function (e) {
         if (e.target === this || $(e.target).closest('#campus-modal-close-btn').length) {
