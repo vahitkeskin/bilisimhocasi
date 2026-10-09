@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <!-- Leads -->
+  <line x1="15" y1="75" x2="60" y2="75" stroke="#9E9E9E" stroke-width="4" stroke-linecap="round"/>
+  <line x1="140" y1="75" x2="185" y2="75" stroke="#9E9E9E" stroke-width="4" stroke-linecap="round"/>
+  <!-- Body -->
+  <rect x="60" y="58" width="80" height="34" rx="10" fill="#EAD2AC" stroke="#C59B27" stroke-width="1.5"/>
+  <!-- Color Bands (220 Ohm: Red, Red, Brown, Gold) -->
+  <rect x="74" y="58" width="6" height="34" fill="#D32F2F"/>
+  <rect x="88" y="58" width="6" height="34" fill="#D32F2F"/>
+  <rect x="102" y="58" width="6" height="34" fill="#5D4037"/>
+  <rect x="122" y="58" width="5" height="34" fill="#FFD700"/>
+  <text x="100" y="35" fill="#3E2723" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">220Ω / 10kΩ DİRENÇ</text>
+  <text x="100" y="118" fill="#795548" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Akım Sınırlayıcı / Voltaj Bölücü</text>
+</svg>

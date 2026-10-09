@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#ECEFF1"/>
+    </linearGradient>
+  </defs>
+  <!-- Breadboard Body -->
+  <rect x="15" y="20" width="170" height="110" rx="6" fill="url(#bb-bg)" stroke="#B0BEC5" stroke-width="2"/>
+  <!-- Power Rail Lines -->
+  <line x1="25" y1="28" x2="175" y2="28" stroke="#EF5350" stroke-width="2"/>
+  <line x1="25" y1="36" x2="175" y2="36" stroke="#42A5F5" stroke-width="2"/>
+  <line x1="25" y1="114" x2="175" y2="114" stroke="#42A5F5" stroke-width="2"/>
+  <line x1="25" y1="122" x2="175" y2="122" stroke="#EF5350" stroke-width="2"/>
+  <!-- Center Notch Divider -->
+  <rect x="25" y="72" width="150" height="6" fill="#CFD8DC"/>
+  <!-- Pin Tie Holes -->
+  <g fill="#37474F">
+    <!-- Top Terminal Area -->
+    <circle cx="35" cy="48" r="1.5"/><circle cx="50" cy="48" r="1.5"/><circle cx="65" cy="48" r="1.5"/><circle cx="80" cy="48" r="1.5"/><circle cx="95" cy="48" r="1.5"/><circle cx="110" cy="48" r="1.5"/><circle cx="125" cy="48" r="1.5"/><circle cx="140" cy="48" r="1.5"/><circle cx="155" cy="48" r="1.5"/>
+    <circle cx="35" cy="56" r="1.5"/><circle cx="50" cy="56" r="1.5"/><circle cx="65" cy="56" r="1.5"/><circle cx="80" cy="56" r="1.5"/><circle cx="95" cy="56" r="1.5"/><circle cx="110" cy="56" r="1.5"/><circle cx="125" cy="56" r="1.5"/><circle cx="140" cy="56" r="1.5"/><circle cx="155" cy="56" r="1.5"/>
+    <circle cx="35" cy="64" r="1.5"/><circle cx="50" cy="64" r="1.5"/><circle cx="65" cy="64" r="1.5"/><circle cx="80" cy="64" r="1.5"/><circle cx="95" cy="64" r="1.5"/><circle cx="110" cy="64" r="1.5"/><circle cx="125" cy="64" r="1.5"/><circle cx="140" cy="64" r="1.5"/><circle cx="155" cy="64" r="1.5"/>
+    <!-- Bottom Terminal Area -->
+    <circle cx="35" cy="86" r="1.5"/><circle cx="50" cy="86" r="1.5"/><circle cx="65" cy="86" r="1.5"/><circle cx="80" cy="86" r="1.5"/><circle cx="95" cy="86" r="1.5"/><circle cx="110" cy="86" r="1.5"/><circle cx="125" cy="86" r="1.5"/><circle cx="140" cy="86" r="1.5"/><circle cx="155" cy="86" r="1.5"/>
+    <circle cx="35" cy="94" r="1.5"/><circle cx="50" cy="94" r="1.5"/><circle cx="65" cy="94" r="1.5"/><circle cx="80" cy="94" r="1.5"/><circle cx="95" cy="94" r="1.5"/><circle cx="110" cy="94" r="1.5"/><circle cx="125" cy="94" r="1.5"/><circle cx="140" cy="94" r="1.5"/><circle cx="155" cy="94" r="1.5"/>
+    <circle cx="35" cy="102" r="1.5"/><circle cx="50" cy="102" r="1.5"/><circle cx="65" cy="102" r="1.5"/><circle cx="80" cy="102" r="1.5"/><circle cx="95" cy="102" r="1.5"/><circle cx="110" cy="102" r="1.5"/><circle cx="125" cy="102" r="1.5"/><circle cx="140" cy="102" r="1.5"/><circle cx="155" cy="102" r="1.5"/>
+  </g>
+  <text x="100" y="77" fill="#78909C" font-family="monospace" font-size="5" text-anchor="middle">BREADBOARD 400 TIE-POINT</text>
+</svg>

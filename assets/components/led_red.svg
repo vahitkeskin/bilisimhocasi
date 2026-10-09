@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow-red" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FF8A80"/>
+      <stop offset="60%" stop-color="#D50000"/>
+      <stop offset="100%" stop-color="#8E0000"/>
+    </radialGradient>
+  </defs>
+  <!-- Leads -->
+  <line x1="88" y1="95" x2="88" y2="135" stroke="#9E9E9E" stroke-width="4" stroke-linecap="round"/>
+  <line x1="112" y1="95" x2="112" y2="145" stroke="#BDBDBD" stroke-width="4" stroke-linecap="round"/>
+  <!-- Rim -->
+  <path d="M 70 95 L 130 95 A 4 4 0 0 1 130 102 L 70 102 A 4 4 0 0 1 70 95 Z" fill="#B71C1C"/>
+  <!-- Dome -->
+  <path d="M 75 95 C 75 40, 125 40, 125 95 Z" fill="url(#glow-red)"/>
+  <!-- Highlight -->
+  <ellipse cx="88" cy="62" rx="7" ry="14" fill="#ffffff" opacity="0.5" transform="rotate(-20 88 62)"/>
+  <text x="100" y="24" fill="#E53935" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">5mm KIRMIZI LED</text>
+</svg>

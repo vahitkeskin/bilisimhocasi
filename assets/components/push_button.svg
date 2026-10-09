@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <!-- Leads -->
+  <line x1="55" y1="90" x2="40" y2="125" stroke="#9E9E9E" stroke-width="4"/>
+  <line x1="145" y1="90" x2="160" y2="125" stroke="#9E9E9E" stroke-width="4"/>
+  <!-- Base Body -->
+  <rect x="55" y="45" width="90" height="60" rx="6" fill="#212121" stroke="#424242" stroke-width="2"/>
+  <!-- Round Actuator -->
+  <circle cx="100" cy="75" r="22" fill="#D32F2F"/>
+  <circle cx="100" cy="75" r="16" fill="#F44336"/>
+  <!-- Metallic corners -->
+  <rect x="60" y="50" width="6" height="6" fill="#B0BEC5"/>
+  <rect x="134" y="50" width="6" height="6" fill="#B0BEC5"/>
+  <rect x="60" y="94" width="6" height="6" fill="#B0BEC5"/>
+  <rect x="134" y="94" width="6" height="6" fill="#B0BEC5"/>
+  <text x="100" y="25" fill="#D32F2F" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">PUSH BUTON (Düğme)</text>
+</svg>

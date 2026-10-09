@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <!-- Red Wire -->
+  <path d="M 20 50 Q 100 20 180 50" fill="none" stroke="#E53935" stroke-width="5" stroke-linecap="round"/>
+  <!-- Black Wire -->
+  <path d="M 20 75 Q 100 45 180 75" fill="none" stroke="#212121" stroke-width="5" stroke-linecap="round"/>
+  <!-- Blue Wire -->
+  <path d="M 20 100 Q 100 70 180 100" fill="none" stroke="#1E88E5" stroke-width="5" stroke-linecap="round"/>
+  <!-- Male Pin Heads -->
+  <rect x="15" y="46" width="12" height="8" rx="2" fill="#424242"/>
+  <rect x="173" y="46" width="12" height="8" rx="2" fill="#424242"/>
+  <line x1="8" y1="50" x2="15" y2="50" stroke="#FFD54F" stroke-width="3"/>
+  <line x1="185" y1="50" x2="192" y2="50" stroke="#FFD54F" stroke-width="3"/>
+
+  <rect x="15" y="71" width="12" height="8" rx="2" fill="#424242"/>
+  <rect x="173" y="71" width="12" height="8" rx="2" fill="#424242"/>
+  <line x1="8" y1="75" x2="15" y2="75" stroke="#FFD54F" stroke-width="3"/>
+  <line x1="185" y1="75" x2="192" y2="75" stroke="#FFD54F" stroke-width="3"/>
+
+  <rect x="15" y="96" width="12" height="8" rx="2" fill="#424242"/>
+  <rect x="173" y="96" width="12" height="8" rx="2" fill="#424242"/>
+  <line x1="8" y1="100" x2="15" y2="100" stroke="#FFD54F" stroke-width="3"/>
+  <line x1="185" y1="100" x2="192" y2="100" stroke="#FFD54F" stroke-width="3"/>
+
+  <text x="100" y="135" fill="#546E7A" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">JUMPER BAĞLANTI KABLOLARI</text>
+</svg>

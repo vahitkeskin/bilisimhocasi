@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <!-- Leads -->
+  <line x1="90" y1="90" x2="90" y2="135" stroke="#9E9E9E" stroke-width="4"/>
+  <line x1="110" y1="90" x2="110" y2="135" stroke="#9E9E9E" stroke-width="4"/>
+  <!-- Ceramic Body -->
+  <circle cx="100" cy="60" r="30" fill="#FFE0B2" stroke="#FFB74D" stroke-width="2"/>
+  <!-- Cadmium Sulfide Track (Serpentine Pattern) -->
+  <path d="M 85 45 Q 115 45 115 52 Q 85 52 85 60 Q 115 60 115 68 Q 85 68 85 75" fill="none" stroke="#D84315" stroke-width="3" stroke-linecap="round"/>
+  <text x="100" y="22" fill="#E65100" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">LDR (Foto Direnç)</text>
+</svg>

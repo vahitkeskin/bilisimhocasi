@@ -1018,6 +1018,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalOutcomesListEl = document.getElementById('modal-outcomes-list');
   const modalToolsListEl = document.getElementById('modal-tools-list');
   const modalProjectEl = document.getElementById('modal-project');
+  const modalArduinoContainerEl = document.getElementById('modal-arduino-container');
+  const modalArduinoContentEl = document.getElementById('modal-arduino-content');
 
   let currentOpenStageId = null;
   let currentOpenGradeKey = null;
@@ -1167,6 +1169,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // 9. Capstone Project
     if (modalProjectEl) {
       modalProjectEl.textContent = gradeData.project || stageData.project;
+    }
+
+    // 10. Arduino Hardware Project Integration
+    if (modalArduinoContainerEl && modalArduinoContentEl) {
+      const activeGradeKey = currentOpenGradeKey || (grades && Object.keys(grades)[0]);
+      const arduinoData = (window.ARDUINO_PROJECTS_DATA && activeGradeKey) ? window.ARDUINO_PROJECTS_DATA[activeGradeKey] : (gradeData.arduinoProject || null);
+      if (arduinoData) {
+        modalArduinoContainerEl.style.display = 'block';
+        modalArduinoContentEl.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px;">
+              <strong style="color:#ffffff; font-size:14px;">${arduinoData.shortTitle || arduinoData.title}</strong>
+              <span style="background:#00979D; color:#ffffff; font-size:11px; font-weight:700; padding:2px 8px; border-radius:10px;">
+                ${(arduinoData.components || []).length} Bileşen • ${arduinoData.duration || '45 Dk'}
+              </span>
+            </div>
+            <p style="font-size:12.5px; color:var(--text-muted); margin:0; line-height:1.45;">
+              ${arduinoData.objective}
+            </p>
+            <div style="margin-top:6px;">
+              <a href="mufredat.html?sinif=${encodeURIComponent(activeGradeKey)}#arduino-project-${encodeURIComponent(activeGradeKey)}" class="btn btn-sm btn-outline-golden" style="font-size:12px; font-weight:700; border-radius:16px; padding:4px 14px;">
+                <i class="fas fa-microchip mr-1"></i> Devre Şeması ve Arduino Kodunu İncele &rarr;
+              </a>
+            </div>
+          </div>
+        `;
+      } else {
+        modalArduinoContainerEl.style.display = 'none';
+        modalArduinoContentEl.innerHTML = '';
+      }
     }
   }
 

@@ -227,6 +227,278 @@
   }
 
   /**
+   * Syntax Highlighter for Arduino C++ Source Code (.ino)
+   */
+  function highlightArduinoCode(code) {
+    if (!code) return '';
+    let escaped = code
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    const tokens = [];
+    const saveToken = (html) => {
+      const id = `___ARDUINO_TOK_${tokens.length}___`;
+      tokens.push(html);
+      return id;
+    };
+
+    // 1. Multi-line comments /* ... */
+    escaped = escaped.replace(/\/\*[\s\S]*?\*\//g, (match) => {
+      return saveToken(`<span class="arduino-token-comment">${match}</span>`);
+    });
+
+    // 2. Single-line comments // ...
+    escaped = escaped.replace(/\/\/[^\n]*/g, (match) => {
+      return saveToken(`<span class="arduino-token-comment">${match}</span>`);
+    });
+
+    // 3. Preprocessor directives (#include, #define)
+    escaped = escaped.replace(/(#(?:include|define|ifdef|ifndef|endif|pragma)\b[^\n]*)/g, (match) => {
+      return saveToken(`<span class="arduino-token-directive">${match}</span>`);
+    });
+
+    // 4. Double-quoted strings "..."
+    escaped = escaped.replace(/"([^"\\]|\\.)*"/g, (match) => {
+      return saveToken(`<span class="arduino-token-string">${match}</span>`);
+    });
+
+    // 5. Arduino C++ Keywords
+    const keywords = [
+      'setup', 'loop', 'void', 'int', 'long', 'float', 'double', 'char', 'bool', 'boolean',
+      'const', 'unsigned', 'byte', 'String', 'if', 'else', 'for', 'while', 'return',
+      'switch', 'case', 'break', 'default', 'true', 'false', 'HIGH', 'LOW', 'INPUT',
+      'OUTPUT', 'INPUT_PULLUP', 'pinMode', 'digitalWrite', 'digitalRead', 'analogRead',
+      'analogWrite', 'delay', 'delayMicroseconds', 'pulseIn', 'tone', 'noTone', 'map',
+      'isnan', 'Serial', 'begin', 'print', 'println', 'available', 'read', 'write',
+      'attach', 'init', 'backlight', 'setCursor', 'clear', 'sizeof'
+    ];
+    const kwRegex = new RegExp(`\\b(${keywords.join('|')})\\b`, 'g');
+    escaped = escaped.replace(kwRegex, '<span class="arduino-token-keyword">$1</span>');
+
+    // 6. Numeric literals
+    escaped = escaped.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="arduino-token-number">$1</span>');
+
+    // Restore tokens
+    tokens.forEach((html, i) => {
+      escaped = escaped.replace(`___ARDUINO_TOK_${i}___`, html);
+    });
+
+    return escaped;
+  }
+
+  /**
+   * Render K-12 Hands-on Arduino Hardware Project Block
+   */
+  function renderArduinoProjectHtml(grade) {
+    const project = grade.arduinoProject || (window.ARDUINO_PROJECTS_DATA && window.ARDUINO_PROJECTS_DATA[grade.id]);
+    if (!project) return '';
+
+    // Components Cards HTML
+    const componentsHtml = (project.components || []).map((comp) => `
+      <div class="arduino-component-card">
+        <div class="arduino-component-img-wrap">
+          <img src="${comp.image || 'assets/components/arduino_uno.svg'}" alt="${comp.name}" class="arduino-component-img" loading="lazy">
+          <span class="arduino-component-qty-badge">${comp.qty}</span>
+        </div>
+        <div class="arduino-component-info">
+          <h4 class="arduino-component-name">
+            <i class="${comp.icon || 'fas fa-microchip'} mr-1"></i> ${comp.name}
+          </h4>
+          <p class="arduino-component-role">${comp.role}</p>
+          <div class="arduino-component-spec">
+            <span class="spec-label"><i class="fas fa-info-circle mr-1"></i>Teknik Özellik:</span>
+            <span>${comp.spec}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Pinout Table Rows HTML
+    const pinoutRowsHtml = (project.pinout || []).map((p) => `
+      <tr>
+        <td class="pin-badge-cell">
+          <span class="arduino-pin-pill">${p.pin}</span>
+        </td>
+        <td class="pin-comp-cell">
+          <strong>${p.compPin}</strong>
+        </td>
+        <td class="pin-desc-cell">${p.desc}</td>
+      </tr>
+    `).join('');
+
+    // Libraries HTML
+    const librariesHtml = (project.libraries && project.libraries.length) ? `
+      <div class="arduino-libraries-box">
+        <div class="arduino-sub-title">
+          <i class="fas fa-book mr-1 text-primary"></i> Gerekli Kütüphaneler &amp; Kurulum:
+        </div>
+        <div class="arduino-libs-list">
+          ${project.libraries.map(lib => `
+            <div class="arduino-lib-item">
+              <span class="arduino-lib-badge ${lib.isBuiltin ? 'builtin' : 'external'}">
+                <i class="${lib.isBuiltin ? 'fas fa-check-circle' : 'fas fa-download'} mr-1"></i>
+                ${lib.name} ${lib.isBuiltin ? '(Yerleşik)' : '(Harici Kütüphane)'}
+              </span>
+              <span class="arduino-lib-guide">${lib.guide}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    ` : '';
+
+    // Breadboard Steps
+    const breadboardSteps = (project.breadboardGuide || '')
+      .split('\n')
+      .filter(line => line.trim().length > 0)
+      .map(line => `<li class="breadboard-step-item"><span class="step-bullet"><i class="fas fa-plug"></i></span><span>${line.replace(/^\d+\.\s*/, '')}</span></li>`)
+      .join('');
+
+    // Highlighted Source Code
+    const highlightedCode = highlightArduinoCode(project.code || '');
+
+    return `
+      <!-- ====================================================================
+           K-12 UYGULAMALI ARDUINO & DONANIM PROJESİ
+           ==================================================================== -->
+      <div class="arduino-project-card" id="arduino-project-${grade.id}">
+        
+        <!-- Header Strip -->
+        <div class="arduino-project-header">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <span class="arduino-badge-primary">
+                <i class="fas fa-microchip mr-1"></i> ${t('arduino.badge.hardware', 'K-12 Donanım &amp; IoT Atölyesi')}
+              </span>
+              <span class="arduino-badge-outline">
+                <i class="fas fa-layer-group mr-1"></i> ${project.badge || grade.shortLabel}
+              </span>
+              <span class="arduino-badge-outline">
+                <i class="fas fa-tachometer-alt mr-1"></i> ${project.difficulty || 'MEB Uyumlu'}
+              </span>
+              <span class="arduino-badge-outline">
+                <i class="fas fa-stopwatch mr-1"></i> ${project.duration || '40-50 Dk'}
+              </span>
+            </div>
+            <div class="arduino-header-actions">
+              <button type="button" class="arduino-action-btn" id="btn-copy-arduino-code" title="${t('arduino.code.copy', 'Kodu Kopyala')}">
+                <i class="fas fa-copy mr-1"></i>
+                <span>${t('arduino.code.copy', 'Kodu Kopyala')}</span>
+              </button>
+              <button type="button" class="arduino-action-btn" id="btn-download-arduino-code" title="${t('arduino.code.download', '.ino Dosyasını İndir')}">
+                <i class="fas fa-download mr-1"></i>
+                <span>${t('arduino.code.download', 'İndir (.ino)')}</span>
+              </button>
+            </div>
+          </div>
+
+          <h3 class="arduino-project-title">
+            <i class="fas fa-robot text-teal mr-2" style="color: var(--arduino-teal);"></i> ${project.title}
+          </h3>
+          
+          <p class="arduino-project-objective">
+            <strong><i class="fas fa-bullseye text-warning mr-1"></i> ${t('arduino.objective.label', 'Pedagojik Kazanım &amp; Amaç:')}</strong>
+            ${project.objective}
+          </p>
+
+          <div class="arduino-principle-box">
+            <div class="principle-box-title">
+              <i class="fas fa-cogs mr-1"></i> ${t('arduino.principle.label', 'Çalışma Prensibi &amp; Algoritma Akışı:')}
+            </div>
+            <p class="principle-box-text">${project.principle}</p>
+          </div>
+        </div>
+
+        <!-- Bölüm 1: Kullanılan Devre Elemanları (Bileşen Kartları) -->
+        <div class="mufredat-section-heading mt-4">
+          <i class="fas fa-shapes"></i>
+          <span>${t('arduino.section.components', 'Kullanılan Devre Elemanları ve Teknik Rolleri')}</span>
+          <span class="badge badge-pill badge-secondary ml-2">${(project.components || []).length} Bileşen</span>
+        </div>
+        <div class="arduino-components-grid">
+          ${componentsHtml}
+        </div>
+
+        <!-- Bölüm 2: Devre Bağlantı Şeması & Pin Tablosu -->
+        <div class="mufredat-section-heading mt-5">
+          <i class="fas fa-project-diagram"></i>
+          <span>${t('arduino.section.wiring', 'Devre Bağlantı Şeması &amp; Breadboard Montaj Rehberi')}</span>
+        </div>
+
+        <div class="row align-items-stretch">
+          <!-- Sol Sütun: Breadboard Adım Adım Rehber -->
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <div class="breadboard-guide-card">
+              <div class="breadboard-guide-header">
+                <i class="fas fa-clipboard-list mr-2 text-warning"></i>
+                <span>Adım Adım Devre Kurulumu</span>
+              </div>
+              <ul class="breadboard-steps-list">
+                ${breadboardSteps}
+              </ul>
+              ${librariesHtml}
+            </div>
+          </div>
+
+          <!-- Sağ Sütun: Pin Bağlantı Tablosu -->
+          <div class="col-lg-7">
+            <div class="arduino-pinout-table-wrapper">
+              <div class="pinout-table-header">
+                <i class="fas fa-exchange-alt mr-2 text-info"></i>
+                <span>Arduino Uno &lt;-&gt; Bileşen Pin-Out Tablosu</span>
+              </div>
+              <div class="table-responsive">
+                <table class="table arduino-pinout-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 25%;">Arduino Pini</th>
+                      <th style="width: 40%;">Bileşen Bacağı &amp; Bağlantı</th>
+                      <th style="width: 35%;">Sinyal / Görev</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${pinoutRowsHtml}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bölüm 3: Arduino Kaynak Kodu (.ino) -->
+        <div class="mufredat-section-heading mt-5">
+          <i class="fas fa-code"></i>
+          <span>${t('arduino.section.code', 'Arduino Tam Kaynak Kodu (C++ / .ino)')}</span>
+        </div>
+
+        <div class="arduino-code-editor-box">
+          <div class="arduino-code-topbar">
+            <div class="code-editor-dots">
+              <span class="editor-dot dot-red"></span>
+              <span class="editor-dot dot-yellow"></span>
+              <span class="editor-dot dot-green"></span>
+              <span class="code-editor-file-badge">
+                <i class="fas fa-file-code mr-1"></i> ${project.file || (grade.id + '.ino')}
+              </span>
+            </div>
+            <div class="code-editor-actions">
+              <span class="code-editor-lang-tag">Arduino C++</span>
+              <button type="button" class="code-editor-copy-btn" id="btn-copy-arduino-code-inner" title="${t('arduino.code.copy', 'Kodu Kopyala')}">
+                <i class="fas fa-copy mr-1"></i>
+                <span>${t('arduino.code.copy', 'Kodu Kopyala')}</span>
+              </button>
+            </div>
+          </div>
+          <div class="arduino-code-scroll">
+            <pre class="arduino-code-pre"><code class="arduino-code-content">${highlightedCode}</code></pre>
+          </div>
+        </div>
+
+      </div>
+    `;
+  }
+
+  /**
    * Render Active Grade Complete View
    */
   function renderActiveGrade(grade) {
@@ -453,6 +725,9 @@
             </a>
           </div>
 
+          <!-- K-12 Uygulamalı Arduino & Donanım Projesi -->
+          ${renderArduinoProjectHtml(grade)}
+
           <!-- İnteraktif 3 Soruluk Mini Bilgi Testi -->
           <div class="curriculum-quiz-card">
             <div class="quiz-card-header">
@@ -612,6 +887,47 @@
       resetQuizBtn.addEventListener('click', () => {
         quizScores = {};
         renderActiveGrade(grade);
+      });
+    }
+
+    // Arduino Copy Code Handlers
+    const handleCopyCode = () => {
+      const project = grade.arduinoProject || (window.ARDUINO_PROJECTS_DATA && window.ARDUINO_PROJECTS_DATA[grade.id]);
+      if (!project || !project.code) return;
+      navigator.clipboard.writeText(project.code).then(() => {
+        ['btn-copy-arduino-code', 'btn-copy-arduino-code-inner'].forEach(id => {
+          const btn = document.getElementById(id);
+          if (btn) {
+            const oldHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check text-success mr-1"></i> <span>Kopyalandı!</span>';
+            setTimeout(() => { btn.innerHTML = oldHtml; }, 2000);
+          }
+        });
+      }).catch(err => {
+        console.error('Kopyalama hatası:', err);
+      });
+    };
+
+    const copyBtn1 = document.getElementById('btn-copy-arduino-code');
+    const copyBtn2 = document.getElementById('btn-copy-arduino-code-inner');
+    if (copyBtn1) copyBtn1.addEventListener('click', handleCopyCode);
+    if (copyBtn2) copyBtn2.addEventListener('click', handleCopyCode);
+
+    // Arduino Download .ino Button
+    const downloadBtn = document.getElementById('btn-download-arduino-code');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        const project = grade.arduinoProject || (window.ARDUINO_PROJECTS_DATA && window.ARDUINO_PROJECTS_DATA[grade.id]);
+        if (!project || !project.code) return;
+        const blob = new Blob([project.code], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = project.file || `${grade.id}_arduino.ino`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       });
     }
   }

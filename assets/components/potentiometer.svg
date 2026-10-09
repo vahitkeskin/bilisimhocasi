@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <!-- Leads -->
+  <line x1="75" y1="105" x2="60" y2="135" stroke="#9E9E9E" stroke-width="4"/>
+  <line x1="100" y1="105" x2="100" y2="140" stroke="#9E9E9E" stroke-width="4"/>
+  <line x1="125" y1="105" x2="140" y2="135" stroke="#9E9E9E" stroke-width="4"/>
+  <!-- Body -->
+  <circle cx="100" cy="65" r="40" fill="#1B5E20" stroke="#004D40" stroke-width="2"/>
+  <!-- Metallic Collar -->
+  <circle cx="100" cy="65" r="22" fill="#B0BEC5"/>
+  <!-- D-Shaft / Knob -->
+  <circle cx="100" cy="65" r="14" fill="#CFD8DC"/>
+  <line x1="100" y1="51" x2="100" y2="65" stroke="#37474F" stroke-width="3"/>
+  <text x="100" y="20" fill="#2E7D32" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">10kΩ POTANSİYOMETRE</text>
+</svg>

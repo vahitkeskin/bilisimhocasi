@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <!-- Green PCB -->
+  <rect x="35" y="50" width="130" height="60" rx="4" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+  <!-- White Dome (Fresnel Lens) -->
+  <circle cx="100" cy="70" r="34" fill="#FAFAFA" stroke="#E0E0E0" stroke-width="2"/>
+  <!-- Fresnel Ring Segment Lines -->
+  <circle cx="100" cy="70" r="24" fill="none" stroke="#E0E0E0" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <circle cx="100" cy="70" r="14" fill="none" stroke="#BDBDBD" stroke-width="1.5"/>
+  <!-- Potentiometers on board -->
+  <circle cx="50" cy="65" r="7" fill="#FFB300"/>
+  <circle cx="50" cy="85" r="7" fill="#FFB300"/>
+  <!-- 3-Pin Header -->
+  <g stroke="#FFD54F" stroke-width="3">
+    <line x1="140" y1="110" x2="140" y2="135"/>
+    <line x1="148" y1="110" x2="148" y2="135"/>
+    <line x1="156" y1="110" x2="156" y2="135"/>
+  </g>
+  <text x="100" y="25" fill="#388E3C" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">HC-SR501 PIR HAREKET</text>
+</svg>
