@@ -8068,7 +8068,8 @@ img {
 .topbar-search-container {
   width: 100%;
   max-width: 100%;
-  padding: 12px 14px 10px 14px;
+  padding: 20px 32px 18px 32px;
+  box-sizing: border-box;
 }
 
 .topbar-search-inner {
@@ -8365,7 +8366,7 @@ img {
 
 /* --- 3. Tam 3 Görünür Sonuç ve Kaydırmalı Liste (CRITICAL REQUIREMENT) --- */
 .global-search-results-list {
-  max-height: 236px; /* Tam 3 görünür kart + zarif kaydırma alanı */
+  max-height: 212px; /* Tam 3 görünür kart + zarif kaydırma alanı */
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
@@ -8927,7 +8928,7 @@ img {
 
 @media (max-width: 767px) {
   .topbar-search-container {
-    padding: 12px 10px 14px !important;
+    padding: 14px 16px !important;
   }
   .topbar-search-input-box {
     height: 44px !important;
