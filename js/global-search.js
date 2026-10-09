@@ -642,7 +642,9 @@
     if (results.length === 0) {
       dropdownEl.innerHTML = `
         <div class="search-empty-state">
-          <i class="fas fa-search-minus search-empty-icon"></i>
+          <div class="search-empty-icon-wrap">
+            <i class="fas fa-search-minus search-empty-icon"></i>
+          </div>
           <p class="search-empty-text">"<strong>${escapeHtml(query)}</strong>${t('search.empty.prefix', '" için sonuç bulunamadı.')}</p>
           <span class="search-empty-sub">${t('search.empty.sub', 'Farklı anahtar kelimeler deneyebilirsiniz (Örn: Arduino, Python, Robotik, LCD, 7. Sınıf).')}</span>
         </div>
@@ -655,14 +657,18 @@
     const headerHtml = `
       <div class="search-dropdown-header">
         <span class="search-count-badge">
-          <i class="fas fa-bolt mr-1 text-warning"></i> ${results.length} ${t('search.count.found', 'Sonuç Bulundu')}
+          <i class="fas fa-layer-group search-header-icon"></i>
+          <span class="search-count-num">${results.length}</span>
+          <span class="search-count-label">${t('search.count.found', 'Sonuç Bulundu')}</span>
         </span>
         ${results.length > 3 ? `
           <span class="search-scroll-hint">
             <i class="fas fa-arrows-alt-v mr-1"></i> ${t('search.scroll.hint', 'İlk 3 görünür • Aşağı kaydırın ↓')}
           </span>
         ` : `
-          <span class="search-scroll-hint">${t('search.all.listed', 'Tüm sonuçlar listelendi')}</span>
+          <span class="search-scroll-hint">
+            <i class="fas fa-check-circle mr-1 text-success"></i> ${t('search.all.listed', 'Tüm sonuçlar listelendi')}
+          </span>
         `}
       </div>
     `;
