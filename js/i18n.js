@@ -1897,6 +1897,210 @@ const I18N = (() => {
       tr: 'Viranşehir Kampüsü',
       en: 'Viranşehir Campus',
       ar: 'حرم فيران شهير'
+    },
+
+    // ── GLOBAL SEARCH TRANSLATIONS ──
+    'search.placeholder': {
+      tr: 'Müfredat, Arduino, konu ara...',
+      en: 'Search curriculum, Arduino, topic...',
+      ar: 'ابحث في المنهج، أردوينو، الموضوع...'
+    },
+    'search.quick.placeholder': {
+      tr: 'Müfredat, Arduino, konu veya atölye ara...',
+      en: 'Search curriculum, Arduino, topic or workshop...',
+      ar: 'ابحث في المنهج، أردوينو، الموضوع أو الورشة...'
+    },
+    'search.aria': {
+      tr: 'Proje Geneli Arama',
+      en: 'Site-wide Search',
+      ar: 'بحث في الموقع بالكامل'
+    },
+    'search.cancel': {
+      tr: 'Vazgeç',
+      en: 'Cancel',
+      ar: 'إلغاء'
+    },
+    'search.clear': {
+      tr: 'Temizle',
+      en: 'Clear',
+      ar: 'مسح'
+    },
+    'search.close': {
+      tr: 'Kapat',
+      en: 'Close',
+      ar: 'إغلاق'
+    },
+    'search.count.found': {
+      tr: 'Sonuç Bulundu',
+      en: 'Results Found',
+      ar: 'نتيجة موجودة'
+    },
+    'search.scroll.hint': {
+      tr: 'İlk 3 görünür • Aşağı kaydırın ↓',
+      en: 'First 3 visible • Scroll down ↓',
+      ar: 'أول 3 نتائج مرئية • قم بالتمرير لأسفل ↓'
+    },
+    'search.all.listed': {
+      tr: 'Tüm sonuçlar listelendi',
+      en: 'All results listed',
+      ar: 'تم سرد جميع النتائج'
+    },
+    'search.empty.prefix': {
+      tr: '" için sonuç bulunamadı.',
+      en: '" not found.',
+      ar: '" لم يتم العثور على نتائج.'
+    },
+    'search.empty.sub': {
+      tr: 'Farklı anahtar kelimeler deneyebilirsiniz (Örn: Arduino, Python, Robotik, LCD, 7. Sınıf).',
+      en: 'Try different keywords (e.g., Arduino, Python, Robotics, LCD, Grade 7).',
+      ar: 'جرّب كلمات مفتاحية أخرى (مثل: أردوينو، بايثون، روبوتات، LCD، الصف السابع).'
+    },
+    'search.kbd.nav': {
+      tr: 'Gezin',
+      en: 'Navigate',
+      ar: 'تنقل'
+    },
+    'search.kbd.select': {
+      tr: 'Seç',
+      en: 'Select',
+      ar: 'اختيار'
+    },
+    'search.kbd.close': {
+      tr: 'Kapat',
+      en: 'Close',
+      ar: 'إغلاق'
+    },
+    'search.category.section': {
+      tr: 'Sayfa Bölümü',
+      en: 'Page Section',
+      ar: 'قسم الصفحة'
+    },
+    'search.category.workshop': {
+      tr: 'Atölye & Hizmet',
+      en: 'Workshop & Service',
+      ar: 'ورشة عمل وخدمة'
+    },
+    'search.category.showcase': {
+      tr: 'Robotik Vitrini',
+      en: 'Robotics Showcase',
+      ar: 'معرض الروبوتات'
+    },
+    'search.category.curriculum': {
+      tr: 'Müfredat Portalı',
+      en: 'Curriculum Portal',
+      ar: 'بوابة المنهج'
+    },
+    'search.category.about': {
+      tr: 'Kurumsal',
+      en: 'Corporate',
+      ar: 'مؤسسي'
+    },
+    'search.category.grade': {
+      tr: 'Sınıf Müfredatı',
+      en: 'Grade Curriculum',
+      ar: 'منهج الصف'
+    },
+    'search.category.arduino': {
+      tr: 'Arduino Donanım Projesi',
+      en: 'Arduino Hardware Project',
+      ar: 'مشروع أجهزة أردوينو'
+    },
+
+    // ── ARDUINO & FRITZING CIRCUIT SYSTEM ──
+    'arduino.badge.hardware': {
+      tr: 'K-12 Donanım & IoT Atölyesi',
+      en: 'K-12 Hardware & IoT Workshop',
+      ar: 'ورشة عمل أجهزة وإنترنت الأشياء K-12'
+    },
+    'arduino.code.copy': {
+      tr: 'Kodu Kopyala',
+      en: 'Copy Code',
+      ar: 'نسخ الكود'
+    },
+    'arduino.code.copied': {
+      tr: 'Kopyalandı!',
+      en: 'Copied!',
+      ar: 'تم النسخ!'
+    },
+    'arduino.code.download': {
+      tr: 'İndir (.ino)',
+      en: 'Download (.ino)',
+      ar: 'تنزيل (.ino)'
+    },
+    'arduino.objective.label': {
+      tr: 'Pedagojik Kazanım & Amaç:',
+      en: 'Pedagogical Learning & Goal:',
+      ar: 'المكتسب التربوي والهدف:'
+    },
+    'arduino.principle.label': {
+      tr: 'Çalışma Prensibi & Algoritma Akışı:',
+      en: 'Working Principle & Algorithm Flow:',
+      ar: 'مبدأ العمل وتدفق الخوارزمية:'
+    },
+    'arduino.section.components': {
+      tr: 'Kullanılan Devre Elemanları ve Teknik Rolleri',
+      en: 'Circuit Components & Technical Roles',
+      ar: 'عناصر الدائرة والأدوار التقنية'
+    },
+    'arduino.section.wiring': {
+      tr: 'Fritzing Devre Simülasyonu, Breadboard & Port Matrisi',
+      en: 'Fritzing Circuit Simulation, Breadboard & Port Matrix',
+      ar: 'محاكاة دائرة فريتزينج ولوحة التجارب ومصفوفة المنافذ'
+    },
+    'arduino.section.code': {
+      tr: 'Arduino Tam Kaynak Kodu (C++ / .ino)',
+      en: 'Arduino Full Source Code (C++ / .ino)',
+      ar: 'كود أردوينو المصدري الكامل (C++ / .ino)'
+    },
+    'fritzing.badge': {
+      tr: 'Fritzing Simülasyonu',
+      en: 'Fritzing Simulation',
+      ar: 'محاكاة فريتزينج'
+    },
+    'fritzing.compatible': {
+      tr: 'Fritzing v0.9.x Uyumlu',
+      en: 'Fritzing v0.9.x Compatible',
+      ar: 'متوافق مع Fritzing v0.9.x'
+    },
+    'fritzing.btn.zoom': {
+      tr: 'Büyüt ve İncele',
+      en: 'Zoom & Inspect',
+      ar: 'تكبير ومعاينة'
+    },
+    'fritzing.btn.svg': {
+      tr: 'Vektörel SVG İndir',
+      en: 'Download Vector SVG',
+      ar: 'تنزيل متجه SVG'
+    },
+    'fritzing.btn.png': {
+      tr: 'Yüksek Çözünürlüklü 2x HD PNG İndir',
+      en: 'Download 2x HD PNG',
+      ar: 'تنزيل PNG عالي الدقة 2x'
+    },
+    'fritzing.click.zoom': {
+      tr: 'Tam ekran büyütmek için tıklayınız',
+      en: 'Click to view fullscreen',
+      ar: 'انقر للعرض بملء الشاشة'
+    },
+    'fritzing.meta.board': {
+      tr: 'Geliştirme Kartı',
+      en: 'Development Board',
+      ar: 'لوحة التطوير'
+    },
+    'fritzing.meta.platform': {
+      tr: 'Platform Tipi',
+      en: 'Platform Type',
+      ar: 'نوع المنصة'
+    },
+    'fritzing.meta.ports': {
+      tr: 'Kullanılan Portlar',
+      en: 'Used Ports',
+      ar: 'المنافذ المستخدمة'
+    },
+    'fritzing.meta.archive': {
+      tr: 'Arşiv Dizini',
+      en: 'Archive Directory',
+      ar: 'دليل الأرشيف'
     }
   };
 

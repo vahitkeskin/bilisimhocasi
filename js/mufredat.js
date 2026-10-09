@@ -423,7 +423,7 @@
         <div class="mufredat-section-heading mt-5">
           <i class="fas fa-project-diagram"></i>
           <span>${t('arduino.section.wiring', 'Fritzing Devre Simülasyonu, Breadboard &amp; Port Matrisi')}</span>
-          <span class="badge badge-pill badge-primary ml-2" style="background:#00979D; font-size:11px;">Fritzing v0.9.x Uyumlu</span>
+          <span class="badge badge-pill badge-primary ml-2" style="background:#00979D; font-size:11px;">${t('fritzing.compatible', 'Fritzing v0.9.x Uyumlu')}</span>
         </div>
 
         <!-- Fritzing Devre & Breadboard Simülasyon Görseli -->
@@ -431,32 +431,32 @@
           <div class="fritzing-header-bar">
             <div class="fritzing-header-left">
               <span class="fritzing-badge">
-                <i class="fas fa-microchip"></i> Fritzing Simülasyonu
+                <i class="fas fa-microchip"></i> ${t('fritzing.badge', 'Fritzing Simülasyonu')}
               </span>
               <h4 class="fritzing-header-title">
                 ${project.shortTitle || project.title} &mdash; Donanım &amp; Port Şeması
               </h4>
             </div>
             <div class="fritzing-header-actions">
-              <button type="button" class="fritzing-tool-btn btn-zoom-circuit" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="Büyüt ve İncele">
+              <button type="button" class="fritzing-tool-btn btn-zoom-circuit" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="${t('fritzing.btn.zoom', 'Büyüt ve İncele')}">
                 <i class="fas fa-search-plus"></i>
-                <span>Büyüt (Zoom)</span>
+                <span>${t('fritzing.btn.zoom', 'Büyüt (Zoom)')}</span>
               </button>
-              <a href="${project.circuitSvg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.svg')}" target="_blank" class="fritzing-tool-btn" download="${grade.id}_circuit_fritzing.svg" title="Vektörel SVG İndir">
+              <a href="${project.circuitSvg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.svg')}" target="_blank" class="fritzing-tool-btn" download="${grade.id}_circuit_fritzing.svg" title="${t('fritzing.btn.svg', 'Vektörel SVG İndir')}">
                 <i class="fas fa-bezier-curve"></i>
                 <span>SVG İndir</span>
               </a>
-              <a href="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" target="_blank" class="fritzing-tool-btn" download="${grade.id}_circuit_fritzing.png" title="Yüksek Çözünürlüklü 2x HD PNG İndir">
+              <a href="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" target="_blank" class="fritzing-tool-btn" download="${grade.id}_circuit_fritzing.png" title="${t('fritzing.btn.png', 'Yüksek Çözünürlüklü 2x HD PNG İndir')}">
                 <i class="fas fa-file-image"></i>
                 <span>HD PNG İndir</span>
               </a>
             </div>
           </div>
 
-          <div class="fritzing-diagram-canvas" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="Tam ekran büyütmek için tıklayınız">
+          <div class="fritzing-diagram-canvas" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="${t('fritzing.click.zoom', 'Tam ekran büyütmek için tıklayınız')}">
             <img src="${project.circuitSvg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.svg')}" alt="${project.title} Fritzing Breadboard Devre Şeması" class="fritzing-diagram-img" loading="lazy">
             <div class="fritzing-zoom-overlay">
-              <i class="fas fa-search-plus"></i> Tam Ekran İncele
+              <i class="fas fa-search-plus"></i> ${t('fritzing.click.zoom', 'Tam Ekran İncele')}
             </div>
           </div>
 
@@ -465,28 +465,28 @@
               <div class="fritzing-meta-item">
                 <div class="fritzing-meta-icon icon-ard"><i class="fas fa-microchip"></i></div>
                 <div class="fritzing-meta-text">
-                  <span class="fritzing-meta-label">Geliştirme Kartı</span>
+                  <span class="fritzing-meta-label">${t('fritzing.meta.board', 'Geliştirme Kartı')}</span>
                   <span class="fritzing-meta-val">Arduino Uno R3 (ATmega328P)</span>
                 </div>
               </div>
               <div class="fritzing-meta-item">
                 <div class="fritzing-meta-icon icon-bb"><i class="fas fa-border-all"></i></div>
                 <div class="fritzing-meta-text">
-                  <span class="fritzing-meta-label">Platform Tipi</span>
+                  <span class="fritzing-meta-label">${t('fritzing.meta.platform', 'Platform Tipi')}</span>
                   <span class="fritzing-meta-val">400 Tie-Point Breadboard</span>
                 </div>
               </div>
               <div class="fritzing-meta-item">
                 <div class="fritzing-meta-icon icon-pin"><i class="fas fa-plug"></i></div>
                 <div class="fritzing-meta-text">
-                  <span class="fritzing-meta-label">Kullanılan Portlar</span>
+                  <span class="fritzing-meta-label">${t('fritzing.meta.ports', 'Kullanılan Portlar')}</span>
                   <span class="fritzing-meta-val">${(project.pinout || []).map(p => p.pin.split(' ')[0]).join(', ')}</span>
                 </div>
               </div>
               <div class="fritzing-meta-item">
                 <div class="fritzing-meta-icon icon-dir"><i class="fas fa-folder-open"></i></div>
                 <div class="fritzing-meta-text">
-                  <span class="fritzing-meta-label">Arşiv Dizini</span>
+                  <span class="fritzing-meta-label">${t('fritzing.meta.archive', 'Arşiv Dizini')}</span>
                   <span class="fritzing-meta-val">ArduinoProjects/${project.folder || ''}</span>
                 </div>
               </div>

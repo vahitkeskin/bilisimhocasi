@@ -219,9 +219,40 @@ html, body {
   transform: translateY(-1px);
 }
 
+/* Fluid, wrap-proof title bar container */
+#main-nav .container {
+  max-width: 1600px !important;
+  width: 100% !important;
+  padding-left: clamp(14px, 2.2vw, 32px) !important;
+  padding-right: clamp(14px, 2.2vw, 32px) !important;
+}
+
+@media (min-width: 1200px) {
+  #main-nav .navbar-collapse {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  #main-nav .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    margin-left: auto;
+    margin-bottom: 0 !important;
+  }
+
+  #main-nav .navbar-nav > .nav-item {
+    flex-shrink: 0 !important;
+  }
+}
+
 .nav-actions-group {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
   gap: 8px;
   margin-left: 8px;
 }
@@ -7925,6 +7956,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
+  flex-shrink: 0 !important;
 }
 
 .global-search-box {
@@ -7935,10 +7967,11 @@ img {
   border-radius: 22px;
   padding: 0 12px;
   height: 38px;
-  width: 215px;
+  width: 175px;
   gap: 8px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  flex-shrink: 0;
 }
 
 .global-search-box:hover {
@@ -7947,7 +7980,7 @@ img {
 }
 
 .global-search-box:focus-within {
-  width: 290px;
+  width: 225px;
   background: rgba(13, 16, 26, 0.98);
   border-color: var(--primary-gold);
   box-shadow: 0 0 16px rgba(245, 166, 35, 0.3), 0 6px 18px rgba(0, 0, 0, 0.5);
@@ -8509,15 +8542,64 @@ img {
 }
 
 /* --- 6. Cihaz Uyumlulukları (TV, Desktop, Tablet, Mobil) --- */
-@media (min-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .navbar-brand {
+    gap: 8px !important;
+    margin-right: 10px !important;
+  }
+  .brand-campus-logo-img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .brand-name {
+    font-size: 0.98rem !important;
+    letter-spacing: 0.6px !important;
+  }
+  .brand-campus-sub {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.4px !important;
+  }
+  .navbar-nav .nav-link {
+    padding: 6px 8px !important;
+    font-size: 12.5px !important;
+    letter-spacing: 0.3px !important;
+  }
   .global-search-box {
-    width: 240px;
+    width: 160px !important;
+    height: 36px !important;
+    padding: 0 10px !important;
+    gap: 6px !important;
   }
   .global-search-box:focus-within {
-    width: 320px;
+    width: 195px !important;
+  }
+  .global-search-input {
+    font-size: 12px !important;
+  }
+  .global-search-kbd {
+    font-size: 9px !important;
+    padding: 1px 4px !important;
+  }
+  .nav-icon-action {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar-nav .nav-link {
+    padding: 7px 11px !important;
+    font-size: 13px !important;
+  }
+  .global-search-box {
+    width: 185px !important;
+  }
+  .global-search-box:focus-within {
+    width: 235px !important;
   }
   .global-search-dropdown {
-    width: 480px;
+    width: 460px !important;
   }
 }
 
@@ -8543,31 +8625,251 @@ img {
   }
 }
 
-/* --- 7. RTL (Arapça) Uyumluluğu --- */
+/* ==========================================================================
+   7. PROJE GENELİ KAPSAMLI RTL & ÇOK DİLLİ (ARAPÇA) DÜZENLEME SİSTEMİ
+   - Title Bar, Global Search, Fritzing Kartları, Breadcrumbs, Modallar, Yön Okları
+   ========================================================================== */
+
+/* --- 7.1. RTL Spacing & Navbar Utilities --- */
+[dir="rtl"] .ml-xl-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+[dir="rtl"] .mr-xl-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .nav-actions-group {
+  margin-left: 0 !important;
+  margin-right: 10px !important;
+  direction: rtl;
+}
+
+[dir="rtl"] .theme-dropdown-menu,
+[dir="rtl"] .lang-dropdown-menu {
+  right: auto !important;
+  left: 0 !important;
+  transform-origin: top left !important;
+}
+
+/* --- 7.2. RTL Global Arama Sistemi --- */
+[dir="rtl"] .global-search-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .global-search-box {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .global-search-input {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .global-search-input::placeholder {
+  text-align: right !important;
+}
+
 [dir="rtl"] .global-search-dropdown {
-  right: auto;
-  left: 0;
+  right: auto !important;
+  left: 0 !important;
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .search-dropdown-header {
+  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .search-result-item {
-  border-left: none;
-  border-right: 3px solid transparent;
+  flex-direction: row-reverse;
+  border-left: none !important;
+  border-right: 3px solid transparent !important;
+  text-align: right;
 }
 
 [dir="rtl"] .search-result-item:hover,
 [dir="rtl"] .search-result-item.active {
-  border-right-color: var(--primary-gold);
-  border-left-color: transparent;
-  transform: translateX(-3px);
+  border-right-color: var(--primary-gold) !important;
+  border-left-color: transparent !important;
+  transform: translateX(-4px) !important;
+}
+
+[dir="rtl"] .search-item-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .search-item-content {
+  text-align: right !important;
 }
 
 [dir="rtl"] .search-item-arrow i {
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
+}
+
+[dir="rtl"] .search-dropdown-footer {
+  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .mobile-search-toggle-btn {
-  margin-right: 0;
-  margin-left: 8px;
+  margin-right: 0 !important;
+  margin-left: 8px !important;
+}
+
+[dir="rtl"] .mobile-quick-search-bar {
+  direction: rtl;
+}
+
+[dir="rtl"] .mobile-quick-search-input {
+  text-align: right !important;
+}
+
+[dir="rtl"] .mobile-quick-search-bar .d-flex {
+  flex-direction: row-reverse;
+}
+
+/* --- 7.3. RTL Fritzing & Arduino Devre Simülasyonu --- */
+[dir="rtl"] .fritzing-simulation-card,
+[dir="rtl"] .arduino-project-card,
+[dir="rtl"] .breadboard-guide-card {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .fritzing-header-bar,
+[dir="rtl"] .arduino-project-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .fritzing-header-left,
+[dir="rtl"] .arduino-header-left {
+  text-align: right;
+}
+
+[dir="rtl"] .fritzing-badge i,
+[dir="rtl"] .arduino-badge i {
+  margin-right: 0 !important;
+  margin-left: 6px !important;
+}
+
+[dir="rtl"] .fritzing-header-actions,
+[dir="rtl"] .arduino-header-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .fritzing-meta-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .fritzing-meta-item {
+  flex-direction: row;
+  text-align: right;
+}
+
+[dir="rtl"] .fritzing-meta-text {
+  text-align: right;
+}
+
+[dir="rtl"] .arduino-component-card {
+  flex-direction: row;
+  text-align: right;
+}
+
+[dir="rtl"] .arduino-component-info {
+  text-align: right;
+}
+
+[dir="rtl"] .arduino-pinout-table {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .arduino-pinout-table th,
+[dir="rtl"] .arduino-pinout-table td {
+  text-align: right !important;
+}
+
+[dir="rtl"] .code-editor-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .code-editor-copy-btn {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Arduino C++ Kod Editörü Her Zaman LTR Kalmalıdır */
+[dir="rtl"] .code-editor-window pre code {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* --- 7.4. RTL Breadcrumbs & Kademeler Arası Gezinme --- */
+[dir="rtl"] .mufredat-breadcrumb {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .mufredat-breadcrumb a i {
+  margin-right: 0 !important;
+  margin-left: 5px !important;
+}
+
+[dir="rtl"] .mufredat-breadcrumb .separator {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .grade-navigation-footer {
+  direction: rtl;
+}
+
+[dir="rtl"] #btn-prev-grade i.fa-chevron-left {
+  transform: rotate(180deg) !important;
+  margin-right: 0 !important;
+  margin-left: 8px !important;
+}
+
+[dir="rtl"] #btn-next-grade i.fa-chevron-right {
+  transform: rotate(180deg) !important;
+  margin-left: 0 !important;
+  margin-right: 8px !important;
+}
+
+[dir="rtl"] .stage-tab-buttons {
+  direction: rtl;
+}
+
+[dir="rtl"] .grade-pills-list {
+  direction: rtl;
+}
+
+[dir="rtl"] .grade-pills-label-row {
+  direction: rtl;
+  text-align: right;
+}
+
+/* --- 7.5. RTL Modallar ve Video Vitrini --- */
+[dir="rtl"] .video-modal-card {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .video-modal-card .modal-close-btn {
+  right: auto !important;
+  left: 16px !important;
+}
+
+[dir="rtl"] .circuit-lightbox-card .modal-close-btn {
+  right: auto !important;
+  left: 18px !important;
+}
+
+[dir="rtl"] .circuit-lightbox-header {
+  flex-direction: row-reverse;
+  text-align: right;
 }
 
 

@@ -407,6 +407,14 @@
   }
 
   // --- DROPDOWN RENDERLEME & TAM 3 SONUÇ + KAYDIRMA MEKANİZMASI ---
+  function t(key, fallback = '') {
+    if (window.I18N && typeof window.I18N.t === 'function') {
+      const res = window.I18N.t(key);
+      if (res && res !== key) return res;
+    }
+    return fallback || key;
+  }
+
   function renderSearchResults(dropdownEl, results, query) {
     if (!dropdownEl) return;
 
@@ -421,8 +429,8 @@
       dropdownEl.innerHTML = `
         <div class="search-empty-state">
           <i class="fas fa-search-minus search-empty-icon"></i>
-          <p class="search-empty-text">"<strong>${escapeHtml(query)}</strong>" için sonuç bulunamadı.</p>
-          <span class="search-empty-sub">Farklı anahtar kelimeler deneyebilirsiniz (Örn: Arduino, Python, Robotik, LCD, 7. Sınıf).</span>
+          <p class="search-empty-text">"<strong>${escapeHtml(query)}</strong>${t('search.empty.prefix', '" için sonuç bulunamadı.')}</p>
+          <span class="search-empty-sub">${t('search.empty.sub', 'Farklı anahtar kelimeler deneyebilirsiniz (Örn: Arduino, Python, Robotik, LCD, 7. Sınıf).')}</span>
         </div>
       `;
       dropdownEl.classList.add('active');
@@ -433,14 +441,14 @@
     const headerHtml = `
       <div class="search-dropdown-header">
         <span class="search-count-badge">
-          <i class="fas fa-bolt mr-1 text-warning"></i> ${results.length} Sonuç Bulundu
+          <i class="fas fa-bolt mr-1 text-warning"></i> ${results.length} ${t('search.count.found', 'Sonuç Bulundu')}
         </span>
         ${results.length > 3 ? `
           <span class="search-scroll-hint">
-            <i class="fas fa-arrows-alt-v mr-1"></i> İlk 3 görünür • Aşağı kaydırın ↓
+            <i class="fas fa-arrows-alt-v mr-1"></i> ${t('search.scroll.hint', 'İlk 3 görünür • Aşağı kaydırın ↓')}
           </span>
         ` : `
-          <span class="search-scroll-hint">Tüm sonuçlar listelendi</span>
+          <span class="search-scroll-hint">${t('search.all.listed', 'Tüm sonuçlar listelendi')}</span>
         `}
       </div>
     `;
@@ -458,7 +466,7 @@
           </div>
           <p class="search-item-snippet">${item.highlightedSnippet}</p>
         </div>
-        <div class="search-item-arrow" title="Sayfaya Git">
+        <div class="search-item-arrow" title="${t('mufredat.grid.btn', 'Sayfaya Git')}">
           <i class="fas fa-arrow-right"></i>
         </div>
       </div>
@@ -467,9 +475,9 @@
     // Alt Klavye İpuçları Bandı
     const footerHtml = `
       <div class="search-dropdown-footer">
-        <span class="search-kbd-hint"><kbd>↑</kbd><kbd>↓</kbd> Gezin</span>
-        <span class="search-kbd-hint"><kbd>↵</kbd> Seç</span>
-        <span class="search-kbd-hint"><kbd>ESC</kbd> Kapat</span>
+        <span class="search-kbd-hint"><kbd>↑</kbd><kbd>↓</kbd> ${t('search.kbd.nav', 'Gezin')}</span>
+        <span class="search-kbd-hint"><kbd>↵</kbd> ${t('search.kbd.select', 'Seç')}</span>
+        <span class="search-kbd-hint"><kbd>ESC</kbd> ${t('search.kbd.close', 'Kapat')}</span>
       </div>
     `;
 
