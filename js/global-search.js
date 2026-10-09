@@ -514,13 +514,67 @@
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  function closeAllSearchDropdowns() {
+  // --- TOPBAR ALTI ARAMA PANELİ (SLIDE-DOWN FLYOUT) AÇMA / KAPATMA ---
+  function openSearchFlyout() {
+    const flyout = document.getElementById('topbar-search-flyout');
+    const backdrop = document.getElementById('topbar-search-backdrop');
+    const flyoutInput = document.getElementById('global-search-flyout-input');
+    const flyoutDropdown = document.getElementById('flyout-search-dropdown');
+    const flyoutClear = document.getElementById('global-search-flyout-clear');
+
+    if (flyout) {
+      flyout.classList.add('active');
+      flyout.setAttribute('aria-hidden', 'false');
+    }
+    if (backdrop) {
+      backdrop.classList.add('active');
+    }
+
+    if (flyoutInput) {
+      setTimeout(() => {
+        flyoutInput.focus();
+        flyoutInput.select();
+        const query = flyoutInput.value.trim();
+        if (flyoutClear) {
+          flyoutClear.style.display = query.length > 0 ? 'flex' : 'none';
+        }
+        if (query.length >= 2 && flyoutDropdown) {
+          const results = executeSearch(query);
+          renderSearchResults(flyoutDropdown, results, query);
+        }
+      }, 50);
+    }
+  }
+
+  function closeSearchFlyout() {
+    const flyout = document.getElementById('topbar-search-flyout');
+    const backdrop = document.getElementById('topbar-search-backdrop');
+    const flyoutDropdown = document.getElementById('flyout-search-dropdown');
+    const flyoutInput = document.getElementById('global-search-flyout-input');
+
+    if (flyout) {
+      flyout.classList.remove('active');
+      flyout.setAttribute('aria-hidden', 'true');
+    }
+    if (backdrop) {
+      backdrop.classList.remove('active');
+    }
+    if (flyoutDropdown) {
+      flyoutDropdown.classList.remove('active');
+      flyoutDropdown.innerHTML = '';
+    }
+    if (flyoutInput) {
+      flyoutInput.blur();
+    }
+
     document.querySelectorAll('.global-search-dropdown').forEach(d => {
       d.classList.remove('active');
       d.innerHTML = '';
     });
-    const quickBar = document.getElementById('mobile-quick-search-bar');
-    if (quickBar) quickBar.classList.remove('active');
+  }
+
+  function closeAllSearchDropdowns() {
+    closeSearchFlyout();
   }
 
   // --- ARAMA KUTULARINI BAĞLAMA VE KLAVYE DİNLENMESİ ---
@@ -571,8 +625,7 @@
     inputEl.addEventListener('keydown', (e) => {
       if (!dropdownEl.classList.contains('active') || currentResults.length === 0) {
         if (e.key === 'Escape') {
-          closeAllSearchDropdowns();
-          inputEl.blur();
+          closeSearchFlyout();
         }
         return;
       }
@@ -595,8 +648,7 @@
         }
       } else if (e.key === 'Escape') {
         e.preventDefault();
-        closeAllSearchDropdowns();
-        inputEl.blur();
+        closeSearchFlyout();
       }
     });
   }
@@ -616,23 +668,62 @@
   function initGlobalSearch() {
     buildSearchIndex();
 
-    // 1. Masaüstü Arama Kutusu (Title Bar)
-    const desktopInput = document.getElementById('global-search-desktop-input');
-    const desktopClear = document.getElementById('global-search-desktop-clear');
-    const desktopDropdown = document.getElementById('desktop-search-dropdown');
-    if (desktopInput && desktopDropdown) {
-      setupSearchInstance(desktopInput, desktopClear, desktopDropdown);
+    // 1. Topbar Altına Açılan Arama Paneli (Slide-Down Flyout)
+    const flyoutInput = document.getElementById('global-search-flyout-input');
+    const flyoutClear = document.getElementById('global-search-flyout-clear');
+    const flyoutDropdown = document.getElementById('flyout-search-dropdown');
+    const flyoutClose = document.getElementById('global-search-flyout-close');
+    const searchBackdrop = document.getElementById('topbar-search-backdrop');
+
+    if (flyoutInput && flyoutDropdown) {
+      setupSearchInstance(flyoutInput, flyoutClear, flyoutDropdown);
     }
 
-    // 2. Mobil Hızlı Arama Kutusu (Slide-Down Bar)
-    const quickInput = document.getElementById('global-search-quick-input');
-    const quickClear = document.getElementById('mobile-quick-search-clear');
-    const quickDropdown = document.getElementById('quick-search-dropdown');
-    if (quickInput && quickDropdown) {
-      setupSearchInstance(quickInput, quickClear, quickDropdown);
+    // Masaüstü Title Bar Tetikleyici Pill Butonu (#nav-search-trigger-btn)
+    const navSearchTriggerBtn = document.getElementById('nav-search-trigger-btn');
+    if (navSearchTriggerBtn) {
+      navSearchTriggerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const flyout = document.getElementById('topbar-search-flyout');
+        if (flyout && flyout.classList.contains('active')) {
+          closeSearchFlyout();
+        } else {
+          openSearchFlyout();
+        }
+      });
     }
 
-    // 3. Mobil Çekmece Menü İçi Arama Kutusu
+    // Mobil Arama Aç/Kapat Butonu (#mobile-search-toggle-btn)
+    const mobileToggleBtn = document.getElementById('mobile-search-toggle-btn');
+    if (mobileToggleBtn) {
+      mobileToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const flyout = document.getElementById('topbar-search-flyout');
+        if (flyout && flyout.classList.contains('active')) {
+          closeSearchFlyout();
+        } else {
+          openSearchFlyout();
+        }
+      });
+    }
+
+    // Kapat (ESC / Vazgeç) Butonu
+    if (flyoutClose) {
+      flyoutClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeSearchFlyout();
+      });
+    }
+
+    // Arka Plan Karartmasına Tıklayınca Kapat
+    if (searchBackdrop) {
+      searchBackdrop.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeSearchFlyout();
+      });
+    }
+
+    // 2. Mobil Çekmece Menü İçi Arama Kutusu (Drawer Search)
     const mobileInput = document.getElementById('global-search-mobile-input');
     const mobileClear = document.getElementById('global-search-mobile-clear');
     const mobileDropdown = document.getElementById('mobile-search-dropdown');
@@ -640,41 +731,15 @@
       setupSearchInstance(mobileInput, mobileClear, mobileDropdown);
     }
 
-    // Mobil Arama Aç/Kapat Butonu
-    const mobileToggleBtn = document.getElementById('mobile-search-toggle-btn');
-    const mobileQuickBar = document.getElementById('mobile-quick-search-bar');
-    const mobileQuickClose = document.getElementById('mobile-quick-search-close');
-
-    if (mobileToggleBtn && mobileQuickBar) {
-      mobileToggleBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        mobileQuickBar.classList.toggle('active');
-        if (mobileQuickBar.classList.contains('active')) {
-          setTimeout(() => {
-            if (quickInput) quickInput.focus();
-          }, 100);
-        } else {
-          closeAllSearchDropdowns();
-        }
-      });
-    }
-
-    if (mobileQuickClose && mobileQuickBar) {
-      mobileQuickClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        mobileQuickBar.classList.remove('active');
-        closeAllSearchDropdowns();
-      });
-    }
-
     // Dışarı tıklanınca arama menüsünü kapat
     document.addEventListener('click', (e) => {
-      const isSearchContainer = e.target.closest('.global-search-container') ||
-                                e.target.closest('.mobile-quick-search-bar') ||
+      const isSearchContainer = e.target.closest('.topbar-search-flyout') ||
+                                e.target.closest('#nav-search-trigger-btn') ||
+                                e.target.closest('#mobile-search-toggle-btn') ||
                                 e.target.closest('.mobile-search-section') ||
-                                e.target.closest('#mobile-search-toggle-btn');
+                                e.target.closest('.topbar-search-backdrop');
       if (!isSearchContainer) {
-        closeAllSearchDropdowns();
+        closeSearchFlyout();
       }
     });
 
@@ -682,23 +747,17 @@
     document.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
         e.preventDefault();
-        const activeBar = (window.innerWidth < 1200) ? quickInput : desktopInput;
-        if (activeBar) {
-          if (window.innerWidth < 1200 && mobileQuickBar) {
-            mobileQuickBar.classList.add('active');
-          }
-          activeBar.focus();
-          activeBar.select();
+        const flyout = document.getElementById('topbar-search-flyout');
+        if (flyout && flyout.classList.contains('active')) {
+          closeSearchFlyout();
+        } else {
+          openSearchFlyout();
         }
       } else if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
         e.preventDefault();
-        const activeBar = (window.innerWidth < 1200) ? quickInput : desktopInput;
-        if (activeBar) {
-          if (window.innerWidth < 1200 && mobileQuickBar) {
-            mobileQuickBar.classList.add('active');
-          }
-          activeBar.focus();
-        }
+        openSearchFlyout();
+      } else if (e.key === 'Escape') {
+        closeSearchFlyout();
       }
     });
 

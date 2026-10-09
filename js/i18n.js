@@ -1900,6 +1900,11 @@ const I18N = (() => {
     },
 
     // ── GLOBAL SEARCH TRANSLATIONS ──
+    'search.trigger': {
+      tr: 'Ara...',
+      en: 'Search...',
+      ar: 'بحث...'
+    },
     'search.placeholder': {
       tr: 'Müfredat, Arduino, konu ara...',
       en: 'Search curriculum, Arduino, topic...',

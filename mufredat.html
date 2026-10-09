@@ -139,22 +139,13 @@
               <a class="nav-link" href="index.html#location" data-i18n="nav.location">KONUM</a>
             </li>
 
-            <!-- Desktop Global Search Box (Title Bar) -->
+            <!-- Desktop Global Search Trigger Pill (Title Bar) -->
             <li class="nav-item ml-xl-2 d-none d-xl-flex align-items-center">
-              <div class="global-search-container" id="desktop-global-search">
-                <div class="global-search-box">
-                  <i class="fas fa-search global-search-icon"></i>
-                  <input type="text" class="global-search-input" id="global-search-desktop-input"
-                    placeholder="Müfredat, Arduino, konu ara..." data-i18n="search.placeholder" autocomplete="off" spellcheck="false"
-                    aria-label="Proje Geneli Arama" data-i18n-aria="search.aria">
-                  <button type="button" class="global-search-clear-btn" id="global-search-desktop-clear" aria-label="Temizle" data-i18n-aria="search.clear" style="display:none;">
-                    <i class="fas fa-times"></i>
-                  </button>
-                  <kbd class="global-search-kbd">⌘K</kbd>
-                </div>
-                <!-- Global Search Dropdown Panel (Exact 3 items visible, scrollable) -->
-                <div class="global-search-dropdown" id="desktop-search-dropdown" role="listbox"></div>
-              </div>
+              <button type="button" class="nav-search-pill-btn" id="nav-search-trigger-btn" aria-label="Sitede Ara" data-i18n-title="search.aria" title="Sitede Ara (⌘K)">
+                <i class="fas fa-search search-pill-icon"></i>
+                <span class="search-pill-text" data-i18n="search.trigger">Ara...</span>
+                <kbd class="search-pill-kbd">⌘K</kbd>
+              </button>
             </li>
 
             <li class="nav-item ml-xl-2 d-none d-xl-block">
@@ -291,23 +282,32 @@
       </div>
     </div>
 
-    <!-- Expandable Mobile Quick Search Bar (Slides down on mobile when search icon is clicked) -->
-    <div class="mobile-quick-search-bar" id="mobile-quick-search-bar">
-      <div class="d-flex align-items-center gap-2">
-        <i class="fas fa-search text-warning mr-2"></i>
-        <input type="text" class="mobile-quick-search-input" id="global-search-quick-input"
-          placeholder="Müfredat, Arduino, konu veya atölye ara..." data-i18n="search.quick.placeholder" autocomplete="off" spellcheck="false"
-          aria-label="Mobil Hızlı Arama" data-i18n-aria="search.aria">
-        <button type="button" class="mobile-quick-search-clear" id="mobile-quick-search-clear" aria-label="Temizle" data-i18n-aria="search.clear">
-          <i class="fas fa-times"></i>
-        </button>
-        <button type="button" class="mobile-quick-search-close" id="mobile-quick-search-close" aria-label="Kapat" data-i18n-aria="search.close">
-          <span data-i18n="search.cancel">Vazgeç</span>
-        </button>
+      <!-- Topbar Slide-Down Search Flyout (Opens below topbar on click / shortcut) -->
+      <div class="topbar-search-flyout" id="topbar-search-flyout" aria-hidden="true">
+        <div class="container topbar-search-container">
+          <div class="topbar-search-inner">
+            <div class="topbar-search-input-box">
+              <i class="fas fa-search topbar-search-icon"></i>
+              <input type="text" class="topbar-search-input" id="global-search-flyout-input"
+                placeholder="Müfredat, Arduino, sınıf veya konu ara..." data-i18n="search.placeholder" autocomplete="off" spellcheck="false"
+                aria-label="Proje Geneli Arama" data-i18n-aria="search.aria">
+              <button type="button" class="topbar-search-clear-btn" id="global-search-flyout-clear" aria-label="Temizle" data-i18n-aria="search.clear" style="display:none;">
+                <i class="fas fa-times"></i>
+              </button>
+              <button type="button" class="topbar-search-close-btn" id="global-search-flyout-close" aria-label="Kapat" data-i18n-aria="search.close">
+                <kbd class="flyout-close-kbd">ESC</kbd>
+                <span class="flyout-close-text" data-i18n="search.cancel">Vazgeç</span>
+              </button>
+            </div>
+            <!-- Scrollable Search Results Dropdown (Top 3 visible, scroll for rest) -->
+            <div class="global-search-dropdown flyout-search-dropdown" id="flyout-search-dropdown" role="listbox"></div>
+          </div>
+        </div>
       </div>
-      <div class="global-search-dropdown quick-search-dropdown" id="quick-search-dropdown" role="listbox"></div>
-    </div>
-  </nav>
+    </nav>
+
+    <!-- Topbar Search Backdrop Overlay -->
+    <div class="topbar-search-backdrop" id="topbar-search-backdrop"></div>
 
   <!-- ====================================================================
        PAGE HERO / HEADER SECTION (PURE GLASSMORPHISM, NO COVER PHOTO)
