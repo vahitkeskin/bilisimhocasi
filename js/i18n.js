@@ -208,6 +208,782 @@ const I18N = (() => {
       en: 'High School (9-12)',
       ar: 'الثانوية (9-12)'
     },
+    'portfolio.k12.cta': {
+      tr: '2026 MEB K12 Müfredatını Tam Sayfa İncele (Ana Sınıfı - 12. Sınıf)',
+      en: 'View Full 2026 MoNE K12 Curriculum (Kindergarten - 12th Grade)',
+      ar: 'عرض منهج MEB K12 لعام 2026 بالكامل (الروضة - الصف الثاني عشر)'
+    },
+    'portfolio.card.preview': {
+      tr: 'Müfredat & Proje Detayları',
+      en: 'Curriculum & Project Details',
+      ar: 'تفاصيل المنهج والمشروع'
+    },
+    'portfolio.card.action': {
+      tr: 'Müfredatı & Projeyi İncele',
+      en: 'View Curriculum & Project',
+      ar: 'عرض المنهج والمشروع'
+    },
+    'grade.anasinifi.badge': {
+      tr: 'Okul Öncesi • 4-5 Yaş',
+      en: 'Preschool • Ages 4-5',
+      ar: 'ما قبل المدرسة • 4-5 سنوات'
+    },
+    'grade.anasinifi.title': {
+      tr: 'Ana Sınıfı',
+      en: 'Kindergarten',
+      ar: 'مرحلة الروضة'
+    },
+    'grade.anasinifi.subtitle': {
+      tr: 'Bilgisayarsız Kodlama & Bilişsel Temeller',
+      en: 'Unplugged Coding & Cognitive Foundations',
+      ar: 'البرمجة غير المتصلة والأسس المعرفية'
+    },
+    'grade.anasinifi.project': {
+      tr: 'Bee-Bot ile Çiçek Bahçesi Labirenti',
+      en: 'Bee-Bot Flower Garden Maze',
+      ar: 'متاهة حديقة الزهور مع Bee-Bot'
+    },
+    'grade.anasinifi.tag1': {
+      tr: 'Bee-Bot Robotu',
+      en: 'Bee-Bot Robot',
+      ar: 'روبوت Bee-Bot'
+    },
+    'grade.anasinifi.tag2': {
+      tr: 'Unplugged Kodlama',
+      en: 'Unplugged Coding',
+      ar: 'البرمجة غير المتصلة'
+    },
+    'grade.anasinifi.tag3': {
+      tr: 'Yön Algoritmaları',
+      en: 'Direction Algorithms',
+      ar: 'خوارزميات الاتجاه'
+    },
+    'grade.sinif1.badge': {
+      tr: 'İlkokul • 6-7 Yaş',
+      en: 'Primary • Ages 6-7',
+      ar: 'المرحلة الابتدائية • 6-7 سنوات'
+    },
+    'grade.sinif1.title': {
+      tr: '1. Sınıf',
+      en: '1st Grade',
+      ar: 'الصف الأول'
+    },
+    'grade.sinif1.subtitle': {
+      tr: 'Dijital Okuryazarlık & Temel Bilişim Becerileri',
+      en: 'Digital Literacy & Basic IT Skills',
+      ar: 'محو الأمية الرقمية والمهارات الأساسية'
+    },
+    'grade.sinif1.project': {
+      tr: 'İlk Dijital Hikâye & Resim Albümüm',
+      en: 'My First Digital Story & Art Album',
+      ar: 'قصتي الرقمية الأولى وألبوم الرسوم'
+    },
+    'grade.sinif1.tag1': {
+      tr: 'Fare & Klavye',
+      en: 'Mouse & Keyboard',
+      ar: 'الفأرة ولوحة المفاتيح'
+    },
+    'grade.sinif1.tag2': {
+      tr: 'Tux Paint',
+      en: 'Tux Paint',
+      ar: 'Tux Paint'
+    },
+    'grade.sinif1.tag3': {
+      tr: 'Dijital Güvenlik',
+      en: 'Digital Safety',
+      ar: 'السلامة الرقمية'
+    },
+    'grade.sinif2.badge': {
+      tr: 'İlkokul • 7-8 Yaş',
+      en: 'Primary • Ages 7-8',
+      ar: 'المرحلة الابتدائية • 7-8 سنوات'
+    },
+    'grade.sinif2.title': {
+      tr: '2. Sınıf',
+      en: '2nd Grade',
+      ar: 'الصف الثاني'
+    },
+    'grade.sinif2.subtitle': {
+      tr: 'ScratchJr ile Görsel Blok Tabanlı Kodlama',
+      en: 'Visual Block Coding with ScratchJr',
+      ar: 'البرمجة بالكتل المرئية مع ScratchJr'
+    },
+    'grade.sinif2.project': {
+      tr: 'ScratchJr Hayvanlar Âlemi Canlandırması',
+      en: 'ScratchJr Animal Kingdom Animation',
+      ar: 'رسوم متحركة لعالم الحيوان مع ScratchJr'
+    },
+    'grade.sinif2.tag1': {
+      tr: 'ScratchJr',
+      en: 'ScratchJr',
+      ar: 'ScratchJr'
+    },
+    'grade.sinif2.tag2': {
+      tr: 'Karakter Hareketi',
+      en: 'Character Motion',
+      ar: 'حركة الشخصيات'
+    },
+    'grade.sinif2.tag3': {
+      tr: 'Sıralı Olaylar',
+      en: 'Sequential Events',
+      ar: 'الأحداث المتسلسلة'
+    },
+    'grade.sinif3.badge': {
+      tr: 'İlkokul • 8-9 Yaş',
+      en: 'Primary • Ages 8-9',
+      ar: 'المرحلة الابتدائية • 8-9 سنوات'
+    },
+    'grade.sinif3.title': {
+      tr: '3. Sınıf',
+      en: '3rd Grade',
+      ar: 'الصف الثالث'
+    },
+    'grade.sinif3.subtitle': {
+      tr: 'Scratch 3.0 ile 2D Oyun Tasarımı Temelleri',
+      en: '2D Game Design Foundations with Scratch 3.0',
+      ar: 'أساسيات تصميم ألعاب ثنائية الأبعاد مع Scratch 3.0'
+    },
+    'grade.sinif3.project': {
+      tr: 'Uzay Görevi 2D Arcade Oyunu (Scratch)',
+      en: 'Space Mission 2D Arcade Game (Scratch)',
+      ar: 'لعبة أركيد ثنائية الأبعاد لمهمة فضاء (Scratch)'
+    },
+    'grade.sinif3.tag1': {
+      tr: 'Scratch 3.0',
+      en: 'Scratch 3.0',
+      ar: 'Scratch 3.0'
+    },
+    'grade.sinif3.tag2': {
+      tr: 'Döngüler',
+      en: 'Loops',
+      ar: 'الحلقات التكرارية'
+    },
+    'grade.sinif3.tag3': {
+      tr: 'Puan & Skor',
+      en: 'Points & Score',
+      ar: 'النقاط والنتائج'
+    },
+    'grade.sinif4.badge': {
+      tr: 'İlkokul • 9-10 Yaş',
+      en: 'Primary • Ages 9-10',
+      ar: 'المرحلة الابتدائية • 9-10 سنوات'
+    },
+    'grade.sinif4.title': {
+      tr: '4. Sınıf',
+      en: '4th Grade',
+      ar: 'الصف الرابع'
+    },
+    'grade.sinif4.subtitle': {
+      tr: 'Algoritmik Problem Çözme & İleri Scratch',
+      en: 'Algorithmic Problem Solving & Advanced Scratch',
+      ar: 'حل المشكلات خوارزميًا وScratch المتقدم'
+    },
+    'grade.sinif4.project': {
+      tr: 'Neon Labirent Koşucusu & Zamanlayıcı',
+      en: 'Neon Maze Runner & Timer Game',
+      ar: 'عداء المتاهة النيون والمؤقت'
+    },
+    'grade.sinif4.tag1': {
+      tr: 'Değişkenler',
+      en: 'Variables',
+      ar: 'المتغيرات'
+    },
+    'grade.sinif4.tag2': {
+      tr: 'Şart Blokları',
+      en: 'Condition Blocks',
+      ar: 'كتل الشروط'
+    },
+    'grade.sinif4.tag3': {
+      tr: 'Çoklu Karakter',
+      en: 'Multi-Sprite',
+      ar: 'شخصيات متعددة'
+    },
+    'grade.sinif5.badge': {
+      tr: 'Ortaokul • 10-11 Yaş',
+      en: 'Middle • Ages 10-11',
+      ar: 'المرحلة المتوسطة • 10-11 سنة'
+    },
+    'grade.sinif5.title': {
+      tr: '5. Sınıf',
+      en: '5th Grade',
+      ar: 'الصف الخامس'
+    },
+    'grade.sinif5.subtitle': {
+      tr: 'Bilişim Donanımı & Dijital Vatandaşlık',
+      en: 'IT Hardware & Digital Citizenship',
+      ar: 'أجهزة تكنولوجيا المعلومات والمواطنة الرقمية'
+    },
+    'grade.sinif5.project': {
+      tr: 'Güvenli İnternet & Donanım Keşif Dergisi',
+      en: 'Safe Internet & Hardware Discovery E-Magazine',
+      ar: 'مجلة استكشاف الأجهزة والإنترنت الآمن'
+    },
+    'grade.sinif5.tag1': {
+      tr: 'Donanım Mimarisi',
+      en: 'Hardware Architecture',
+      ar: 'هندسة العتاد'
+    },
+    'grade.sinif5.tag2': {
+      tr: 'Siber Güvenlik',
+      en: 'Cybersecurity',
+      ar: 'الأمن السيبراني'
+    },
+    'grade.sinif5.tag3': {
+      tr: 'Google Workspace',
+      en: 'Google Workspace',
+      ar: 'Google Workspace'
+    },
+    'grade.sinif6.badge': {
+      tr: 'Ortaokul • 11-12 Yaş',
+      en: 'Middle • Ages 11-12',
+      ar: 'المرحلة المتوسطة • 11-12 سنة'
+    },
+    'grade.sinif6.title': {
+      tr: '6. Sınıf',
+      en: '6th Grade',
+      ar: 'الصف السادس'
+    },
+    'grade.sinif6.subtitle': {
+      tr: '3D Modelleme (Tinkercad) & Akış Şemaları',
+      en: '3D Modeling (Tinkercad) & Flowcharts',
+      ar: 'النمذجة ثلاثية الأبعاد (Tinkercad) والمخططات الانسيابية'
+    },
+    'grade.sinif6.project': {
+      tr: '3D Akıllı Şehir & Rüzgâr Türbini Tasarımı',
+      en: '3D Smart City & Wind Turbine Model',
+      ar: 'مدينة ذكية ثلاثية الأبعاد ونموذج توربين الرياح'
+    },
+    'grade.sinif6.tag1': {
+      tr: 'Tinkercad 3D',
+      en: 'Tinkercad 3D',
+      ar: 'Tinkercad 3D'
+    },
+    'grade.sinif6.tag2': {
+      tr: '3D Yazıcı Üretimi',
+      en: '3D Printer Production',
+      ar: 'الطباعة ثلاثية الأبعاد'
+    },
+    'grade.sinif6.tag3': {
+      tr: 'Akış Şemaları',
+      en: 'Flowcharts',
+      ar: 'المخططات الانسيابية'
+    },
+    'grade.sinif7.badge': {
+      tr: 'Ortaokul • 12-13 Yaş',
+      en: 'Middle • Ages 12-13',
+      ar: 'المرحلة المتوسطة • 12-13 سنة'
+    },
+    'grade.sinif7.title': {
+      tr: '7. Sınıf',
+      en: '7th Grade',
+      ar: 'الصف السابع'
+    },
+    'grade.sinif7.subtitle': {
+      tr: 'Fiziksel Bilişim & Temel Arduino Devreleri',
+      en: 'Physical Computing & Basic Arduino Circuits',
+      ar: 'الحوسبة المادية ودوائر أردوينو الأساسية'
+    },
+    'grade.sinif7.project': {
+      tr: 'Otomatik Gece Lambası & Alarm Simülasyonu',
+      en: 'Automatic Night Lamp & Alarm Simulation',
+      ar: 'مصباح ليلي تلقائي ومحاكاة الإنذار'
+    },
+    'grade.sinif7.tag1': {
+      tr: 'Arduino UNO',
+      en: 'Arduino UNO',
+      ar: 'Arduino UNO'
+    },
+    'grade.sinif7.tag2': {
+      tr: 'Tinkercad Circuits',
+      en: 'Tinkercad Circuits',
+      ar: 'Tinkercad Circuits'
+    },
+    'grade.sinif7.tag3': {
+      tr: 'LDR Sensör & LED',
+      en: 'LDR Sensor & LED',
+      ar: 'مستشعر LDR ومصابيح LED'
+    },
+    'grade.sinif8.badge': {
+      tr: 'Ortaokul • 13-14 Yaş',
+      en: 'Middle • Ages 13-14',
+      ar: 'المرحلة المتوسطة • 13-14 سنة'
+    },
+    'grade.sinif8.title': {
+      tr: '8. Sınıf',
+      en: '8th Grade',
+      ar: 'الصف الثامن'
+    },
+    'grade.sinif8.subtitle': {
+      tr: 'Robotik Sistemler & LGS Bilişimsel Düşünce',
+      en: 'Robotic Systems & Computational Thinking',
+      ar: 'الأنظمة الروبوتية والتفكير الحسابي'
+    },
+    'grade.sinif8.project': {
+      tr: '4WD Otonom Engel Tanıyan Robot (Arduino)',
+      en: '4WD Obstacle Avoiding Autonomous Robot (Arduino)',
+      ar: 'روبوت دفع رباعي ذاتي القيادة يتجنب العقبات (Arduino)'
+    },
+    'grade.sinif8.tag1': {
+      tr: 'Ultrasonik Sensör',
+      en: 'Ultrasonic Sensor',
+      ar: 'مستشعر الموجات فوق الصوتية'
+    },
+    'grade.sinif8.tag2': {
+      tr: 'Motor Sürücü L298N',
+      en: 'L298N Motor Driver',
+      ar: 'مشغل المحركات L298N'
+    },
+    'grade.sinif8.tag3': {
+      tr: 'Otonom Robot',
+      en: 'Autonomous Robot',
+      ar: 'روبوت ذاتي القيادة'
+    },
+    'grade.sinif9.badge': {
+      tr: 'Lise • 14-15 Yaş',
+      en: 'High School • Ages 14-15',
+      ar: 'المرحلة الثانوية • 14-15 سنة'
+    },
+    'grade.sinif9.title': {
+      tr: '9. Sınıf',
+      en: '9th Grade',
+      ar: 'الصف التاسع'
+    },
+    'grade.sinif9.subtitle': {
+      tr: 'Metin Tabanlı Kodlama: Python Temelleri',
+      en: 'Text-Based Coding: Python Fundamentals',
+      ar: 'البرمجة النصية: أساسيات بايثون'
+    },
+    'grade.sinif9.project': {
+      tr: 'Python Not Takip ve İstatistik Sistemi',
+      en: 'Python Grade Tracking & Statistical System',
+      ar: 'نظام تتبع الدرجات والإحصاء بلغة بايثون'
+    },
+    'grade.sinif9.tag1': {
+      tr: 'Python 3 Sözdizimi',
+      en: 'Python 3 Syntax',
+      ar: 'بناء جملة Python 3'
+    },
+    'grade.sinif9.tag2': {
+      tr: 'Döngüler & Şartlar',
+      en: 'Loops & Conditions',
+      ar: 'الحلقات والشروط'
+    },
+    'grade.sinif9.tag3': {
+      tr: 'VS Code Ortamı',
+      en: 'VS Code Environment',
+      ar: 'بيئة VS Code'
+    },
+    'grade.sinif10.badge': {
+      tr: 'Lise • 15-16 Yaş',
+      en: 'High School • Ages 15-16',
+      ar: 'المرحلة الثانوية • 15-16 سنة'
+    },
+    'grade.sinif10.title': {
+      tr: '10. Sınıf',
+      en: '10th Grade',
+      ar: 'الصف العاشر'
+    },
+    'grade.sinif10.subtitle': {
+      tr: 'Nesne Yönelimli Programlama (OOP) & Modüller',
+      en: 'Object-Oriented Programming (OOP) & Modules',
+      ar: 'البرمجة كائنية التوجه (OOP) والوحدات'
+    },
+    'grade.sinif10.project': {
+      tr: 'OOP Banka Hesap Yönetim Simülatörü',
+      en: 'OOP Bank Account Management Simulator',
+      ar: 'محاكي إدارة الحسابات المصرفية (OOP)'
+    },
+    'grade.sinif10.tag1': {
+      tr: 'OOP & Sınıflar',
+      en: 'OOP & Classes',
+      ar: 'OOP والفئات'
+    },
+    'grade.sinif10.tag2': {
+      tr: 'Listeler & Sözlükler',
+      en: 'Lists & Dictionaries',
+      ar: 'القوائم والقواميس'
+    },
+    'grade.sinif10.tag3': {
+      tr: 'Hata Yakalama',
+      en: 'Exception Handling',
+      ar: 'معالجة الاستثناءات'
+    },
+    'grade.sinif11.badge': {
+      tr: 'Lise • 16-17 Yaş',
+      en: 'High School • Ages 16-17',
+      ar: 'المرحلة الثانوية • 16-17 سنة'
+    },
+    'grade.sinif11.title': {
+      tr: '11. Sınıf',
+      en: '11th Grade',
+      ar: 'الصف الحادي عشر'
+    },
+    'grade.sinif11.subtitle': {
+      tr: 'Web Geliştirme (HTML/CSS/JS) & Veritabanı',
+      en: 'Web Development (HTML/CSS/JS) & Database',
+      ar: 'تطوير الويب (HTML/CSS/JS) وقواعد البيانات'
+    },
+    'grade.sinif11.project': {
+      tr: 'Uğur Kampüs Portalı & SQLite Veritabanı',
+      en: 'Campus Portal & SQLite Database Project',
+      ar: 'بوابة الحرم ومشروع قاعدة بيانات SQLite'
+    },
+    'grade.sinif11.tag1': {
+      tr: 'HTML5 & CSS3',
+      en: 'HTML5 & CSS3',
+      ar: 'HTML5 وCSS3'
+    },
+    'grade.sinif11.tag2': {
+      tr: 'JavaScript DOM',
+      en: 'JavaScript DOM',
+      ar: 'JavaScript DOM'
+    },
+    'grade.sinif11.tag3': {
+      tr: 'SQLite / SQL',
+      en: 'SQLite / SQL',
+      ar: 'SQLite وSQL'
+    },
+    'grade.sinif12.badge': {
+      tr: 'Lise • 17-18 Yaş',
+      en: 'High School • Ages 17-18',
+      ar: 'المرحلة الثانوية • 17-18 سنة'
+    },
+    'grade.sinif12.title': {
+      tr: '12. Sınıf',
+      en: '12th Grade',
+      ar: 'الصف الثاني عشر'
+    },
+    'grade.sinif12.subtitle': {
+      tr: 'Yapay Zekâ (AI), Nesnelerin İnterneti & Güvenlik',
+      en: 'Artificial Intelligence (AI), IoT & Security',
+      ar: 'الذكاء الاصطناعي، إنترنت الأشياء والأمن'
+    },
+    'grade.sinif12.project': {
+      tr: 'Yapay Zekâ Nesne Tanıma & IoT İstasyonu',
+      en: 'AI Object Recognition & IoT Sensor Station',
+      ar: 'محطة التعرف على الكائنات بالذكاء الاصطناعي وإنترنت الأشياء'
+    },
+    'grade.sinif12.tag1': {
+      tr: 'OpenCV & AI',
+      en: 'OpenCV & AI',
+      ar: 'OpenCV والذكاء الاصطناعي'
+    },
+    'grade.sinif12.tag2': {
+      tr: 'ESP32 IoT Bulut',
+      en: 'ESP32 IoT Cloud',
+      ar: 'سحابة ESP32 IoT'
+    },
+    'grade.sinif12.tag3': {
+      tr: 'Siber Savunma Etiği',
+      en: 'Cyber Defense Ethics',
+      ar: 'أخلاقيات الدفاع السيبراني'
+    },
+    'location.campus.city': {
+      tr: 'Viranşehir / Şanlıurfa Yerleşkesi',
+      en: 'Viranşehir / Şanlıurfa Campus',
+      ar: 'حرم فيران شهير / شانلي أورفا'
+    },
+    'location.stage.preschool': {
+      tr: '• Okul Öncesi',
+      en: '• Preschool',
+      ar: '• ما قبل المدرسة'
+    },
+    'location.stage.primary': {
+      tr: '• İlkokul',
+      en: '• Primary School',
+      ar: '• المرحلة الابتدائية'
+    },
+    'location.stage.middle': {
+      tr: '• Ortaokul',
+      en: '• Middle School',
+      ar: '• المرحلة المتوسطة'
+    },
+    'location.stage.anatolian': {
+      tr: '• Anadolu Lisesi',
+      en: '• Anatolian High School',
+      ar: '• الثانوية الأناضولية'
+    },
+    'location.stage.science': {
+      tr: '• Fen Lisesi',
+      en: '• Science High School',
+      ar: '• ثانوية العلوم'
+    },
+    'mufredat.meta.title': {
+      tr: '2026 MEB Bilişim Teknolojileri & Bilgisayar Bilimi Müfredatı | Uğur Okulları Viranşehir Kampüsü',
+      en: '2026 MoNE IT & Computer Science Curriculum | Uğur Okulları Viranşehir Kampüsü',
+      ar: 'منهج تكنولوجيا المعلومات وعلوم الحاسوب 2026 | Uğur Okulları Viranşehir Kampüsü'
+    },
+    'mufredat.meta.description': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü 2026 MEB K12 Bilişim Teknolojileri ve Bilgisayar Bilimi Akademik Müfredatı. Ana sınıfından 12. sınıfa kadar 13 seviye tam kapsamlı eğitim programı.',
+      en: 'Uğur Okulları Viranşehir Kampüsü 2026 MoNE K12 IT and Computer Science Academic Curriculum. 13-level comprehensive program from kindergarten to 12th grade.',
+      ar: 'منهج K12 لتكنولوجيا المعلومات وعلوم الحاسوب لUğur Okulları Viranşehir Kampüsü. برنامج شامل من 13 مستوى من الروضة حتى الصف الثاني عشر.'
+    },
+    'mufredat.breadcrumb.home': {
+      tr: 'Ana Sayfa',
+      en: 'Home',
+      ar: 'الرئيسية'
+    },
+    'mufredat.breadcrumb.stages': {
+      tr: 'Müfredat ve Kademelerimiz',
+      en: 'Curriculum & Stages',
+      ar: 'المنهج ومراحلنا'
+    },
+    'mufredat.badge.meb': {
+      tr: 'T.C. Millî Eğitim Bakanlığı 2026 Müfredatı ile %100 Uyumlu',
+      en: '100% Compliant with 2026 MoNE Curriculum',
+      ar: 'متوافق بنسبة 100% مع منهج وزارة التربية الوطنية 2026'
+    },
+    'mufredat.title': {
+      tr: 'K12 Bilişim Teknolojileri ve Bilgisayar Bilimi Müfredatı',
+      en: 'K12 IT & Computer Science Curriculum',
+      ar: 'منهج K12 لتكنولوجيا المعلومات وعلوم الحاسوب'
+    },
+    'mufredat.subtitle': {
+      tr: 'Ana sınıfından 12. sınıfa kadar her yaş grubuna ve pedagojik bilişsel gelişim düzeyine özel hazırlanmış 13 kademeli tam kapsamlı eğitim yolculuğu.',
+      en: 'A 13-stage comprehensive educational journey tailored to each age group and cognitive developmental level from kindergarten to 12th grade.',
+      ar: 'رحلة تعليمية شاملة من 13 مرحلة مصممة خصيصًا لكل فئة عمرية ومستوى نمو معرفي من الروضة إلى الصف الثاني عشر.'
+    },
+    'mufredat.stat.levels': {
+      tr: '13 Ayrı Sınıf Düzeyi (K12)',
+      en: '13 Grade Levels (K12)',
+      ar: '13 مستوى دراسي منفصل (K12)'
+    },
+    'mufredat.stat.stages': {
+      tr: '4 Temel Eğitim Kademesi',
+      en: '4 Core Educational Stages',
+      ar: '4 مراحل تعليمية أساسية'
+    },
+    'mufredat.stat.standards': {
+      tr: '%100 MEB Kazanım Standartları',
+      en: '100% MoNE Standards',
+      ar: 'معايير مخرجات وزارة التربية 100%'
+    },
+    'mufredat.stat.projects': {
+      tr: 'Uygulamalı Atölye & Proje Odaklı',
+      en: 'Hands-on Lab & Project Focused',
+      ar: 'ورش عمل عملية قائمة على المشاريع'
+    },
+    'mufredat.filter.all': {
+      tr: 'Tüm Sınıflar (13)',
+      en: 'All Grades (13)',
+      ar: 'جميع الصفوف (13)'
+    },
+    'mufredat.filter.preschool': {
+      tr: 'Okul Öncesi (4-5 Yaş)',
+      en: 'Preschool (Ages 4-5)',
+      ar: 'ما قبل المدرسة (4-5 سنوات)'
+    },
+    'mufredat.filter.primary': {
+      tr: 'İlkokul (1 - 4. Sınıf)',
+      en: 'Primary (Grades 1-4)',
+      ar: 'الابتدائية (الصفوف 1-4)'
+    },
+    'mufredat.filter.middle': {
+      tr: 'Ortaokul (5 - 8. Sınıf)',
+      en: 'Middle (Grades 5-8)',
+      ar: 'المتوسطة (الصفوف 5-8)'
+    },
+    'mufredat.filter.high': {
+      tr: 'Lise (9 - 12. Sınıf)',
+      en: 'High School (Grades 9-12)',
+      ar: 'الثانوية (الصفوف 9-12)'
+    },
+    'mufredat.quickselect.label': {
+      tr: 'Sınıf Seçin (Hızlı Geçiş & Özel Görünüm):',
+      en: 'Select Grade (Quick Jump & Dedicated View):',
+      ar: 'اختر الصف (انتقال سريع وعرض مخصص):'
+    },
+    'mufredat.quickselect.count': {
+      tr: '13 Seviye',
+      en: '13 Levels',
+      ar: '13 مستوى'
+    },
+    'mufredat.loading': {
+      tr: 'Müfredat yükleniyor...',
+      en: 'Loading curriculum...',
+      ar: 'جارٍ تحميل المنهج...'
+    },
+    'mufredat.overview.title': {
+      tr: 'Ana Sınıfından Liseye Bilişim Merdiveni',
+      en: 'From Kindergarten to High School IT Ladder',
+      ar: 'سلم تكنولوجيا المعلومات من الروضة إلى الثانوية'
+    },
+    'mufredat.overview.desc': {
+      tr: 'Tüm kademelerimizi ve yaş gruplarımızı tek bakışta inceleyin, istediğiniz sınıfa anında geçin.',
+      en: 'Explore all our stages and age groups at a glance, jump to any grade instantly.',
+      ar: 'استكشف جميع مراحلنا وفئاتنا العمرية في لمحة، وانتقل فورًا إلى أي صف تريده.'
+    },
+    'mufredat.stages.strip': {
+      tr: '• Okul Öncesi • İlkokul • Ortaokul • Anadolu Lisesi • Fen Lisesi',
+      en: '• Preschool • Primary • Middle School • Anatolian High • Science High',
+      ar: '• ما قبل المدرسة • الابتدائية • المتوسطة • الثانوية الأناضولية • ثانوية العلوم'
+    },
+    'mufredat.maps.link': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü (Google Haritalar)',
+      en: 'Uğur Okulları Viranşehir Kampüsü (Google Maps)',
+      ar: 'Uğur Okulları Viranşehir Kampüsü (خرائط Google)'
+    },
+    'mufredat.footer.lab': {
+      tr: 'Bilişim Teknolojileri ve İnovasyon Laboratuvarı',
+      en: 'IT and Innovation Laboratory',
+      ar: 'مختبر تكنولوجيا المعلومات والابتكار'
+    },
+    'mufredat.footer.backtotop': {
+      tr: 'Başa Dön',
+      en: 'Back to Top',
+      ar: 'العودة للأعلى'
+    },
+    'mufredat.action.share': {
+      tr: 'Paylaş',
+      en: 'Share',
+      ar: 'مشاركة'
+    },
+    'mufredat.action.print': {
+      tr: 'Yazdır / PDF',
+      en: 'Print / PDF',
+      ar: 'طباعة / PDF'
+    },
+    'mufredat.banner.zoom': {
+      tr: 'Tam Boyut Görseli Aç',
+      en: 'Open Full Size Image',
+      ar: 'فتح الصورة بالحجم الكامل'
+    },
+    'mufredat.banner.levelProject': {
+      tr: 'Seviye Projesi:',
+      en: 'Level Project:',
+      ar: 'مشروع المستوى:'
+    },
+    'mufredat.section.academicUnits': {
+      tr: 'Akademik Dönem Üniteleri ve Haftalık İçerikler',
+      en: 'Academic Term Units & Weekly Topics',
+      ar: 'وحدات الفصل الدراسي والمواضيع الأسبوعية'
+    },
+    'mufredat.term1.title': {
+      tr: '1. Dönem (Güz Yarıyılı) Müfredatı',
+      en: 'Term 1 (Fall Semester) Curriculum',
+      ar: 'منهج الفصل الأول (فصل الخريف)'
+    },
+    'mufredat.term2.title': {
+      tr: '2. Dönem (Bahar Yarıyılı) Müfredatı',
+      en: 'Term 2 (Spring Semester) Curriculum',
+      ar: 'منهج الفصل الثاني (فصل الربيع)'
+    },
+    'mufredat.section.outcomes': {
+      tr: '2026 MEB Temel Öğrenme Kazanımları',
+      en: '2026 MoNE Core Learning Outcomes',
+      ar: 'مخرجات التعلم الأساسية لوزارة التربية 2026'
+    },
+    'mufredat.section.tools': {
+      tr: 'Laboratuvar Yazılım ve Donanım Ekosistemi',
+      en: 'Lab Software & Hardware Ecosystem',
+      ar: 'النظام البيئي لبرمجيات وأجهزة المختبر'
+    },
+    'mufredat.capstone.badge': {
+      tr: 'Dönem Sonu Başarı Projesi (Capstone)',
+      en: 'Capstone Achievement Project',
+      ar: 'مشروع التخرج لنهاية الفصل الدراسي'
+    },
+    'mufredat.capstone.termEnd': {
+      tr: '2. Dönem Sonu',
+      en: 'End of Term 2',
+      ar: 'نهاية الفصل الثاني'
+    },
+    'mufredat.capstone.zoom': {
+      tr: 'Projeyi Tam Boyut İncele',
+      en: 'View Project Full Size',
+      ar: 'معاينة المشروع بالحجم الكامل'
+    },
+    'mufredat.video.subtitle': {
+      tr: 'MEB ve Uğur Okulları standartlarında hazırlanmış uygulamalı örnek video dersi',
+      en: 'Hands-on sample video lesson prepared to MoNE and Uğur Okulları standards',
+      ar: 'درس فيديو نموذجي تطبيقي مُعد وفق معايير وزارة التربية وUğur Okulları'
+    },
+    'mufredat.video.btn': {
+      tr: 'Ders Videosunu İzle',
+      en: 'Watch Lesson Video',
+      ar: 'مشاهدة فيديو الدرس'
+    },
+    'mufredat.quiz.titleSuffix': {
+      tr: 'İnteraktif Mini Bilgi Testi',
+      en: 'Interactive Mini Quiz',
+      ar: 'اختبار معرفي مصغر تفاعلي'
+    },
+    'mufredat.quiz.correct': {
+      tr: 'Doğru',
+      en: 'Correct',
+      ar: 'صحيح'
+    },
+    'mufredat.quiz.reset': {
+      tr: 'Sıfırla',
+      en: 'Reset',
+      ar: 'إعادة تعيين'
+    },
+    'mufredat.quiz.question': {
+      tr: 'Soru',
+      en: 'Question',
+      ar: 'السؤال'
+    },
+    'mufredat.quiz.explanation': {
+      tr: 'Açıklama:',
+      en: 'Explanation:',
+      ar: 'الشرح:'
+    },
+    'mufredat.nav.prev': {
+      tr: 'Önceki:',
+      en: 'Previous:',
+      ar: 'السابق:'
+    },
+    'mufredat.nav.first': {
+      tr: 'İlk Sınıf Kademesi',
+      en: 'First Grade Stage',
+      ar: 'المرحلة الأولى'
+    },
+    'mufredat.nav.next': {
+      tr: 'Sonraki:',
+      en: 'Next:',
+      ar: 'التالي:'
+    },
+    'mufredat.nav.last': {
+      tr: 'Son Sınıf Kademesi (12. Sınıf)',
+      en: 'Last Grade Stage (12th Grade)',
+      ar: 'المرحلة الأخيرة (الصف الثاني عشر)'
+    },
+    'mufredat.nav.level': {
+      tr: 'Seviye',
+      en: 'Level',
+      ar: 'مستوى'
+    },
+    'mufredat.grid.btn': {
+      tr: 'Detaylı Müfredatı İncele',
+      en: 'View Detailed Curriculum',
+      ar: 'عرض المنهج التفصيلي'
+    },
+    'mufredat.modal.title': {
+      tr: 'Proje Başlığı',
+      en: 'Project Title',
+      ar: 'عنوان المشروع'
+    },
+    'mufredat.modal.desc': {
+      tr: 'Proje Açıklaması',
+      en: 'Project Description',
+      ar: 'وصف المشروع'
+    },
+    'mufredat.modal.close': {
+      tr: 'Kapat',
+      en: 'Close',
+      ar: 'إغلاق'
+    },
+    'mufredat.share.copied': {
+      tr: 'Bağlantı Kopyalandı!',
+      en: 'Link Copied!',
+      ar: 'تم نسخ الرابط!'
+    },
+    'mufredat.share.title': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü K12 Bilişim Müfredatı',
+      en: 'Uğur Okulları Viranşehir Kampüsü K12 IT Curriculum',
+      ar: 'منهج K12 لتكنولوجيا المعلومات لUğur Okulları Viranşehir Kampüsü'
+    },
+
 
     // ── CURRICULUM CARDS ──
     'card1.badge': {
@@ -749,6 +1525,76 @@ const I18N = (() => {
       tr: 'Öğrenme Çıktısı',
       en: 'Learning Outcome',
       ar: 'نتيجة التعلم'
+    },
+    'modal.close': {
+      tr: 'Kapat',
+      en: 'Close',
+      ar: 'إغلاق'
+    },
+    'modal.stage.1': {
+      tr: '1. Aşama',
+      en: 'Stage 1',
+      ar: 'المرحلة 1'
+    },
+    'modal.stage.2': {
+      tr: '2. Aşama',
+      en: 'Stage 2',
+      ar: 'المرحلة 2'
+    },
+    'modal.stage.3': {
+      tr: '3. Aşama',
+      en: 'Stage 3',
+      ar: 'المرحلة 3'
+    },
+    'modal.stage.4': {
+      tr: '4. Aşama',
+      en: 'Stage 4',
+      ar: 'المرحلة 4'
+    },
+    'modal.stage.5': {
+      tr: '5. Aşama',
+      en: 'Stage 5',
+      ar: 'المرحلة 5'
+    },
+    'modal.stage.6': {
+      tr: '6. Aşama',
+      en: 'Stage 6',
+      ar: 'المرحلة 6'
+    },
+    'campus.modal.prev': {
+      tr: 'Önceki Görsel',
+      en: 'Previous Image',
+      ar: 'الصورة السابقة'
+    },
+    'campus.modal.next': {
+      tr: 'Sonraki Görsel',
+      en: 'Next Image',
+      ar: 'الصورة التالية'
+    },
+    'campus.modal.dots': {
+      tr: 'Görsel Geçiş Göstergesi',
+      en: 'Image Slider Indicator',
+      ar: 'مؤشر انتقال الصور'
+    },
+    'campus.modal.drag': {
+      tr: 'Görseller arasında kaydırmak için sürükleyin',
+      en: 'Drag to slide between images',
+      ar: 'اسحب للتنقل بين الصور'
+    },
+    'theme.light.title': {
+      tr: 'Tema: Açık Mod',
+      en: 'Theme: Light Mode',
+      ar: 'المظهر: الوضع الفاتح'
+    },
+    'theme.dark.title': {
+      tr: 'Tema: Kapalı Mod',
+      en: 'Theme: Dark Mode',
+      ar: 'المظهر: الوضع الداكن'
+    },
+    'theme.system.title': {
+      tr: 'Tema: Sistem Modu (Otomatik)',
+      en: 'Theme: System Mode (Automatic)',
+      ar: 'المظهر: وضع النظام (تلقائي)'
     },
 
     // ── TOAST MESSAGES ──
@@ -3062,15 +3908,27 @@ const I18N = (() => {
 
   // ─── LANGUAGE DETECTION ──────────────────────────────────────────
   function detectLanguage() {
-    // 1. Check localStorage
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && SUPPORTED_LANGS.includes(stored)) {
-      return stored;
+    // 0. Check URL query parameter (?lang=ar, ?lang=en, ?lang=tr)
+    if (typeof window !== 'undefined' && window.location && window.location.search) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      if (urlLang && SUPPORTED_LANGS.includes(urlLang.toLowerCase())) {
+        const clean = urlLang.toLowerCase();
+        try { localStorage.setItem(STORAGE_KEY, clean); } catch (e) {}
+        return clean;
+      }
     }
 
+    // 1. Check localStorage
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && SUPPORTED_LANGS.includes(stored)) {
+        return stored;
+      }
+    } catch (e) {}
+
     // 2. Check browser language
-    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    // Match exact (e.g. "tr", "en", "ar") or prefix (e.g. "tr-TR", "en-US", "ar-SA")
+    const browserLang = (typeof navigator !== 'undefined' && (navigator.language || navigator.userLanguage || '')).toLowerCase();
     for (const lang of SUPPORTED_LANGS) {
       if (browserLang === lang || browserLang.startsWith(lang + '-')) {
         return lang;
@@ -3096,7 +3954,9 @@ const I18N = (() => {
     const dir = RTL_LANGS.includes(lang) ? 'rtl' : 'ltr';
     document.documentElement.setAttribute('dir', dir);
     document.documentElement.setAttribute('lang', lang);
-    document.body.setAttribute('dir', dir);
+    if (document.body) {
+      document.body.setAttribute('dir', dir);
+    }
   }
 
   // ─── APPLY ALL TRANSLATIONS ──────────────────────────────────────
@@ -3105,9 +3965,16 @@ const I18N = (() => {
     applyDirection(currentLang);
 
     // Update page title and meta
-    document.title = t('meta.title');
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
+    const isMufredat = typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.indexOf('mufredat.html') !== -1;
+    if (isMufredat) {
+      document.title = t('mufredat.meta.title');
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', t('mufredat.meta.description'));
+    } else {
+      document.title = t('meta.title');
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', t('meta.description'));
+    }
 
     // Translate all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -3164,6 +4031,11 @@ const I18N = (() => {
     if (window._reRenderModalIfOpen) {
       window._reRenderModalIfOpen();
     }
+
+    // Dispatch global languageChanged event for all reactive components (ViewPager, Mufredat, etc.)
+    try {
+      window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: currentLang } }));
+    } catch (e) {}
   }
 
   // ─── SET LANGUAGE ────────────────────────────────────────────────

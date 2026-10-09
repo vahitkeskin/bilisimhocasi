@@ -78,6 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
+
+      // 5. Reapply theme tooltip when language changes
+      window.addEventListener('languageChanged', () => {
+        this.applyTheme(this.currentMode, false);
+      });
     }
 
     toggleDropdown(show) {
@@ -114,15 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update main icon & aria-label
       if (this.activeIcon) {
+        const getT = (key, fallback) => (window.I18N && typeof window.I18N.t === 'function' ? window.I18N.t(key) : fallback);
         if (mode === 'light') {
           this.activeIcon.className = 'fas fa-sun';
-          if (this.menuBtn) this.menuBtn.title = 'Tema: Açık Mod';
+          if (this.menuBtn) this.menuBtn.title = getT('theme.light.title', 'Tema: Açık Mod');
         } else if (mode === 'dark') {
           this.activeIcon.className = 'fas fa-moon';
-          if (this.menuBtn) this.menuBtn.title = 'Tema: Kapalı Mod';
+          if (this.menuBtn) this.menuBtn.title = getT('theme.dark.title', 'Tema: Kapalı Mod');
         } else {
           this.activeIcon.className = 'fas fa-desktop';
-          if (this.menuBtn) this.menuBtn.title = 'Tema: Sistem Modu (Otomatik)';
+          if (this.menuBtn) this.menuBtn.title = getT('theme.system.title', 'Tema: Sistem Modu (Otomatik)');
         }
       }
 

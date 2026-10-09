@@ -250,9 +250,9 @@
         
         <!-- Breadcrumb Navigation -->
         <nav aria-label="Sayfa Yolu" class="mufredat-breadcrumb">
-          <a href="index.html#cover"><i class="fas fa-home mr-1"></i> Ana Sayfa</a>
+          <a href="index.html#cover"><i class="fas fa-home mr-1"></i> <span data-i18n="mufredat.breadcrumb.home">Ana Sayfa</span></a>
           <span class="separator">/</span>
-          <a href="index.html#portfolio">Müfredat ve Kademelerimiz</a>
+          <a href="index.html#portfolio" data-i18n="mufredat.breadcrumb.stages">Müfredat ve Kademelerimiz</a>
           <span class="separator">/</span>
           <span id="breadcrumb-category">K12</span>
           <span class="separator">/</span>
@@ -262,31 +262,31 @@
         <!-- Official MEB Badge -->
         <div>
           <span class="mufredat-meb-badge">
-            <i class="fas fa-award"></i> T.C. Millî Eğitim Bakanlığı 2026 Müfredatı ile %100 Uyumlu
+            <i class="fas fa-award mr-1"></i> <span data-i18n="mufredat.badge.meb">T.C. Millî Eğitim Bakanlığı 2026 Müfredatı ile %100 Uyumlu</span>
           </span>
         </div>
 
-        <h1 class="mufredat-page-title">
+        <h1 class="mufredat-page-title" data-i18n="mufredat.title">
           K12 Bilişim Teknolojileri ve Bilgisayar Bilimi Müfredatı
         </h1>
 
-        <p class="mufredat-page-subtitle">
+        <p class="mufredat-page-subtitle" data-i18n="mufredat.subtitle">
           Ana sınıfından 12. sınıfa kadar her yaş grubuna ve pedagojik bilişsel gelişim düzeyine özel hazırlanmış 13 kademeli tam kapsamlı eğitim yolculuğu.
         </p>
 
         <!-- Stats Chips Bar -->
         <div class="mufredat-stats-bar">
           <span class="mufredat-stat-pill">
-            <i class="fas fa-graduation-cap"></i> 13 Ayrı Sınıf Düzeyi (K12)
+            <i class="fas fa-graduation-cap mr-1"></i> <span data-i18n="mufredat.stat.levels">13 Ayrı Sınıf Düzeyi (K12)</span>
           </span>
           <span class="mufredat-stat-pill">
-            <i class="fas fa-layer-group"></i> 4 Temel Eğitim Kademesi
+            <i class="fas fa-layer-group mr-1"></i> <span data-i18n="mufredat.stat.stages">4 Temel Eğitim Kademesi</span>
           </span>
           <span class="mufredat-stat-pill">
-            <i class="fas fa-check-circle"></i> %100 MEB Kazanım Standartları
+            <i class="fas fa-check-circle mr-1"></i> <span data-i18n="mufredat.stat.standards">%100 MEB Kazanım Standartları</span>
           </span>
           <span class="mufredat-stat-pill">
-            <i class="fas fa-laptop-code"></i> Uygulamalı Atölye & Proje Odaklı
+            <i class="fas fa-laptop-code mr-1"></i> <span data-i18n="mufredat.stat.projects">Uygulamalı Atölye & Proje Odaklı</span>
           </span>
         </div>
 
@@ -303,19 +303,19 @@
     <div class="mufredat-stages-nav">
       <div class="stage-tab-buttons" role="tablist">
         <button type="button" class="stage-tab-btn active" data-filter="all" role="tab">
-          <i class="fas fa-th-large"></i> Tüm Sınıflar (13)
+          <i class="fas fa-th-large mr-1"></i> <span data-i18n="mufredat.filter.all">Tüm Sınıflar (13)</span>
         </button>
         <button type="button" class="stage-tab-btn" data-filter="okuloncesi" role="tab">
-          <i class="fas fa-shapes"></i> Okul Öncesi (4-5 Yaş)
+          <i class="fas fa-shapes mr-1"></i> <span data-i18n="mufredat.filter.preschool">Okul Öncesi (4-5 Yaş)</span>
         </button>
         <button type="button" class="stage-tab-btn" data-filter="ilkokul" role="tab">
-          <i class="fas fa-cubes"></i> İlkokul (1 - 4. Sınıf)
+          <i class="fas fa-cubes mr-1"></i> <span data-i18n="mufredat.filter.primary">İlkokul (1 - 4. Sınıf)</span>
         </button>
         <button type="button" class="stage-tab-btn" data-filter="ortaokul" role="tab">
-          <i class="fas fa-robot"></i> Ortaokul (5 - 8. Sınıf)
+          <i class="fas fa-robot mr-1"></i> <span data-i18n="mufredat.filter.middle">Ortaokul (5 - 8. Sınıf)</span>
         </button>
         <button type="button" class="stage-tab-btn" data-filter="lise" role="tab">
-          <i class="fas fa-code"></i> Lise (9 - 12. Sınıf)
+          <i class="fas fa-code mr-1"></i> <span data-i18n="mufredat.filter.high">Lise (9 - 12. Sınıf)</span>
         </button>
       </div>
     </div>
@@ -323,8 +323,8 @@
     <!-- 13 Grade Pills Selector -->
     <div class="grade-pills-container">
       <div class="grade-pills-label-row">
-        <span><i class="fas fa-mouse-pointer mr-1"></i> Sınıf Seçin (Hızlı Geçiş & Özel Görünüm):</span>
-        <span>13 Seviye</span>
+        <span><i class="fas fa-mouse-pointer mr-1"></i> <span data-i18n="mufredat.quickselect.label">Sınıf Seçin (Hızlı Geçiş & Özel Görünüm):</span></span>
+        <span data-i18n="mufredat.quickselect.count">13 Seviye</span>
       </div>
       <div class="grade-pills-list" id="grade-pills-list">
         <!-- Rendered dynamically by js/mufredat.js -->
@@ -340,7 +340,7 @@
     <!-- Rendered dynamically by js/mufredat.js -->
     <div class="text-center py-5">
       <div class="spinner-border text-primary" role="status">
-        <span class="sr-only">Müfredat yükleniyor...</span>
+        <span class="sr-only" data-i18n="mufredat.loading">Müfredat yükleniyor...</span>
       </div>
     </div>
   </main>
@@ -351,10 +351,10 @@
   <section class="all-grades-overview-section">
     <div class="container">
       <div class="text-center mb-4">
-        <h3 style="font-family: var(--font-heading); font-weight: 800; color: var(--text-heading); font-size: 1.6rem;">
+        <h3 data-i18n="mufredat.overview.title" style="font-family: var(--font-heading); font-weight: 800; color: var(--text-heading); font-size: 1.6rem;">
           Ana Sınıfından Liseye Bilişim Merdiveni
         </h3>
-        <p style="font-family: var(--font-serif); font-style: italic; color: var(--text-muted); font-size: 14.5px;">
+        <p data-i18n="mufredat.overview.desc" style="font-family: var(--font-serif); font-style: italic; color: var(--text-muted); font-size: 14.5px;">
           Tüm kademelerimizi ve yaş gruplarımızı tek bakışta inceleyin, istediğiniz sınıfa anında geçin.
         </p>
       </div>
@@ -370,7 +370,7 @@
        ==================================================================== -->
   <div class="container my-4">
     <div class="p-4" style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; text-align: center;">
-      <div class="footer-stages-row mb-2" style="font-size: 14px; font-weight: 800; color: var(--primary-gold);">
+      <div class="footer-stages-row mb-2" data-i18n="mufredat.stages.strip" style="font-size: 14px; font-weight: 800; color: var(--primary-gold);">
         • Okul Öncesi • İlkokul • Ortaokul • Anadolu Lisesi • Fen Lisesi
       </div>
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
@@ -378,7 +378,7 @@
           <i class="fas fa-phone-alt mr-1"></i> 0544 969 49 19
         </a>
         <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 13px; font-weight: 700; border-radius: 20px; padding: 6px 18px;">
-          <i class="fas fa-map-marker-alt mr-1"></i> Uğur Okulları Viranşehir Kampüsü (Google Haritalar)
+          <i class="fas fa-map-marker-alt mr-1"></i> <span data-i18n="mufredat.maps.link">Uğur Okulları Viranşehir Kampüsü (Google Haritalar)</span>
         </a>
       </div>
     </div>
@@ -392,17 +392,17 @@
       <div class="row align-items-center">
         <div class="col-md-4 text-center text-md-left">
           <p style="color: var(--text-muted); font-size: 13px; margin: 0;">
-            &copy; <span id="current-year-mufredat"></span> Uğur Okulları Viranşehir Kampüsü
+            &copy; <span id="current-year-mufredat"></span> <span data-i18n="footer.copyright">Uğur Okulları Viranşehir Kampüsü</span>
           </p>
         </div>
         <div class="col-md-4 text-center my-2 my-md-0">
-          <span style="font-family: var(--font-heading); font-size: 12.5px; font-weight: 700; color: var(--primary-gold);">
+          <span data-i18n="mufredat.footer.lab" style="font-family: var(--font-heading); font-size: 12.5px; font-weight: 700; color: var(--primary-gold);">
             Bilişim Teknolojileri ve İnovasyon Laboratuvarı
           </span>
         </div>
         <div class="col-md-4 text-center text-md-right">
           <a href="index.html#cover" style="color: var(--text-muted); font-size: 13px; text-decoration: none;">
-            <i class="fas fa-arrow-up mr-1"></i> Başa Dön
+            <i class="fas fa-arrow-up mr-1"></i> <span data-i18n="mufredat.footer.backtotop">Başa Dön</span>
           </a>
         </div>
       </div>
@@ -415,12 +415,12 @@
        ==================================================================== -->
   <div class="project-modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
     <div class="project-modal-card">
-      <button type="button" class="modal-close-btn" id="project-modal-close-btn" aria-label="Kapat">
+      <button type="button" class="modal-close-btn" id="project-modal-close-btn" data-i18n-aria="mufredat.modal.close" aria-label="Kapat">
         <i class="fas fa-times"></i>
       </button>
       <img src="" alt="" class="project-modal-img" id="project-modal-img">
-      <h3 class="project-modal-title" id="project-modal-title">Proje Başlığı</h3>
-      <p class="project-modal-desc" id="project-modal-desc">Proje Açıklaması</p>
+      <h3 class="project-modal-title" id="project-modal-title" data-i18n="mufredat.modal.title">Proje Başlığı</h3>
+      <p class="project-modal-desc" id="project-modal-desc" data-i18n="mufredat.modal.desc">Proje Açıklaması</p>
     </div>
   </div>
 
@@ -539,30 +539,16 @@
 
       new ThemeController();
 
-      // Language Switcher sync for mufredat.html
-      const langBtn = document.getElementById('lang-menu-btn');
-      const langDropdown = document.getElementById('lang-dropdown-menu');
-      if (langBtn && langDropdown) {
-        langBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          langDropdown.classList.toggle('show');
-          langBtn.setAttribute('aria-expanded', langDropdown.classList.contains('show'));
-        });
-        document.addEventListener('click', (e) => {
-          if (!langDropdown.contains(e.target) && e.target !== langBtn) {
-            langDropdown.classList.remove('show');
-            langBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-
       // Share page button
       const shareBtn = document.getElementById('share-page-btn');
       if (shareBtn) {
         shareBtn.addEventListener('click', async () => {
+          const shareText = (window.I18N && typeof window.I18N.t === 'function')
+            ? window.I18N.t('mufredat.meta.description')
+            : 'Uğur Okulları Viranşehir Kampüsü K12 Bilişim Teknolojileri ve Bilgisayar Bilimi Müfredatı';
           const shareData = {
             title: document.title,
-            text: 'Uğur Okulları Viranşehir Kampüsü K12 Bilişim Teknolojileri ve Bilgisayar Bilimi Müfredatı',
+            text: shareText,
             url: window.location.href
           };
           if (navigator.share) {

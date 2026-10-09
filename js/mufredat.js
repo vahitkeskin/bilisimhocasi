@@ -2,6 +2,7 @@
  * UĞUR OKULLARI VİRANŞEHİR KAMPÜSÜ
  * 2026 MEB K12 Bilişim Teknolojileri & Bilgisayar Bilimi Müfredat Sayfası Kontrolcüsü
  * (mufredat.html Controller)
+ * 3 Dil Desteği: Türkçe (tr), English (en), العربية (ar)
  */
 
 (function () {
@@ -21,24 +22,65 @@
   const overviewGradesGrid = document.getElementById('overview-grades-grid');
 
   /**
+   * Helper: Get current active language code
+   */
+  function getCurrentLang() {
+    return (window.I18N && typeof window.I18N.currentLang === 'function') ? window.I18N.currentLang() : 'tr';
+  }
+
+  /**
+   * Helper: Translate key with fallback
+   */
+  function t(key, fallback = '') {
+    if (window.I18N && typeof window.I18N.t === 'function') {
+      const res = window.I18N.t(key);
+      if (res && res !== key) return res;
+    }
+    return fallback || key;
+  }
+
+  /**
+   * Helper: Get localized grade data for a given grade key
+   */
+  function getGradeData(key) {
+    const lang = getCurrentLang();
+    if (window.CURRICULUM_GRADES_DATA_I18N && window.CURRICULUM_GRADES_DATA_I18N[lang] && window.CURRICULUM_GRADES_DATA_I18N[lang][key]) {
+      return window.CURRICULUM_GRADES_DATA_I18N[lang][key];
+    }
+    return (window.CURRICULUM_GRADES_DATA && window.CURRICULUM_GRADES_DATA[key]) || null;
+  }
+
+  /**
+   * Helper: Get all localized grades for the current language
+   */
+  function getAllGrades() {
+    const lang = getCurrentLang();
+    if (window.CURRICULUM_GRADES_DATA_I18N && window.CURRICULUM_GRADES_DATA_I18N[lang]) {
+      return window.CURRICULUM_GRADES_DATA_I18N[lang];
+    }
+    return window.CURRICULUM_GRADES_DATA || {};
+  }
+
+  /**
    * Determine initial grade and filter from URL search params
    */
   function parseUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const sinifParam = params.get('sinif');
     const kademeParam = params.get('kademe');
+    const allGrades = getAllGrades();
 
-    if (sinifParam && window.CURRICULUM_GRADES_DATA && window.CURRICULUM_GRADES_DATA[sinifParam]) {
+    if (sinifParam && allGrades[sinifParam]) {
       activeGradeKey = sinifParam;
-      activeFilter = window.CURRICULUM_GRADES_DATA[sinifParam].category || 'all';
+      activeFilter = allGrades[sinifParam].category || 'all';
       return;
     }
 
     if (kademeParam && window.STAGE_TO_DEFAULT_GRADE && window.STAGE_TO_DEFAULT_GRADE[kademeParam]) {
       const defaultGrade = window.STAGE_TO_DEFAULT_GRADE[kademeParam];
-      if (window.CURRICULUM_GRADES_DATA[defaultGrade]) {
+      if (allGrades[defaultGrade]) {
         activeGradeKey = defaultGrade;
-        activeFilter = window.CURRICULUM_GRADES_DATA[defaultGrade].category || 'all';
+        activeFilter = allGrades[defaultGrade].category || 'all';
         return;
       }
     }
@@ -52,19 +94,15 @@
    * Switch active grade and update URL without full reload
    */
   function selectGrade(gradeKey, updateHistory = true, shouldScroll = false) {
-    if (!window.CURRICULUM_GRADES_DATA || !window.CURRICULUM_GRADES_DATA[gradeKey]) {
-      return;
-    }
+    const gradeData = getGradeData(gradeKey);
+    if (!gradeData) return;
 
     activeGradeKey = gradeKey;
-    const gradeData = window.CURRICULUM_GRADES_DATA[gradeKey];
-
-    // Reset quiz state for new grade
     quizScores = {};
 
     // Update document title for SEO & bookmarking
-    const campusTitle = window.I18N ? window.I18N.t('nav.brand.name') : 'Uğur Okulları';
-    document.title = `${gradeData.gradeLabel} MEB Bilişim Müfredatı | ${campusTitle} Viranşehir Kampüsü`;
+    const campusTitle = t('nav.brand.name', 'Uğur Okulları');
+    document.title = `${gradeData.gradeLabel} | ${campusTitle} Viranşehir Kampüsü`;
 
     // Update URL query parameter
     if (updateHistory) {
@@ -112,10 +150,11 @@
 
     // If current grade doesn't match active filter, auto-select first matching grade
     if (filter !== 'all') {
-      const gradeData = window.CURRICULUM_GRADES_DATA[activeGradeKey];
+      const allGrades = getAllGrades();
+      const gradeData = allGrades[activeGradeKey];
       if (gradeData && gradeData.category !== filter) {
-        const matchingKey = Object.keys(window.CURRICULUM_GRADES_DATA).find(
-          key => window.CURRICULUM_GRADES_DATA[key].category === filter
+        const matchingKey = Object.keys(allGrades).find(
+          key => allGrades[key].category === filter
         );
         if (matchingKey) {
           selectGrade(matchingKey, true, false);
@@ -140,12 +179,13 @@
    * Render the 13 grade selector pills
    */
   function renderGradePills() {
-    if (!gradePillsList || !window.CURRICULUM_GRADES_DATA) return;
+    if (!gradePillsList) return;
+    const allGrades = getAllGrades();
 
     gradePillsList.innerHTML = '';
 
-    Object.keys(window.CURRICULUM_GRADES_DATA).forEach(key => {
-      const grade = window.CURRICULUM_GRADES_DATA[key];
+    Object.keys(allGrades).forEach(key => {
+      const grade = allGrades[key];
       const isVisible = activeFilter === 'all' || grade.category === activeFilter;
 
       if (!isVisible) return;
@@ -177,18 +217,19 @@
    */
   function renderActiveGrade(grade) {
     if (!activeGradeContainer) return;
+    const allGrades = getAllGrades();
 
     // Keys list for previous / next navigation
-    const allKeys = Object.keys(window.CURRICULUM_GRADES_DATA);
+    const allKeys = Object.keys(allGrades);
     const currentIndex = allKeys.indexOf(grade.id);
     const prevKey = currentIndex > 0 ? allKeys[currentIndex - 1] : null;
     const nextKey = currentIndex < allKeys.length - 1 ? allKeys[currentIndex + 1] : null;
 
-    const prevGrade = prevKey ? window.CURRICULUM_GRADES_DATA[prevKey] : null;
-    const nextGrade = nextKey ? window.CURRICULUM_GRADES_DATA[nextKey] : null;
+    const prevGrade = prevKey ? allGrades[prevKey] : null;
+    const nextGrade = nextKey ? allGrades[nextKey] : null;
 
     // Build Term 1 Units HTML
-    const term1UnitsHtml = grade.term1.map(u => `
+    const term1UnitsHtml = (grade.term1 || []).map(u => `
       <div class="term-unit-item">
         <div class="unit-item-name">
           <i class="fas fa-bookmark"></i>
@@ -199,7 +240,7 @@
     `).join('');
 
     // Build Term 2 Units HTML
-    const term2UnitsHtml = grade.term2.map(u => `
+    const term2UnitsHtml = (grade.term2 || []).map(u => `
       <div class="term-unit-item">
         <div class="unit-item-name">
           <i class="fas fa-bookmark"></i>
@@ -210,7 +251,7 @@
     `).join('');
 
     // Build Learning Outcomes HTML
-    const outcomesHtml = grade.outcomes.map(out => `
+    const outcomesHtml = (grade.outcomes || []).map(out => `
       <div class="outcome-check-card">
         <div class="outcome-check-icon">
           <i class="fas fa-check"></i>
@@ -220,7 +261,7 @@
     `).join('');
 
     // Build Tools & Ecosystem HTML
-    const toolsHtml = grade.tools.map(tool => `
+    const toolsHtml = (grade.tools || []).map(tool => `
       <span class="tool-tag-pill">
         <i class="fas fa-microchip"></i>
         <span>${tool}</span>
@@ -228,7 +269,7 @@
     `).join('');
 
     // Build Quiz Questions HTML
-    const quizHtml = grade.quiz.map((q, qIndex) => {
+    const quizHtml = (grade.quiz || []).map((q, qIndex) => {
       const optionsHtml = q.options.map((opt, optIndex) => `
         <button type="button" class="quiz-option-btn" data-q-idx="${qIndex}" data-opt-idx="${optIndex}">
           <span class="badge badge-secondary mr-2">${String.fromCharCode(65 + optIndex)}</span>
@@ -239,14 +280,14 @@
       return `
         <div class="quiz-question-block" id="quiz-block-${qIndex}">
           <div class="quiz-question-title">
-            <span class="quiz-q-num">Soru ${qIndex + 1}:</span>
+            <span class="quiz-q-num">${t('mufredat.quiz.question', 'Soru')} ${qIndex + 1}:</span>
             <span>${q.question}</span>
           </div>
           <div class="quiz-options-list">
             ${optionsHtml}
           </div>
           <div class="quiz-explanation-box" id="quiz-expl-${qIndex}">
-            <strong><i class="fas fa-lightbulb text-warning mr-1"></i> Açıklama:</strong> ${q.explanation}
+            <strong><i class="fas fa-lightbulb text-warning mr-1"></i> ${t('mufredat.quiz.explanation', 'Açıklama:')}</strong> ${q.explanation}
           </div>
         </div>
       `;
@@ -275,26 +316,26 @@
             </div>
 
             <div class="active-grade-actions">
-              <button type="button" class="grade-action-btn" id="btn-share-grade" title="Bu Sınıfın Müfredat Bağlantısını Paylaş">
+              <button type="button" class="grade-action-btn" id="btn-share-grade" title="${t('mufredat.action.share', 'Paylaş')}">
                 <i class="fas fa-share-alt"></i>
-                <span>Paylaş</span>
+                <span>${t('mufredat.action.share', 'Paylaş')}</span>
               </button>
-              <button type="button" class="grade-action-btn" id="btn-print-grade" title="Bu Sınıfın Müfredatını Yazdır veya PDF Kaydet">
+              <button type="button" class="grade-action-btn" id="btn-print-grade" title="${t('mufredat.action.print', 'Yazdır / PDF')}">
                 <i class="fas fa-print"></i>
-                <span>Yazdır / PDF</span>
+                <span>${t('mufredat.action.print', 'Yazdır / PDF')}</span>
               </button>
             </div>
           </div>
 
-          <!-- Sınıf Seviyesi Proje Görseli (Title'ın tam üstünde, title genişliğinde ve orantılı) -->
-          <div class="active-grade-hero-banner-wrap" role="button" tabindex="0" title="Proje Görselini Tam Boyut İncele" data-img="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" data-title="${grade.project}" data-desc="${grade.projectDesc}">
+          <!-- Sınıf Seviyesi Proje Görseli -->
+          <div class="active-grade-hero-banner-wrap" role="button" tabindex="0" title="${t('mufredat.banner.zoom', 'Tam Boyut Görseli Aç')}" data-img="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" data-title="${grade.project}" data-desc="${grade.projectDesc}">
             <img src="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" alt="${grade.project} - ${grade.title}" class="active-grade-hero-banner-img" loading="eager">
             <div class="active-grade-hero-banner-overlay">
               <div class="hero-banner-badge">
-                <i class="fas fa-trophy mr-1"></i> ${grade.shortLabel} Seviye Projesi: <strong>${grade.project}</strong>
+                <i class="fas fa-trophy mr-1"></i> ${grade.shortLabel} ${t('mufredat.banner.levelProject', 'Seviye Projesi:')} <strong>${grade.project}</strong>
               </div>
               <span class="hero-banner-zoom-pill">
-                <i class="fas fa-search-plus mr-1"></i> Tam Boyut Görseli Aç
+                <i class="fas fa-search-plus mr-1"></i> ${t('mufredat.banner.zoom', 'Tam Boyut Görseli Aç')}
               </span>
             </div>
           </div>
@@ -312,7 +353,7 @@
           <!-- 1. ve 2. Dönem Üniteleri -->
           <div class="mufredat-section-heading">
             <i class="fas fa-calendar-alt"></i>
-            <span>Akademik Dönem Üniteleri ve Haftalık İçerikler</span>
+            <span>${t('mufredat.section.academicUnits', 'Akademik Dönem Üniteleri ve Haftalık İçerikler')}</span>
           </div>
 
           <div class="terms-plan-grid">
@@ -320,7 +361,7 @@
             <div class="term-column-card">
               <div class="term-column-title">
                 <i class="fas fa-leaf"></i>
-                <span>1. Dönem (Güz Yarıyılı) Müfredatı</span>
+                <span>${t('mufredat.term1.title', '1. Dönem (Güz Yarıyılı) Müfredatı')}</span>
               </div>
               ${term1UnitsHtml}
             </div>
@@ -329,7 +370,7 @@
             <div class="term-column-card">
               <div class="term-column-title">
                 <i class="fas fa-seedling"></i>
-                <span>2. Dönem (Bahar Yarıyılı) Müfredatı</span>
+                <span>${t('mufredat.term2.title', '2. Dönem (Bahar Yarıyılı) Müfredatı')}</span>
               </div>
               ${term2UnitsHtml}
             </div>
@@ -338,7 +379,7 @@
           <!-- MEB Öğrenme Kazanımları -->
           <div class="mufredat-section-heading">
             <i class="fas fa-check-double"></i>
-            <span>2026 MEB Temel Öğrenme Kazanımları</span>
+            <span>${t('mufredat.section.outcomes', '2026 MEB Temel Öğrenme Kazanımları')}</span>
           </div>
           <div class="outcomes-cards-grid">
             ${outcomesHtml}
@@ -347,7 +388,7 @@
           <!-- Kullanılan Teknolojiler & Donanım -->
           <div class="mufredat-section-heading">
             <i class="fas fa-tools"></i>
-            <span>Laboratuvar Yazılım ve Donanım Ekosistemi</span>
+            <span>${t('mufredat.section.tools', 'Laboratuvar Yazılım ve Donanım Ekosistemi')}</span>
           </div>
           <div class="tools-tags-container">
             ${toolsHtml}
@@ -358,22 +399,22 @@
             <div class="row align-items-center">
               <div class="col-lg-7">
                 <div class="capstone-badge">
-                  <i class="fas fa-trophy mr-1"></i> Dönem Sonu Başarı Projesi (Capstone)
+                  <i class="fas fa-trophy mr-1"></i> ${t('mufredat.capstone.badge', 'Dönem Sonu Başarı Projesi (Capstone)')}
                 </div>
                 <h3 class="capstone-title">${grade.project}</h3>
                 <p class="capstone-desc">${grade.projectDesc}</p>
                 <div class="capstone-meta-tags mt-3">
-                  <span class="capstone-tag"><i class="fas fa-laptop-code mr-1"></i> ${grade.shortLabel} Seviye Projesi</span>
+                  <span class="capstone-tag"><i class="fas fa-laptop-code mr-1"></i> ${grade.shortLabel} ${t('mufredat.banner.levelProject', 'Seviye Projesi:')}</span>
                   <span class="capstone-tag"><i class="fas fa-layer-group mr-1"></i> ${grade.categoryLabel}</span>
-                  <span class="capstone-tag"><i class="fas fa-calendar-check mr-1"></i> 2. Dönem Sonu</span>
+                  <span class="capstone-tag"><i class="fas fa-calendar-check mr-1"></i> ${t('mufredat.capstone.termEnd', '2. Dönem Sonu')}</span>
                 </div>
               </div>
               <div class="col-lg-5 mt-4 mt-lg-0">
-                <div class="capstone-image-wrapper" role="button" tabindex="0" title="Proje Görselini Tam Boyut İncele" data-img="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" data-title="${grade.project}" data-desc="${grade.projectDesc}">
+                <div class="capstone-image-wrapper" role="button" tabindex="0" title="${t('mufredat.capstone.zoom', 'Projeyi Tam Boyut İncele')}" data-img="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" data-title="${grade.project}" data-desc="${grade.projectDesc}">
                   <img src="${grade.projectImage || 'assets/projects/' + grade.id + '.jpg'}" alt="${grade.project}" class="capstone-project-img" loading="lazy">
                   <div class="capstone-img-overlay">
                     <span class="capstone-img-zoom-btn">
-                      <i class="fas fa-search-plus mr-1"></i> Projeyi Tam Boyut İncele
+                      <i class="fas fa-search-plus mr-1"></i> ${t('mufredat.capstone.zoom', 'Projeyi Tam Boyut İncele')}
                     </span>
                   </div>
                 </div>
@@ -389,12 +430,12 @@
               </div>
               <div>
                 <h4 class="video-box-title">${grade.videoTitle}</h4>
-                <p class="video-box-subtitle">MEB ve Uğur Okulları standartlarında hazırlanmış uygulamalı örnek video dersi</p>
+                <p class="video-box-subtitle">${t('mufredat.video.subtitle', 'MEB ve Uğur Okulları standartlarında hazırlanmış uygulamalı örnek video dersi')}</p>
               </div>
             </div>
             <a href="${grade.videoUrl}" target="_blank" rel="noopener noreferrer" class="video-box-btn">
               <i class="fab fa-youtube mr-1"></i>
-              <span>Ders Videosunu İzle</span>
+              <span>${t('mufredat.video.btn', 'Ders Videosunu İzle')}</span>
             </a>
           </div>
 
@@ -403,12 +444,12 @@
             <div class="quiz-card-header">
               <div class="mufredat-section-heading mb-0">
                 <i class="fas fa-brain"></i>
-                <span>${grade.shortLabel} İnteraktif Mini Bilgi Testi</span>
+                <span>${grade.shortLabel} ${t('mufredat.quiz.titleSuffix', 'İnteraktif Mini Bilgi Testi')}</span>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <span class="quiz-score-badge" id="quiz-score-display">0 / 3 Doğru</span>
+                <span class="quiz-score-badge" id="quiz-score-display">0 / 3 ${t('mufredat.quiz.correct', 'Doğru')}</span>
                 <button type="button" class="quiz-reset-btn ml-2" id="btn-reset-quiz">
-                  <i class="fas fa-redo-alt mr-1"></i> Sıfırla
+                  <i class="fas fa-redo-alt mr-1"></i> ${t('mufredat.quiz.reset', 'Sıfırla')}
                 </button>
               </div>
             </div>
@@ -423,27 +464,27 @@
             ${prevGrade ? `
               <button type="button" class="grade-nav-footer-btn" id="btn-prev-grade">
                 <i class="fas fa-arrow-left mr-2"></i>
-                <span>Önceki: ${prevGrade.shortLabel}</span>
+                <span>${t('mufredat.nav.prev', 'Önceki:')} ${prevGrade.shortLabel}</span>
               </button>
             ` : `
               <span class="grade-nav-footer-btn disabled">
                 <i class="fas fa-arrow-left mr-2"></i>
-                <span>İlk Sınıf Kademesi</span>
+                <span>${t('mufredat.nav.first', 'İlk Sınıf Kademesi')}</span>
               </span>
             `}
 
             <div class="text-center font-weight-bold" style="color: var(--text-muted); font-size: 13px;">
-              ${currentIndex + 1} / ${allKeys.length} Seviye
+              ${currentIndex + 1} / ${allKeys.length} ${t('mufredat.nav.level', 'Seviye')}
             </div>
 
             ${nextGrade ? `
               <button type="button" class="grade-nav-footer-btn" id="btn-next-grade">
-                <span>Sonraki: ${nextGrade.shortLabel}</span>
+                <span>${t('mufredat.nav.next', 'Sonraki:')} ${nextGrade.shortLabel}</span>
                 <i class="fas fa-arrow-right ml-2"></i>
               </button>
             ` : `
               <span class="grade-nav-footer-btn disabled">
-                <span>Son Sınıf Kademesi (12. Sınıf)</span>
+                <span>${t('mufredat.nav.last', 'Son Sınıf Kademesi (12. Sınıf)')}</span>
                 <i class="fas fa-arrow-right ml-2"></i>
               </span>
             `}
@@ -466,7 +507,7 @@
     if (shareBtn) {
       shareBtn.addEventListener('click', async () => {
         const url = window.location.href;
-        const text = `${grade.gradeLabel} MEB Bilişim Müfredatı - Uğur Okulları Viranşehir Kampüsü`;
+        const text = `${grade.gradeLabel} - ${t('mufredat.share.title', 'Uğur Okulları Viranşehir Kampüsü K12 Bilişim Müfredatı')}`;
         if (navigator.share) {
           try {
             await navigator.share({ title: text, text, url });
@@ -477,10 +518,10 @@
           // Fallback to clipboard
           navigator.clipboard.writeText(url).then(() => {
             const originalHtml = shareBtn.innerHTML;
-            shareBtn.innerHTML = '<i class="fas fa-check text-success"></i> <span>Kopyalandı!</span>';
+            shareBtn.innerHTML = `<i class="fas fa-check text-success"></i> <span>${t('mufredat.share.copied', 'Kopyalandı!')}</span>`;
             setTimeout(() => { shareBtn.innerHTML = originalHtml; }, 2000);
           }).catch(() => {
-            prompt('Müfredat Bağlantısı:', url);
+            prompt(t('mufredat.share.title', 'Müfredat Bağlantısı:'), url);
           });
         }
       });
@@ -600,38 +641,33 @@
     if (!block) return;
 
     const buttons = block.querySelectorAll('.quiz-option-btn');
-    const isCorrect = optIdx === question.answer;
-
-    // Record score
-    quizScores[qIdx] = isCorrect ? 1 : 0;
-
-    // Update buttons style and disable further clicks for this question
-    buttons.forEach((b, bIdx) => {
-      b.disabled = true;
-      if (bIdx === question.answer) {
-        b.classList.add('correct');
-        b.innerHTML += ' <i class="fas fa-check-circle ml-auto"></i>';
-      } else if (bIdx === optIdx && !isCorrect) {
-        b.classList.add('wrong');
-        b.innerHTML += ' <i class="fas fa-times-circle ml-auto"></i>';
+    buttons.forEach((btn, idx) => {
+      btn.disabled = true;
+      if (idx === question.answer) {
+        btn.classList.add('correct');
+      } else if (idx === optIdx && optIdx !== question.answer) {
+        btn.classList.add('wrong');
       }
     });
 
-    // Show explanation
+    // Show explanation box
     const explBox = document.getElementById(`quiz-expl-${qIdx}`);
     if (explBox) {
       explBox.classList.add('show');
     }
 
-    // Update overall score banner
-    const totalCorrect = Object.values(quizScores).reduce((a, b) => a + b, 0);
+    // Save score
+    quizScores[qIdx] = (optIdx === question.answer) ? 1 : 0;
+
+    // Update total score display
     const scoreDisplay = document.getElementById('quiz-score-display');
     if (scoreDisplay) {
+      const totalCorrect = Object.values(quizScores).reduce((a, b) => a + b, 0);
       if (totalCorrect === 3) {
-        scoreDisplay.textContent = `3 / 3 Tam Puan! 🏆`;
+        scoreDisplay.textContent = `3 / 3 🏆`;
         scoreDisplay.style.color = '#10B981';
       } else {
-        scoreDisplay.textContent = `${totalCorrect} / 3 Doğru`;
+        scoreDisplay.textContent = `${totalCorrect} / 3 ${t('mufredat.quiz.correct', 'Doğru')}`;
       }
     }
   }
@@ -640,12 +676,13 @@
    * Render the 13 grades bottom overview grid with project images
    */
   function renderOverviewGrid() {
-    if (!overviewGradesGrid || !window.CURRICULUM_GRADES_DATA) return;
+    if (!overviewGradesGrid) return;
+    const allGrades = getAllGrades();
 
     overviewGradesGrid.innerHTML = '';
 
-    Object.keys(window.CURRICULUM_GRADES_DATA).forEach(key => {
-      const grade = window.CURRICULUM_GRADES_DATA[key];
+    Object.keys(allGrades).forEach(key => {
+      const grade = allGrades[key];
       const isVisible = activeFilter === 'all' || grade.category === activeFilter;
 
       if (!isVisible) return;
@@ -671,8 +708,8 @@
         <h4 class="mini-card-title">${grade.shortLabel}</h4>
         <p class="mini-card-sub">${grade.project}</p>
         <div class="mini-card-footer">
-          <span><i class="fas fa-trophy mr-1"></i> Dönem Projesi</span>
-          <span>Müfredatı İncele <i class="fas fa-arrow-right ml-1"></i></span>
+          <span><i class="fas fa-trophy mr-1"></i> ${t('mufredat.capstone.badge', 'Dönem Projesi')}</span>
+          <span>${t('mufredat.grid.btn', 'Müfredatı İncele')} <i class="fas fa-arrow-right ml-1"></i></span>
         </div>
       `;
 
@@ -704,13 +741,14 @@
     selectGrade(activeGradeKey, false, false);
 
     // Sync Stage Filter UI
-    const initialGrade = window.CURRICULUM_GRADES_DATA[activeGradeKey];
+    const allGrades = getAllGrades();
+    const initialGrade = allGrades[activeGradeKey];
     if (initialGrade && activeFilter !== 'all') {
       setStageFilter(initialGrade.category);
     }
 
     // Handle browser back/forward buttons
-    window.addEventListener('popstate', (e) => {
+    window.addEventListener('popstate', () => {
       parseUrlParams();
       selectGrade(activeGradeKey, false, true);
     });
@@ -742,6 +780,17 @@
         progressBar.style.width = `${progress}%`;
       }, { passive: true });
     }
+
+    // Reactive Language Change Listener
+    window.addEventListener('languageChanged', () => {
+      const gradeData = getGradeData(activeGradeKey);
+      if (gradeData) {
+        renderBreadcrumbs(gradeData);
+        renderGradePills();
+        renderActiveGrade(gradeData);
+        renderOverviewGrid();
+      }
+    });
   }
 
   // Auto-run on DOM ready
