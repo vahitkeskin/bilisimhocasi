@@ -1,0 +1,324 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 720" width="1060" height="720">
+  
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#232736" stroke-width="0.75"/>
+    </pattern>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#32384A"/>
+    </pattern>
+    <linearGradient id="ard-pcb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#008D91"/>
+      <stop offset="50%" stop-color="#006C6F"/>
+      <stop offset="100%" stop-color="#004D50"/>
+    </linearGradient>
+    <linearGradient id="metal-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#CFD8DC"/>
+      <stop offset="100%" stop-color="#90A4AE"/>
+    </linearGradient>
+    <linearGradient id="bb-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#ECEFF1"/>
+    </linearGradient>
+    <radialGradient id="glow-red" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF8A80"/><stop offset="70%" stop-color="#D50000"/><stop offset="100%" stop-color="#8E0000"/>
+    </radialGradient>
+    <radialGradient id="glow-green" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#B9F6CA"/><stop offset="70%" stop-color="#00C853"/><stop offset="100%" stop-color="#00600F"/>
+    </radialGradient>
+    <radialGradient id="glow-yellow" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFF8D"/><stop offset="70%" stop-color="#FFD600"/><stop offset="100%" stop-color="#FF6F00"/>
+    </radialGradient>
+    <radialGradient id="glow-white" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="70%" stop-color="#E0F7FA"/><stop offset="100%" stop-color="#80DEEA"/>
+    </radialGradient>
+    <linearGradient id="rainbow-rgb" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF5252"/><stop offset="50%" stop-color="#69F0AE"/><stop offset="100%" stop-color="#448AFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  
+  <rect width="1060" height="720" fill="#141620"/>
+  <rect width="1060" height="720" fill="url(#grid)"/>
+  <rect width="1060" height="720" fill="url(#dots)"/>
+
+  <!-- Top Banner -->
+  <rect x="0" y="0" width="1060" height="66" fill="#1A1C28" stroke="#2E3346" stroke-width="1"/>
+  <rect x="0" y="64" width="1060" height="2" fill="#00979D"/>
+  
+  <g transform="translate(25, 20)">
+    <rect x="0" y="0" width="34" height="28" rx="6" fill="#00979D"/>
+    <text x="17" y="19" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="900" font-size="14" text-anchor="middle">∞</text>
+    <text x="44" y="14" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="800" font-size="15">UĞUR OKULLARI VİRANŞEHİR KAMPÜSÜ</text>
+    <text x="44" y="27" fill="#00BCD4" font-family="system-ui, sans-serif" font-weight="600" font-size="10.5">BİLİŞİM TEKNOLOJİLERİ VE ROBOTİK KODLAMA ATÖLYESİ</text>
+  </g>
+
+  <g transform="translate(680, 16)">
+    <rect x="0" y="0" width="160" height="34" rx="8" fill="#222634" stroke="#00979D" stroke-width="1"/>
+    <text x="80" y="22" fill="#E0F7FA" font-family="system-ui, sans-serif" font-weight="700" font-size="11.5" text-anchor="middle">6. Sınıf (11-12 Yaş)</text>
+    <rect x="170" y="0" width="180" height="34" rx="8" fill="#00979D"/>
+    <text x="260" y="22" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="800" font-size="11.5" text-anchor="middle">FRITZING SİMÜLASYONU</text>
+  </g>
+
+  <!-- Project Title Sub-bar -->
+  <rect x="25" y="78" width="1010" height="40" rx="8" fill="#1E2230" stroke="#2C3244" stroke-width="1"/>
+  <circle cx="44" cy="98" r="5" fill="#00E676"/>
+  <text x="58" y="103" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="800" font-size="14.5">6. Sınıf: HC-SR04 Ultrasonik Sensör ile Sesli/Işıklı Park Sensörü</text>
+  <rect x="880" y="85" width="140" height="26" rx="6" fill="rgba(0,151,157,0.18)" stroke="#00979D" stroke-width="1"/>
+  <text x="950" y="102" fill="#4DD0E1" font-family="system-ui, sans-serif" font-weight="700" font-size="11" text-anchor="middle">Kademe 7 / 13</text>
+
+  
+  <!-- ARDUINO UNO R3 -->
+  <g id="arduino-uno" filter="url(#shadow)">
+    <path d="M 70 140 L 365 140 A 10 10 0 0 1 375 150 L 375 370 A 10 10 0 0 1 365 380 L 70 380 A 10 10 0 0 1 60 370 L 60 150 A 10 10 0 0 1 70 140 Z" fill="url(#ard-pcb)" stroke="#00383A" stroke-width="2.5"/>
+    <circle cx="77" cy="158" r="5" fill="#13151D" stroke="#004D50" stroke-width="2"/>
+    <circle cx="360" cy="160" r="5" fill="#13151D" stroke="#004D50" stroke-width="2"/>
+    <circle cx="360" cy="365" r="5" fill="#13151D" stroke="#004D50" stroke-width="2"/>
+
+    <!-- USB Port -->
+    <rect x="45" y="170" width="42" height="34" rx="3" fill="url(#metal-grad)" stroke="#546E7A" stroke-width="1.5"/>
+    <line x1="45" y1="187" x2="87" y2="187" stroke="#90A4AE" stroke-width="1"/>
+    
+    <!-- DC Jack -->
+    <rect x="45" y="300" width="48" height="42" rx="3" fill="#1E222A" stroke="#37474F" stroke-width="2"/>
+    <circle cx="65" cy="321" r="9" fill="#2E3440" stroke="#4C566A" stroke-width="2"/>
+    <circle cx="65" cy="321" r="4" fill="#0E1116"/>
+
+    <!-- ATmega328P DIP IC -->
+    <rect x="180" y="240" width="115" height="36" rx="3" fill="#1C1E24" stroke="#2E3440" stroke-width="2"/>
+    <circle cx="188" cy="258" r="3" fill="#3B4252"/>
+    <text x="237" y="262" fill="#ECEFF4" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">ATMEGA328P-PU</text>
+
+    <!-- 16MHz Crystal -->
+    <rect x="143" y="248" width="20" height="10" rx="3" fill="url(#metal-grad)" stroke="#78909C"/>
+    <text x="153" y="256" fill="#37474F" font-family="monospace" font-size="6" text-anchor="middle">16.000</text>
+
+    <!-- Reset Button -->
+    <rect x="107" y="155" width="16" height="16" rx="3" fill="#D32F2F" stroke="#B71C1C" stroke-width="1"/>
+    <circle cx="115" cy="163" r="4" fill="#F44336"/>
+
+    <!-- Silk Branding -->
+    <text x="240" y="202" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="900" font-size="16" letter-spacing="0.5">ARDUINO</text>
+    <text x="320" y="202" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="700" font-size="11">UNO</text>
+    <text x="240" y="217" fill="#80CBC4" font-family="system-ui, sans-serif" font-weight="600" font-size="8">ATmega328P • R3</text>
+
+    <!-- TOP HEADERS -->
+    <rect x="165" y="145" width="195" height="18" fill="#1C1E24" stroke="#2C3244" stroke-width="1.5" rx="2"/>
+    <g fill="#FFD54F" stroke="#212121" stroke-width="0.5">
+      <circle cx="175.0" cy="154" r="2.2"/><circle cx="186.6" cy="154" r="2.2"/><circle cx="198.2" cy="154" r="2.2"/><circle cx="209.8" cy="154" r="2.2"/><circle cx="221.4" cy="154" r="2.2"/><circle cx="233.0" cy="154" r="2.2"/><circle cx="244.6" cy="154" r="2.2"/><circle cx="256.2" cy="154" r="2.2"/><circle cx="267.8" cy="154" r="2.2"/><circle cx="279.4" cy="154" r="2.2"/><circle cx="291.0" cy="154" r="2.2"/><circle cx="302.6" cy="154" r="2.2"/><circle cx="314.2" cy="154" r="2.2"/><circle cx="325.79999999999995" cy="154" r="2.2"/><circle cx="337.4" cy="154" r="2.2"/><circle cx="349.0" cy="154" r="2.2"/>
+    </g>
+    <g fill="#ECEFF4" font-family="monospace" font-size="7" font-weight="bold">
+      <text x="175" y="172">SCL</text>
+      <text x="187" y="172">SDA</text>
+      <text x="199" y="172">ARF</text>
+      <text x="210" y="172">GND</text>
+      <text x="222" y="172">13</text>
+      <text x="234" y="172">12</text>
+      <text x="245" y="172">~11</text>
+      <text x="257" y="172">~10</text>
+      <text x="268" y="172">~9</text>
+      <text x="280" y="172">8</text>
+      <text x="292" y="172">7</text>
+      <text x="304" y="172">~6</text>
+      <text x="315" y="172">~5</text>
+      <text x="327" y="172">4</text>
+      <text x="339" y="172">~3</text>
+      <text x="350" y="172">2</text>
+    </g>
+
+    <!-- BOTTOM HEADERS -->
+    <rect x="180" y="357" width="95" height="18" fill="#1C1E24" stroke="#2C3244" stroke-width="1.5" rx="2"/>
+    <g fill="#FFD54F" stroke="#212121" stroke-width="0.5">
+      <circle cx="188.0" cy="366" r="2.2"/><circle cx="199.2" cy="366" r="2.2"/><circle cx="210.4" cy="366" r="2.2"/><circle cx="221.6" cy="366" r="2.2"/><circle cx="232.8" cy="366" r="2.2"/><circle cx="244.0" cy="366" r="2.2"/><circle cx="255.2" cy="366" r="2.2"/><circle cx="266.4" cy="366" r="2.2"/>
+    </g>
+    <rect x="290" y="357" width="70" height="18" fill="#1C1E24" stroke="#2C3244" stroke-width="1.5" rx="2"/>
+    <g fill="#FFD54F" stroke="#212121" stroke-width="0.5">
+      <circle cx="297.0" cy="366" r="2.2"/><circle cx="308.2" cy="366" r="2.2"/><circle cx="319.4" cy="366" r="2.2"/><circle cx="330.6" cy="366" r="2.2"/><circle cx="341.8" cy="366" r="2.2"/><circle cx="353.0" cy="366" r="2.2"/>
+    </g>
+    <g fill="#ECEFF4" font-family="monospace" font-size="7" font-weight="bold">
+      <text x="188" y="350">IOREF</text>
+      <text x="199" y="350">RST</text>
+      <text x="210" y="350">3.3V</text>
+      <text x="222" y="350">5V</text>
+      <text x="233" y="350">GND</text>
+      <text x="244" y="350">GND</text>
+      <text x="255" y="350">VIN</text>
+
+      <text x="297" y="350">A0</text>
+      <text x="308" y="350">A1</text>
+      <text x="319" y="350">A2</text>
+      <text x="330" y="350">A3</text>
+      <text x="341" y="350">A4</text>
+      <text x="352" y="350">A5</text>
+    </g>
+  </g>
+
+  
+  <g id="breadboard" filter="url(#shadow)">
+    <rect x="430" y="135" width="590" height="330" rx="12" fill="url(#bb-body)" stroke="#B0BEC5" stroke-width="2.5"/>
+    <line x1="465" y1="153" x2="985" y2="153" stroke="#EF5350" stroke-width="2.5"/>
+    <text x="448" y="157" fill="#EF5350" font-family="sans-serif" font-size="14" font-weight="bold">+</text>
+    <line x1="465" y1="185" x2="985" y2="185" stroke="#1E88E5" stroke-width="2.5"/>
+    <text x="450" y="189" fill="#1E88E5" font-family="sans-serif" font-size="16" font-weight="bold">-</text>
+
+    <line x1="465" y1="402" x2="985" y2="402" stroke="#1E88E5" stroke-width="2.5"/>
+    <text x="450" y="406" fill="#1E88E5" font-family="sans-serif" font-size="16" font-weight="bold">-</text>
+    <line x1="465" y1="434" x2="985" y2="434" stroke="#EF5350" stroke-width="2.5"/>
+    <text x="448" y="438" fill="#EF5350" font-family="sans-serif" font-size="14" font-weight="bold">+</text>
+
+    <rect x="460" y="290" width="530" height="14" fill="#CFD8DC" rx="2"/>
+    <text x="725.0" y="300" fill="#78909C" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">400 TIE-POINT SOLDERLESS BREADBOARD</text>
+    <circle cx="475" cy="161" r="2.2" fill="#37474F"/><circle cx="475" cy="177" r="2.2" fill="#37474F"/><circle cx="475" cy="210" r="2.2" fill="#37474F"/><circle cx="475" cy="225" r="2.2" fill="#37474F"/><circle cx="475" cy="240" r="2.2" fill="#37474F"/><circle cx="475" cy="255" r="2.2" fill="#37474F"/><circle cx="475" cy="270" r="2.2" fill="#37474F"/><circle cx="475" cy="320" r="2.2" fill="#37474F"/><circle cx="475" cy="335" r="2.2" fill="#37474F"/><circle cx="475" cy="350" r="2.2" fill="#37474F"/><circle cx="475" cy="365" r="2.2" fill="#37474F"/><circle cx="475" cy="380" r="2.2" fill="#37474F"/><circle cx="475" cy="410" r="2.2" fill="#37474F"/><circle cx="475" cy="426" r="2.2" fill="#37474F"/><circle cx="495" cy="161" r="2.2" fill="#37474F"/><circle cx="495" cy="177" r="2.2" fill="#37474F"/><circle cx="495" cy="210" r="2.2" fill="#37474F"/><circle cx="495" cy="225" r="2.2" fill="#37474F"/><circle cx="495" cy="240" r="2.2" fill="#37474F"/><circle cx="495" cy="255" r="2.2" fill="#37474F"/><circle cx="495" cy="270" r="2.2" fill="#37474F"/><circle cx="495" cy="320" r="2.2" fill="#37474F"/><circle cx="495" cy="335" r="2.2" fill="#37474F"/><circle cx="495" cy="350" r="2.2" fill="#37474F"/><circle cx="495" cy="365" r="2.2" fill="#37474F"/><circle cx="495" cy="380" r="2.2" fill="#37474F"/><circle cx="495" cy="410" r="2.2" fill="#37474F"/><circle cx="495" cy="426" r="2.2" fill="#37474F"/><circle cx="515" cy="161" r="2.2" fill="#37474F"/><circle cx="515" cy="177" r="2.2" fill="#37474F"/><circle cx="515" cy="210" r="2.2" fill="#37474F"/><circle cx="515" cy="225" r="2.2" fill="#37474F"/><circle cx="515" cy="240" r="2.2" fill="#37474F"/><circle cx="515" cy="255" r="2.2" fill="#37474F"/><circle cx="515" cy="270" r="2.2" fill="#37474F"/><circle cx="515" cy="320" r="2.2" fill="#37474F"/><circle cx="515" cy="335" r="2.2" fill="#37474F"/><circle cx="515" cy="350" r="2.2" fill="#37474F"/><circle cx="515" cy="365" r="2.2" fill="#37474F"/><circle cx="515" cy="380" r="2.2" fill="#37474F"/><circle cx="515" cy="410" r="2.2" fill="#37474F"/><circle cx="515" cy="426" r="2.2" fill="#37474F"/><circle cx="535" cy="161" r="2.2" fill="#37474F"/><circle cx="535" cy="177" r="2.2" fill="#37474F"/><circle cx="535" cy="210" r="2.2" fill="#37474F"/><circle cx="535" cy="225" r="2.2" fill="#37474F"/><circle cx="535" cy="240" r="2.2" fill="#37474F"/><circle cx="535" cy="255" r="2.2" fill="#37474F"/><circle cx="535" cy="270" r="2.2" fill="#37474F"/><circle cx="535" cy="320" r="2.2" fill="#37474F"/><circle cx="535" cy="335" r="2.2" fill="#37474F"/><circle cx="535" cy="350" r="2.2" fill="#37474F"/><circle cx="535" cy="365" r="2.2" fill="#37474F"/><circle cx="535" cy="380" r="2.2" fill="#37474F"/><circle cx="535" cy="410" r="2.2" fill="#37474F"/><circle cx="535" cy="426" r="2.2" fill="#37474F"/><circle cx="555" cy="161" r="2.2" fill="#37474F"/><circle cx="555" cy="177" r="2.2" fill="#37474F"/><circle cx="555" cy="210" r="2.2" fill="#37474F"/><circle cx="555" cy="225" r="2.2" fill="#37474F"/><circle cx="555" cy="240" r="2.2" fill="#37474F"/><circle cx="555" cy="255" r="2.2" fill="#37474F"/><circle cx="555" cy="270" r="2.2" fill="#37474F"/><circle cx="555" cy="320" r="2.2" fill="#37474F"/><circle cx="555" cy="335" r="2.2" fill="#37474F"/><circle cx="555" cy="350" r="2.2" fill="#37474F"/><circle cx="555" cy="365" r="2.2" fill="#37474F"/><circle cx="555" cy="380" r="2.2" fill="#37474F"/><circle cx="555" cy="410" r="2.2" fill="#37474F"/><circle cx="555" cy="426" r="2.2" fill="#37474F"/><circle cx="575" cy="161" r="2.2" fill="#37474F"/><circle cx="575" cy="177" r="2.2" fill="#37474F"/><circle cx="575" cy="210" r="2.2" fill="#37474F"/><circle cx="575" cy="225" r="2.2" fill="#37474F"/><circle cx="575" cy="240" r="2.2" fill="#37474F"/><circle cx="575" cy="255" r="2.2" fill="#37474F"/><circle cx="575" cy="270" r="2.2" fill="#37474F"/><circle cx="575" cy="320" r="2.2" fill="#37474F"/><circle cx="575" cy="335" r="2.2" fill="#37474F"/><circle cx="575" cy="350" r="2.2" fill="#37474F"/><circle cx="575" cy="365" r="2.2" fill="#37474F"/><circle cx="575" cy="380" r="2.2" fill="#37474F"/><circle cx="575" cy="410" r="2.2" fill="#37474F"/><circle cx="575" cy="426" r="2.2" fill="#37474F"/><circle cx="595" cy="161" r="2.2" fill="#37474F"/><circle cx="595" cy="177" r="2.2" fill="#37474F"/><circle cx="595" cy="210" r="2.2" fill="#37474F"/><circle cx="595" cy="225" r="2.2" fill="#37474F"/><circle cx="595" cy="240" r="2.2" fill="#37474F"/><circle cx="595" cy="255" r="2.2" fill="#37474F"/><circle cx="595" cy="270" r="2.2" fill="#37474F"/><circle cx="595" cy="320" r="2.2" fill="#37474F"/><circle cx="595" cy="335" r="2.2" fill="#37474F"/><circle cx="595" cy="350" r="2.2" fill="#37474F"/><circle cx="595" cy="365" r="2.2" fill="#37474F"/><circle cx="595" cy="380" r="2.2" fill="#37474F"/><circle cx="595" cy="410" r="2.2" fill="#37474F"/><circle cx="595" cy="426" r="2.2" fill="#37474F"/><circle cx="615" cy="161" r="2.2" fill="#37474F"/><circle cx="615" cy="177" r="2.2" fill="#37474F"/><circle cx="615" cy="210" r="2.2" fill="#37474F"/><circle cx="615" cy="225" r="2.2" fill="#37474F"/><circle cx="615" cy="240" r="2.2" fill="#37474F"/><circle cx="615" cy="255" r="2.2" fill="#37474F"/><circle cx="615" cy="270" r="2.2" fill="#37474F"/><circle cx="615" cy="320" r="2.2" fill="#37474F"/><circle cx="615" cy="335" r="2.2" fill="#37474F"/><circle cx="615" cy="350" r="2.2" fill="#37474F"/><circle cx="615" cy="365" r="2.2" fill="#37474F"/><circle cx="615" cy="380" r="2.2" fill="#37474F"/><circle cx="615" cy="410" r="2.2" fill="#37474F"/><circle cx="615" cy="426" r="2.2" fill="#37474F"/><circle cx="635" cy="161" r="2.2" fill="#37474F"/><circle cx="635" cy="177" r="2.2" fill="#37474F"/><circle cx="635" cy="210" r="2.2" fill="#37474F"/><circle cx="635" cy="225" r="2.2" fill="#37474F"/><circle cx="635" cy="240" r="2.2" fill="#37474F"/><circle cx="635" cy="255" r="2.2" fill="#37474F"/><circle cx="635" cy="270" r="2.2" fill="#37474F"/><circle cx="635" cy="320" r="2.2" fill="#37474F"/><circle cx="635" cy="335" r="2.2" fill="#37474F"/><circle cx="635" cy="350" r="2.2" fill="#37474F"/><circle cx="635" cy="365" r="2.2" fill="#37474F"/><circle cx="635" cy="380" r="2.2" fill="#37474F"/><circle cx="635" cy="410" r="2.2" fill="#37474F"/><circle cx="635" cy="426" r="2.2" fill="#37474F"/><circle cx="655" cy="161" r="2.2" fill="#37474F"/><circle cx="655" cy="177" r="2.2" fill="#37474F"/><circle cx="655" cy="210" r="2.2" fill="#37474F"/><circle cx="655" cy="225" r="2.2" fill="#37474F"/><circle cx="655" cy="240" r="2.2" fill="#37474F"/><circle cx="655" cy="255" r="2.2" fill="#37474F"/><circle cx="655" cy="270" r="2.2" fill="#37474F"/><circle cx="655" cy="320" r="2.2" fill="#37474F"/><circle cx="655" cy="335" r="2.2" fill="#37474F"/><circle cx="655" cy="350" r="2.2" fill="#37474F"/><circle cx="655" cy="365" r="2.2" fill="#37474F"/><circle cx="655" cy="380" r="2.2" fill="#37474F"/><circle cx="655" cy="410" r="2.2" fill="#37474F"/><circle cx="655" cy="426" r="2.2" fill="#37474F"/><circle cx="675" cy="161" r="2.2" fill="#37474F"/><circle cx="675" cy="177" r="2.2" fill="#37474F"/><circle cx="675" cy="210" r="2.2" fill="#37474F"/><circle cx="675" cy="225" r="2.2" fill="#37474F"/><circle cx="675" cy="240" r="2.2" fill="#37474F"/><circle cx="675" cy="255" r="2.2" fill="#37474F"/><circle cx="675" cy="270" r="2.2" fill="#37474F"/><circle cx="675" cy="320" r="2.2" fill="#37474F"/><circle cx="675" cy="335" r="2.2" fill="#37474F"/><circle cx="675" cy="350" r="2.2" fill="#37474F"/><circle cx="675" cy="365" r="2.2" fill="#37474F"/><circle cx="675" cy="380" r="2.2" fill="#37474F"/><circle cx="675" cy="410" r="2.2" fill="#37474F"/><circle cx="675" cy="426" r="2.2" fill="#37474F"/><circle cx="695" cy="161" r="2.2" fill="#37474F"/><circle cx="695" cy="177" r="2.2" fill="#37474F"/><circle cx="695" cy="210" r="2.2" fill="#37474F"/><circle cx="695" cy="225" r="2.2" fill="#37474F"/><circle cx="695" cy="240" r="2.2" fill="#37474F"/><circle cx="695" cy="255" r="2.2" fill="#37474F"/><circle cx="695" cy="270" r="2.2" fill="#37474F"/><circle cx="695" cy="320" r="2.2" fill="#37474F"/><circle cx="695" cy="335" r="2.2" fill="#37474F"/><circle cx="695" cy="350" r="2.2" fill="#37474F"/><circle cx="695" cy="365" r="2.2" fill="#37474F"/><circle cx="695" cy="380" r="2.2" fill="#37474F"/><circle cx="695" cy="410" r="2.2" fill="#37474F"/><circle cx="695" cy="426" r="2.2" fill="#37474F"/><circle cx="715" cy="161" r="2.2" fill="#37474F"/><circle cx="715" cy="177" r="2.2" fill="#37474F"/><circle cx="715" cy="210" r="2.2" fill="#37474F"/><circle cx="715" cy="225" r="2.2" fill="#37474F"/><circle cx="715" cy="240" r="2.2" fill="#37474F"/><circle cx="715" cy="255" r="2.2" fill="#37474F"/><circle cx="715" cy="270" r="2.2" fill="#37474F"/><circle cx="715" cy="320" r="2.2" fill="#37474F"/><circle cx="715" cy="335" r="2.2" fill="#37474F"/><circle cx="715" cy="350" r="2.2" fill="#37474F"/><circle cx="715" cy="365" r="2.2" fill="#37474F"/><circle cx="715" cy="380" r="2.2" fill="#37474F"/><circle cx="715" cy="410" r="2.2" fill="#37474F"/><circle cx="715" cy="426" r="2.2" fill="#37474F"/><circle cx="735" cy="161" r="2.2" fill="#37474F"/><circle cx="735" cy="177" r="2.2" fill="#37474F"/><circle cx="735" cy="210" r="2.2" fill="#37474F"/><circle cx="735" cy="225" r="2.2" fill="#37474F"/><circle cx="735" cy="240" r="2.2" fill="#37474F"/><circle cx="735" cy="255" r="2.2" fill="#37474F"/><circle cx="735" cy="270" r="2.2" fill="#37474F"/><circle cx="735" cy="320" r="2.2" fill="#37474F"/><circle cx="735" cy="335" r="2.2" fill="#37474F"/><circle cx="735" cy="350" r="2.2" fill="#37474F"/><circle cx="735" cy="365" r="2.2" fill="#37474F"/><circle cx="735" cy="380" r="2.2" fill="#37474F"/><circle cx="735" cy="410" r="2.2" fill="#37474F"/><circle cx="735" cy="426" r="2.2" fill="#37474F"/><circle cx="755" cy="161" r="2.2" fill="#37474F"/><circle cx="755" cy="177" r="2.2" fill="#37474F"/><circle cx="755" cy="210" r="2.2" fill="#37474F"/><circle cx="755" cy="225" r="2.2" fill="#37474F"/><circle cx="755" cy="240" r="2.2" fill="#37474F"/><circle cx="755" cy="255" r="2.2" fill="#37474F"/><circle cx="755" cy="270" r="2.2" fill="#37474F"/><circle cx="755" cy="320" r="2.2" fill="#37474F"/><circle cx="755" cy="335" r="2.2" fill="#37474F"/><circle cx="755" cy="350" r="2.2" fill="#37474F"/><circle cx="755" cy="365" r="2.2" fill="#37474F"/><circle cx="755" cy="380" r="2.2" fill="#37474F"/><circle cx="755" cy="410" r="2.2" fill="#37474F"/><circle cx="755" cy="426" r="2.2" fill="#37474F"/><circle cx="775" cy="161" r="2.2" fill="#37474F"/><circle cx="775" cy="177" r="2.2" fill="#37474F"/><circle cx="775" cy="210" r="2.2" fill="#37474F"/><circle cx="775" cy="225" r="2.2" fill="#37474F"/><circle cx="775" cy="240" r="2.2" fill="#37474F"/><circle cx="775" cy="255" r="2.2" fill="#37474F"/><circle cx="775" cy="270" r="2.2" fill="#37474F"/><circle cx="775" cy="320" r="2.2" fill="#37474F"/><circle cx="775" cy="335" r="2.2" fill="#37474F"/><circle cx="775" cy="350" r="2.2" fill="#37474F"/><circle cx="775" cy="365" r="2.2" fill="#37474F"/><circle cx="775" cy="380" r="2.2" fill="#37474F"/><circle cx="775" cy="410" r="2.2" fill="#37474F"/><circle cx="775" cy="426" r="2.2" fill="#37474F"/><circle cx="795" cy="161" r="2.2" fill="#37474F"/><circle cx="795" cy="177" r="2.2" fill="#37474F"/><circle cx="795" cy="210" r="2.2" fill="#37474F"/><circle cx="795" cy="225" r="2.2" fill="#37474F"/><circle cx="795" cy="240" r="2.2" fill="#37474F"/><circle cx="795" cy="255" r="2.2" fill="#37474F"/><circle cx="795" cy="270" r="2.2" fill="#37474F"/><circle cx="795" cy="320" r="2.2" fill="#37474F"/><circle cx="795" cy="335" r="2.2" fill="#37474F"/><circle cx="795" cy="350" r="2.2" fill="#37474F"/><circle cx="795" cy="365" r="2.2" fill="#37474F"/><circle cx="795" cy="380" r="2.2" fill="#37474F"/><circle cx="795" cy="410" r="2.2" fill="#37474F"/><circle cx="795" cy="426" r="2.2" fill="#37474F"/><circle cx="815" cy="161" r="2.2" fill="#37474F"/><circle cx="815" cy="177" r="2.2" fill="#37474F"/><circle cx="815" cy="210" r="2.2" fill="#37474F"/><circle cx="815" cy="225" r="2.2" fill="#37474F"/><circle cx="815" cy="240" r="2.2" fill="#37474F"/><circle cx="815" cy="255" r="2.2" fill="#37474F"/><circle cx="815" cy="270" r="2.2" fill="#37474F"/><circle cx="815" cy="320" r="2.2" fill="#37474F"/><circle cx="815" cy="335" r="2.2" fill="#37474F"/><circle cx="815" cy="350" r="2.2" fill="#37474F"/><circle cx="815" cy="365" r="2.2" fill="#37474F"/><circle cx="815" cy="380" r="2.2" fill="#37474F"/><circle cx="815" cy="410" r="2.2" fill="#37474F"/><circle cx="815" cy="426" r="2.2" fill="#37474F"/><circle cx="835" cy="161" r="2.2" fill="#37474F"/><circle cx="835" cy="177" r="2.2" fill="#37474F"/><circle cx="835" cy="210" r="2.2" fill="#37474F"/><circle cx="835" cy="225" r="2.2" fill="#37474F"/><circle cx="835" cy="240" r="2.2" fill="#37474F"/><circle cx="835" cy="255" r="2.2" fill="#37474F"/><circle cx="835" cy="270" r="2.2" fill="#37474F"/><circle cx="835" cy="320" r="2.2" fill="#37474F"/><circle cx="835" cy="335" r="2.2" fill="#37474F"/><circle cx="835" cy="350" r="2.2" fill="#37474F"/><circle cx="835" cy="365" r="2.2" fill="#37474F"/><circle cx="835" cy="380" r="2.2" fill="#37474F"/><circle cx="835" cy="410" r="2.2" fill="#37474F"/><circle cx="835" cy="426" r="2.2" fill="#37474F"/><circle cx="855" cy="161" r="2.2" fill="#37474F"/><circle cx="855" cy="177" r="2.2" fill="#37474F"/><circle cx="855" cy="210" r="2.2" fill="#37474F"/><circle cx="855" cy="225" r="2.2" fill="#37474F"/><circle cx="855" cy="240" r="2.2" fill="#37474F"/><circle cx="855" cy="255" r="2.2" fill="#37474F"/><circle cx="855" cy="270" r="2.2" fill="#37474F"/><circle cx="855" cy="320" r="2.2" fill="#37474F"/><circle cx="855" cy="335" r="2.2" fill="#37474F"/><circle cx="855" cy="350" r="2.2" fill="#37474F"/><circle cx="855" cy="365" r="2.2" fill="#37474F"/><circle cx="855" cy="380" r="2.2" fill="#37474F"/><circle cx="855" cy="410" r="2.2" fill="#37474F"/><circle cx="855" cy="426" r="2.2" fill="#37474F"/><circle cx="875" cy="161" r="2.2" fill="#37474F"/><circle cx="875" cy="177" r="2.2" fill="#37474F"/><circle cx="875" cy="210" r="2.2" fill="#37474F"/><circle cx="875" cy="225" r="2.2" fill="#37474F"/><circle cx="875" cy="240" r="2.2" fill="#37474F"/><circle cx="875" cy="255" r="2.2" fill="#37474F"/><circle cx="875" cy="270" r="2.2" fill="#37474F"/><circle cx="875" cy="320" r="2.2" fill="#37474F"/><circle cx="875" cy="335" r="2.2" fill="#37474F"/><circle cx="875" cy="350" r="2.2" fill="#37474F"/><circle cx="875" cy="365" r="2.2" fill="#37474F"/><circle cx="875" cy="380" r="2.2" fill="#37474F"/><circle cx="875" cy="410" r="2.2" fill="#37474F"/><circle cx="875" cy="426" r="2.2" fill="#37474F"/><circle cx="895" cy="161" r="2.2" fill="#37474F"/><circle cx="895" cy="177" r="2.2" fill="#37474F"/><circle cx="895" cy="210" r="2.2" fill="#37474F"/><circle cx="895" cy="225" r="2.2" fill="#37474F"/><circle cx="895" cy="240" r="2.2" fill="#37474F"/><circle cx="895" cy="255" r="2.2" fill="#37474F"/><circle cx="895" cy="270" r="2.2" fill="#37474F"/><circle cx="895" cy="320" r="2.2" fill="#37474F"/><circle cx="895" cy="335" r="2.2" fill="#37474F"/><circle cx="895" cy="350" r="2.2" fill="#37474F"/><circle cx="895" cy="365" r="2.2" fill="#37474F"/><circle cx="895" cy="380" r="2.2" fill="#37474F"/><circle cx="895" cy="410" r="2.2" fill="#37474F"/><circle cx="895" cy="426" r="2.2" fill="#37474F"/><circle cx="915" cy="161" r="2.2" fill="#37474F"/><circle cx="915" cy="177" r="2.2" fill="#37474F"/><circle cx="915" cy="210" r="2.2" fill="#37474F"/><circle cx="915" cy="225" r="2.2" fill="#37474F"/><circle cx="915" cy="240" r="2.2" fill="#37474F"/><circle cx="915" cy="255" r="2.2" fill="#37474F"/><circle cx="915" cy="270" r="2.2" fill="#37474F"/><circle cx="915" cy="320" r="2.2" fill="#37474F"/><circle cx="915" cy="335" r="2.2" fill="#37474F"/><circle cx="915" cy="350" r="2.2" fill="#37474F"/><circle cx="915" cy="365" r="2.2" fill="#37474F"/><circle cx="915" cy="380" r="2.2" fill="#37474F"/><circle cx="915" cy="410" r="2.2" fill="#37474F"/><circle cx="915" cy="426" r="2.2" fill="#37474F"/><circle cx="935" cy="161" r="2.2" fill="#37474F"/><circle cx="935" cy="177" r="2.2" fill="#37474F"/><circle cx="935" cy="210" r="2.2" fill="#37474F"/><circle cx="935" cy="225" r="2.2" fill="#37474F"/><circle cx="935" cy="240" r="2.2" fill="#37474F"/><circle cx="935" cy="255" r="2.2" fill="#37474F"/><circle cx="935" cy="270" r="2.2" fill="#37474F"/><circle cx="935" cy="320" r="2.2" fill="#37474F"/><circle cx="935" cy="335" r="2.2" fill="#37474F"/><circle cx="935" cy="350" r="2.2" fill="#37474F"/><circle cx="935" cy="365" r="2.2" fill="#37474F"/><circle cx="935" cy="380" r="2.2" fill="#37474F"/><circle cx="935" cy="410" r="2.2" fill="#37474F"/><circle cx="935" cy="426" r="2.2" fill="#37474F"/><circle cx="955" cy="161" r="2.2" fill="#37474F"/><circle cx="955" cy="177" r="2.2" fill="#37474F"/><circle cx="955" cy="210" r="2.2" fill="#37474F"/><circle cx="955" cy="225" r="2.2" fill="#37474F"/><circle cx="955" cy="240" r="2.2" fill="#37474F"/><circle cx="955" cy="255" r="2.2" fill="#37474F"/><circle cx="955" cy="270" r="2.2" fill="#37474F"/><circle cx="955" cy="320" r="2.2" fill="#37474F"/><circle cx="955" cy="335" r="2.2" fill="#37474F"/><circle cx="955" cy="350" r="2.2" fill="#37474F"/><circle cx="955" cy="365" r="2.2" fill="#37474F"/><circle cx="955" cy="380" r="2.2" fill="#37474F"/><circle cx="955" cy="410" r="2.2" fill="#37474F"/><circle cx="955" cy="426" r="2.2" fill="#37474F"/><circle cx="975" cy="161" r="2.2" fill="#37474F"/><circle cx="975" cy="177" r="2.2" fill="#37474F"/><circle cx="975" cy="210" r="2.2" fill="#37474F"/><circle cx="975" cy="225" r="2.2" fill="#37474F"/><circle cx="975" cy="240" r="2.2" fill="#37474F"/><circle cx="975" cy="255" r="2.2" fill="#37474F"/><circle cx="975" cy="270" r="2.2" fill="#37474F"/><circle cx="975" cy="320" r="2.2" fill="#37474F"/><circle cx="975" cy="335" r="2.2" fill="#37474F"/><circle cx="975" cy="350" r="2.2" fill="#37474F"/><circle cx="975" cy="365" r="2.2" fill="#37474F"/><circle cx="975" cy="380" r="2.2" fill="#37474F"/><circle cx="975" cy="410" r="2.2" fill="#37474F"/><circle cx="975" cy="426" r="2.2" fill="#37474F"/>
+  </g>
+
+  
+          <!-- HC-SR04 Sensor -->
+          <g transform="translate(560, 200)" filter="url(#shadow)">
+            <rect x="0" y="0" width="120" height="60" rx="4" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
+            <circle cx="32" cy="30" r="20" fill="#CFD8DC" stroke="#78909C" stroke-width="2"/>
+            <circle cx="32" cy="30" r="14" fill="#37474F"/>
+            <text x="32" y="34" fill="#FFF" font-size="8" font-weight="bold" text-anchor="middle">T</text>
+            <circle cx="88" cy="30" r="20" fill="#CFD8DC" stroke="#78909C" stroke-width="2"/>
+            <circle cx="88" cy="30" r="14" fill="#37474F"/>
+            <text x="88" y="34" fill="#FFF" font-size="8" font-weight="bold" text-anchor="middle">R</text>
+          </g>
+          <!-- Buzzer -->
+          <circle cx="760" cy="240" r="22" fill="#212121" stroke="#424242"/>
+          <!-- LED -->
+          <circle cx="830" cy="240" r="10" fill="url(#glow-red)" stroke="#B71C1C"/>
+          <!-- Wires -->
+          
+    <path d="M 222 366 C 310.25 420, 486.75 420, 575 265" fill="none" stroke="#000000" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 222 366 C 310.25 420, 486.75 420, 575 265" fill="none" stroke="#E53935" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="222" cy="366" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+    <circle cx="575" cy="265" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+
+          
+    <path d="M 233 366 C 341.0 440, 557.0 440, 665 265" fill="none" stroke="#000000" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 233 366 C 341.0 440, 557.0 440, 665 265" fill="none" stroke="#212121" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="233" cy="366" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+    <circle cx="665" cy="265" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+
+          
+    <path d="M 268 154 C 352.25 110, 520.75 110, 605 265" fill="none" stroke="#000000" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 268 154 C 352.25 110, 520.75 110, 605 265" fill="none" stroke="#29B6F6" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="268" cy="154" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+    <circle cx="605" cy="265" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+
+          
+    <path d="M 280 154 C 368.75 125, 546.25 125, 635 265" fill="none" stroke="#000000" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 280 154 C 368.75 125, 546.25 125, 635 265" fill="none" stroke="#FDD835" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="280" cy="154" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+    <circle cx="635" cy="265" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+
+          
+    <path d="M 291 154 C 408.25 140, 642.75 140, 760 220" fill="none" stroke="#000000" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 291 154 C 408.25 140, 642.75 140, 760 220" fill="none" stroke="#AB47BC" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="291" cy="154" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+    <circle cx="760" cy="220" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+
+          
+    <path d="M 303 154 C 434.75 155, 698.25 155, 830 225" fill="none" stroke="#000000" stroke-width="6" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 303 154 C 434.75 155, 698.25 155, 830 225" fill="none" stroke="#43A047" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="303" cy="154" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+    <circle cx="830" cy="225" r="3.5" fill="#FFE082" stroke="#212121" stroke-width="1.5"/>
+
+          <!-- Callouts -->
+          
+    <g transform="translate(215.0, 118)">
+      <rect x="0" y="0" width="106.0" height="24" rx="6" fill="#00E5FF" filter="url(#shadow)"/>
+      <text x="53.0" y="16" fill="#101216" font-family="system-ui, sans-serif" font-weight="800" font-size="11" text-anchor="middle">Pin 9 (Trig)</text>
+    </g>
+
+          
+    <g transform="translate(227.0, 93)">
+      <rect x="0" y="0" width="106.0" height="24" rx="6" fill="#00E5FF" filter="url(#shadow)"/>
+      <text x="53.0" y="16" fill="#101216" font-family="system-ui, sans-serif" font-weight="800" font-size="11" text-anchor="middle">Pin 8 (Echo)</text>
+    </g>
+
+          
+    <g transform="translate(230.5, 118)">
+      <rect x="0" y="0" width="121.0" height="24" rx="6" fill="#00E5FF" filter="url(#shadow)"/>
+      <text x="60.5" y="16" fill="#101216" font-family="system-ui, sans-serif" font-weight="800" font-size="11" text-anchor="middle">Pin 7 (Buzzer)</text>
+    </g>
+
+          
+    <g transform="translate(253.75, 93)">
+      <rect x="0" y="0" width="98.5" height="24" rx="6" fill="#00E5FF" filter="url(#shadow)"/>
+      <text x="49.25" y="16" fill="#101216" font-family="system-ui, sans-serif" font-weight="800" font-size="11" text-anchor="middle">Pin 6 (LED)</text>
+    </g>
+
+          
+    <g transform="translate(518.25, 153)">
+      <rect x="0" y="0" width="203.5" height="24" rx="6" fill="#00E5FF" filter="url(#shadow)"/>
+      <text x="101.75" y="16" fill="#101216" font-family="system-ui, sans-serif" font-weight="800" font-size="11" text-anchor="middle">HC-SR04 Ultrasonik Mesafe</text>
+    </g>
+
+        
+  
+  <!-- BOTTOM PORT CONNECTION MATRIX -->
+  <g id="pinout-matrix">
+    <rect x="25" y="490" width="1010" height="205" rx="10" fill="#161922" stroke="#262B3C" stroke-width="1.5"/>
+    <rect x="25" y="490" width="1010" height="34" rx="10" fill="#1C202C"/>
+    <text x="45" y="512" fill="#00E5FF" font-family="system-ui, sans-serif" font-weight="800" font-size="13">
+      ⚡ DEVRE BAĞLANTI &amp; PORT ÇIKIŞLARI MATRİSİ (PINOUT GUIDE)
+    </text>
+    <text x="1015" y="512" fill="#90A4AE" font-family="monospace" font-size="10" text-anchor="end">
+      ARDUINO UNO R3 &lt;---&gt; BREADBOARD ELEMANLARI
+    </text>
+    
+        <g transform="translate(45.0, 535)">
+          <rect x="0" y="0" width="232.5" height="36" rx="6" fill="#1E2230" stroke="#2D3346" stroke-width="1"/>
+          <rect x="6" y="6" width="62" height="24" rx="4" fill="#E53935"/>
+          <text x="37" y="22" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="10.5" text-anchor="middle">5V</text>
+          <text x="76" y="17" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5">HC-SR04 VCC</text>
+          <text x="76" y="28" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="500" font-size="9">Sensör Beslemesi</text>
+        </g>
+        
+        <g transform="translate(287.5, 535)">
+          <rect x="0" y="0" width="232.5" height="36" rx="6" fill="#1E2230" stroke="#2D3346" stroke-width="1"/>
+          <rect x="6" y="6" width="62" height="24" rx="4" fill="#37474F"/>
+          <text x="37" y="22" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="10.5" text-anchor="middle">GND</text>
+          <text x="76" y="17" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5">HC-SR04 GND &amp; Buzzer(-) &amp; LED(-)</text>
+          <text x="76" y="28" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="500" font-size="9">Ortak Toprak Hattı</text>
+        </g>
+        
+        <g transform="translate(530.0, 535)">
+          <rect x="0" y="0" width="232.5" height="36" rx="6" fill="#1E2230" stroke="#2D3346" stroke-width="1"/>
+          <rect x="6" y="6" width="62" height="24" rx="4" fill="#00979D"/>
+          <text x="37" y="22" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="10.5" text-anchor="middle">Pin 9</text>
+          <text x="76" y="17" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5">HC-SR04 Trig</text>
+          <text x="76" y="28" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="500" font-size="9">Ses Dalgası Tetikleme (10µs)</text>
+        </g>
+        
+        <g transform="translate(772.5, 535)">
+          <rect x="0" y="0" width="232.5" height="36" rx="6" fill="#1E2230" stroke="#2D3346" stroke-width="1"/>
+          <rect x="6" y="6" width="62" height="24" rx="4" fill="#00979D"/>
+          <text x="37" y="22" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="10.5" text-anchor="middle">Pin 8</text>
+          <text x="76" y="17" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5">HC-SR04 Echo</text>
+          <text x="76" y="28" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="500" font-size="9">Yankı Dinleme (pulseIn)</text>
+        </g>
+        
+        <g transform="translate(45.0, 577)">
+          <rect x="0" y="0" width="232.5" height="36" rx="6" fill="#1E2230" stroke="#2D3346" stroke-width="1"/>
+          <rect x="6" y="6" width="62" height="24" rx="4" fill="#00979D"/>
+          <text x="37" y="22" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="10.5" text-anchor="middle">Pin 7</text>
+          <text x="76" y="17" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5">Buzzer (+)</text>
+          <text x="76" y="28" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="500" font-size="9">Kademeli Sesli Alarm</text>
+        </g>
+        
+        <g transform="translate(287.5, 577)">
+          <rect x="0" y="0" width="232.5" height="36" rx="6" fill="#1E2230" stroke="#2D3346" stroke-width="1"/>
+          <rect x="6" y="6" width="62" height="24" rx="4" fill="#00979D"/>
+          <text x="37" y="22" fill="#FFFFFF" font-family="monospace" font-weight="bold" font-size="10.5" text-anchor="middle">Pin 6</text>
+          <text x="76" y="17" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5">220Ω -&gt; Kırmızı LED (+)</text>
+          <text x="76" y="28" fill="#80DEEA" font-family="system-ui, sans-serif" font-weight="500" font-size="9">Kademeli Görsel Flaşör</text>
+        </g>
+        
+  </g>
+
+</svg>

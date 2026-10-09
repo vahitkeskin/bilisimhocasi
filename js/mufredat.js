@@ -419,10 +419,79 @@
           ${componentsHtml}
         </div>
 
-        <!-- Bölüm 2: Devre Bağlantı Şeması & Pin Tablosu -->
+        <!-- Bölüm 2: Fritzing Simülasyon Şeması, Breadboard Montajı & Port Matrisi -->
         <div class="mufredat-section-heading mt-5">
           <i class="fas fa-project-diagram"></i>
-          <span>${t('arduino.section.wiring', 'Devre Bağlantı Şeması &amp; Breadboard Montaj Rehberi')}</span>
+          <span>${t('arduino.section.wiring', 'Fritzing Devre Simülasyonu, Breadboard &amp; Port Matrisi')}</span>
+          <span class="badge badge-pill badge-primary ml-2" style="background:#00979D; font-size:11px;">Fritzing v0.9.x Uyumlu</span>
+        </div>
+
+        <!-- Fritzing Devre & Breadboard Simülasyon Görseli -->
+        <div class="fritzing-simulation-card">
+          <div class="fritzing-header-bar">
+            <div class="fritzing-header-left">
+              <span class="fritzing-badge">
+                <i class="fas fa-microchip"></i> Fritzing Simülasyonu
+              </span>
+              <h4 class="fritzing-header-title">
+                ${project.shortTitle || project.title} &mdash; Donanım &amp; Port Şeması
+              </h4>
+            </div>
+            <div class="fritzing-header-actions">
+              <button type="button" class="fritzing-tool-btn btn-zoom-circuit" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="Büyüt ve İncele">
+                <i class="fas fa-search-plus"></i>
+                <span>Büyüt (Zoom)</span>
+              </button>
+              <a href="${project.circuitSvg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.svg')}" target="_blank" class="fritzing-tool-btn" download="${grade.id}_circuit_fritzing.svg" title="Vektörel SVG İndir">
+                <i class="fas fa-bezier-curve"></i>
+                <span>SVG İndir</span>
+              </a>
+              <a href="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" target="_blank" class="fritzing-tool-btn" download="${grade.id}_circuit_fritzing.png" title="Yüksek Çözünürlüklü 2x HD PNG İndir">
+                <i class="fas fa-file-image"></i>
+                <span>HD PNG İndir</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="fritzing-diagram-canvas" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="Tam ekran büyütmek için tıklayınız">
+            <img src="${project.circuitSvg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.svg')}" alt="${project.title} Fritzing Breadboard Devre Şeması" class="fritzing-diagram-img" loading="lazy">
+            <div class="fritzing-zoom-overlay">
+              <i class="fas fa-search-plus"></i> Tam Ekran İncele
+            </div>
+          </div>
+
+          <div class="fritzing-footer-meta">
+            <div class="fritzing-meta-grid">
+              <div class="fritzing-meta-item">
+                <div class="fritzing-meta-icon icon-ard"><i class="fas fa-microchip"></i></div>
+                <div class="fritzing-meta-text">
+                  <span class="fritzing-meta-label">Geliştirme Kartı</span>
+                  <span class="fritzing-meta-val">Arduino Uno R3 (ATmega328P)</span>
+                </div>
+              </div>
+              <div class="fritzing-meta-item">
+                <div class="fritzing-meta-icon icon-bb"><i class="fas fa-border-all"></i></div>
+                <div class="fritzing-meta-text">
+                  <span class="fritzing-meta-label">Platform Tipi</span>
+                  <span class="fritzing-meta-val">400 Tie-Point Breadboard</span>
+                </div>
+              </div>
+              <div class="fritzing-meta-item">
+                <div class="fritzing-meta-icon icon-pin"><i class="fas fa-plug"></i></div>
+                <div class="fritzing-meta-text">
+                  <span class="fritzing-meta-label">Kullanılan Portlar</span>
+                  <span class="fritzing-meta-val">${(project.pinout || []).map(p => p.pin.split(' ')[0]).join(', ')}</span>
+                </div>
+              </div>
+              <div class="fritzing-meta-item">
+                <div class="fritzing-meta-icon icon-dir"><i class="fas fa-folder-open"></i></div>
+                <div class="fritzing-meta-text">
+                  <span class="fritzing-meta-label">Arşiv Dizini</span>
+                  <span class="fritzing-meta-val">ArduinoProjects/${project.folder || ''}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="row align-items-stretch">
@@ -930,6 +999,17 @@
         URL.revokeObjectURL(url);
       });
     }
+
+    // Circuit Zoom & Lightbox Triggers
+    const zoomButtons = document.querySelectorAll('.btn-zoom-circuit, .fritzing-diagram-canvas');
+    zoomButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (e.target.closest('a[download]')) return;
+        const project = grade.arduinoProject || (window.ARDUINO_PROJECTS_DATA && window.ARDUINO_PROJECTS_DATA[grade.id]);
+        const imgUrl = btn.dataset.img || (project && (project.circuitImage || project.circuitSvg));
+        if (imgUrl) openCircuitLightbox(imgUrl);
+      });
+    });
   }
 
   /**
@@ -959,6 +1039,44 @@
     projectModal.classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  /**
+   * Circuit Lightbox Modal Handlers
+   */
+  const circuitLightboxModal = document.getElementById('circuit-lightbox-modal');
+  const circuitLightboxImg = document.getElementById('circuit-lightbox-img');
+  const circuitLightboxCloseBtn = document.getElementById('circuit-lightbox-close-btn');
+
+  function openCircuitLightbox(imgUrl) {
+    if (!circuitLightboxModal) return;
+    if (circuitLightboxImg) {
+      circuitLightboxImg.src = imgUrl;
+    }
+    circuitLightboxModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCircuitLightbox() {
+    if (!circuitLightboxModal) return;
+    circuitLightboxModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (circuitLightboxCloseBtn) {
+    circuitLightboxCloseBtn.addEventListener('click', closeCircuitLightbox);
+  }
+  if (circuitLightboxModal) {
+    circuitLightboxModal.addEventListener('click', (e) => {
+      if (e.target === circuitLightboxModal) closeCircuitLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeProjectModal();
+      closeCircuitLightbox();
+    }
+  });
 
   /**
    * Interactive Quiz Evaluation

@@ -1300,6 +1300,16 @@ const ARDUINO_PROJECTS_DATA = {
 
 // Global export ve CURRICULUM_GRADES_DATA_I18N ile otomatik birleştirme
 (function() {
+  // Her projeye Fritzing simülasyon ve devre şeması yollarını otomatik ekle
+  Object.keys(ARDUINO_PROJECTS_DATA).forEach(gradeKey => {
+    const p = ARDUINO_PROJECTS_DATA[gradeKey];
+    const fileKey = gradeKey === 'anasinifi' ? 'sinif0' : gradeKey;
+    p.circuitImage = `assets/circuits/circuit_${fileKey}.png`;
+    p.circuitSvg = `assets/circuits/circuit_${fileKey}.svg`;
+    p.diagramPng = `ArduinoProjects/${p.folder}/circuit_diagram.png`;
+    p.diagramSvg = `ArduinoProjects/${p.folder}/circuit_diagram.svg`;
+  });
+
   if (typeof window !== 'undefined') {
     window.ARDUINO_PROJECTS_DATA = ARDUINO_PROJECTS_DATA;
 

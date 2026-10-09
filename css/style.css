@@ -7648,5 +7648,269 @@ img {
   .arduino-code-pre {
     font-size: 11.5px;
   }
+  .fritzing-diagram-img {
+    max-height: 360px;
+  }
+  .fritzing-meta-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   FRITZING BREADBOARD & DEVRE SIMÜLASYON ŞEMASI GÖRSEL KARTI
+   ========================================================================== */
+.fritzing-simulation-card {
+  background: #141724;
+  border: 1px solid rgba(0, 151, 157, 0.4);
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fritzing-simulation-card:hover {
+  border-color: var(--arduino-teal);
+  box-shadow: 0 20px 56px rgba(0, 151, 157, 0.22);
+}
+
+.fritzing-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #191D2C;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fritzing-header-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fritzing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #00979D 0%, #00686B 100%);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fritzing-header-title {
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fritzing-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fritzing-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #E0E0E0;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.fritzing-tool-btn:hover {
+  background: var(--arduino-teal);
+  border-color: var(--arduino-teal);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.fritzing-diagram-canvas {
+  position: relative;
+  background: #0F1118;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.fritzing-diagram-img {
+  width: 100%;
+  max-width: 1060px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.fritzing-diagram-canvas:hover .fritzing-diagram-img {
+  transform: scale(1.008);
+}
+
+.fritzing-zoom-overlay {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(15, 17, 24, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.fritzing-footer-meta {
+  padding: 14px 20px;
+  background: #171A27;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fritzing-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.fritzing-meta-item {
+  background: #1E2232;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fritzing-meta-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.icon-ard { background: rgba(0, 151, 157, 0.2); color: #4DD0E1; }
+.icon-bb  { background: rgba(255, 183, 77, 0.2); color: #FFB74D; }
+.icon-pin { background: rgba(129, 199, 132, 0.2); color: #81C784; }
+.icon-dir { background: rgba(186, 104, 200, 0.2); color: #BA68C8; }
+
+.fritzing-meta-text {
+  overflow: hidden;
+}
+
+.fritzing-meta-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #8C94A8;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  display: block;
+}
+
+.fritzing-meta-val {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* Lightbox Modal for Fullscreen Circuit Inspection */
+.circuit-lightbox-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 12, 18, 0.94);
+  backdrop-filter: blur(12px);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.circuit-lightbox-modal.active {
+  display: flex;
+}
+
+.circuit-lightbox-content {
+  position: relative;
+  max-width: 96vw;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circuit-lightbox-img {
+  max-width: 100%;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 151, 157, 0.4);
+}
+
+.circuit-lightbox-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #E53935;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.circuit-lightbox-close:hover {
+  transform: scale(1.1);
 }
 

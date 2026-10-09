@@ -1188,9 +1188,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <p style="font-size:12.5px; color:var(--text-muted); margin:0; line-height:1.45;">
               ${arduinoData.objective}
             </p>
+            <div style="display:flex; gap:12px; align-items:center; margin-top:6px; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:10px; border:1px solid rgba(0,151,157,0.25);">
+              <img src="${arduinoData.circuitSvg || arduinoData.circuitImage || 'assets/circuits/circuit_sinif0.svg'}" alt="Fritzing Devre Şeması" style="width:105px; height:70px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
+              <div style="flex:1;">
+                <div style="font-size:12px; font-weight:700; color:#4DD0E1; margin-bottom:2px;"><i class="fas fa-microchip mr-1"></i> Fritzing Devre Simülasyonu</div>
+                <div style="font-size:11px; color:#A0AAB8;">Breadboard, Arduino Uno ve detaylı port pinout bağlantı şeması.</div>
+              </div>
+            </div>
             <div style="margin-top:6px;">
               <a href="mufredat.html?sinif=${encodeURIComponent(activeGradeKey)}#arduino-project-${encodeURIComponent(activeGradeKey)}" class="btn btn-sm btn-outline-golden" style="font-size:12px; font-weight:700; border-radius:16px; padding:4px 14px;">
-                <i class="fas fa-microchip mr-1"></i> Devre Şeması ve Arduino Kodunu İncele &rarr;
+                <i class="fas fa-microchip mr-1"></i> Fritzing Şemasını ve Arduino Kodunu İncele &rarr;
               </a>
             </div>
           </div>
