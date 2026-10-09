@@ -2213,53 +2213,49 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "9th Grade (Ages 14-15)",
       "shortLabel": "9th Grade",
       "order": 9,
-      "badge": "High School • Ages 14-15 • 2 Hours/Week",
-      "title": "9th Grade: Computer Science Track 1: Algorithms & Python Fundamentals",
+      "badge": "High School • Ages 14-15 • 2 Hours/Week • MoNE Computer Science Track 1",
+      "title": "9th Grade: MoNE Computer Science Track 1: Algorithmic Problem Solving & Data Structures with Python",
       "age": "Ages 14 - 15",
       "hours": "2 Hours / Week",
-      "scope": "2 Hours/Week • Ministry Computer Science Track 1 Standards",
-      "labType": "Computer Science & Python Coding Lab",
+      "scope": "MoNE Secondary Computer Science Curriculum Track 1 • Text-Based Programming",
+      "labType": "High School Advanced Software & Python Lab",
       "themeColor": "#3B82F6",
       "themeGradient": "linear-gradient(135deg, #3B82F6 0%, #8F489C 100%)",
       "icon": "fab fa-python",
-      "desc": "Transitioning to professional text coding. Flowcharts, pseudocode, PEP 8 standards, and core Python data types and conditional branches.",
+      "desc": "Transitioning from blocks to professional coding. Core syntax, data types (str, int, float, bool), console user inputs, if-elif-else branching conditions, for/while iteration loops, and modular functions (def) in Python 3.",
       "term1": [
         {
-          "unit": "Unit 1: Computer Science & Problem-Solving Strategies",
-          "topics": "Algorithm design, ISO flowchart symbols, structured pseudocode documentation."
+          "unit": "Unit 1: Computer Science & Foundations of Algorithmic Thinking",
+          "topics": "Algorithm complexity (intro to Big-O), flowcharts, Python installation, IDE setup (VS Code / PyCharm / IDLE)."
         },
         {
-          "unit": "Unit 2: Introduction to Python Programming",
-          "topics": "Python interpreter, IDE configuration, PEP 8 code guidelines, print() and input() I/O."
+          "unit": "Unit 2: Python Core Syntax & Data Types",
+          "topics": "Variable naming rules, string, integer, float, boolean types; type casting, print() and input()."
         },
         {
-          "unit": "Unit 3: Variables, Data Types & Type Casting",
-          "topics": "int, float, str, bool; dynamic type casting via type(), int(), float(), str()."
-        },
-        {
-          "unit": "Unit 4: Arithmetic & Relational Operators",
-          "topics": "Operators (+, -, *, /, //, %, **); relational comparisons (==, !=, <, >, <=, >=)."
+          "unit": "Unit 3: Arithmetic, Relational & Logical Operators",
+          "topics": "Mathematical operators (+, -, *, /, //, %, **); relational comparisons (==, !=, <, >) and logical operators (and, or, not)."
         }
       ],
       "term2": [
         {
-          "unit": "Unit 5: Conditionals & Branching Structures",
-          "topics": "if, elif, else blocks; combining conditions with logical operators (and, or, not)."
+          "unit": "Unit 4: Decision Structures & Conditional Statements",
+          "topics": "if, elif, else blocks; nested conditionals, logical branching algorithms, and debugging techniques."
         },
         {
-          "unit": "Unit 6: Nested Conditionals & Input Validation",
-          "topics": "Nested branching, validating and sanitizing user inputs from console."
+          "unit": "Unit 5: Loop Structures (Loops)",
+          "topics": "for loops, range() function, while loops; counter pattern, infinite loops, and break/continue statements."
         },
         {
-          "unit": "Unit 7: Algorithmic Graphics with Turtle Module",
-          "topics": "Turtle library, geometry coordinates, drawing fractals and repeating geometric patterns."
+          "unit": "Unit 6: Modular Programming & Functions",
+          "topics": "Function definition with def, parameters and arguments, return statement; built-in functions and math/random modules."
         }
       ],
       "outcomes": [
-        "Modeling multi-branch computational problems with standard flowcharts and pseudocode",
-        "Writing clean Python code conforming to PEP 8 naming and formatting conventions",
-        "Implementing complex decision trees with if-elif-else statements and boolean logic",
-        "Developing dynamic console utility programs with input validation"
+        "Mastering text-based programming fundamentals and writing syntax-compliant Python code",
+        "Constructing robust decision trees using if-elif-else statements and logical operators",
+        "Optimizing repetitive computational problems with for and while loop constructs",
+        "Designing clean, modular and reusable software architectures using def functions"
       ],
       "tools": [
         "Python 3.12",
@@ -2267,9 +2263,9 @@ const CURRICULUM_GRADES_DATA_I18N = {
         "Flowgorithm",
         "Turtle Graphics"
       ],
-      "project": "Interactive Student GPA & Academic Grade Calculation Console System",
-      "projectDesc": "Transitioning to professional text coding. Flowcharts, pseudocode, PEP 8 standards, and core Python data types and conditional branches.",
-      "videoTitle": "9th Grade - Interactive Student GPA & Academic Grade Calculation Console System",
+      "project": "Interactive Console-Based Student Grade Tracking & Statistics Calculator",
+      "projectDesc": "A Python console application that accepts user grades, determines letter marks with conditionals, calculates class averages with loops, and outputs structured reports via modular functions.",
+      "videoTitle": "9th Grade - Algorithmic Problem Solving & Console Application with Python",
       "videoUrl": "https://www.youtube.com/results?search_query=9.+sinif+bilgisayar+bilimi+python+dersleri",
       "quiz": [
         {
@@ -2316,68 +2312,59 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "10th Grade (Ages 15-16)",
       "shortLabel": "10th Grade",
       "order": 10,
-      "badge": "High School • Ages 15-16 • 2 Hours/Week",
-      "title": "10th Grade: Loops, Data Structures, Functions & File Management",
+      "badge": "High School • Ages 15-16 • 2 Hours/Week • Object-Oriented Python",
+      "title": "10th Grade: Object-Oriented Programming (OOP) in Python, Data Structures & File Management",
       "age": "Ages 15 - 16",
       "hours": "2 Hours / Week",
-      "scope": "2 Hours/Week • Ministry Computer Science Track 1 Advanced Standards",
-      "labType": "Software Engineering & OOP Lab",
+      "scope": "MoNE Computer Science Track 1 Advanced Level • OOP Architecture, Modules & Data Structures",
+      "labType": "High School Advanced Software & Python Lab",
       "themeColor": "#14B8A6",
       "themeGradient": "linear-gradient(135deg, #14B8A6 0%, #8F489C 100%)",
       "icon": "fas fa-cubes",
-      "desc": "Mastering iteration loops, Python collection structures (Lists, Tuples, Dictionaries), custom functions, and persistent file I/O operations.",
+      "desc": "Advanced data structures (Lists, Tuples, Dictionaries, Sets), Object-Oriented Programming (OOP - Classes, Objects, Inheritance, Encapsulation), File Input/Output (.txt, .csv, .json), and Exception Handling (try-except).",
       "term1": [
         {
-          "unit": "Unit 1: Iteration Loops (For & While)",
-          "topics": "For and while loops, range() stepping, infinite loop safeguards."
+          "unit": "Unit 1: Advanced Data Structures (Collections)",
+          "topics": "Lists (append, remove, pop, sort), List Comprehension, Tuples, Sets, and Dictionaries (Key/Value architecture)."
         },
         {
-          "unit": "Unit 2: Loop Control Statements",
-          "topics": "break, continue, pass statements; nested loops and 2D matrix traversal."
+          "unit": "Unit 2: Advanced String Manipulation & Methods",
+          "topics": "String slicing, split, join, replace, string formatting (f-strings), and fundamentals of regular expressions (Regex)."
         },
         {
-          "unit": "Unit 3: Python Collections: Lists",
-          "topics": "Zero-based indexing, slicing, methods (append, insert, pop, remove, sort)."
-        },
-        {
-          "unit": "Unit 4: Tuples & Sets",
-          "topics": "Immutable tuple records, set operations (union, intersection, symmetric difference)."
+          "unit": "Unit 3: Exception Handling & Robust Code Design",
+          "topics": "try, except, else, finally blocks; safely handling IndexError, ValueError, and ZeroDivisionError runtime faults."
         }
       ],
       "term2": [
         {
-          "unit": "Unit 5: Dictionaries & Key-Value Architecture",
-          "topics": "Key-value mapping, dict methods (keys, values, items, get), nested dictionaries."
+          "unit": "Unit 4: File Operations & Persistent Storage",
+          "topics": "open() function, file access modes (r, w, a), file I/O with 'with' context manager, persisting data in CSV and JSON formats."
         },
         {
-          "unit": "Unit 6: Functions & Modular Software Design",
-          "topics": "def keyword, positional/keyword arguments, default parameters, return outputs."
+          "unit": "Unit 5: Object-Oriented Programming (OOP) Fundamentals",
+          "topics": "Classes, objects, __init__ constructor method, 'self' parameter, instance attributes and methods."
         },
         {
-          "unit": "Unit 7: Scope Resolution & Standard Modules",
-          "topics": "Local vs Global scope, importing and utilizing math, random, datetime modules."
-        },
-        {
-          "unit": "Unit 8: File I/O & Exception Handling",
-          "topics": "try-except defensive programming; opening modes ('r', 'w', 'a'), TXT and CSV persistence."
+          "unit": "Unit 6: Advanced OOP: Inheritance & Polymorphism",
+          "topics": "Superclass/subclass hierarchy with super(), method overriding, encapsulation, and modular package architecture."
         }
       ],
       "outcomes": [
-        "Iterating efficiently over structured collections with for and while loops",
-        "Modeling structured datasets using multi-dimensional lists and dictionaries",
-        "Building reusable modular functions with parameter validation and return values",
-        "Writing and parsing persistent data files (TXT and CSV) with exception handling"
+        "Modeling structured datasets efficiently using Dictionaries and multi-dimensional Lists",
+        "Writing safe, fault-tolerant code by handling runtime exceptions via try-except blocks",
+        "Persisting and retrieving application states across external storage files (.txt, .json)",
+        "Engineering sustainable, modular applications following Object-Oriented Principles (OOP)"
       ],
       "tools": [
         "Python 3.12",
-        "VS Code",
+        "Visual Studio Code",
         "Jupyter Notebook",
-        "PyCharm Community",
-        "GitHub Basics"
+        "GitHub Desktop"
       ],
-      "project": "Menu-Driven Persistent Library & Inventory Management Console Application",
-      "projectDesc": "Mastering iteration loops, Python collection structures (Lists, Tuples, Dictionaries), custom functions, and persistent file I/O operations.",
-      "videoTitle": "10th Grade - Menu-Driven Persistent Library & Inventory Management Console Application",
+      "project": "Object-Oriented School Library & Book Lending Management System",
+      "projectDesc": "A comprehensive Python software system featuring Book and Student classes (OOP), handling loan and return transactions, with permanent JSON data storage.",
+      "videoTitle": "10th Grade - Python Object-Oriented Programming (OOP) & File Management",
       "videoUrl": "https://www.youtube.com/results?search_query=python+oop+nesne+yonelimli+programlama+dersleri",
       "quiz": [
         {
@@ -2424,68 +2411,60 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "11th Grade (Ages 16-17)",
       "shortLabel": "11th Grade",
       "order": 11,
-      "badge": "High School • Ages 16-17 • 2 Hours/Week",
-      "title": "11th Grade: Web Technologies (HTML5/CSS3/JS) & SQL Relational Databases",
+      "badge": "High School • Ages 16-17 • 2 Hours/Week • MoNE Computer Science Track 2",
+      "title": "11th Grade: MoNE Computer Science Track 2: Web Technologies (HTML5/CSS3/JS) & SQL Databases",
       "age": "Ages 16 - 17",
       "hours": "2 Hours / Week",
-      "scope": "2 Hours/Week • Ministry Computer Science Track 2 Standards",
-      "labType": "Full-Stack Web & Database Lab",
+      "scope": "MoNE Secondary Computer Science Curriculum Track 2 • Web Architecture & Relational Databases",
+      "labType": "High School Web Development & Database Lab",
       "themeColor": "#8B5CF6",
       "themeGradient": "linear-gradient(135deg, #8B5CF6 0%, #8F489C 100%)",
       "icon": "fas fa-code",
-      "desc": "Modern web development architecture, responsive mobile layouts, object-oriented programming (OOP), and relational database modeling.",
+      "desc": "Internet architecture and Client-Server paradigm; semantic HTML5, modern CSS3 (Flexbox/Grid, Responsive design), client-side JavaScript DOM manipulation, and relational database systems (SQL / SQLite).",
       "term1": [
         {
           "unit": "Unit 1: Web Architecture & Semantic HTML5",
-          "topics": "Client-Server model, HTTP/HTTPS protocols, semantic elements, forms, and web accessibility."
+          "topics": "DNS, IP, HTTP/HTTPS protocols; semantic tags (header, nav, section, article, footer); web forms and tables."
         },
         {
-          "unit": "Unit 2: Modern CSS3 & Responsive Design",
-          "topics": "Box model, Flexbox and CSS Grid layout engines, @media queries for mobile responsiveness."
+          "unit": "Unit 2: Modern CSS3 Design & Responsive Layouts",
+          "topics": "CSS selectors, the Box Model, Flexbox and CSS Grid layouts, responsive media queries (@media) for mobile optimization."
         },
         {
-          "unit": "Unit 3: JavaScript Core & DOM Manipulation",
-          "topics": "Variables, event listeners (addEventListener), dynamically mutating DOM element styles."
-        },
-        {
-          "unit": "Unit 4: Object-Oriented Programming (OOP) Principles",
-          "topics": "Classes, objects, __init__ constructor, inheritance hierarchies, data encapsulation."
+          "unit": "Unit 3: Client-Side JavaScript & DOM Manipulation",
+          "topics": "Variables (let, const), event listeners (addEventListener), selecting DOM elements, and real-time interactive UI updates."
         }
       ],
       "term2": [
         {
-          "unit": "Unit 5: Relational Database Architecture",
-          "topics": "Entity-Relationship modeling, primary keys, foreign keys, SQL data types."
+          "unit": "Unit 4: Database Foundations & Relational Data Model",
+          "topics": "Database architecture, tables, Primary Key, Foreign Key relationships, and relational data types."
         },
         {
-          "unit": "Unit 6: SQL Query Language Mastery",
-          "topics": "SELECT, WHERE, INSERT INTO, UPDATE, DELETE, ORDER BY, and aggregation commands."
+          "unit": "Unit 5: Data Management with SQL (CRUD Operations)",
+          "topics": "SELECT, INSERT INTO, UPDATE, DELETE queries; conditional WHERE clauses, ORDER BY sorting, and GROUP BY aggregation."
         },
         {
-          "unit": "Unit 7: Python SQLite Database Integration",
-          "topics": "sqlite3 module, establishing connections, cursor execution, dynamic parameter queries."
-        },
-        {
-          "unit": "Unit 8: Web Security & REST API Basics",
-          "topics": "Form validation, SQL Injection awareness, querying JSON endpoints via Fetch API."
+          "unit": "Unit 6: Multi-Table Queries & Data Integrity (JOIN)",
+          "topics": "INNER JOIN and LEFT JOIN queries; connecting Python with SQLite database engines and integrating with web forms."
         }
       ],
       "outcomes": [
-        "Authoring semantic, accessible, and responsive multi-page web layouts",
-        "Manipulating browser DOM dynamically with vanilla JavaScript event handlers",
-        "Designing object-oriented class hierarchies modeling real-world business entities",
-        "Executing full relational database CRUD operations using Python and SQLite"
+        "Authoring accessible and responsive multi-page web layouts using semantic HTML5 and modern CSS3",
+        "Manipulating browser DOM dynamically with vanilla JavaScript event handlers and client validation",
+        "Designing relational database schemas establishing Primary and Foreign Key integrity",
+        "Executing complete database CRUD operations with SQL and integrating via Python SQLite engines"
       ],
       "tools": [
-        "VS Code",
-        "Chrome DevTools",
-        "DB Browser for SQLite",
-        "Git / GitHub",
-        "Figma"
+        "Visual Studio Code",
+        "HTML5 / CSS3 / JavaScript",
+        "SQLite / DB Browser",
+        "Bootstrap 5",
+        "GitHub Pages"
       ],
-      "project": "Personal Portfolio & Blog Web Application with SQLite Database Engine",
-      "projectDesc": "Modern web development architecture, responsive mobile layouts, object-oriented programming (OOP), and relational database modeling.",
-      "videoTitle": "11th Grade - Personal Portfolio & Blog Web Application with SQLite Database Engine",
+      "project": "Dynamic Product Showcase & SQLite Integrated Web Portal",
+      "projectDesc": "A modern web portal built with HTML5, CSS Grid and JavaScript, backed by Python-SQLite for real-time inventory querying, filtering, and database persistence.",
+      "videoTitle": "11th Grade - Web Development (HTML5, CSS3, JS) & SQL Database Integration",
       "videoUrl": "https://www.youtube.com/results?search_query=html5+css3+javascript+sql+dersleri",
       "quiz": [
         {
@@ -2532,68 +2511,60 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "12th Grade (Ages 17-18)",
       "shortLabel": "12th Grade",
       "order": 12,
-      "badge": "High School • Ages 17-18 • 2 Hours/Week",
-      "title": "12th Grade: Artificial Intelligence, IoT & Ethical Cybersecurity",
+      "badge": "High School • Ages 17-18 • 2 Hours/Week • Advanced Tech & Career",
+      "title": "12th Grade: Future Technologies: Artificial Intelligence (AI), Internet of Things (IoT) & Cybersecurity",
       "age": "Ages 17 - 18",
       "hours": "2 Hours / Week",
-      "scope": "2 Hours/Week • Advanced Innovation, University & Career Readiness",
-      "labType": "AI, IoT & Cyber Defense Lab",
+      "scope": "MoNE Advanced IT & Innovation • AI, Cloud Computing & College/Career Readiness",
+      "labType": "AI, IoT & Cyber Defense Advanced Research Lab",
       "themeColor": "#6366F1",
       "themeGradient": "linear-gradient(135deg, #6366F1 0%, #EC4899 100%)",
       "icon": "fas fa-brain",
-      "desc": "Machine learning classifiers, ESP32 cloud telemetry, network packet sniffing, ethical cyber defense, and national competition project mentorship.",
+      "desc": "Artificial Intelligence architectures (Machine Learning, Supervised/Unsupervised models, Computer Vision, LLMs and Generative AI), IoT hardware and ESP32 cloud connectivity, ethical cybersecurity defense, and university engineering pathways.",
       "term1": [
         {
-          "unit": "Unit 1: AI & Machine Learning Foundations",
-          "topics": "Supervised, unsupervised, and reinforcement paradigms; classification vs regression."
+          "unit": "Unit 1: Artificial Intelligence (AI) & Machine Learning Architecture",
+          "topics": "AI categories (Narrow AI, General AI), supervised and unsupervised learning algorithms; dataset curation and model training."
         },
         {
-          "unit": "Unit 2: Computer Vision & Real-Time Classification",
-          "topics": "OpenCV basics, Teachable Machine, image preprocessing, real-time webcam inference."
+          "unit": "Unit 2: Computer Vision & Image Processing",
+          "topics": "OpenCV library; real-time facial detection from camera feed, hand gesture tracking, and object classification models."
         },
         {
-          "unit": "Unit 3: Large Language Models (LLMs) & Prompt Engineering",
-          "topics": "Generative AI pipelines, prompt structure optimization, AI ethics and copyright."
-        },
-        {
-          "unit": "Unit 4: Internet of Things (IoT) & ESP32 Hardware",
-          "topics": "ESP32 Wi-Fi/Bluetooth stack, MQTT protocol, publishing telemetry to cloud brokers."
+          "unit": "Unit 3: Large Language Models (LLMs) & Generative AI",
+          "topics": "Prompt engineering, transformer architecture, ethical AI practices, copyright considerations, and mitigating hallucinations."
         }
       ],
       "term2": [
         {
-          "unit": "Unit 5: Cybersecurity Fundamentals & Network Defense",
-          "topics": "CIA Triad (Confidentiality, Integrity, Availability), symmetric/asymmetric encryption, TLS/SSL."
+          "unit": "Unit 4: Internet of Things (IoT) & Smart Connected Systems",
+          "topics": "ESP32 Wi-Fi microcontroller, MQTT protocol, live sensor telemetry streaming to cloud dashboards (ThingSpeak, Adafruit IO)."
         },
         {
-          "unit": "Unit 6: Threat Analysis & Defensive Tactics",
-          "topics": "Phishing detection, Man-in-the-Middle prevention, Wireshark packet capture analysis."
+          "unit": "Unit 5: Cybersecurity Fundamentals & Defense Strategies",
+          "topics": "Network attack vectors (Phishing, DDoS, Man-in-the-Middle), cryptography algorithms (AES, RSA), ethical penetration testing, and data privacy."
         },
         {
-          "unit": "Unit 7: Digital Footprints, GDPR & Tech Leadership",
-          "topics": "Deepfake forensics, personal data legislation, software engineering career trajectories."
-        },
-        {
-          "unit": "Unit 8: Senior Capstone Innovation Project",
-          "topics": "Agile sprint management, Git version control, technical reporting for competitions (TEKNOFEST)."
+          "unit": "Unit 6: Digital Portfolio & Tech Career Roadmap",
+          "topics": "Professional GitHub profiles, open-source contributions, career trajectories in software engineering, AI engineering, and cybersecurity."
         }
       ],
       "outcomes": [
-        "Training computer vision models and performing real-time inference via camera",
-        "Streaming live IoT sensor data to cloud telemetry dashboards using ESP32",
-        "Analyzing network packet traces and applying defensive cyber mitigation techniques",
-        "Documenting and presenting an end-to-end engineering capstone project for competitions"
+        "Training computer vision models and performing real-time inference via camera video feeds",
+        "Streaming live IoT sensor telemetry to cloud dashboards using ESP32 Wi-Fi microcontrollers",
+        "Analyzing network packets and applying defensive cybersecurity mechanisms against attack vectors",
+        "Documenting and presenting an end-to-end engineering capstone project for national and university competitions"
       ],
       "tools": [
         "Google Teachable Machine",
-        "ESP32 / Arduino Cloud",
+        "Python OpenCV / Scikit-Learn",
+        "ESP32 IoT Kit",
         "Wireshark",
-        "Python Scikit-Learn / OpenCV",
         "Hugging Face"
       ],
       "project": "AI-Powered Smart Campus Safety & Environmental Energy Telemetry IoT System",
-      "projectDesc": "Machine learning classifiers, ESP32 cloud telemetry, network packet sniffing, ethical cyber defense, and national competition project mentorship.",
-      "videoTitle": "12th Grade - AI-Powered Smart Campus Safety & Environmental Energy Telemetry IoT System",
+      "projectDesc": "An integrated platform featuring a computer vision model that verifies campus access via camera feed, paired with ESP32 sensors transmitting environmental metrics to cloud dashboards.",
+      "videoTitle": "12th Grade - AI, Internet of Things (IoT) & Cyber Defense Capstone Project",
       "videoUrl": "https://www.youtube.com/results?search_query=yapay+zeka+makine+ogrenmesi+teachable+machine+dersi",
       "quiz": [
         {
@@ -3538,63 +3509,59 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "الصف التاسع (14-15 سنة)",
       "shortLabel": "الصف التاسع",
       "order": 9,
-      "badge": "ثانوي • 14-15 سنة • ساعتان أسبوعياً",
-      "title": "الصف التاسع: علوم الحاسوب 1: حل المشكلات، الخوارزميات وأسس بايثون",
+      "badge": "المرحلة الثانوية • 14-15 سنة • ساعتان أسبوعياً • معايير منهاج علوم الحاسوب 1",
+      "title": "الصف التاسع: علوم الحاسوب 1: حل المشكلات البرمجية، الخوارزميات وهياكل البيانات بلغة بايثون",
       "age": "14 - 15 سنة",
       "hours": "ساعتان دراسيتان أسبوعيًا",
-      "scope": "ساعتان أسبوعياً • معايير منهاج علوم الحاسوب للمرحلة الثانوية - المستوى 1",
-      "labType": "مختبر علوم الحاسوب وبرمجة بايثون",
+      "scope": "برنامج علوم الحاسوب للمرحلة الثانوية - المستوى 1 • البرمجة النصية",
+      "labType": "مختبر البرمجيات المتقدمة وبايثون للمرحلة الثانوية",
       "themeColor": "#3B82F6",
       "themeGradient": "linear-gradient(135deg, #3B82F6 0%, #8F489C 100%)",
       "icon": "fab fa-python",
-      "desc": "الانتقال الاحترافي للبرمجة النصية. المخططات الانسيابية، الكود الزائف، معايير PEP 8، والمتغيرات والشروط في لغة بايثون 3.",
+      "desc": "الانتقال من البرمجة الكتلية إلى الاحترافية النصية. القواعد التركيبية للغة بايثون، أنواع البيانات (str, int, float, bool)، استقبال مدخلات المستخدم، جمل اتخاذ القرار if-elif-else، حلقات التكرار for/while، والدوال المعيارية (def).",
       "term1": [
         {
-          "unit": "الوحدة 1: علوم الحاسوب واستراتيجيات حل المشكلات",
-          "topics": "تصميم الخوارزميات، الرموز القياسية للمخططات الانسيابية، وكتابة الكود الزائف (Pseudocode)."
+          "unit": "الوحدة 1: علوم الحاسوب وأسس التفكير الخوارزمي",
+          "topics": "تعقيد الخوارزميات (مقدمة Big-O)، المخططات الانسيابية، تثبيت بايثون، وإعداد بيئات التطوير (VS Code / PyCharm / IDLE)."
         },
         {
-          "unit": "الوحدة 2: مقدمة إلى لغة البرمجة بايثون",
-          "topics": "مفسر بايثون، بيئات التطوير، معايير PEP 8، ودوال print() و input()."
+          "unit": "الوحدة 2: القواعد الأساسية للغة بايثون وأنواع البيانات",
+          "topics": "قواعد تسمية المتغيرات، النصوص، الأعداد الصحيحة، العشرية والمنطقية؛ تحويل الأنواع ودوال print() و input()."
         },
         {
-          "unit": "الوحدة 3: المتغيرات، أنواع البيانات والتحويل",
-          "topics": "أنواع int و float و str و bool؛ والتحويل الديناميكي عبر type() و int() و str()."
-        },
-        {
-          "unit": "الوحدة 4: المعاملات الحسابية والمقارنات",
-          "topics": "المعاملات (+، -، *، /، //، %، **) ومعاملات المقارنة (==، !=، <، >، <=، >=)."
+          "unit": "الوحدة 3: المعاملات الحسابية والعلائقية والمنطقية",
+          "topics": "المعاملات الرياضية (+, -, *, /, //, %, **)، المقارنات (==, !=, <, >) والروابط المنطقية (and, or, not)."
         }
       ],
       "term2": [
         {
-          "unit": "الوحدة 5: الجمل الشرطية وبنية اتخاذ القرار",
-          "topics": "كتل if و elif و else؛ والربط بالمعاملات المنطقية (and, or, not) للقرارات المركبة."
+          "unit": "الوحدة 4: بنى اتخاذ القرار والجمل الشرطية",
+          "topics": "جمل if و elif و else؛ الشروط المتداخلة، خوارزميات اتخاذ القرار المنطقي وتصحيح الأخطاء (debugging)."
         },
         {
-          "unit": "الوحدة 6: الشروط المتداخلة والتحقق من المدخلات",
-          "topics": "الشروط المتداخلة (Nested if)، تصفية مدخلات المستخدم ومنع المدخلات الخاطئة."
+          "unit": "الوحدة 5: بنيات التكرار (الحلقات Loops)",
+          "topics": "حلقة for، دالة range()، حلقة while؛ منطق العداد، الحلقات اللانهائية وتعليمات break و continue."
         },
         {
-          "unit": "الوحدة 7: النمذجة الرسومية البرمجية مع مكتبة Turtle",
-          "topics": "مكتبة الرسوميات Turtle، رياضيات الزوايا والمسافات، ورسم الأنماط الهندسية."
+          "unit": "الوحدة 6: البرمجة المعيارية والدوال",
+          "topics": "تعريف الدوال باستخدام def، المعاملات والوسائط، تعليمة return؛ الدوال المضمنة ومكتبات math و random."
         }
       ],
       "outcomes": [
-        "نمذجة المسائل البرمجية المتشعبة بالمخططات الانسيابية المعتمدة والكود الزائف",
-        "كتابة أكواد بايثون نظيفة تتوافق بدقة مع معايير PEP 8 الدولية",
-        "بناء أشجار اتخاذ القرار المعقدة عبر كتل if-elif-else والمنطق البولياني",
-        "تطوير برامج وحدة تحكم تفاعلية مع تدقيق صحة مدخلات المستخدمين"
+        "استيعاب مبادئ البرمجة النصية وتطبيق قواعد لغة بايثون بدقة وخلو من الأخطاء",
+        "بناء آليات اتخاذ القرار المعقدة باستخدام كتل if-elif-else والمعاملات المنطقية",
+        "تحسين وتكرار حلول المسائل الحسابية عبر حلقات التكرار for و while",
+        "تصميم هياكل برمجية نظيفة وقابلة لإعادة الاستخدام عبر تعريف الدوال المعيارية (def)"
       ],
       "tools": [
         "Python 3.12",
-        "VS Code / Thonny",
-        "Flowgorithm",
-        "Turtle Graphics"
+        "Visual Studio Code",
+        "PyCharm Community",
+        "IDLE & Terminal"
       ],
-      "project": "نظام وحدة تحكم تفاعلي لحساب معدل درجات الطلاب والتقديرات الأكاديمية",
-      "projectDesc": "الانتقال الاحترافي للبرمجة النصية. المخططات الانسيابية، الكود الزائف، معايير PEP 8، والمتغيرات والشروط في لغة بايثون 3.",
-      "videoTitle": "الصف التاسع - نظام وحدة تحكم تفاعلي لحساب معدل درجات الطلاب والتقديرات الأكاديمية",
+      "project": "برنامج وحدة تحكم تفاعلي لحساب الدرجات والإحصاءات الأكاديمية للطلاب",
+      "projectDesc": "تطبيق بايثون عبر موجه الأوامر يستقبل درجات الطلاب، يحدد التقديرات الحرفية بالجمل الشرطية، يحسب معدل الفصل بحلقات التكرار، ويولد تقارير عبر الدوال المعيارية.",
+      "videoTitle": "الصف التاسع - حل المشكلات الخوارزمية وتطبيقات وحدة التحكم مع بايثون",
       "videoUrl": "https://www.youtube.com/results?search_query=9.+sinif+bilgisayar+bilimi+python+dersleri",
       "quiz": [
         {
@@ -3641,68 +3608,59 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "الصف العاشر (15-16 سنة)",
       "shortLabel": "الصف العاشر",
       "order": 10,
-      "badge": "ثانوي • 15-16 سنة • ساعتان أسبوعياً",
-      "title": "الصف العاشر: التكرار، هياكل البيانات، الدوال وإدارة الملفات",
+      "badge": "المرحلة الثانوية • 15-16 سنة • ساعتان أسبوعياً • بايثون كائني التوجه (OOP)",
+      "title": "الصف العاشر: البرمجة كائنية التوجه (OOP) ببايثون، هياكل البيانات وإدارة الملفات",
       "age": "15 - 16 سنة",
       "hours": "ساعتان دراسيتان أسبوعيًا",
-      "scope": "ساعتان أسبوعياً • معايير منهاج علوم الحاسوب - المستوى 1 المتقدم",
-      "labType": "مختبر هندسة البرمجيات والبرمجة الكائنية",
+      "scope": "برنامج علوم الحاسوب للمرحلة الثانوية المستوى 1 المتقدم • بنية OOP والوحدات وهياكل البيانات",
+      "labType": "مختبر البرمجيات المتقدمة وبايثون للمرحلة الثانوية",
       "themeColor": "#14B8A6",
       "themeGradient": "linear-gradient(135deg, #14B8A6 0%, #8F489C 100%)",
       "icon": "fas fa-cubes",
-      "desc": "إتقان حلقات التكرار، هياكل المجموعات (القوائم، المجموعات، القواميس)، تصميم الدوال المعيارية وعمليات القراءة والكتابة في الملفات.",
+      "desc": "هياكل البيانات المتقدمة (القوائم، الصفوف، القواميس، المجموعات)، البرمجة كائنية التوجه (OOP - الفئات، الكائنات، الوراثة، التغليف)، عمليات الملفات (.txt, .csv, .json) وإدارة الاستثناءات (try-except).",
       "term1": [
         {
-          "unit": "الوحدة 1: حلقات التكرار (For & While)",
-          "topics": "ميكانيكا حلقات for و while، خطوات range()، وتدابير منع الحلقات اللانهائية."
+          "unit": "الوحدة 1: هياكل البيانات المتقدمة (المجموعات Collections)",
+          "topics": "القوائم (append, remove, pop, sort)، توليد القوائم (List Comprehension)، الصفوف (Tuples)، المجموعات (Sets) والقواميس (Dictionaries - مفتاح/قيمة)."
         },
         {
-          "unit": "الوحدة 2: عبارات التحكم في التكرار",
-          "topics": "كلمات break و continue و pass؛ الحلقات المتداخلة والتعامل مع المصفوفات."
+          "unit": "الوحدة 2: الطرق المتقدمة للسلاسل النصية (Strings)",
+          "topics": "تقطيع النصوص (slicing)، split، join، replace، تنسيق النصوص (f-strings) وأسس التعبيرات النمطية (Regex)."
         },
         {
-          "unit": "الوحدة 3: مجموعات بايثون: القوائم (Lists)",
-          "topics": "الفهرسة، تقطيع القوائم (Slicing)، والدوال (append, insert, pop, remove, sort)."
-        },
-        {
-          "unit": "الوحدة 4: الصفوف (Tuples) والمجموعات (Sets)",
-          "topics": "السجلات غير القابلة للتعديل، وعمليات المجموعات (التقاطع، الاتحاد، الفرق)."
+          "unit": "الوحدة 3: معالجة الأخطاء والاستثناءات (Exception Handling)",
+          "topics": "كتل try و except و else و finally؛ إدارة أخطاء IndexError و ValueError و ZeroDivisionError بأمان."
         }
       ],
       "term2": [
         {
-          "unit": "الوحدة 5: القواميس وبنية المفتاح والقيمة",
-          "topics": "علاقة المفتاح والقيمة، دوال القواميس (keys, values, items, get)، والقواميس المتداخلة."
+          "unit": "الوحدة 4: إدارة الملفات والتخزين الدائم",
+          "topics": "دالة open()، أوضاع الملفات (r, w, a)، القراءة والكتابة مع مدير السياق with، وتخزين البيانات بتنسيقات CSV و JSON."
         },
         {
-          "unit": "الوحدة 6: الدوال والتصميم البرمجي المعياري",
-          "topics": "التعريف بكلمة def، المعاملات، القيم الافتراضية، وقيم الإرجاع (return)."
+          "unit": "الوحدة 5: أسس البرمجة كائنية التوجه (OOP)",
+          "topics": "الفئات (Class)، الكائنات (Object)، دالة البناء __init__، المعامل self، خصائص وطرائق النسخ (Instances)."
         },
         {
-          "unit": "الوحدة 7: نطاق المتغيرات والوحدات الجاهزة",
-          "topics": "النطاق المحلي مقابل العام، واستيراد وحدات math و random و datetime."
-        },
-        {
-          "unit": "الوحدة 8: إدارة الملفات ومعالجة الأخطاء (I/O)",
-          "topics": "كتل try-except لحماية الكود؛ أوضاع فتح الملفات ('r', 'w', 'a') وحفظ ملفات TXT و CSV."
+          "unit": "الوحدة 6: البرمجة كائنية التوجه المتقدمة: الوراثة وتعدد الأشكال",
+          "topics": "علاقة الفئة العليا والفرعية باستخدام super()، إعادة تعريف الطرائق (override)، وهندسة الحزم المعيارية."
         }
       ],
       "outcomes": [
-        "التنقل الفعال عبر المجموعات وهياكل البيانات باستخدام حلقات for و while",
-        "نمذجة مجموعات البيانات الهيكلية المعقدة بالقوائم والقواميس متعددة الأبعاد",
-        "بناء دوال معيارية قابلة لإعادة الاستخدام مع التحقق من المعاملات",
-        "حفظ وقراءة البيانات الدائمة في ملفات TXT و CSV مع معالجة الاستثناءات"
+        "نمذجة مجموعات البيانات الهيكلية المعقدة بالقواميس والقوائم متعددة الأبعاد بكفاءة",
+        "كتابة أكواد آمنة عبر التعامل الذكي مع استثناءات التشغيل بكتل try-except",
+        "حفظ بيانات التطبيقات واستعادتها بشكل دائم في ملفات خارجية (.txt, .json)",
+        "تطوير برمجيات مستدامة ومعيارية باستخدام معمارية الفئات (Class) والكائنات (Object)"
       ],
       "tools": [
         "Python 3.12",
-        "VS Code",
+        "Visual Studio Code",
         "Jupyter Notebook",
-        "PyCharm Community",
-        "أساسيات GitHub"
+        "GitHub Desktop"
       ],
-      "project": "تطبيق وحدة تحكم لإدارة وأرشفة سجلات المكتبة والمخزون مع حفظ الملفات",
-      "projectDesc": "إتقان حلقات التكرار، هياكل المجموعات (القوائم، المجموعات، القواميس)، تصميم الدوال المعيارية وعمليات القراءة والكتابة في الملفات.",
-      "videoTitle": "الصف العاشر - تطبيق وحدة تحكم لإدارة وأرشفة سجلات المكتبة والمخزون مع حفظ الملفات",
+      "project": "نظام كائني التوجه لإدارة مكتبة المدرسة واستعارة الكتب",
+      "projectDesc": "برنامج بايثون متكامل يضم فئات الكتاب والطالب (OOP)، يدير عمليات الإعارة والاسترجاع ويخزن كافة السجلات في ملفات JSON بشكل دائم.",
+      "videoTitle": "الصف العاشر - البرمجة كائنية التوجه (OOP) وإدارة الملفات بلغة بايثون",
       "videoUrl": "https://www.youtube.com/results?search_query=python+oop+nesne+yonelimli+programlama+dersleri",
       "quiz": [
         {
@@ -3749,68 +3707,60 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "الصف الحادي عشر (16-17 سنة)",
       "shortLabel": "الصف الحادي عشر",
       "order": 11,
-      "badge": "ثانوي • 16-17 سنة • ساعتان أسبوعياً",
-      "title": "الصف الحادي عشر: تقنيات الويب (HTML5/CSS3/JS) وقواعد بيانات SQL",
+      "badge": "المرحلة الثانوية • 16-17 سنة • ساعتان أسبوعياً • منهاج علوم الحاسوب 2",
+      "title": "الصف الحادي عشر: علوم الحاسوب 2: تقنيات الويب (HTML5/CSS3/JS) وقواعد بيانات SQL",
       "age": "16 - 17 سنة",
       "hours": "ساعتان دراسيتان أسبوعيًا",
-      "scope": "ساعتان أسبوعياً • معايير منهاج علوم الحاسوب للمرحلة الثانوية - المسار 2",
-      "labType": "مختبر تطوير الويب وقواعد البيانات",
+      "scope": "برنامج علوم الحاسوب للمرحلة الثانوية - المسار 2 • بنية الويب وقواعد البيانات العلائقية",
+      "labType": "مختبر تطوير الويب وقواعد البيانات للمرحلة الثانوية",
       "themeColor": "#8B5CF6",
       "themeGradient": "linear-gradient(135deg, #8B5CF6 0%, #8F489C 100%)",
       "icon": "fas fa-code",
-      "desc": "بنية تطوير الويب الحديثة، التصميم المتجاوب للهواتف، البرمجة كائنية التوجه (OOP)، وتكامل قواعد البيانات العلائقية (SQL).",
+      "desc": "بنية الإنترنت ونموذج العميل-الخادم (Client-Server)؛ HTML5 الدلالية، CSS3 الحديثة (Flexbox/Grid، التصميم المتجاوب)، جافاسكريبت للتحكم في DOM ونظم إدارة قواعد البيانات العلائقية (SQL / SQLite).",
       "term1": [
         {
-          "unit": "الوحدة 1: بنية الويب ومعايير HTML5 الدلالية",
-          "topics": "نموذج العميل والخادم، بروتوكولات HTTP/HTTPS، وسوم HTML الدلالية، النماذج وإمكانية الوصول."
+          "unit": "الوحدة 1: هندسة الويب ومعايير HTML5 الدلالية",
+          "topics": "بروتوكولات DNS و IP و HTTP/HTTPS؛ الوسوم الدلالية (header, nav, section, article, footer)؛ النماذج والجداول."
         },
         {
-          "unit": "الوحدة 2: CSS3 الحديث والتصميم المتجاوب",
-          "topics": "نموذج الصندوق، أنظمة Flexbox و Grid، واستعلامات الوسائط (@media) للتوافق مع الهواتف."
+          "unit": "الوحدة 2: تصميم CSS3 الحديث والتخطيط المتجاوب",
+          "topics": "المحددات، نموذج الصندوق (Box Model)، أنظمة Flexbox و CSS Grid، واستعلامات الوسائط (@media) للتوافق مع الجوال."
         },
         {
-          "unit": "الوحدة 3: أساسيات جافاسكريبت والتحكم في DOM",
-          "topics": "المتغيرات، الدوال، مستمعي الأحداث addEventListener، وتعديل عناصر DOM ديناميكياً."
-        },
-        {
-          "unit": "الوحدة 4: مبادئ البرمجة كائنية التوجه (OOP)",
-          "topics": "الفئات (Class)، الكائنات (Object)، دوال البناء __init__، الوراثة وتغليف البيانات."
+          "unit": "الوحدة 3: جافاسكريبت من جانب العميل والتحكم في DOM",
+          "topics": "المتغيرات (let, const)، مستمعو الأحداث (addEventListener)، اختيار عناصر DOM وتحديث المحتوى التفاعلي."
         }
       ],
       "term2": [
         {
-          "unit": "الوحدة 5: هندسة قواعد البيانات العلائقية",
-          "topics": "تصميم الجداول، المفتاح الأساسي (Primary Key)، المفتاح الأجنبي (Foreign Key) وأنواع البيانات."
+          "unit": "الوحدة 4: أسس قواعد البيانات والنموذج العلائقي",
+          "topics": "مفهوم قواعد البيانات، الجداول، المفتاح الأساسي (Primary Key)، المفتاح الأجنبي (Foreign Key) وأنواع البيانات."
         },
         {
-          "unit": "الوحدة 6: إتقان لغة استعلامات SQL",
-          "topics": "أوامر SELECT و WHERE و INSERT INTO و UPDATE و DELETE و ORDER BY."
+          "unit": "الوحدة 5: إدارة البيانات باستخدام SQL (عمليات CRUD)",
+          "topics": "استعلامات SELECT و INSERT INTO و UPDATE و DELETE؛ التصفية بـ WHERE، والترتيب بـ ORDER BY والتجميع بـ GROUP BY."
         },
         {
-          "unit": "الوحدة 7: تكامل قاعدة بيانات SQLite مع بايثون",
-          "topics": "مكتبة sqlite3، إنشاء الاتصال، إدارة المؤشر (cursor)، والاستعلامات الديناميكية."
-        },
-        {
-          "unit": "الوحدة 8: أمان الويب والتكامل مع واجهات API",
-          "topics": "التحقق من النماذج، الوعي بهجمات حقن SQL، وجلب بيانات JSON عبر Fetch API."
+          "unit": "الوحدة 6: استعلامات الجداول المتعددة وسلامة البيانات (JOIN)",
+          "topics": "استعلامات INNER JOIN و LEFT JOIN؛ ربط بايثون بقاعدة بيانات SQLite والتكامل مع نماذج الويب."
         }
       ],
       "outcomes": [
-        "تكويد صفحات ويب دلالية متعددة ومتوافقة بالكامل مع مختلف شاشات الهواتف",
-        "التحكم الديناميكي في عناصر متصفح DOM بأحداث جافاسكريبت المباشرة",
-        "تصميم هياكل فئات برمجية كائنية تمثل كيانات واقعية من الحياة اليومية",
-        "تنفيذ جميع عمليات CRUD لقواعد البيانات العلائقية باستخدام بايثون و SQLite"
+        "برمجة صفحات ويب متجاوبة مع الأجهزة الذكية وفق معايير HTML5 و CSS3 الحديثة",
+        "إدارة تفاعلات المستخدمين في صفحات الويب والتحقق من صحة المدخلات عبر جافاسكريبت",
+        "تصميم مخطط قاعدة بيانات علائقية وإنشاء العلاقات السليمة بين الجداول",
+        "تنفيذ عمليات الاستعلام والإضافة والتعديل والحذف (CRUD) بلغة SQL وربطها ببايثون"
       ],
       "tools": [
-        "VS Code",
-        "Chrome DevTools",
-        "DB Browser for SQLite",
-        "Git / GitHub",
-        "Figma"
+        "Visual Studio Code",
+        "HTML5 / CSS3 / JavaScript",
+        "SQLite / DB Browser",
+        "Bootstrap 5",
+        "GitHub Pages"
       ],
-      "project": "موقع ويب شخصي ومدونة متجاوبة مدعومة بمحرك قاعدة بيانات SQLite",
-      "projectDesc": "بنية تطوير الويب الحديثة، التصميم المتجاوب للهواتف، البرمجة كائنية التوجه (OOP)، وتكامل قواعد البيانات العلائقية (SQL).",
-      "videoTitle": "الصف الحادي عشر - موقع ويب شخصي ومدونة متجاوبة مدعومة بمحرك قاعدة بيانات SQLite",
+      "project": "بوابة ويب لكتالوج المنتجات متكاملة مع قاعدة بيانات SQLite",
+      "projectDesc": "تطبيق ويب متكامل مصمم بواجهة حديثة باستخدام HTML5 و CSS Grid وجافاسكريبت، مرتبط بقاعدة بيانات SQLite عبر بايثون لتصفية وإدارة المنتجات في الوقت الفعلي.",
+      "videoTitle": "الصف الحادي عشر - تطوير الويب (HTML5, CSS3, JS) وتكامل قواعد بيانات SQL",
       "videoUrl": "https://www.youtube.com/results?search_query=html5+css3+javascript+sql+dersleri",
       "quiz": [
         {
@@ -3857,68 +3807,60 @@ const CURRICULUM_GRADES_DATA_I18N = {
       "gradeLabel": "الصف الثاني عشر (17-18 سنة)",
       "shortLabel": "الصف الثاني عشر",
       "order": 12,
-      "badge": "ثانوي • 17-18 سنة • ساعتان أسبوعياً",
-      "title": "الصف الثاني عشر: الذكاء الاصطناعي، إنترنت الأشياء والأمن السيبراني الأخلاقي",
+      "badge": "المرحلة الثانوية • 17-18 سنة • ساعتان أسبوعياً • التكنولوجيا المتقدمة والمسار المهني",
+      "title": "الصف الثاني عشر: تكنولوجيات المستقبل: الذكاء الاصطناعي (AI)، إنترنت الأشياء (IoT) والأمن السيبراني",
       "age": "17 - 18 سنة",
       "hours": "ساعتان دراسيتان أسبوعيًا",
-      "scope": "ساعتان أسبوعياً • الابتكار المتقدم، الاستعداد الجامعي والمسار الوظيفي",
-      "labType": "مختبر الذكاء الاصطناعي وإنترنت الأشياء والدفاع السيبراني",
+      "scope": "برنامج تكنولوجيا المعلومات المتقدمة والابتكار • الذكاء الاصطناعي والحوسبة السحابية والاستعداد الجامعي والمهني",
+      "labType": "مختبر البحوث المتقدمة في الذكاء الاصطناعي و IoT والأمن السيبراني",
       "themeColor": "#6366F1",
       "themeGradient": "linear-gradient(135deg, #6366F1 0%, #EC4899 100%)",
       "icon": "fas fa-brain",
-      "desc": "نماذج تعلم الآلة، نقل البيانات السحابي مع ESP32، تحليل حزم الشبكة، الدفاع السيبراني الأخلاقي، وتوجيه المشاريع للمسابقات الكبرى.",
+      "desc": "نماذج الذكاء الاصطناعي (تعلم الآلة، التعلم الخاضع وغير الخاضع للإشراف، الرؤية الحاسوبية، النماذج اللغوية الكبيرة LLM والذكاء الاصطناعي التوليدي)، إنترنت الأشياء وربط ESP32 بالسحابة، الدفاع السيبراني الأخلاقي والإرشاد المهني الجامعي.",
       "term1": [
         {
-          "unit": "الوحدة 1: أسس الذكاء الاصطناعي (AI) وتعلم الآلة (ML)",
-          "topics": "التعلم الخاضع للإشراف، غير الخاضع للإشراف، والتعزيزي؛ التصنيف ونماذج الانحدار."
+          "unit": "الوحدة 1: هندسة الذكاء الاصطناعي (AI) وتعلم الآلة (ML)",
+          "topics": "أنواع الذكاء الاصطناعي (الضيق والعام)، التعلم الخاضع للإشراف وغير الخاضع للإشراف؛ إعداد مجموعات البيانات وتدريب النماذج."
         },
         {
-          "unit": "الوحدة 2: الرؤية الحاسوبية ومعالجة الصور المباشرة",
-          "topics": "مكتبة OpenCV، أداة Teachable Machine، وتصنيف الأجسام عبر الكاميرا في الوقت الفعلي."
+          "unit": "الوحدة 2: الرؤية الحاسوبية ومعالجة الصور",
+          "topics": "مكتبة OpenCV؛ التعرف على الوجوه من بث الكاميرا، تتبع حركات اليد ونماذج تصنيف الكائنات في الوقت الفعلي."
         },
         {
-          "unit": "الوحدة 3: النماذج اللغوية الكبيرة (LLMs) وهندسة التلقين",
-          "topics": "أدوات الذكاء الاصطناعي التوليدي، تحسين المطالبات، أخلاقيات التقنية وحقوق التأليف."
-        },
-        {
-          "unit": "الوحدة 4: إنترنت الأشياء (IoT) وعمارة ESP32",
-          "topics": "اتصال Wi-Fi/BLE في ESP32، بروتوكول MQTT، ونقل قياسات المستشعرات إلى السحابة."
+          "unit": "الوحدة 3: النماذج اللغوية الكبيرة (LLMs) والذكاء الاصطناعي التوليدي",
+          "topics": "هندسة التلقين (Prompt Engineering)، بنية المحولات (Transformers)، الاستخدام الأخلاقي للذكاء الاصطناعي، حقوق البيانات والهلوسة."
         }
       ],
       "term2": [
         {
-          "unit": "الوحدة 5: أسس الأمن السيبراني والدفاع عن الشبكات",
-          "topics": "مثلث CIA (السرية، السلامة، التوفر)، خوارزميات التشفير (AES, RSA)، وبروتوكول TLS/SSL."
+          "unit": "الوحدة 4: إنترنت الأشياء (IoT) والأنظمة الذكية",
+          "topics": "متحكم ESP32 المزود بـ Wi-Fi، بروتوكول MQTT، ومراقبة البيانات الحية عبر لوحات التحكم السحابية (ThingSpeak, Adafruit IO)."
         },
         {
-          "unit": "الوحدة 6: تحليل التهديدات والدفاع الأخلاقي",
-          "topics": "كشف التصيد الاحتيالي، هجمات الوسيط، فحص حزم البيانات عبر Wireshark وسياسات الأمان."
+          "unit": "الوحدة 5: أسس الأمن السيبراني واستراتيجيات الدفاع",
+          "topics": "هجمات الشبكة (التصيد الاحتيالي Phishing, DDoS, Man-in-the-middle)، خوارزميات التشفير (AES, RSA)، أخلاقيات اختبار الاختراق وحماية البيانات."
         },
         {
-          "unit": "الوحدة 7: البصمة الرقمية والريادة التكنولوجية",
-          "topics": "كشف التزييف العميق (Deepfake)، قوانين حماية البيانات ومسارات الهندسة البرمجية."
-        },
-        {
-          "unit": "الوحدة 8: مشروع التخرج والابتكار السنوي",
-          "topics": "إدارة المشاريع الرشيقة (Agile)، توثيق GitHub، والتقارير الفنية لمسابقات الابتكار (TEKNOFEST)."
+          "unit": "الوحدة 6: المحفظة الرقمية وخريطة المسار المهني التكنولوجي",
+          "topics": "إنشاء ملف احترافي على GitHub، المساهمة في البرمجيات مفتوحة المصدر، ومسارات هندسة البرمجيات والذكاء الاصطناعي والدفاع السيبراني."
         }
       ],
       "outcomes": [
-        "تدريب نماذج الرؤية الحاسوبية وتصنيف الأشياء في الوقت الفعلي عبر الكاميرا",
-        "بث القياسات الحية للمستشعرات إلى لوحات المراقبة السحابية باستخدام ESP32",
-        "تحليل حزم بيانات الشبكة وتطبيق آليات الدفاع والحماية ضد الهجمات الرقمية",
-        "توثيق وعرض مشروع هندسي شامل ومتكامل للمسابقات الوطنية والدولية"
+        "استيعاب مراحل تدريب واختبار نماذج تعلم الآلة وتطوير مشروع تصنيف بصري عبر الكاميرا",
+        "ربط أجهزة إنترنت الأشياء بالسحابة لمراقبة بيانات الحساسات والتحكم بها عن بعد عبر ESP32",
+        "تحليل بروتوكولات الشبكات وتطبيق آليات الدفاع ضد هجمات الاختراق السيبراني",
+        "توثيق وعرض مشروع تخرج تقني متكامل من البداية حتى النهاية للمسابقات الوطنية والمسار الجامعي"
       ],
       "tools": [
         "Google Teachable Machine",
-        "ESP32 / Arduino Cloud",
+        "Python OpenCV / Scikit-Learn",
+        "ESP32 IoT Kit",
         "Wireshark",
-        "Python Scikit-Learn / OpenCV",
         "Hugging Face"
       ],
       "project": "نظام ذكي متكامل للمراقبة البيئية وأمان الحرم المدرسي مدعوم بالذكاء الاصطناعي و IoT",
-      "projectDesc": "نماذج تعلم الآلة، نقل البيانات السحابي مع ESP32، تحليل حزم الشبكة، الدفاع السيبراني الأخلاقي، وتوجيه المشاريع للمسابقات الكبرى.",
-      "videoTitle": "الصف الثاني عشر - نظام ذكي متكامل للمراقبة البيئية وأمان الحرم المدرسي مدعوم بالذكاء الاصطناعي و IoT",
+      "projectDesc": "منصة متكاملة بنموذج رؤية حاسوبية يتعرف على الوجوه لمنح أذونات الدخول، مع حساسات ESP32 تنقل بيانات درجات الحرارة والإضاءة إلى السحابة لتوفير الطاقة.",
+      "videoTitle": "الصف الثاني عشر - مشروع التخرج: الذكاء الاصطناعي وإنترنت الأشياء (IoT) والأمن السيبراني",
       "videoUrl": "https://www.youtube.com/results?search_query=yapay+zeka+makine+ogrenmesi+teachable+machine+dersi",
       "quiz": [
         {
@@ -3959,20 +3901,24 @@ const CURRICULUM_GRADES_DATA_I18N = {
   }
 };
 
+// Default active data pointing to Turkish dataset for backward compatibility
 const CURRICULUM_GRADES_DATA = CURRICULUM_GRADES_DATA_I18N.tr;
 
+// Kademe varsayılan sınıf eşleştirmesi
 const STAGE_TO_DEFAULT_GRADE = {
-  "okuloncesi": "anasinifi",
-  "ilkokul": "sinif1",
-  "ortaokul": "sinif5",
-  "lise": "sinif9"
+  okuloncesi: 'anasinifi',
+  ilkokul: 'sinif1',
+  ortaokul: 'sinif5',
+  lise: 'sinif9'
 };
 
+// Global export
 if (typeof window !== 'undefined') {
   window.CURRICULUM_GRADES_DATA_I18N = CURRICULUM_GRADES_DATA_I18N;
   window.CURRICULUM_GRADES_DATA = CURRICULUM_GRADES_DATA;
   window.STAGE_TO_DEFAULT_GRADE = STAGE_TO_DEFAULT_GRADE;
 }
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { CURRICULUM_GRADES_DATA_I18N, CURRICULUM_GRADES_DATA, STAGE_TO_DEFAULT_GRADE };
 }

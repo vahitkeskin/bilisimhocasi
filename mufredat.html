@@ -47,14 +47,26 @@
         /* Language & Direction pre-init (Zero FOUC) */
         var supported = ['tr', 'en', 'ar'];
         var rtl = ['ar'];
-        var storedLang = localStorage.getItem('ugur_site_lang');
         var lang = 'tr';
-        if (storedLang && supported.indexOf(storedLang) !== -1) {
-          lang = storedLang;
-        } else {
-          var bl = (navigator.language || navigator.userLanguage || '').toLowerCase();
-          for (var i = 0; i < supported.length; i++) {
-            if (bl === supported[i] || bl.indexOf(supported[i] + '-') === 0) { lang = supported[i]; break; }
+        try {
+          var search = window.location.search;
+          if (search) {
+            var m = search.match(/[?&]lang=([a-zA-Z]+)/);
+            if (m && supported.indexOf(m[1].toLowerCase()) !== -1) {
+              lang = m[1].toLowerCase();
+              localStorage.setItem('ugur_site_lang', lang);
+            }
+          }
+        } catch (e) { }
+        if (lang === 'tr') {
+          var storedLang = localStorage.getItem('ugur_site_lang');
+          if (storedLang && supported.indexOf(storedLang) !== -1) {
+            lang = storedLang;
+          } else {
+            var bl = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            for (var i = 0; i < supported.length; i++) {
+              if (bl === supported[i] || bl.indexOf(supported[i] + '-') === 0) { lang = supported[i]; break; }
+            }
           }
         }
         var dir = rtl.indexOf(lang) !== -1 ? 'rtl' : 'ltr';

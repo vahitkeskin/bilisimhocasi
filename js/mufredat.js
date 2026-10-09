@@ -106,7 +106,9 @@
 
     // Update URL query parameter
     if (updateHistory) {
-      const newUrl = `${window.location.pathname}?sinif=${encodeURIComponent(gradeKey)}`;
+      const currentL = getCurrentLang();
+      const langParam = currentL && currentL !== 'tr' ? `&lang=${encodeURIComponent(currentL)}` : '';
+      const newUrl = `${window.location.pathname}?sinif=${encodeURIComponent(gradeKey)}${langParam}`;
       window.history.pushState({ gradeKey }, '', newUrl);
     }
 
@@ -785,6 +787,8 @@
     window.addEventListener('languageChanged', () => {
       const gradeData = getGradeData(activeGradeKey);
       if (gradeData) {
+        const campusTitle = t('nav.brand.name', 'Uğur Okulları');
+        document.title = `${gradeData.gradeLabel} | ${campusTitle} Viranşehir Kampüsü`;
         renderBreadcrumbs(gradeData);
         renderGradePills();
         renderActiveGrade(gradeData);
