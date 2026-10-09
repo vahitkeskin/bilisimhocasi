@@ -108,9 +108,9 @@ html, body {
   left: 20px;
   right: 20px;
   z-index: 1060;
-  max-width: 1240px;
+  max-width: 1260px;
   margin: 16px auto 0;
-  padding: 8px 24px;
+  padding: 8px 28px;
   background: rgba(8, 12, 22, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -126,8 +126,8 @@ html, body {
   justify-content: space-between;
   width: 100% !important;
   max-width: 100% !important;
-  padding-left: 2px !important;
-  padding-right: 2px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .change-fixed-top {
@@ -219,8 +219,8 @@ html, body {
   transform: translateY(-1px);
 }
 
-/* Fluid, wrap-proof title bar container */
-#main-nav .container {
+/* Fluid, wrap-proof title bar container (Sticky Scrolled State) */
+#main-nav.change-fixed-top .container {
   max-width: 1600px !important;
   width: 100% !important;
   padding-left: clamp(14px, 2.2vw, 32px) !important;
@@ -8700,31 +8700,31 @@ img {
 }
 
 /* --- 6. Cihaz Uyumlulukları (TV, Desktop, Tablet, Mobil) --- */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
+@media (min-width: 1200px) {
   .navbar-brand {
-    gap: 8px !important;
-    margin-right: 10px !important;
+    gap: 10px !important;
+    margin-right: 14px !important;
   }
   .brand-campus-logo-img {
-    width: 38px !important;
-    height: 38px !important;
+    width: 40px !important;
+    height: 40px !important;
   }
   .brand-name {
-    font-size: 0.98rem !important;
+    font-size: 1.04rem !important;
     letter-spacing: 0.6px !important;
   }
   .brand-campus-sub {
-    font-size: 0.62rem !important;
+    font-size: 0.64rem !important;
     letter-spacing: 0.4px !important;
   }
   .navbar-nav .nav-link {
-    padding: 6px 8px !important;
+    padding: 6px 9px !important;
     font-size: 12.5px !important;
     letter-spacing: 0.3px !important;
   }
   .nav-search-pill-btn {
-    height: 34px !important;
-    padding: 0 10px !important;
+    height: 35px !important;
+    padding: 0 11px !important;
     gap: 6px !important;
   }
   .search-pill-text {
@@ -8735,22 +8735,16 @@ img {
     padding: 1px 4px !important;
   }
   .nav-icon-action {
-    width: 34px !important;
-    height: 34px !important;
+    width: 35px !important;
+    height: 35px !important;
     font-size: 13px !important;
   }
-}
-
-@media (min-width: 1400px) {
-  .navbar-nav .nav-link {
-    padding: 7px 11px !important;
-    font-size: 13px !important;
-  }
-  .nav-search-pill-btn {
-    padding: 0 14px !important;
+  .nav-actions-group {
+    gap: 7px !important;
+    margin-left: 8px !important;
   }
   .topbar-search-container {
-    max-width: 900px !important;
+    max-width: 860px !important;
   }
 }
 
