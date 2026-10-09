@@ -15,20 +15,84 @@
 (function () {
   'use strict';
 
-  // --- TÜRKÇE & ÇOK DİLLİ KARAKTER NORMALİZASYONU ---
+  // --- TÜRKÇE, İNGİLİZCE & ARAPÇA EVRENSEL KARAKTER NORMALİZASYONU ---
   function normalizeSearchText(text) {
     if (!text) return '';
-    return String(text)
-      .replace(/İ/g, 'i')
-      .replace(/I/g, 'ı')
-      .toLowerCase()
-      .replace(/ğ/g, 'g')
-      .replace(/ü/g, 'u')
-      .replace(/ş/g, 's')
-      .replace(/ö/g, 'o')
-      .replace(/ç/g, 'c')
-      .replace(/[\s\-_.,;:/\\()\[\]]+/g, ' ')
-      .trim();
+    let str = String(text);
+
+    // 1. Arapça Tashkeel / Harakat ve Tatweel temizliği
+    str = str.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '');
+    str = str.replace(/\u0640/g, '');
+
+    // 2. Arapça Harf Varyasyonları Eşitleme
+    str = str.replace(/[أإآٱ]/g, 'ا');
+    str = str.replace(/ة/g, 'ه');
+    str = str.replace(/[ىئ]/g, 'ي');
+    str = str.replace(/ؤ/g, 'و');
+    str = str.replace(/ك/g, 'ك').replace(/ک/g, 'ك');
+
+    // 3. Doğu Arap Rakamları -> Batı Rakamları (٠-٩ -> 0-9)
+    const arDigits = ['\u0660','\u0661','\u0662','\u0663','\u0664','\u0665','\u0666','\u0667','\u0668','\u0669'];
+    for (let i = 0; i < 10; i++) {
+      str = str.replace(new RegExp(arDigits[i], 'g'), String(i));
+    }
+
+    // 4. Türkçe & İngilizce Büyük/Küçük Harf ve i/ı Katlama (Case & Diacritic Folding)
+    // 'İ', 'I', 'ı', 'î' harflerinin tamamı standart 'i' haline getirilerek androID, SINIF, sınıf, Arduino tam eşleşir
+    str = str.replace(/İ/g, 'i').replace(/I/g, 'i').replace(/ı/g, 'i').replace(/î/g, 'i').replace(/Î/g, 'i');
+    str = str.toLowerCase();
+    str = str.replace(/ç/g, 'c')
+             .replace(/ğ/g, 'g')
+             .replace(/ö/g, 'o')
+             .replace(/ş/g, 's')
+             .replace(/ü/g, 'u');
+
+    // 5. Latin Aksanları Temizliği (NFD)
+    str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    // 6. Noktalama işaretleri ve boşluk standardizasyonu
+    str = str.replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+
+    return str;
+  }
+
+  // Harf ve aksan duyarsız esnek regex örüntüsü oluşturucu (TR, EN, AR)
+  function buildFlexibleRegexPattern(token) {
+    if (!token) return '';
+    const charMap = {
+      'i': '[iIıİîÎ\\u0130\\u0131]',
+      'c': '[cCçÇ]',
+      'g': '[gGğĞ]',
+      'o': '[oOöÖôÔ]',
+      'u': '[uUüÜûÛ]',
+      's': '[sSşŞ]',
+      'a': '[aAâÂáÁàÀäÄãÃ]',
+      'e': '[eEéÉèÈêÊëË]',
+      'ا': '[اأإآٱ]',
+      'ه': '[هة]',
+      'ي': '[يىئ]',
+      'و': '[وؤ]',
+      '0': '[0٠]',
+      '1': '[1١]',
+      '2': '[2٢]',
+      '3': '[3٣]',
+      '4': '[4٤]',
+      '5': '[5٥]',
+      '6': '[6٦]',
+      '7': '[7٧]',
+      '8': '[8٨]',
+      '9': '[9٩]'
+    };
+    const arHarakat = '[\\u064B-\\u065F\\u0670]*';
+    let pattern = '';
+    for (const ch of token) {
+      if (charMap[ch]) {
+        pattern += charMap[ch] + arHarakat;
+      } else {
+        pattern += ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + arHarakat;
+      }
+    }
+    return pattern;
   }
 
   function getLang() {
@@ -49,123 +113,242 @@
     const items = [];
     const lang = getLang();
 
-    // 1. ANA SAYFA BÖLÜMLERİ VE ATÖLYE HİZMETLERİ
-    const staticSections = [
+    // 1. ANA SAYFA BÖLÜMLERİ VE ATÖLYE HİZMETLERİ (Çok Dilli Başlık & İçerik)
+    const staticSectionData = [
       {
         id: 'sec-cover',
         type: 'section',
-        title: 'Ana Sayfa — Viranşehir Kampüsü Bilişim & İnovasyon',
-        category: 'Sayfa Bölümü',
+        url: 'index.html#cover',
+        targetId: 'cover',
         badgeClass: 'badge-sec',
         icon: 'fas fa-home',
         iconBg: 'rgba(245, 166, 35, 0.2)',
         iconColor: '#F5A623',
-        url: 'index.html#cover',
-        targetId: 'cover',
-        keywords: 'ana sayfa cover giris ugur okullari viransehir kampusu inovasyon vitrin robotik video',
-        content: 'Uğur Okulları Viranşehir Kampüsü K-12 Bilişim Teknolojileri, Bilgisayar Bilimi ve Robotik Kodlama laboratuvarı.'
+        titles: {
+          tr: 'Ana Sayfa — Viranşehir Kampüsü Bilişim & İnovasyon',
+          en: 'Home — Viranşehir Campus IT & Innovation',
+          ar: 'الصفحة الرئيسية — تكنولوجيا المعلومات والابتكار'
+        },
+        categories: {
+          tr: 'Sayfa Bölümü',
+          en: 'Page Section',
+          ar: 'قسم الصفحة'
+        },
+        keywords: 'ana sayfa cover giris ugur okullari viransehir kampusu inovasyon vitrin robotik video home welcome campus education innovation الرئيسية فيرانشهير ابتكار',
+        contents: {
+          tr: 'Uğur Okulları Viranşehir Kampüsü K-12 Bilişim Teknolojileri, Bilgisayar Bilimi ve Robotik Kodlama laboratuvarı.',
+          en: 'Uğur Schools Viranşehir Campus K-12 Information Technologies, Computer Science and Robotics Coding Lab.',
+          ar: 'مدارس أوغور مجمع فيرانشهير K-12 تكنولوجيا المعلومات وعلوم الحاسوب ومختبر البرمجة والروبوتات.'
+        }
       },
       {
         id: 'sec-services',
         type: 'section',
-        title: 'Bilişim & Robotik Atölyeleri (8 Uzmanlık Alanı)',
-        category: 'Atölye & Hizmet',
+        url: 'index.html#services',
+        targetId: 'services',
         badgeClass: 'badge-sec',
         icon: 'fas fa-cogs',
         iconBg: 'rgba(124, 77, 255, 0.2)',
         iconColor: '#B388FF',
-        url: 'index.html#services',
-        targetId: 'services',
-        keywords: 'hizmetler atolyeler egitim alanlari dersler robotik kodlama yapay zeka siber guvenlik 3d tasarim',
-        content: 'Robotik Kodlama, Yapay Zeka, 3D Tasarım & Üretim, Siber Güvenlik, Mobil Uygulama, Web Yazılım, IoT Gömülü Sistemler, İnovasyon.'
+        titles: {
+          tr: 'Bilişim & Robotik Atölyeleri (8 Uzmanlık Alanı)',
+          en: 'IT & Robotics Workshops (8 Specialty Disciplines)',
+          ar: 'ورش عمل الروبوتات وتكنولوجيا المعلومات (8 تخصصات)'
+        },
+        categories: {
+          tr: 'Atölye & Hizmet',
+          en: 'Workshops & Services',
+          ar: 'الورش والخدمات'
+        },
+        keywords: 'hizmetler atolyeler egitim alanlari dersler robotik kodlama yapay zeka siber guvenlik 3d tasarim mobil uygulama android ios flutter react native mobile app services workshops coding artificial intelligence cyber security ورش عمل روبوتات ذكاء اصطناعي تطبيقات الجوال أندرويد برمجة',
+        contents: {
+          tr: 'Robotik Kodlama, Yapay Zeka, 3D Tasarım & Üretim, Siber Güvenlik, Mobil Uygulama (Android & iOS), Web Yazılım, IoT Gömülü Sistemler, İnovasyon.',
+          en: 'Robotics Coding, Artificial Intelligence, 3D Design & Printing, Cyber Security, Mobile Application (Android & iOS), Web Development, IoT Embedded Systems.',
+          ar: 'البرمجة والروبوتات، الذكاء الاصطناعي، التصميم والطباعة ثلاثية الأبعاد، الأمن السيبراني، تطبيقات الهواتف المحمولة (Android أندرويد و iOS)، تطوير الويب، وإنترنت الأشياء.'
+        }
       },
       {
         id: 'sec-robotics-showcase',
         type: 'section',
-        title: 'Robotik Donanım & Ventuno Ticari Vitrini',
-        category: 'Robotik Vitrini',
+        url: 'index.html#robotics-showcase',
+        targetId: 'robotics-showcase',
         badgeClass: 'badge-ard',
         icon: 'fas fa-robot',
         iconBg: 'rgba(0, 151, 157, 0.2)',
         iconColor: '#4DD0E1',
-        url: 'index.html#robotics-showcase',
-        targetId: 'robotics-showcase',
-        keywords: 'robotik vitrin ventuno video donanim arduino sensor motor ticari video atolye robot',
-        content: 'Sonsuz döngülü sessiz Ventuno robotik ticari tanıtım videosu, atölye ekipmanları ve canlı donanım vitrini.'
+        titles: {
+          tr: 'Robotik Donanım & Ventuno Ticari Vitrini',
+          en: 'Robotics Hardware & Ventuno Commercial Showcase',
+          ar: 'معرض أجهزة الروبوتات وفينتونو'
+        },
+        categories: {
+          tr: 'Robotik Vitrini',
+          en: 'Robotics Showcase',
+          ar: 'معرض الروبوتات'
+        },
+        keywords: 'robotik vitrin ventuno video donanim arduino sensor motor ticari video atolye robot robotics hardware showcase commercial روبوت فينتونو عتاد',
+        contents: {
+          tr: 'Sonsuz döngülü sessiz Ventuno robotik ticari tanıtım videosu, atölye ekipmanları ve canlı donanım vitrini.',
+          en: 'Continuous looping Ventuno robotics commercial video, laboratory hardware equipment and live showcases.',
+          ar: 'فيديو تجاري توضيحي لروبوت فينتونو ومعدات الورش ومختبر الأجهزة الحية.'
+        }
       },
       {
         id: 'sec-portfolio',
         type: 'section',
-        title: 'K-12 Müfredat Kademeleri Vitrini',
-        category: 'Müfredat Portalı',
+        url: 'index.html#portfolio',
+        targetId: 'portfolio',
         badgeClass: 'badge-muf',
         icon: 'fas fa-graduation-cap',
         iconBg: 'rgba(245, 166, 35, 0.2)',
         iconColor: '#FFD54F',
-        url: 'index.html#portfolio',
-        targetId: 'portfolio',
-        keywords: 'mufredat kademeler genel bakis okul oncesi ilkokul ortaokul lise meb 2026',
-        content: '13 sınıf kademesi için MEB 2026 standartlarında bilişim, kodlama ve teknoloji eğitim aşamaları.'
+        titles: {
+          tr: 'K-12 Müfredat Kademeleri Vitrini',
+          en: 'K-12 Curriculum Showcase',
+          ar: 'بوابة المناهج الدراسية K-12'
+        },
+        categories: {
+          tr: 'Müfredat Portalı',
+          en: 'Curriculum Portal',
+          ar: 'بوابة المناهج'
+        },
+        keywords: 'mufredat kademeler genel bakis okul oncesi ilkokul ortaokul lise meb 2026 curriculum showcase grades preschool primary middle high school المناهج الدراسية روضة ابتدائي متوسط ثانوي',
+        contents: {
+          tr: '13 sınıf kademesi için MEB 2026 standartlarında bilişim, kodlama ve teknoloji eğitim aşamaları.',
+          en: 'Curriculum stages for 13 grade levels matching national educational standards in IT and coding.',
+          ar: 'مراحل تعليم تكنولوجيا المعلومات والبرمجة لـ 13 مرحلة دراسية وفق المعايير المعتمدة.'
+        }
       },
       {
         id: 'sec-aboutUs',
         type: 'section',
-        title: 'Hikayemiz & Pedagojik Vizyonumuz',
-        category: 'Kurumsal',
+        url: 'index.html#aboutUs',
+        targetId: 'aboutUs',
         badgeClass: 'badge-sec',
         icon: 'fas fa-book-open',
         iconBg: 'rgba(68, 138, 255, 0.2)',
         iconColor: '#82B1FF',
-        url: 'index.html#aboutUs',
-        targetId: 'aboutUs',
-        keywords: 'hikayemiz hakkimizda vizyon misyon ugur okullari viransehir egitim felsefesi',
-        content: 'Geleceğin liderlerini, yazılımcılarını ve mühendislerini yetiştiren Viranşehir Kampüsü eğitim vizyonu.'
+        titles: {
+          tr: 'Hikayemiz & Pedagojik Vizyonumuz',
+          en: 'Our Story & Pedagogical Vision',
+          ar: 'رؤيتنا وفلسفتنا التعليمية'
+        },
+        categories: {
+          tr: 'Kurumsal',
+          en: 'About Us',
+          ar: 'من نحن'
+        },
+        keywords: 'hikayemiz hakkimizda vizyon misyon ugur okullari viransehir egitim felsefesi story vision mission philosophy our story من نحن رؤيتنا رسالتنا',
+        contents: {
+          tr: 'Geleceğin liderlerini, yazılımcılarını ve mühendislerini yetiştiren Viranşehir Kampüsü eğitim vizyonu.',
+          en: 'Educational vision educating future software engineers, scientists and leaders.',
+          ar: 'رؤية مجمع فيرانشهير لإعداد قادة ومبرمجي ومهندسي المستقبل.'
+        }
       },
       {
         id: 'sec-team',
         type: 'section',
-        title: 'Eğitmen & Uzman Kadromuz',
-        category: 'Eğitim Kadrosu',
+        url: 'index.html#team',
+        targetId: 'team',
         badgeClass: 'badge-sec',
         icon: 'fas fa-users',
         iconBg: 'rgba(0, 200, 83, 0.2)',
         iconColor: '#69F0AE',
-        url: 'index.html#team',
-        targetId: 'team',
-        keywords: 'kadro ogretmenler egitmenler uzmanlar vahit keskin bilisim hocasi mentorler',
-        content: 'Alanında uzman bilişim teknolojileri öğretmenleri, robotik mentörleri ve akademisyen danışmanlar.'
+        titles: {
+          tr: 'Eğitmen & Uzman Kadromuz',
+          en: 'Our Instructors & Expert Team',
+          ar: 'كادر المدربين والخبراء'
+        },
+        categories: {
+          tr: 'Eğitim Kadrosu',
+          en: 'Faculty Team',
+          ar: 'الكادر التعليمي'
+        },
+        keywords: 'kadro ogretmenler egitmenler uzmanlar vahit keskin bilisim hocasi mentorler teachers instructors faculty mentors team كادر المعلمين المدربين',
+        contents: {
+          tr: 'Alanında uzman bilişim teknolojileri öğretmenleri, robotik mentörleri ve akademisyen danışmanlar.',
+          en: 'Expert IT instructors, robotics mentors and academic technology consultants.',
+          ar: 'معلمو تكنولوجيا معلومات متخصصون ومرشدون روبوتيون ومستشارون أكاديميون.'
+        }
       },
       {
         id: 'sec-contact',
         type: 'section',
-        title: 'İletişim & Atölye Randevu Formu',
-        category: 'İletişim',
+        url: 'index.html#contact',
+        targetId: 'contact',
         badgeClass: 'badge-sec',
         icon: 'fas fa-paper-plane',
         iconBg: 'rgba(255, 82, 82, 0.2)',
         iconColor: '#FF8A80',
-        url: 'index.html#contact',
-        targetId: 'contact',
-        keywords: 'iletisim randevu form mesaj telefon email adres basvuru kayit',
-        content: 'Viranşehir Kampüsü bilişim atölyesi ziyaret randevusu, veli bilgilendirme ve doğrudan iletişim kanalları.'
+        titles: {
+          tr: 'İletişim & Atölye Randevu Formu',
+          en: 'Contact & Workshop Appointment Form',
+          ar: 'نموذج الاتصال وحجز موعد الورشة'
+        },
+        categories: {
+          tr: 'İletişim',
+          en: 'Contact',
+          ar: 'اتصل بنا'
+        },
+        keywords: 'iletisim randevu form mesaj telefon email adres basvuru kayit contact message appointment form phone email اتصل بنا حجز موعد استفسار',
+        contents: {
+          tr: 'Viranşehir Kampüsü bilişim atölyesi ziyaret randevusu, veli bilgilendirme ve doğrudan iletişim kanalları.',
+          en: 'Campus visit appointments, parental information and direct communication lines.',
+          ar: 'حجز مواعيد زيارة ورش العمل وقنوات التواصل المباشر.'
+        }
       },
       {
         id: 'sec-location',
         type: 'section',
-        title: 'Kampüs Konumu & Harita',
-        category: 'Ulaşım',
+        url: 'index.html#location',
+        targetId: 'location',
         badgeClass: 'badge-sec',
         icon: 'fas fa-map-marker-alt',
         iconBg: 'rgba(255, 152, 0, 0.2)',
         iconColor: '#FFB74D',
-        url: 'index.html#location',
-        targetId: 'location',
-        keywords: 'konum harita viransehir sanliurfa adres ulasim yol tarifi servis',
-        content: 'Uğur Okulları Viranşehir Kampüsü yerleşkesi, Google Haritalar navigasyonu ve ulaşım bilgileri.'
+        titles: {
+          tr: 'Kampüs Konumu & Harita',
+          en: 'Campus Location & Map',
+          ar: 'موقع الحرم المدرسي والخريطة'
+        },
+        categories: {
+          tr: 'Ulaşım',
+          en: 'Location',
+          ar: 'الموقع'
+        },
+        keywords: 'konum harita viransehir sanliurfa adres ulasim yol tarifi servis campus location map directions address navigation الموقع الخريطة العنوان',
+        contents: {
+          tr: 'Uğur Okulları Viranşehir Kampüsü yerleşkesi, Google Haritalar navigasyonu ve ulaşım bilgileri.',
+          en: 'Campus location map, Google Maps navigation route and transport details.',
+          ar: 'موقع مجمع مدارس أوغور فيرانشهير عبر خرائط جوجل وتفاصيل الوصول.'
+        }
       }
     ];
 
-    items.push(...staticSections);
+    staticSectionData.forEach(sec => {
+      const title = (sec.titles && sec.titles[lang]) || sec.titles.tr;
+      const category = (sec.categories && sec.categories[lang]) || sec.categories.tr;
+      const content = (sec.contents && sec.contents[lang]) || sec.contents.tr;
+
+      items.push({
+        id: sec.id,
+        type: sec.type,
+        title: title,
+        category: category,
+        badgeClass: sec.badgeClass,
+        icon: sec.icon,
+        iconBg: sec.iconBg,
+        iconColor: sec.iconColor,
+        url: sec.url,
+        targetId: sec.targetId,
+        keywords: sec.keywords,
+        content: content,
+        _normTitle: normalizeSearchText(title),
+        _normCategory: normalizeSearchText(category),
+        _normKeywords: normalizeSearchText(sec.keywords),
+        _normContent: normalizeSearchText(content)
+      });
+    });
 
     // 2. K-12 MÜFREDAT KADEMELERİ (13 SINIF)
     let gradesData = {};
@@ -184,20 +367,29 @@
       const outcomes = (g.outcomes || []).join(', ');
       const tools = (g.tools || []).join(', ');
 
+      const title = `${g.gradeLabel || g.shortLabel}: ${g.project || 'Bilişim Müfredatı'}`;
+      const category = `Müfredat (${g.categoryLabel || g.category || 'K-12'})`;
+      const keywords = `${gradeKey} ${g.shortLabel || ''} ${g.gradeLabel || ''} ${g.category || ''} ${tools} ${g.project || ''} mufredat unite konu kazanim curriculum unit topic grade class منهج وحدة دراسية موضوع`;
+      const content = `${g.summary || ''} [1. Dönem: ${term1Topics}] [2. Dönem: ${term2Topics}] [Araçlar: ${tools}] [Kazanımlar: ${outcomes}]`;
+
       items.push({
         id: `muf-${gradeKey}`,
         type: 'mufredat',
         gradeKey: gradeKey,
-        title: `${g.gradeLabel || g.shortLabel}: ${g.project || 'Bilişim Müfredatı'}`,
-        category: `Müfredat (${g.categoryLabel || g.category || 'K-12'})`,
+        title: title,
+        category: category,
         badgeClass: 'badge-muf',
         icon: g.icon || 'fas fa-laptop-code',
         iconBg: 'rgba(245, 166, 35, 0.2)',
         iconColor: '#F5A623',
         url: `mufredat.html?sinif=${encodeURIComponent(gradeKey)}`,
         targetId: `grade-item-${gradeKey}`,
-        keywords: `${gradeKey} ${g.shortLabel} ${g.gradeLabel} ${g.category} ${tools} ${g.project} mufredat unite konu kazanim`,
-        content: `${g.summary || ''} [1. Dönem: ${term1Topics}] [2. Dönem: ${term2Topics}] [Araçlar: ${tools}] [Kazanımlar: ${outcomes}]`
+        keywords: keywords,
+        content: content,
+        _normTitle: normalizeSearchText(title),
+        _normCategory: normalizeSearchText(category),
+        _normKeywords: normalizeSearchText(keywords),
+        _normContent: normalizeSearchText(content)
       });
     });
 
@@ -210,20 +402,29 @@
       const compNames = (p.components || []).map(c => `${c.name} (${c.role})`).join(', ');
       const pinoutInfo = (p.pinout || []).map(pin => `${pin.pin}: ${pin.compPin}`).join(', ');
 
+      const title = `Arduino: ${p.shortTitle || p.title}`;
+      const category = `Arduino Donanım (${p.gradeLabel || ''})`;
+      const keywords = `arduino ${gradeKey} ${p.folder || ''} ${p.shortTitle || ''} ${p.title || ''} ${compNames} ${pinoutInfo} fritzing breadboard devre sema pin port hardware circuit project sensor اردوينو عتاد دارة مشروع مستشعر`;
+      const content = `${p.objective || ''} Çalışma Mantığı: ${p.principle || ''} Bileşenler: ${compNames}. Bağlantılar: ${pinoutInfo}. ${p.circuitDesc || ''}`;
+
       items.push({
         id: `ard-${gradeKey}`,
         type: 'arduino',
         gradeKey: gradeKey,
-        title: `Arduino: ${p.shortTitle || p.title}`,
-        category: `Arduino Donanım (${p.gradeLabel || ''})`,
+        title: title,
+        category: category,
         badgeClass: 'badge-ard',
         icon: 'fas fa-microchip',
         iconBg: 'rgba(0, 151, 157, 0.22)',
         iconColor: '#00E5FF',
         url: `mufredat.html?sinif=${encodeURIComponent(gradeKey)}#arduino-project-${encodeURIComponent(gradeKey)}`,
         targetId: `arduino-project-${gradeKey}`,
-        keywords: `arduino ${gradeKey} ${p.folder} ${p.shortTitle} ${p.title} ${compNames} ${pinoutInfo} fritzing breadboard devre sema pin port`,
-        content: `${p.objective || ''} Çalışma Mantığı: ${p.principle || ''} Bileşenler: ${compNames}. Bağlantılar: ${pinoutInfo}.`
+        keywords: keywords,
+        content: content,
+        _normTitle: normalizeSearchText(title),
+        _normCategory: normalizeSearchText(category),
+        _normKeywords: normalizeSearchText(keywords),
+        _normContent: normalizeSearchText(content)
       });
     });
 
@@ -245,10 +446,10 @@
     const results = [];
 
     searchIndex.forEach(item => {
-      const normTitle = normalizeSearchText(item.title);
-      const normKeywords = normalizeSearchText(item.keywords);
-      const normContent = normalizeSearchText(item.content);
-      const normCategory = normalizeSearchText(item.category);
+      const normTitle = item._normTitle || normalizeSearchText(item.title);
+      const normKeywords = item._normKeywords || normalizeSearchText(item.keywords);
+      const normContent = item._normContent || normalizeSearchText(item.content);
+      const normCategory = item._normCategory || normalizeSearchText(item.category);
 
       let score = 0;
       let allTokensMatch = true;
@@ -305,14 +506,21 @@
     return results;
   }
 
-  // Eşleşen kelimeleri <mark> ile vurgula
+  // Eşleşen kelimeleri <mark> ile vurgula (Büyük/küçük harf ve dil varyasyonlarını koruyarak)
   function highlightMatches(text, tokens) {
     if (!text) return '';
     let result = text;
     tokens.forEach(tok => {
-      if (tok.length < 2) return;
-      const regex = new RegExp(`(${escapeRegExp(tok)})`, 'gi');
-      result = result.replace(regex, '<mark class="search-highlight">$1</mark>');
+      if (!tok || tok.length < 2) return;
+      try {
+        const pattern = buildFlexibleRegexPattern(tok);
+        const regex = new RegExp(`(${pattern})`, 'gi');
+        result = result.replace(regex, '<mark class="search-highlight">$1</mark>');
+      } catch (e) {
+        const safe = escapeRegExp(tok);
+        const regex = new RegExp(`(${safe})`, 'gi');
+        result = result.replace(regex, '<mark class="search-highlight">$1</mark>');
+      }
     });
     return result;
   }
@@ -324,14 +532,20 @@
   // İlk eşleşen kelimenin etrafından ~90 karakterlik temiz bir kesit al
   function createSnippet(content, tokens) {
     if (!content) return '';
-    const norm = normalizeSearchText(content);
     let firstIndex = -1;
+    let matchLength = 0;
 
     for (let tok of tokens) {
-      const idx = norm.indexOf(tok);
-      if (idx !== -1 && (firstIndex === -1 || idx < firstIndex)) {
-        firstIndex = idx;
-      }
+      if (!tok || tok.length < 2) continue;
+      try {
+        const pattern = buildFlexibleRegexPattern(tok);
+        const regex = new RegExp(pattern, 'i');
+        const match = regex.exec(content);
+        if (match && (firstIndex === -1 || match.index < firstIndex)) {
+          firstIndex = match.index;
+          matchLength = match[0].length;
+        }
+      } catch (e) {}
     }
 
     if (firstIndex === -1) {
@@ -339,7 +553,7 @@
     }
 
     const start = Math.max(0, firstIndex - 25);
-    const end = Math.min(content.length, firstIndex + 75);
+    const end = Math.min(content.length, firstIndex + matchLength + 65);
     let snippet = content.substring(start, end).trim();
     if (start > 0) snippet = '...' + snippet;
     if (end < content.length) snippet = snippet + '...';

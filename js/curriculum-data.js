@@ -529,7 +529,7 @@ const CURRICULUM_GRADES_DATA_I18N = {
         },
         {
           "unit": "2. Ünite: İşletim Sistemleri ve Dosya Yönetimi",
-          "topics": "Windows, Linux (Pardus), macOS, Android işletim sistemleri; dosya uzantıları, klasör ağacı, sıkıştırma (ZIP) ve bulut depolama."
+          "topics": "Windows, Linux (Pardus), macOS, Android (أندرويد) işletim sistemleri; dosya uzantıları, klasör ağacı, sıkıştırma (ZIP) ve bulut depolama."
         },
         {
           "unit": "3. Ünite: Bilişim Etiği, Güvenlik ve Dijital Yurttaşlık",
@@ -1829,7 +1829,7 @@ const CURRICULUM_GRADES_DATA_I18N = {
         },
         {
           "unit": "Unit 2: Operating Systems & File Organization",
-          "topics": "OS roles, folder hierarchy, extensions (.pdf, .docx, .png), compression, cloud storage."
+          "topics": "Operating systems (Windows, Linux, macOS, Android), folder hierarchy, extensions (.pdf, .docx, .png), compression, cloud storage."
         },
         {
           "unit": "Unit 3: IT Ethics, Cybersecurity & Digital Citizenship",
@@ -3125,7 +3125,7 @@ const CURRICULUM_GRADES_DATA_I18N = {
         },
         {
           "unit": "الوحدة 2: أنظمة التشغيل وإدارة الملفات",
-          "topics": "أنواع أنظمة التشغيل، التسلسل الهرمي للمجلدات، الامتدادات، الضغط والتخزين السحابي."
+          "topics": "أنظمة التشغيل (Windows, Linux, macOS, Android أندرويد)، التسلسل الهرمي للمجلدات، الامتدادات، الضغط والتخزين السحابي."
         },
         {
           "unit": "الوحدة 3: أخلاقيات التقنية والأمن والمواطنة الرقمية",
