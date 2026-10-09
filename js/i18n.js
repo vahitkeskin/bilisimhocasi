@@ -161,6 +161,11 @@ const I18N = (() => {
       en: 'With Arduino, microcontrollers, sensor circuits, 3D modeling with Tinkercad, and maker projects, our students transform theoretical knowledge into tangible innovation products.',
       ar: 'باستخدام أردوينو والمتحكمات الدقيقة ودوائر الاستشعار والنمذجة ثلاثية الأبعاد بـ Tinkercad ومشاريع الصانعين، يحول طلابنا المعرفة النظرية إلى منتجات ابتكارية ملموسة.'
     },
+    'services.pillar2.watch': {
+      tr: 'Atölye Vitrinini İzle',
+      en: 'Watch Workshop Showcase',
+      ar: 'شاهد عرض ورشة العمل'
+    },
     'services.pillar3.title': {
       tr: 'Yapay Zeka & Siber Güvenlik',
       en: 'AI & Cybersecurity',
@@ -170,6 +175,123 @@ const I18N = (() => {
       tr: 'Üretken yapay zeka (GenAI) okuryazarlığı, makine öğrenmesi modelleri, veri etiği, dijital ayak izi yönetimi ve güvenli internet ekosistemi bilinci kazandırılır.',
       en: 'Students gain generative AI (GenAI) literacy, machine learning models, data ethics, digital footprint management, and safe internet ecosystem awareness.',
       ar: 'يكتسب الطلاب محو الأمية في الذكاء الاصطناعي التوليدي، ونماذج التعلم الآلي، وأخلاقيات البيانات، وإدارة البصمة الرقمية، والوعي بالنظام البيئي الآمن للإنترنت.'
+    },
+
+    // ── ROBOTICS & ARDUINO VENTUNO SHOWCASE SECTION ──
+    'showcase.eyebrow': {
+      tr: '✦ İNOVASYON & FİZİKSEL BİLİŞİM LAB',
+      en: '✦ INNOVATION & PHYSICAL COMPUTING LAB',
+      ar: '✦ مختبر الابتكار والحوسبة الفيزيائية'
+    },
+    'showcase.title': {
+      tr: 'ROBOTİK & İLERİ DÜZEY DONANIM ATÖLYEMİZ',
+      en: 'ROBOTICS & ADVANCED HARDWARE WORKSHOP',
+      ar: 'ورشة عمل الروبوتات والعتاد المتقدم'
+    },
+    'showcase.subtitle': {
+      tr: 'Arduino & Yapay Zeka Destekli Otonom Sistemler ile Teori Gerçeğe Dönüşüyor',
+      en: 'Theory Becomes Reality with Arduino & AI-Powered Autonomous Systems',
+      ar: 'النظرية تصبح واقعاً مع أنظمة أردوينو والذكاء الاصطناعي الذاتية القيادة'
+    },
+    'showcase.card.badge': {
+      tr: 'CANLI ATÖLYE • VİTRİN',
+      en: 'LIVE WORKSHOP • SHOWCASE',
+      ar: 'ورشة عمل حية • عرض'
+    },
+    'showcase.heading': {
+      tr: 'Kodlar Ekranda Kalmaz, Fiziksel Dünyada Hayat Bulur',
+      en: 'Code Does Not Stay on Screen, It Comes to Life in the Physical World',
+      ar: 'الرموز لا تبقى على الشاشة، بل تنبض بالحياة في العالم الحقيقي'
+    },
+    'showcase.desc': {
+      tr: 'Viranşehir Kampüsü Bilişim Laboratuvarımızda öğrencilerimiz; Arduino Ventuno mimarisi, sensör füzyonu, bilgisayarlı görü ve robotik kollar ile endüstri standardı fiziksel bilişim projeleri geliştirir. Hataları simülasyonda değil, çalışan gerçek donanım üzerinde çözmeyi öğrenir.',
+      en: 'In our Viranşehir Campus IT Lab, students develop industry-standard physical computing projects using Arduino Ventuno architecture, sensor fusion, computer vision, and robotic arms. They learn to debug on real operating hardware, not just simulations.',
+      ar: 'في مختبر تكنولوجيا المعلومات بحرم فيران شهير، يطور طلابنا مشاريع حوسبة فيزيائية بمعايير صناعية باستخدام بنية Arduino Ventuno ودمج الحساسات والرؤية الحاسوبية والأذرع الروبوتية. يتعلمون حل المشكلات على العتاد الحقيقي المشغل وليس المحاكاة فقط.'
+    },
+    'showcase.f1.title': {
+      tr: 'Otonom Robotik & Kinematik',
+      en: 'Autonomous Robotics & Kinematics',
+      ar: 'الروبوتات الذاتية والحركيات'
+    },
+    'showcase.f1.desc': {
+      tr: 'Robotik kollar, servo sürücüler, PID motor kontrolü ve engellerden kaçan akıllı mobil platformlar.',
+      en: 'Robotic arms, servo drivers, PID motor controls, and obstacle-avoiding smart mobile platforms.',
+      ar: 'أذرع روبوتية، مشغلات سيرفو، تحكم PID بالمحركات ومنصات متنقلة ذكية تتجنب العوائق.'
+    },
+    'showcase.f2.title': {
+      tr: 'Gömülü Yapay Zeka & Bilgisayarlı Görü',
+      en: 'Embedded AI & Computer Vision',
+      ar: 'الذكاء الاصطناعي المدمج والرؤية الحاسوبية'
+    },
+    'showcase.f2.desc': {
+      tr: 'Kamera sensörleri, 3D uzamsal nokta bulutu haritalama, nesne tanıma ve otonom karar mekanizmaları.',
+      en: 'Camera sensors, 3D spatial point cloud mapping, object recognition, and autonomous decision pipelines.',
+      ar: 'مستشعرات الكاميرا، مسح سحابي نقطي ثلاثي الأبعاد، التعرف على الكائنات واتخاذ القرارات الذاتية.'
+    },
+    'showcase.f3.title': {
+      tr: 'Fiziksel Bilişim & Endüstriyel Standartlar',
+      en: 'Physical Computing & Industrial Standards',
+      ar: 'الحوسبة الفيزيائية والمعايير الصناعية'
+    },
+    'showcase.f3.desc': {
+      tr: 'Python, ROS (Robot İşletim Sistemi) temelleri, mikro-denetleyici mimarisi ve telemetri.',
+      en: 'Python, ROS (Robot Operating System) fundamentals, microcontroller architecture, and telemetry.',
+      ar: 'بايثون، أساسيات نظام تشغيل الروبوت ROS، بنية المتحكمات الدقيقة والقياس عن بعد.'
+    },
+    'showcase.stat.loop': {
+      tr: '40 Sn Kesintisiz Döngü',
+      en: '40s Seamless Loop',
+      ar: 'حلقة مستمرة لمدة 40 ثانية'
+    },
+    'showcase.stat.silent': {
+      tr: 'Sessiz Oynatma',
+      en: 'Muted Playback',
+      ar: 'تشغيل صامت'
+    },
+    'showcase.stat.ratio': {
+      tr: '9:16 Dikey Vitrin',
+      en: '9:16 Vertical Showcase',
+      ar: 'شاشة عرض عمودية 9:16'
+    },
+    'showcase.stat.board': {
+      tr: 'Arduino Ventuno',
+      en: 'Arduino Ventuno',
+      ar: 'Arduino Ventuno'
+    },
+    'showcase.cta.curriculum': {
+      tr: 'Robotik Müfredatını İncele',
+      en: 'Explore Robotics Curriculum',
+      ar: 'استكشف منهج الروبوتات'
+    },
+    'showcase.cta.modal': {
+      tr: 'Büyük Ekranda İncele',
+      en: 'Watch in Large Screen',
+      ar: 'مشاهدة في شاشة كبيرة'
+    },
+    'showcase.badge.live': {
+      tr: 'CANLI VİTRİN • DÖNGÜ',
+      en: 'LIVE SHOWCASE • LOOP',
+      ar: 'عرض حي • حلقة مستمرة'
+    },
+    'showcase.chip1': {
+      tr: '⚡ Edge AI • 40s Döngü',
+      en: '⚡ Edge AI • 40s Loop',
+      ar: '⚡ ذكاء حافة • حلقة 40 ثانية'
+    },
+    'showcase.chip2': {
+      tr: '🤖 ROS & Fiziksel Kodlama',
+      en: '🤖 ROS & Physical Coding',
+      ar: '🤖 ROS والبرمجة الفيزيائية'
+    },
+    'showcase.modal.title': {
+      tr: 'Robotik & Fiziksel Bilişim Laboratuvarı Tanıtımı',
+      en: 'Robotics & Physical Computing Lab Showcase',
+      ar: 'عرض مختبر الروبوتات والحوسبة الفيزيائية'
+    },
+    'showcase.modal.subtitle': {
+      tr: 'Sonsuz döngü ve sessiz oynatma ile yeni nesil Arduino Ventuno mimarisi ve robotik atölyesi',
+      en: 'Next-gen Arduino Ventuno architecture and robotics workshop with endless loop and muted playback',
+      ar: 'بنية Arduino Ventuno الحديثة وورشة الروبوتات بحلقة مستمرة وتشغيل صامت'
     },
 
     // ── PORTFOLIO SECTION ──

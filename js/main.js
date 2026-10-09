@@ -1514,5 +1514,228 @@ ugur_gelecege_hazirlik("Uğurlu Öğrenci")`;
     applyIcons(dynamicItems[0]);
     setTimeout(typeTick, 350);
   }
+
+  // --- ARDUINO VENTUNO ROBOTICS SHOWCASE VIDEO CONTROLLER ---
+  class VentunoVideoController {
+    constructor() {
+      this.video = document.getElementById('ventuno-video');
+      this.togglePlayBtn = document.getElementById('video-toggle-play');
+      this.playIcon = document.getElementById('video-play-icon');
+      this.toggleMuteBtn = document.getElementById('video-toggle-mute');
+      this.muteIcon = document.getElementById('video-mute-icon');
+      this.progressBar = document.getElementById('video-progress-bar');
+      this.progressContainer = document.getElementById('video-progress-container');
+      this.timeDisplay = document.getElementById('video-time-display');
+      this.fullscreenBtn = document.getElementById('video-fullscreen-btn');
+      this.expandBtn = document.getElementById('showcase-expand-btn');
+
+      this.modal = document.getElementById('video-modal');
+      this.modalCloseBtn = document.getElementById('video-modal-close-btn');
+      this.modalVideo = document.getElementById('modal-ventuno-video');
+
+      this.isUserPaused = false;
+      this.reducedMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+
+      if (this.video) {
+        this.init();
+      }
+    }
+
+    formatTime(seconds) {
+      if (!seconds || isNaN(seconds)) return '00:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    init() {
+      const v = this.video;
+
+      // 1. Ensure looped, muted, autoplay inline
+      v.loop = true;
+      v.muted = true;
+      v.playsInline = true;
+
+      // 2. Play/Pause toggle
+      const handleTogglePlay = (e) => {
+        if (e) e.stopPropagation();
+        if (v.paused) {
+          this.isUserPaused = false;
+          v.play().catch(() => {});
+          this.updatePlayState(false);
+        } else {
+          this.isUserPaused = true;
+          v.pause();
+          this.updatePlayState(true);
+        }
+      };
+
+      if (this.togglePlayBtn) {
+        this.togglePlayBtn.addEventListener('click', handleTogglePlay);
+      }
+      v.addEventListener('click', handleTogglePlay);
+
+      // 3. Mute/Unmute toggle
+      if (this.toggleMuteBtn) {
+        this.toggleMuteBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          v.muted = !v.muted;
+          this.updateMuteState(v.muted);
+        });
+      }
+
+      // 4. Time & Progress Bar update
+      v.addEventListener('timeupdate', () => {
+        const cur = v.currentTime || 0;
+        const dur = v.duration || 40.32;
+        const pct = (cur / dur) * 100;
+        if (this.progressBar) {
+          this.progressBar.style.width = `${pct}%`;
+        }
+        if (this.progressContainer) {
+          this.progressContainer.setAttribute('aria-valuenow', Math.round(pct).toString());
+        }
+        if (this.timeDisplay) {
+          this.timeDisplay.textContent = `${this.formatTime(cur)} / ${this.formatTime(dur)}`;
+        }
+      });
+
+      // 5. Click on progress bar to seek
+      if (this.progressContainer) {
+        this.progressContainer.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const rect = this.progressContainer.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const pct = Math.max(0, Math.min(1, clickX / rect.width));
+          const dur = v.duration || 40.32;
+          v.currentTime = pct * dur;
+        });
+      }
+
+      // 6. Playback state event listeners
+      v.addEventListener('play', () => this.updatePlayState(false));
+      v.addEventListener('pause', () => {
+        if (this.isUserPaused) this.updatePlayState(true);
+      });
+
+      // 7. Lightbox Modal triggers
+      const openModal = () => {
+        if (this.modal) {
+          this.modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          if (this.modalVideo) {
+            this.modalVideo.currentTime = v.currentTime;
+            this.modalVideo.muted = true;
+            this.modalVideo.play().catch(() => {});
+          }
+          v.pause();
+        }
+      };
+
+      const closeModal = () => {
+        if (this.modal) {
+          this.modal.classList.remove('open');
+          document.body.style.overflow = '';
+          if (this.modalVideo) {
+            this.modalVideo.pause();
+            v.currentTime = this.modalVideo.currentTime;
+          }
+          if (!this.isUserPaused) {
+            v.play().catch(() => {});
+          }
+        }
+      };
+
+      if (this.fullscreenBtn) {
+        this.fullscreenBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openModal();
+        });
+      }
+
+      if (this.expandBtn) {
+        this.expandBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      }
+
+      if (this.modalCloseBtn) {
+        this.modalCloseBtn.addEventListener('click', closeModal);
+      }
+
+      if (this.modal) {
+        this.modal.addEventListener('click', (e) => {
+          if (e.target === this.modal) closeModal();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.modal && this.modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
+      // 8. IntersectionObserver to pause when off-screen and play when visible
+      if ('IntersectionObserver' in window && !this.reducedMotion) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (!this.isUserPaused && (!this.modal || !this.modal.classList.contains('open'))) {
+                v.play().catch(() => {});
+              }
+            } else {
+              v.pause();
+            }
+          });
+        }, { threshold: 0.15 });
+
+        observer.observe(v);
+      } else if (!this.reducedMotion) {
+        v.play().catch(() => {});
+      }
+
+      // 9. Reduced motion change listener
+      if (window.matchMedia) {
+        const rmMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
+        rmMedia.addEventListener('change', (e) => {
+          this.reducedMotion = e.matches;
+          if (this.reducedMotion) {
+            v.pause();
+            this.updatePlayState(true);
+          }
+        });
+      }
+    }
+
+    updatePlayState(isPaused) {
+      if (!this.playIcon) return;
+      if (isPaused) {
+        this.playIcon.classList.remove('fa-pause');
+        this.playIcon.classList.add('fa-play');
+        if (this.togglePlayBtn) this.togglePlayBtn.setAttribute('title', 'Oynat');
+      } else {
+        this.playIcon.classList.remove('fa-play');
+        this.playIcon.classList.add('fa-pause');
+        if (this.togglePlayBtn) this.togglePlayBtn.setAttribute('title', 'Duraklat');
+      }
+    }
+
+    updateMuteState(isMuted) {
+      if (!this.muteIcon) return;
+      if (isMuted) {
+        this.muteIcon.classList.remove('fa-volume-up');
+        this.muteIcon.classList.add('fa-volume-mute');
+        if (this.toggleMuteBtn) this.toggleMuteBtn.setAttribute('title', 'Sessiz Mod (Açmak için tıkla)');
+      } else {
+        this.muteIcon.classList.remove('fa-volume-mute');
+        this.muteIcon.classList.add('fa-volume-up');
+        if (this.toggleMuteBtn) this.toggleMuteBtn.setAttribute('title', 'Ses Açık (Susturmak için tıkla)');
+      }
+    }
+  }
+
+  // Instantiate Ventuno Video Controller
+  window.ventunoVideoCtrl = new VentunoVideoController();
 });
 

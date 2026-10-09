@@ -143,6 +143,9 @@
       const btnFilter = btn.dataset.filter;
       if (btnFilter === filter) {
         btn.classList.add('active');
+        if (typeof btn.scrollIntoView === 'function') {
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
       } else {
         btn.classList.remove('active');
       }
@@ -213,6 +216,14 @@
 
       gradePillsList.appendChild(pill);
     });
+
+    // Auto-scroll active pill into view on mobile ribbon viewports
+    setTimeout(() => {
+      const activePill = gradePillsList.querySelector('.grade-pill-item.active');
+      if (activePill && typeof activePill.scrollIntoView === 'function') {
+        activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }, 60);
   }
 
   /**
