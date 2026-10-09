@@ -24,8 +24,8 @@
       },
       title: {
         tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşkesi',
-        en: 'Uğur Okulları Viranşehir Kampüsü Grounds',
-        ar: 'Uğur Okulları Viranşehir Kampüsü'
+        en: 'Uğur Okulları Viranşehir Campus Grounds',
+        ar: 'مقر Uğur Okulları - حرم فيران شهير'
       },
       subtitle: {
         tr: 'Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı Eğitim Binası (Tam Görünüm)',

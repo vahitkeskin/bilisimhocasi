@@ -102,7 +102,8 @@
 
     // Update document title for SEO & bookmarking
     const campusTitle = t('nav.brand.name', 'Uğur Okulları');
-    document.title = `${gradeData.gradeLabel} | ${campusTitle} Viranşehir Kampüsü`;
+    const campusSub = t('nav.brand.campus', 'Viranşehir Kampüsü');
+    document.title = `${gradeData.gradeLabel} | ${campusTitle} ${campusSub}`;
 
     // Update URL query parameter
     if (updateHistory) {
@@ -788,7 +789,8 @@
       const gradeData = getGradeData(activeGradeKey);
       if (gradeData) {
         const campusTitle = t('nav.brand.name', 'Uğur Okulları');
-        document.title = `${gradeData.gradeLabel} | ${campusTitle} Viranşehir Kampüsü`;
+        const campusSub = t('nav.brand.campus', 'Viranşehir Kampüsü');
+        document.title = `${gradeData.gradeLabel} | ${campusTitle} ${campusSub}`;
         renderBreadcrumbs(gradeData);
         renderGradePills();
         renderActiveGrade(gradeData);

@@ -20,13 +20,13 @@ const I18N = (() => {
     // ── META / TITLE ──
     'meta.title': {
       tr: 'Uğur Okulları Viranşehir Kampüsü | Bilişim Teknolojileri Müfredatı',
-      en: 'Uğur Okulları Viranşehir Kampüsü | IT Curriculum',
-      ar: 'Uğur Okulları Viranşehir Kampüsü | منهج تكنولوجيا المعلومات'
+      en: 'Uğur Okulları Viranşehir Campus | IT Curriculum',
+      ar: 'Uğur Okulları - حرم فيران شهير | منهج تكنولوجيا المعلومات'
     },
     'meta.description': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri K12 Akademik Müfredatı. Ana sınıfından 12. sınıfa kadar algoritmik düşünce, Scratch, 3D modelleme, Arduino, Python ve Yapay Zeka serüveni.',
-      en: 'Uğur Okulları Viranşehir Kampüsü Information Technologies K12 Academic Curriculum. From kindergarten to 12th grade: algorithmic thinking, Scratch, 3D modeling, Arduino, Python, and AI journey.',
-      ar: 'منهج تكنولوجيا المعلومات الأكاديمي K12 لUğur Okulları Viranşehir Kampüsü. من الروضة إلى الصف الثاني عشر: التفكير الخوارزمي، سكراتش، النمذجة ثلاثية الأبعاد، أردوينو، بايثون ورحلة الذكاء الاصطناعي.'
+      en: 'Uğur Okulları Viranşehir Campus Information Technologies K12 Academic Curriculum. From kindergarten to 12th grade: algorithmic thinking, Scratch, 3D modeling, Arduino, Python, and AI journey.',
+      ar: 'منهج تكنولوجيا المعلومات الأكاديمي K12 لـ Uğur Okulları حرم فيران شهير. من الروضة إلى الصف الثاني عشر: التفكير الخوارزمي، سكراتش، النمذجة ثلاثية الأبعاد، أردوينو، بايثون ورحلة الذكاء الاصطناعي.'
     },
 
     // ── NAVBAR ──
@@ -710,13 +710,13 @@ const I18N = (() => {
     },
     'mufredat.meta.title': {
       tr: '2026 MEB Bilişim Teknolojileri & Bilgisayar Bilimi Müfredatı | Uğur Okulları Viranşehir Kampüsü',
-      en: '2026 MoNE IT & Computer Science Curriculum | Uğur Okulları Viranşehir Kampüsü',
-      ar: 'منهج تكنولوجيا المعلومات وعلوم الحاسوب 2026 | Uğur Okulları Viranşehir Kampüsü'
+      en: '2026 MoNE IT & Computer Science Curriculum | Uğur Okulları Viranşehir Campus',
+      ar: 'منهج تكنولوجيا المعلومات وعلوم الحاسوب 2026 | Uğur Okulları - حرم فيران شهير'
     },
     'mufredat.meta.description': {
       tr: 'Uğur Okulları Viranşehir Kampüsü 2026 MEB K12 Bilişim Teknolojileri ve Bilgisayar Bilimi Akademik Müfredatı. Ana sınıfından 12. sınıfa kadar 13 seviye tam kapsamlı eğitim programı.',
-      en: 'Uğur Okulları Viranşehir Kampüsü 2026 MoNE K12 IT and Computer Science Academic Curriculum. 13-level comprehensive program from kindergarten to 12th grade.',
-      ar: 'منهج K12 لتكنولوجيا المعلومات وعلوم الحاسوب لUğur Okulları Viranşehir Kampüsü. برنامج شامل من 13 مستوى من الروضة حتى الصف الثاني عشر.'
+      en: 'Uğur Okulları Viranşehir Campus 2026 MoNE K12 IT and Computer Science Academic Curriculum. 13-level comprehensive program from kindergarten to 12th grade.',
+      ar: 'منهج K12 لتكنولوجيا المعلومات وعلوم الحاسوب لـ Uğur Okulları حرم فيران شهير. برنامج شامل من 13 مستوى من الروضة حتى الصف الثاني عشر.'
     },
     'mufredat.breadcrumb.home': {
       tr: 'Ana Sayfa',
@@ -820,8 +820,8 @@ const I18N = (() => {
     },
     'mufredat.maps.link': {
       tr: 'Uğur Okulları Viranşehir Kampüsü (Google Haritalar)',
-      en: 'Uğur Okulları Viranşehir Kampüsü (Google Maps)',
-      ar: 'Uğur Okulları Viranşehir Kampüsü (خرائط Google)'
+      en: 'Uğur Okulları Viranşehir Campus (Google Maps)',
+      ar: 'Uğur Okulları - حرم فيران شهير (خرائط Google)'
     },
     'mufredat.footer.lab': {
       tr: 'Bilişim Teknolojileri ve İnovasyon Laboratuvarı',
@@ -980,8 +980,8 @@ const I18N = (() => {
     },
     'mufredat.share.title': {
       tr: 'Uğur Okulları Viranşehir Kampüsü K12 Bilişim Müfredatı',
-      en: 'Uğur Okulları Viranşehir Kampüsü K12 IT Curriculum',
-      ar: 'منهج K12 لتكنولوجيا المعلومات لUğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus K12 IT Curriculum',
+      ar: 'منهج K12 لتكنولوجيا المعلومات لـ Uğur Okulları حرم فيران شهير'
     },
 
 
@@ -1308,8 +1308,8 @@ const I18N = (() => {
     },
     'team.summary': {
       tr: 'Uğur Okulları Viranşehir Kampüsü olarak; öğrencilerimize sadece teknoloji tüketicisi olmayı değil, algoritmik düşünen, problem çözen, etik değerlerle donanmış ve geleceğin dijital dünyasını inşa eden liderler olma vizyonunu kazandırıyoruz.',
-      en: 'At Uğur Okulları Viranşehir Kampüsü, we equip our students not just to be technology consumers, but to become leaders who think algorithmically, solve problems, are armed with ethical values, and build the digital world of the future.',
-      ar: 'في Uğur Okulları Viranşehir Kampüsü، نزود طلابنا ليس فقط ليكونوا مستهلكين للتكنولوجيا، بل ليصبحوا قادة يفكرون خوارزمياً ويحلون المشكلات ومسلحين بالقيم الأخلاقية ويبنون العالم الرقمي للمستقبل.'
+      en: 'At Uğur Okulları Viranşehir Campus, we equip our students not just to be technology consumers, but to become leaders who think algorithmically, solve problems, are armed with ethical values, and build the digital world of the future.',
+      ar: 'في Uğur Okulları حرم فيران شهير، نزود طلابنا ليس فقط ليكونوا مستهلكين للتكنولوجيا، بل ليصبحوا قادة يفكرون خوارزمياً ويحلون المشكلات ومسلحين بالقيم الأخلاقية ويبنون العالم الرقمي للمستقبل.'
     },
 
     // ── CONTACT ──
@@ -1320,8 +1320,8 @@ const I18N = (() => {
     },
     'contact.subtitle': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Bilişim Teknolojileri Bölümü İletişim Formu',
-      en: 'Uğur Okulları Viranşehir Kampüsü IT Department Contact Form',
-      ar: 'نموذج الاتصال بقسم تكنولوجيا المعلومات في Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus IT Department Contact Form',
+      ar: 'نموذج الاتصال بقسم تكنولوجيا المعلومات في Uğur Okulları - حرم فيران شهير'
     },
     'contact.form.name': {
       tr: 'ADINIZ SOYADINIZ *',
@@ -1370,8 +1370,8 @@ const I18N = (() => {
     },
     'contact.institution.value': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Okulları Viranşehir Kampüsü',
-      ar: 'Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus',
+      ar: 'Uğur Okulları - حرم فيران شهير'
     },
     'contact.email.title': {
       tr: 'E-Posta',
@@ -1382,8 +1382,8 @@ const I18N = (() => {
     // ── FOOTER ──
     'footer.copyright': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Okulları Viranşehir Kampüsü',
-      ar: 'Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus',
+      ar: 'Uğur Okulları - حرم فيران شهير'
     },
     'footer.dept': {
       tr: 'Bilişim Teknolojileri ve İnovasyon',
@@ -1394,8 +1394,8 @@ const I18N = (() => {
     // ── CAMPUS MODAL ──
     'campus.modal.title': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşkesi',
-      en: 'Uğur Okulları Viranşehir Kampüsü Grounds',
-      ar: 'Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus Grounds',
+      ar: 'مقر Uğur Okulları - حرم فيران شهير'
     },
     'campus.modal.subtitle': {
       tr: 'Bilişim Teknolojileri, İnovasyon & Robotik Laboratuvarı Eğitim Binası (Tam Görünüm)',
@@ -1416,13 +1416,13 @@ const I18N = (() => {
     },
     'location.subtitle': {
       tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşkesi',
-      en: 'Uğur Okulları Viranşehir Kampüsü Grounds',
-      ar: 'مقر Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus Grounds',
+      ar: 'مقر Uğur Okulları - حرم فيران شهير'
     },
     'location.map.name': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Okulları Viranşehir Kampüsü',
-      ar: 'Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus',
+      ar: 'Uğur Okulları - حرم فيران شهير'
     },
     'location.directions.badge': {
       tr: 'Yol Tarifi',
@@ -1706,13 +1706,70 @@ const I18N = (() => {
     },
     'nav.brand.label': {
       tr: 'Uğur Okulları Viranşehir Kampüsü',
-      en: 'Uğur Okulları Viranşehir Kampüsü',
-      ar: 'Uğur Okulları Viranşehir Kampüsü'
+      en: 'Uğur Okulları Viranşehir Campus',
+      ar: 'Uğur Okulları - حرم فيران شهير'
     },
     'nav.brand.name': {
       tr: 'UĞUR OKULLARI',
       en: 'UĞUR OKULLARI',
       ar: 'Uğur Okulları'
+    },
+
+    // ── ACCESSIBILITY & IMAGES I18N ──
+    'brand.logo.alt': {
+      tr: 'Viranşehir Kampüsü Logosu',
+      en: 'Viranşehir Campus Logo',
+      ar: 'شعار حرم فيران شهير'
+    },
+    'theme.button.title': {
+      tr: 'Görünüm Modu (Açık / Kapalı / Sistem)',
+      en: 'Appearance Mode (Light / Dark / System)',
+      ar: 'وضع المظهر (فاتح / داكن / النظام)'
+    },
+    'theme.menu.aria': {
+      tr: 'Görünüm Modu Menüsü',
+      en: 'Appearance Mode Menu',
+      ar: 'قائمة وضع المظهر'
+    },
+    'lang.button.title': {
+      tr: 'Dil Değiştir',
+      en: 'Change Language',
+      ar: 'تغيير اللغة'
+    },
+    'lang.menu.aria': {
+      tr: 'Dil Menüsü',
+      en: 'Language Menu',
+      ar: 'قائمة اختيار اللغة'
+    },
+    'nav.share.title': {
+      tr: 'Bağlantıyı Paylaş',
+      en: 'Share Link',
+      ar: 'مشاركة الرابط'
+    },
+    'nav.share.aria': {
+      tr: 'Sayfayı Paylaş',
+      en: 'Share Page',
+      ar: 'مشاركة الصفحة'
+    },
+    'location.call.aria': {
+      tr: 'Kampüsü Ara',
+      en: 'Call Campus',
+      ar: 'الاتصال بالحرم'
+    },
+    'mufredat.breadcrumb.aria': {
+      tr: 'Sayfa Yolu',
+      en: 'Breadcrumb Navigation',
+      ar: 'مسار التصفح'
+    },
+    'campus.gallery.aria': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü Yerleşke ve Sınıflar Galerisi',
+      en: 'Uğur Okulları Viranşehir Campus Grounds and Classrooms Gallery',
+      ar: 'معرض حرم وفصول Uğur Okulları فيران شهير'
+    },
+    'location.map.iframe': {
+      tr: 'Uğur Okulları Viranşehir Kampüsü Google Haritalar Konumu',
+      en: 'Uğur Okulları Viranşehir Campus Google Maps Location',
+      ar: 'موقع Uğur Okulları حرم فيران شهير على خرائط Google'
     },
     'nav.brand.campus': {
       tr: 'Viranşehir Kampüsü',
@@ -3999,6 +4056,12 @@ const I18N = (() => {
     document.querySelectorAll('[data-i18n-title]').forEach(el => {
       const key = el.getAttribute('data-i18n-title');
       el.setAttribute('title', t(key));
+    });
+
+    // Translate alt attributes
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.getAttribute('data-i18n-alt');
+      el.setAttribute('alt', t(key));
     });
 
     // Update current flag icon in navbar

@@ -98,7 +98,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="main-nav">
       <div class="container">
         <a class="navbar-brand" href="#cover" data-i18n-aria="nav.brand.label" aria-label="Uğur Okulları Viranşehir Kampüsü">
-          <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Viranşehir Kampüsü Logosu"
+          <img src="assets/ugurokullariviransehirkampusu.jpg" alt="Viranşehir Kampüsü Logosu" data-i18n-alt="brand.logo.alt"
             class="brand-campus-logo-img">
           <div class="brand-text-col">
             <span class="brand-name" data-i18n="nav.brand.name">UĞUR OKULLARI</span>
@@ -139,10 +139,10 @@
                 <!-- Theme Mode Dropdown (Icon Only on Bar, Compact & Space-Saving) -->
                 <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
                   <button type="button" class="nav-icon-action theme-menu-btn" id="theme-menu-btn"
-                    aria-label="Görünüm Modu Seçimi" aria-haspopup="true" aria-expanded="false" title="Görünüm Modu (Açık / Kapalı / Sistem)">
+                    aria-label="Görünüm Modu Seçimi" aria-haspopup="true" aria-expanded="false" title="Görünüm Modu (Açık / Kapalı / Sistem)" data-i18n-title="theme.button.title">
                     <i class="fas fa-desktop" id="theme-current-icon"></i>
                   </button>
-                  <div class="theme-dropdown-menu" id="theme-dropdown-menu" role="menu" aria-label="Görünüm Modu Menüsü">
+                  <div class="theme-dropdown-menu" id="theme-dropdown-menu" role="menu" aria-label="Görünüm Modu Menüsü" data-i18n-aria="theme.menu.aria">
                     <div class="theme-dropdown-header" data-i18n="theme.title">GÖRÜNÜM MODU</div>
                     <button type="button" class="theme-dropdown-item" data-theme-choice="light" role="menuitem">
                       <span class="theme-item-left">
@@ -171,10 +171,10 @@
                 <!-- Language Switcher Dropdown (Flag Icons) -->
                 <div class="lang-dropdown-wrapper" id="lang-dropdown-wrapper">
                   <button type="button" class="nav-icon-action lang-menu-btn" id="lang-menu-btn"
-                    aria-label="Dil Seçimi" aria-haspopup="true" aria-expanded="false" title="Dil Değiştir">
+                    aria-label="Dil Seçimi" aria-haspopup="true" aria-expanded="false" title="Dil Değiştir" data-i18n-title="lang.button.title">
                     <span class="lang-flag-icon" id="lang-current-flag">🇹🇷</span>
                   </button>
-                  <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="menu" aria-label="Dil Menüsü">
+                  <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="menu" aria-label="Dil Menüsü" data-i18n-aria="lang.menu.aria">
                     <div class="lang-dropdown-header" data-i18n="lang.label">DİL</div>
                     <button type="button" class="lang-dropdown-item active" data-lang-choice="tr" role="menuitem">
                       <span class="lang-item-left">
@@ -200,8 +200,8 @@
                   </div>
                 </div>
 
-                <button type="button" class="nav-icon-action" id="share-page-btn" aria-label="Sayfayı Paylaş"
-                  title="Bağlantıyı Paylaş">
+                <button type="button" class="nav-icon-action" id="share-page-btn" aria-label="Sayfayı Paylaş" data-i18n-aria="nav.share.aria"
+                  title="Bağlantıyı Paylaş" data-i18n-title="nav.share.title">
                   <i class="fas fa-share-alt"></i>
                 </button>
               </div>
@@ -1268,7 +1268,7 @@
               <!-- Telefon Kutusu -->
               <div class="location-phone-box">
                 <span class="location-phone-label" data-i18n="contact.phone.title">📞 İletişim / Danışma Hattı:</span>
-                <a href="tel:05449694919" class="location-phone-link" aria-label="Kampüsü Ara">
+                <a href="tel:05449694919" class="location-phone-link" aria-label="Kampüsü Ara" data-i18n-aria="location.call.aria">
                   <i class="fas fa-phone"></i> 0544 969 49 19
                 </a>
               </div>
@@ -1288,7 +1288,7 @@
           <div class="location-map-wrapper">
             <iframe class="location-map-iframe"
               src="https://maps.google.com/maps?q=37.2188711,39.7809496+(U%C4%9Fur+Okullar%C4%B1+Viran%C5%9Fehir+Kamp%C3%BCs%C3%BC)&t=k&z=16&ie=UTF8&iwloc=B&output=embed"
-              title="Uğur Okulları Viranşehir Kampüsü Google Haritalar Konumu"
+              title="Uğur Okulları Viranşehir Kampüsü Google Haritalar Konumu" data-i18n-title="location.map.iframe"
               allowfullscreen="" loading="lazy"></iframe>
             <a href="https://maps.app.goo.gl/Jp2G4GuSFVjhdQAs8" target="_blank" rel="noopener noreferrer" class="location-map-floating-badge" title="Google Haritalar'da Yol Tarifi Al">
               <i class="fas fa-directions"></i>
@@ -1440,7 +1440,7 @@
       </div>
 
       <!-- 14-Slide Interactive ViewPager with Overlaid Dynamic Dots Indicator -->
-      <div class="campus-viewpager" id="campus-viewpager" role="region" aria-label="Uğur Okulları Viranşehir Kampüsü Yerleşke ve Sınıflar Galerisi">
+      <div class="campus-viewpager" id="campus-viewpager" role="region" aria-label="Uğur Okulları Viranşehir Kampüsü Yerleşke ve Sınıflar Galerisi" data-i18n-aria="campus.gallery.aria">
         <!-- ViewPager Track Container -->
         <div class="campus-vp-track-container" id="campus-vp-track-container" title="Görseller arasında kaydırmak için sürükleyin" data-i18n-title="campus.modal.drag">
           <div class="campus-vp-track" id="campus-vp-track">
