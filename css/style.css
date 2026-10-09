@@ -8066,10 +8066,11 @@ img {
 }
 
 .topbar-search-container {
-  width: 100%;
-  max-width: 100%;
-  padding: 20px 32px 18px 32px;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  padding: 20px 32px !important;
+  box-sizing: border-box !important;
 }
 
 .topbar-search-inner {
@@ -8914,9 +8915,6 @@ img {
   .nav-actions-group {
     gap: 7px !important;
     margin-left: 8px !important;
-  }
-  .topbar-search-container {
-    max-width: 860px !important;
   }
 }
 
