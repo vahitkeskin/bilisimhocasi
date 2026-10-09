@@ -104,111 +104,150 @@
         </div>
       </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" data-i18n-aria="nav.toggler.label" aria-label="Gezinti Menüsünü Aç/Kapat">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div class="d-flex align-items-center d-xl-none">
+          <button type="button" class="mobile-search-toggle-btn" id="mobile-search-toggle-btn"
+            aria-label="Arama" title="Sitede Ara">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" data-i18n-aria="nav.toggler.label" aria-label="Gezinti Menüsünü Aç/Kapat">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#cover" data-i18n="nav.home">ANA SAYFA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#services" data-i18n="nav.services">HİZMETLER</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="mufredat.html" data-i18n="nav.curriculum">MÜFREDAT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#aboutUs" data-i18n="nav.story">HİKAYEMİZ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#team" data-i18n="nav.team">KADRO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#contact" data-i18n="nav.contact">İLETİŞİM</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#location" data-i18n="nav.location">KONUM</a>
-          </li>
-          <li class="nav-item ml-xl-2 d-none d-xl-block">
-            <div class="nav-actions-group">
-              <!-- Theme Mode Dropdown -->
-              <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
-                <button type="button" class="nav-icon-action theme-menu-btn" id="theme-menu-btn"
-                  aria-label="Görünüm Modu Seçimi" aria-haspopup="true" aria-expanded="false" title="Görünüm Modu (Açık / Kapalı / Sistem)" data-i18n-title="theme.button.title">
-                  <i class="fas fa-desktop" id="theme-current-icon"></i>
-                </button>
-                <div class="theme-dropdown-menu" id="theme-dropdown-menu" role="menu" aria-label="Görünüm Modu Menüsü" data-i18n-aria="theme.menu.aria">
-                  <div class="theme-dropdown-header" data-i18n="theme.title">GÖRÜNÜM MODU</div>
-                  <button type="button" class="theme-dropdown-item" data-theme-choice="light" role="menuitem">
-                    <span class="theme-item-left">
-                      <i class="fas fa-sun theme-icon-sun"></i>
-                      <span data-i18n="theme.light">Açık</span>
-                    </span>
-                    <i class="fas fa-check theme-check-icon"></i>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#cover" data-i18n="nav.home">ANA SAYFA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services" data-i18n="nav.services">HİZMETLER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="mufredat.html" data-i18n="nav.curriculum">MÜFREDAT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#aboutUs" data-i18n="nav.story">HİKAYEMİZ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#team" data-i18n="nav.team">KADRO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact" data-i18n="nav.contact">İLETİŞİM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#location" data-i18n="nav.location">KONUM</a>
+            </li>
+
+            <!-- Desktop Global Search Box (Title Bar) -->
+            <li class="nav-item ml-xl-2 d-none d-xl-flex align-items-center">
+              <div class="global-search-container" id="desktop-global-search">
+                <div class="global-search-box">
+                  <i class="fas fa-search global-search-icon"></i>
+                  <input type="text" class="global-search-input" id="global-search-desktop-input"
+                    placeholder="Müfredat, Arduino, konu ara..." autocomplete="off" spellcheck="false"
+                    aria-label="Proje Geneli Arama">
+                  <button type="button" class="global-search-clear-btn" id="global-search-desktop-clear" aria-label="Temizle" style="display:none;">
+                    <i class="fas fa-times"></i>
                   </button>
-                  <button type="button" class="theme-dropdown-item" data-theme-choice="dark" role="menuitem">
-                    <span class="theme-item-left">
-                      <i class="fas fa-moon theme-icon-moon"></i>
-                      <span data-i18n="theme.dark">Kapalı</span>
-                    </span>
-                    <i class="fas fa-check theme-check-icon"></i>
-                  </button>
-                  <button type="button" class="theme-dropdown-item active" data-theme-choice="system" role="menuitem">
-                    <span class="theme-item-left">
-                      <i class="fas fa-desktop theme-icon-system"></i>
-                      <span data-i18n="theme.system">Sistem</span>
-                    </span>
-                    <i class="fas fa-check theme-check-icon"></i>
-                  </button>
+                  <kbd class="global-search-kbd">⌘K</kbd>
                 </div>
+                <!-- Global Search Dropdown Panel (Exact 3 items visible, scrollable) -->
+                <div class="global-search-dropdown" id="desktop-search-dropdown" role="listbox"></div>
               </div>
+            </li>
 
-              <!-- Language Switcher Dropdown (Flag Icons) -->
-              <div class="lang-dropdown-wrapper" id="lang-dropdown-wrapper">
-                <button type="button" class="nav-icon-action lang-menu-btn" id="lang-menu-btn"
-                  aria-label="Dil Seçimi" aria-haspopup="true" aria-expanded="false" title="Dil Değiştir" data-i18n-title="lang.button.title">
-                  <span class="lang-flag-icon" id="lang-current-flag">🇹🇷</span>
-                </button>
-                <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="menu" aria-label="Dil Menüsü" data-i18n-aria="lang.menu.aria">
-                  <div class="lang-dropdown-header" data-i18n="lang.label">DİL</div>
-                  <button type="button" class="lang-dropdown-item active" data-lang-choice="tr" role="menuitem">
-                    <span class="lang-item-left">
-                      <span class="lang-item-flag">🇹🇷</span>
-                      <span>Türkçe</span>
-                    </span>
-                    <i class="fas fa-check lang-check-icon"></i>
+            <li class="nav-item ml-xl-2 d-none d-xl-block">
+              <div class="nav-actions-group">
+                <!-- Theme Mode Dropdown -->
+                <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
+                  <button type="button" class="nav-icon-action theme-menu-btn" id="theme-menu-btn"
+                    aria-label="Görünüm Modu Seçimi" aria-haspopup="true" aria-expanded="false" title="Görünüm Modu (Açık / Kapalı / Sistem)" data-i18n-title="theme.button.title">
+                    <i class="fas fa-desktop" id="theme-current-icon"></i>
                   </button>
-                  <button type="button" class="lang-dropdown-item" data-lang-choice="en" role="menuitem">
-                    <span class="lang-item-left">
-                      <span class="lang-item-flag">🇬🇧</span>
-                      <span>English</span>
-                    </span>
-                    <i class="fas fa-check lang-check-icon"></i>
-                  </button>
-                  <button type="button" class="lang-dropdown-item" data-lang-choice="ar" role="menuitem">
-                    <span class="lang-item-left">
-                      <span class="lang-item-flag">🇸🇦</span>
-                      <span>العربية</span>
-                    </span>
-                    <i class="fas fa-check lang-check-icon"></i>
-                  </button>
+                  <div class="theme-dropdown-menu" id="theme-dropdown-menu" role="menu" aria-label="Görünüm Modu Menüsü" data-i18n-aria="theme.menu.aria">
+                    <div class="theme-dropdown-header" data-i18n="theme.title">GÖRÜNÜM MODU</div>
+                    <button type="button" class="theme-dropdown-item" data-theme-choice="light" role="menuitem">
+                      <span class="theme-item-left">
+                        <i class="fas fa-sun theme-icon-sun"></i>
+                        <span data-i18n="theme.light">Açık</span>
+                      </span>
+                      <i class="fas fa-check theme-check-icon"></i>
+                    </button>
+                    <button type="button" class="theme-dropdown-item" data-theme-choice="dark" role="menuitem">
+                      <span class="theme-item-left">
+                        <i class="fas fa-moon theme-icon-moon"></i>
+                        <span data-i18n="theme.dark">Kapalı</span>
+                      </span>
+                      <i class="fas fa-check theme-check-icon"></i>
+                    </button>
+                    <button type="button" class="theme-dropdown-item active" data-theme-choice="system" role="menuitem">
+                      <span class="theme-item-left">
+                        <i class="fas fa-desktop theme-icon-system"></i>
+                        <span data-i18n="theme.system">Sistem</span>
+                      </span>
+                      <i class="fas fa-check theme-check-icon"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Share Page Button -->
-              <button type="button" class="nav-icon-action" id="share-page-btn" aria-label="Sayfayı Paylaş" data-i18n-aria="nav.share.aria"
-                title="Müfredat Sayfasını Paylaş" data-i18n-title="nav.share.title">
-                <i class="fas fa-share-alt"></i>
+                <!-- Language Switcher Dropdown (Flag Icons) -->
+                <div class="lang-dropdown-wrapper" id="lang-dropdown-wrapper">
+                  <button type="button" class="nav-icon-action lang-menu-btn" id="lang-menu-btn"
+                    aria-label="Dil Seçimi" aria-haspopup="true" aria-expanded="false" title="Dil Değiştir" data-i18n-title="lang.button.title">
+                    <span class="lang-flag-icon" id="lang-current-flag">🇹🇷</span>
+                  </button>
+                  <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="menu" aria-label="Dil Menüsü" data-i18n-aria="lang.menu.aria">
+                    <div class="lang-dropdown-header" data-i18n="lang.label">DİL</div>
+                    <button type="button" class="lang-dropdown-item active" data-lang-choice="tr" role="menuitem">
+                      <span class="lang-item-left">
+                        <span class="lang-item-flag">🇹🇷</span>
+                        <span>Türkçe</span>
+                      </span>
+                      <i class="fas fa-check lang-check-icon"></i>
+                    </button>
+                    <button type="button" class="lang-dropdown-item" data-lang-choice="en" role="menuitem">
+                      <span class="lang-item-left">
+                        <span class="lang-item-flag">🇬🇧</span>
+                        <span>English</span>
+                      </span>
+                      <i class="fas fa-check lang-check-icon"></i>
+                    </button>
+                    <button type="button" class="lang-dropdown-item" data-lang-choice="ar" role="menuitem">
+                      <span class="lang-item-left">
+                        <span class="lang-item-flag">🇸🇦</span>
+                        <span>العربية</span>
+                      </span>
+                      <i class="fas fa-check lang-check-icon"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Share Page Button -->
+                <button type="button" class="nav-icon-action" id="share-page-btn" aria-label="Sayfayı Paylaş" data-i18n-aria="nav.share.aria"
+                  title="Müfredat Sayfasını Paylaş" data-i18n-title="nav.share.title">
+                  <i class="fas fa-share-alt"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Mobile Menu Search Box (inside drawer) -->
+          <div class="mobile-search-section d-xl-none">
+            <div class="global-search-box mobile-search-box">
+              <i class="fas fa-search global-search-icon"></i>
+              <input type="text" class="global-search-input" id="global-search-mobile-input"
+                placeholder="Müfredat, Arduino, konu ara..." autocomplete="off" spellcheck="false"
+                aria-label="Proje Geneli Arama">
+              <button type="button" class="global-search-clear-btn" id="global-search-mobile-clear" aria-label="Temizle" style="display:none;">
+                <i class="fas fa-times"></i>
               </button>
             </div>
-          </li>
-        </ul>
+            <div class="global-search-dropdown mobile-search-dropdown" id="mobile-search-dropdown" role="listbox"></div>
+          </div>
 
-        <!-- Mobile Menu Divider -->
-        <div class="mobile-menu-divider d-xl-none"></div>
+          <!-- Mobile Menu Divider -->
+          <div class="mobile-menu-divider d-xl-none"></div>
 
         <!-- Mobile Theme Switcher Bar (Quick Access) -->
         <div class="mobile-theme-bar d-xl-none">
@@ -250,6 +289,23 @@
           </button>
         </div>
       </div>
+    </div>
+
+    <!-- Expandable Mobile Quick Search Bar (Slides down on mobile when search icon is clicked) -->
+    <div class="mobile-quick-search-bar" id="mobile-quick-search-bar">
+      <div class="d-flex align-items-center gap-2">
+        <i class="fas fa-search text-warning mr-2"></i>
+        <input type="text" class="mobile-quick-search-input" id="global-search-quick-input"
+          placeholder="Müfredat, Arduino, konu veya atölye ara..." autocomplete="off" spellcheck="false"
+          aria-label="Mobil Hızlı Arama">
+        <button type="button" class="mobile-quick-search-clear" id="mobile-quick-search-clear" aria-label="Temizle">
+          <i class="fas fa-times"></i>
+        </button>
+        <button type="button" class="mobile-quick-search-close" id="mobile-quick-search-close" aria-label="Kapat">
+          <span>Vazgeç</span>
+        </button>
+      </div>
+      <div class="global-search-dropdown quick-search-dropdown" id="quick-search-dropdown" role="listbox"></div>
     </div>
   </nav>
 
@@ -465,6 +521,9 @@
 
   <!-- Dedicated Full-Page Curriculum Controller -->
   <script src="js/mufredat.js"></script>
+
+  <!-- Global Site-Wide Search Controller -->
+  <script src="js/global-search.js"></script>
 
   <!-- Theme & Language Controller Sync -->
   <script>

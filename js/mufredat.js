@@ -1242,6 +1242,9 @@
         renderOverviewGrid();
       }
     });
+
+    // Expose selectCurriculumGrade for global search integration
+    window.selectCurriculumGrade = selectGrade;
   }
 
   // Auto-run on DOM ready

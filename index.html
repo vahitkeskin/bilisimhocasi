@@ -106,10 +106,16 @@
           </div>
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" data-i18n-aria="nav.toggler.label" aria-label="Gezinti Menüsünü Aç/Kapat">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex align-items-center d-xl-none">
+          <button type="button" class="mobile-search-toggle-btn" id="mobile-search-toggle-btn"
+            aria-label="Arama" title="Sitede Ara">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" data-i18n-aria="nav.toggler.label" aria-label="Gezinti Menüsünü Aç/Kapat">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav align-items-center">
@@ -134,6 +140,25 @@
             <li class="nav-item">
               <a class="nav-link" href="#location" data-i18n="nav.location">KONUM</a>
             </li>
+
+            <!-- Desktop Global Search Box (Title Bar) -->
+            <li class="nav-item ml-xl-2 d-none d-xl-flex align-items-center">
+              <div class="global-search-container" id="desktop-global-search">
+                <div class="global-search-box">
+                  <i class="fas fa-search global-search-icon"></i>
+                  <input type="text" class="global-search-input" id="global-search-desktop-input"
+                    placeholder="Müfredat, Arduino, konu ara..." autocomplete="off" spellcheck="false"
+                    aria-label="Proje Geneli Arama">
+                  <button type="button" class="global-search-clear-btn" id="global-search-desktop-clear" aria-label="Temizle" style="display:none;">
+                    <i class="fas fa-times"></i>
+                  </button>
+                  <kbd class="global-search-kbd">⌘K</kbd>
+                </div>
+                <!-- Global Search Dropdown Panel (Exact 3 items visible, scrollable) -->
+                <div class="global-search-dropdown" id="desktop-search-dropdown" role="listbox"></div>
+              </div>
+            </li>
+
             <li class="nav-item ml-xl-2 d-none d-xl-block">
               <div class="nav-actions-group">
                 <!-- Theme Mode Dropdown (Icon Only on Bar, Compact & Space-Saving) -->
@@ -208,6 +233,20 @@
             </li>
           </ul>
 
+          <!-- Mobile Menu Search Box (inside drawer) -->
+          <div class="mobile-search-section d-xl-none">
+            <div class="global-search-box mobile-search-box">
+              <i class="fas fa-search global-search-icon"></i>
+              <input type="text" class="global-search-input" id="global-search-mobile-input"
+                placeholder="Müfredat, Arduino, konu ara..." autocomplete="off" spellcheck="false"
+                aria-label="Proje Geneli Arama">
+              <button type="button" class="global-search-clear-btn" id="global-search-mobile-clear" aria-label="Temizle" style="display:none;">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="global-search-dropdown mobile-search-dropdown" id="mobile-search-dropdown" role="listbox"></div>
+          </div>
+
           <!-- Mobile Menu Divider -->
           <div class="mobile-menu-divider d-xl-none"></div>
 
@@ -251,6 +290,23 @@
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Expandable Mobile Quick Search Bar (Slides down on mobile when search icon is clicked) -->
+      <div class="mobile-quick-search-bar" id="mobile-quick-search-bar">
+        <div class="d-flex align-items-center gap-2">
+          <i class="fas fa-search text-warning mr-2"></i>
+          <input type="text" class="mobile-quick-search-input" id="global-search-quick-input"
+            placeholder="Müfredat, Arduino, konu veya atölye ara..." autocomplete="off" spellcheck="false"
+            aria-label="Mobil Hızlı Arama">
+          <button type="button" class="mobile-quick-search-clear" id="mobile-quick-search-clear" aria-label="Temizle">
+            <i class="fas fa-times"></i>
+          </button>
+          <button type="button" class="mobile-quick-search-close" id="mobile-quick-search-close" aria-label="Kapat">
+            <span>Vazgeç</span>
+          </button>
+        </div>
+        <div class="global-search-dropdown quick-search-dropdown" id="quick-search-dropdown" role="listbox"></div>
       </div>
     </nav>
 
@@ -1802,6 +1858,9 @@
   <!-- i18n Translations System -->
   <script src="js/i18n.js"></script>
 
+  <!-- 2026 MEB K12 Curriculum Dataset -->
+  <script src="js/curriculum-data.js"></script>
+
   <!-- K-12 Arduino Projeleri & Donanım Veritabanı -->
   <script src="js/arduino-curriculum-data.js"></script>
 
@@ -1810,6 +1869,9 @@
 
   <!-- Custom Main Controller -->
   <script src="js/main.js"></script>
+
+  <!-- Global Site-Wide Search Controller -->
+  <script src="js/global-search.js"></script>
 
   <!-- Golden Scroll & Modal Wire-up Script -->
   <script>

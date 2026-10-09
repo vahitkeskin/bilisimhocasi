@@ -7914,3 +7914,660 @@ img {
   transform: scale(1.1);
 }
 
+/* ==========================================================================
+   TITLE BAR & GLOBAL SITE-WIDE SEARCH SYSTEM (DESKTOP, TABLET, MOBILE, TV)
+   - Tam 3 Görünür Sonuç + Yumuşak Kaydırma (Scrollable)
+   - %1000 UX UI Uyumlu, Cam Efektli & Kibar Tasarım
+   ========================================================================== */
+
+/* --- 1. Masaüstü Arama Konteyneri (Navbar / Title Bar) --- */
+.global-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.global-search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  padding: 0 12px;
+  height: 38px;
+  width: 215px;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.global-search-box:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(245, 166, 35, 0.5);
+}
+
+.global-search-box:focus-within {
+  width: 290px;
+  background: rgba(13, 16, 26, 0.98);
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 16px rgba(245, 166, 35, 0.3), 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .global-search-box {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .global-search-box:focus-within {
+  background: #FFFFFF;
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 14px rgba(245, 166, 35, 0.25), 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.global-search-icon {
+  color: var(--primary-gold);
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.global-search-box:focus-within .global-search-icon {
+  transform: scale(1.1);
+}
+
+.global-search-input {
+  background: transparent;
+  border: none;
+  outline: none !important;
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 600;
+  width: 100%;
+  font-family: inherit;
+  padding: 0;
+}
+
+[data-theme="light"] .global-search-input {
+  color: #1A1D28;
+}
+
+.global-search-input::placeholder {
+  color: #9AA0B0;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.global-search-clear-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.global-search-clear-btn:hover {
+  background: #E53935;
+  color: #FFFFFF;
+}
+
+.global-search-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: #A0AAB8;
+  font-family: monospace;
+  font-size: 10px;
+  padding: 1px 5px;
+  line-height: 1.2;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .global-search-kbd {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #606878;
+}
+
+/* --- 2. Global Arama Sonuç Paneli (Dropdown) --- */
+.global-search-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 440px;
+  max-width: calc(100vw - 28px);
+  background: rgba(14, 18, 29, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 20px rgba(245, 166, 35, 0.15);
+  z-index: 10010;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.global-search-dropdown.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-theme="light"] .global-search-dropdown {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(245, 166, 35, 0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18), 0 0 16px rgba(245, 166, 35, 0.12);
+}
+
+.search-dropdown-header {
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+
+[data-theme="light"] .search-dropdown-header {
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.search-count-badge {
+  font-weight: 700;
+  color: var(--primary-gold);
+  display: flex;
+  align-items: center;
+}
+
+.search-scroll-hint {
+  color: #8C96A8;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+/* --- 3. Tam 3 Görünür Sonuç ve Kaydırmalı Liste (CRITICAL REQUIREMENT) --- */
+.global-search-results-list {
+  max-height: 228px; /* Tam olarak 3 kart görünür (3 x 72px + boşluklar) */
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px;
+}
+
+/* Şık ve Kibar İnce Kaydırma Çubuğu (Scrollbar) */
+.global-search-results-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.global-search-results-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+.global-search-results-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-gold) 0%, #00979D 100%);
+  border-radius: 6px;
+}
+
+.global-search-results-list::-webkit-scrollbar-thumb:hover {
+  background: #FFD54F;
+}
+
+/* Sonuç Kartı Elemanı */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none !important;
+  border-left: 3px solid transparent;
+  background: transparent;
+  min-height: 66px;
+  box-sizing: border-box;
+}
+
+.search-result-item:last-child {
+  margin-bottom: 0;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+  background: rgba(245, 166, 35, 0.12);
+  border-left-color: var(--primary-gold);
+  transform: translateX(3px);
+}
+
+[data-theme="light"] .search-result-item:hover,
+[data-theme="light"] .search-result-item.active {
+  background: rgba(245, 166, 35, 0.14);
+  border-left-color: var(--primary-gold);
+}
+
+.search-item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.search-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.search-item-title {
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+[data-theme="light"] .search-item-title {
+  color: #141724;
+}
+
+.search-item-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.badge-muf {
+  background: rgba(245, 166, 35, 0.18);
+  color: #FFD54F;
+  border: 1px solid rgba(245, 166, 35, 0.4);
+}
+
+.badge-ard {
+  background: rgba(0, 151, 157, 0.2);
+  color: #4DD0E1;
+  border: 1px solid rgba(0, 151, 157, 0.4);
+}
+
+.badge-sec {
+  background: rgba(124, 77, 255, 0.2);
+  color: #D1C4E9;
+  border: 1px solid rgba(124, 77, 255, 0.4);
+}
+
+[data-theme="light"] .badge-muf {
+  background: rgba(245, 166, 35, 0.15);
+  color: #B26A00;
+}
+
+[data-theme="light"] .badge-ard {
+  background: rgba(0, 151, 157, 0.12);
+  color: #00796B;
+}
+
+[data-theme="light"] .badge-sec {
+  background: rgba(124, 77, 255, 0.12);
+  color: #5E35B1;
+}
+
+.search-item-snippet {
+  color: #9EABB8;
+  font-size: 11.5px;
+  margin: 0;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme="light"] .search-item-snippet {
+  color: #606A7C;
+}
+
+.search-item-arrow {
+  color: #727D92;
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.search-result-item:hover .search-item-arrow,
+.search-result-item.active .search-item-arrow {
+  color: var(--primary-gold);
+  transform: translateX(3px);
+}
+
+/* Vurgulu Arama Terimleri */
+.search-highlight {
+  background: rgba(245, 166, 35, 0.35);
+  color: #FFF3C4 !important;
+  font-weight: 800;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+[data-theme="light"] .search-highlight {
+  background: rgba(245, 166, 35, 0.3);
+  color: #8D5300 !important;
+}
+
+/* Dropdown Alt Bilgi Bandı */
+.search-dropdown-footer {
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 10.5px;
+  color: #808A9C;
+}
+
+[data-theme="light"] .search-dropdown-footer {
+  background: rgba(0, 0, 0, 0.04);
+  border-top-color: rgba(0, 0, 0, 0.08);
+  color: #6A7282;
+}
+
+.search-kbd-hint {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.search-kbd-hint kbd {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #D0D8E6;
+  font-size: 9.5px;
+  padding: 1px 4px;
+}
+
+[data-theme="light"] .search-kbd-hint kbd {
+  background: rgba(0, 0, 0, 0.07);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #333333;
+}
+
+/* Boş Arama Durumu */
+.search-empty-state {
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.search-empty-icon {
+  font-size: 28px;
+  color: #727D92;
+  margin-bottom: 10px;
+}
+
+.search-empty-text {
+  color: #FFFFFF;
+  font-size: 13px;
+  margin: 0 0 4px 0;
+}
+
+[data-theme="light"] .search-empty-text {
+  color: #1A1D28;
+}
+
+.search-empty-sub {
+  color: #8C96A8;
+  font-size: 11.5px;
+  display: block;
+}
+
+/* --- 4. Mobil & Tablet Title Bar Entegrasyonu --- */
+.mobile-search-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--primary-gold);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-search-toggle-btn:hover {
+  background: var(--primary-gold);
+  color: #000000;
+}
+
+/* Mobil Üstten Kayan Hızlı Arama Bandı */
+.mobile-quick-search-bar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(10, 13, 22, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 2px solid var(--primary-gold);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8);
+  z-index: 10002;
+  padding: 10px 16px;
+  box-sizing: border-box;
+}
+
+.mobile-quick-search-bar.active {
+  display: block;
+  animation: slideDownSearch 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDownSearch {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-theme="light"] .mobile-quick-search-bar {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom-color: var(--primary-gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-quick-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none !important;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 0;
+  font-family: inherit;
+}
+
+[data-theme="light"] .mobile-quick-search-input {
+  color: #141724;
+}
+
+.mobile-quick-search-clear {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #FFFFFF;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.mobile-quick-search-close {
+  background: transparent;
+  border: none;
+  color: var(--primary-gold);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.quick-search-dropdown {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 10px !important;
+  border-radius: 12px !important;
+}
+
+/* Mobil Menü İçindeki Arama Kutusu */
+.mobile-search-section {
+  padding: 12px 14px 4px 14px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-search-box {
+  width: 100% !important;
+}
+
+.mobile-search-dropdown {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 8px !important;
+}
+
+/* --- 5. Arama ile Hedefe Ulaşınca Vurgu Efekti (Glow Pulse) --- */
+@keyframes searchPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.8);
+    transform: scale(1);
+  }
+  30% {
+    box-shadow: 0 0 35px 8px rgba(245, 166, 35, 0.6);
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
+    transform: scale(1);
+  }
+}
+
+.search-highlight-pulse {
+  animation: searchPulseGlow 2.5s ease-out;
+  border-radius: 14px;
+}
+
+/* --- 6. Cihaz Uyumlulukları (TV, Desktop, Tablet, Mobil) --- */
+@media (min-width: 1400px) {
+  .global-search-box {
+    width: 240px;
+  }
+  .global-search-box:focus-within {
+    width: 320px;
+  }
+  .global-search-dropdown {
+    width: 480px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .global-search-container.d-none {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .global-search-results-list {
+    max-height: 220px;
+  }
+  .search-result-item {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+  .search-item-title {
+    font-size: 12.5px;
+  }
+  .search-item-snippet {
+    font-size: 11px;
+  }
+}
+
+/* --- 7. RTL (Arapça) Uyumluluğu --- */
+[dir="rtl"] .global-search-dropdown {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .search-result-item {
+  border-left: none;
+  border-right: 3px solid transparent;
+}
+
+[dir="rtl"] .search-result-item:hover,
+[dir="rtl"] .search-result-item.active {
+  border-right-color: var(--primary-gold);
+  border-left-color: transparent;
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .search-item-arrow i {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .mobile-search-toggle-btn {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+
