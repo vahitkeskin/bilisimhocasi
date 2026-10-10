@@ -19,11 +19,11 @@ projects_meta = {
         "difficulty": "Başlangıç Seviyesi (Level 1)",
         "duration": "20-30 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Ana Programlanabilir Beyin", "spec": "ATmega328P, 5V Besleme, 14 Dijital Pin", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard (Devre Tahtası)", "qty": "1 Adet", "role": "Lehimsiz Geçici Devre Platformu", "spec": "400 Bağlantı Noktası, İletken Hatlar", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Işıklı Görsel Çıktı", "spec": "2.0V - 2.2V İleri Gerilim, 20mA Akım", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.svg"},
-            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Akım Sınırlayıcı", "spec": "1/4W Karbon Film (Kırmızı-Kırmızı-Kahverengi)", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Erkek-Erkek Jumper Kablo", "qty": "2 Adet", "role": "İletken Bağlantı Hattı", "spec": "20cm Esnek Bakır Tel", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Ana Programlanabilir Beyin", "spec": "ATmega328P, 5V Besleme, 14 Dijital Pin", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard (Devre Tahtası)", "qty": "1 Adet", "role": "Lehimsiz Geçici Devre Platformu", "spec": "400 Bağlantı Noktası, İletken Hatlar", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Işıklı Görsel Çıktı", "spec": "2.0V - 2.2V İleri Gerilim, 20mA Akım", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Akım Sınırlayıcı", "spec": "1/4W Karbon Film (Kırmızı-Kırmızı-Kahverengi)", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Erkek-Erkek Jumper Kablo", "qty": "2 Adet", "role": "İletken Bağlantı Hattı", "spec": "20cm Esnek Bakır Tel", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "Pin 8 (Dijital)", "compPin": "220Ω Direnç -> LED Anot (+)", "desc": "Dijital Çıkış (5V / 0V Sinyali)"},
@@ -44,12 +44,12 @@ projects_meta = {
         "difficulty": "Temel Seviye (Level 2)",
         "duration": "30-40 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Mikrodenetleyici Kartı", "spec": "ATmega328P, 16MHz Kristal", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Montaj Zemini", "spec": "400 Noktalı Lehimsiz", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "4 Bacaklı Push Buton", "qty": "1 Adet", "role": "Kullanıcı Girdi Elemanı", "spec": "Dokunmatik Yaylı Anahtar (Tactile Switch)", "icon": "fas fa-toggle-on", "image": "assets/components/push_button.svg"},
-            {"name": "5mm Yeşil LED", "qty": "1 Adet", "role": "Görsel Çıktı Göstergesi", "spec": "2.2V İleri Gerilim", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.svg"},
-            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Akım Koruması", "spec": "1/4W Direnç", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Erkek-Erkek Jumper", "qty": "4 Adet", "role": "Devre Bağlantı Kabloları", "spec": "20cm Standart Jumper", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Mikrodenetleyici Kartı", "spec": "ATmega328P, 16MHz Kristal", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Montaj Zemini", "spec": "400 Noktalı Lehimsiz", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "4 Bacaklı Push Buton", "qty": "1 Adet", "role": "Kullanıcı Girdi Elemanı", "spec": "Dokunmatik Yaylı Anahtar (Tactile Switch)", "icon": "fas fa-toggle-on", "image": "assets/components/push_button.jpg"},
+            {"name": "5mm Yeşil LED", "qty": "1 Adet", "role": "Görsel Çıktı Göstergesi", "spec": "2.2V İleri Gerilim", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Akım Koruması", "spec": "1/4W Direnç", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Erkek-Erkek Jumper", "qty": "4 Adet", "role": "Devre Bağlantı Kabloları", "spec": "20cm Standart Jumper", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "Pin 2 (Giriş)", "compPin": "Buton 1. Bacağı", "desc": "Dahili INPUT_PULLUP Giriş Pini"},
@@ -72,13 +72,13 @@ projects_meta = {
         "difficulty": "Temel Seviye (Level 3)",
         "duration": "40 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Kontrol Ünitesi", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Tahtası", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Dur Sinyali", "spec": "2.0V Kırmızı LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.svg"},
-            {"name": "5mm Sarı LED", "qty": "1 Adet", "role": "Hazırlan/Yavaşla Sinyali", "spec": "2.1V Sarı LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_yellow.svg"},
-            {"name": "5mm Yeşil LED", "qty": "1 Adet", "role": "Geç Sinyali", "spec": "2.2V Yeşil LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.svg"},
-            {"name": "220 Ohm Direnç", "qty": "3 Adet", "role": "LED Akım Koruması", "spec": "1/4W Karbon Film", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Erkek-Erkek Jumper", "qty": "5 Adet", "role": "Haberleşme Telleri", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Kontrol Ünitesi", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Tahtası", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Dur Sinyali", "spec": "2.0V Kırmızı LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.jpg"},
+            {"name": "5mm Sarı LED", "qty": "1 Adet", "role": "Hazırlan/Yavaşla Sinyali", "spec": "2.1V Sarı LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_yellow.jpg"},
+            {"name": "5mm Yeşil LED", "qty": "1 Adet", "role": "Geç Sinyali", "spec": "2.2V Yeşil LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "3 Adet", "role": "LED Akım Koruması", "spec": "1/4W Karbon Film", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Erkek-Erkek Jumper", "qty": "5 Adet", "role": "Haberleşme Telleri", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "Pin 10 (Dijital)", "compPin": "220Ω -> Kırmızı LED (+)", "desc": "Kırmızı Işık Çıkışı"},
@@ -101,11 +101,11 @@ projects_meta = {
         "difficulty": "Orta Başlangıç (Level 4)",
         "duration": "40-45 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Frekans Üreteci", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "Pasif Piezo Buzzer", "qty": "1 Adet", "role": "Sesli Akustik Çıktı", "spec": "Pasif Frekans Girişli, 5V", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.svg"},
-            {"name": "100 Ohm Direnç", "qty": "1 Adet", "role": "Ses Seviyesi Yumuşatıcı", "spec": "Opsiyonel ses dengeleyici", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Erkek-Erkek Jumper", "qty": "2 Adet", "role": "Bağlantı Hatları", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Frekans Üreteci", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "Pasif Piezo Buzzer", "qty": "1 Adet", "role": "Sesli Akustik Çıktı", "spec": "Pasif Frekans Girişli, 5V", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.jpg"},
+            {"name": "100 Ohm Direnç", "qty": "1 Adet", "role": "Ses Seviyesi Yumuşatıcı", "spec": "Opsiyonel ses dengeleyici", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Erkek-Erkek Jumper", "qty": "2 Adet", "role": "Bağlantı Hatları", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "Pin 8 (PWM/Çıkış)", "compPin": "Buzzer Artı (+) Bacağı", "desc": "tone() Fonksiyonu Frekans Sinyali"},
@@ -126,13 +126,13 @@ projects_meta = {
         "difficulty": "Orta Seviye (Level 5)",
         "duration": "45 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Analog-Dijital Çevirici", "spec": "10-bit ADC Çözünürlüğü", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "LDR (Foto Direnç)", "qty": "1 Adet", "role": "Işığa Duyarlı Sensör", "spec": "5mm Kadmiyum Sülfit (CdS)", "icon": "fas fa-sun", "image": "assets/components/ldr_sensor.svg"},
-            {"name": "10k Ohm Direnç", "qty": "1 Adet", "role": "Voltaj Bölücü Direnci", "spec": "Kahverengi-Siyah-Turuncu-Altın", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "5mm Beyaz LED", "qty": "1 Adet", "role": "Gece Lambası Aydınlatması", "spec": "3.0V Parlak Beyaz", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.svg"},
-            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Akım Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Erkek-Erkek Jumper", "qty": "5 Adet", "role": "Kablolar", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Analog-Dijital Çevirici", "spec": "10-bit ADC Çözünürlüğü", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "LDR (Foto Direnç)", "qty": "1 Adet", "role": "Işığa Duyarlı Sensör", "spec": "5mm Kadmiyum Sülfit (CdS)", "icon": "fas fa-sun", "image": "assets/components/ldr_sensor.jpg"},
+            {"name": "10k Ohm Direnç", "qty": "1 Adet", "role": "Voltaj Bölücü Direnci", "spec": "Kahverengi-Siyah-Turuncu-Altın", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "5mm Beyaz LED", "qty": "1 Adet", "role": "Gece Lambası Aydınlatması", "spec": "3.0V Parlak Beyaz", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Akım Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Erkek-Erkek Jumper", "qty": "5 Adet", "role": "Kablolar", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "LDR 1. Bacağı", "desc": "Pozitif Referans Besleme"},
@@ -156,11 +156,11 @@ projects_meta = {
         "difficulty": "Orta Seviye (Level 6)",
         "duration": "45-50 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Hareket Kontrolcüsü", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "TowerPro SG90 Mini Servo", "qty": "1 Adet", "role": "Hassas Açılı Aktüatör", "spec": "9g Ağırlık, 180° Dönüş Açısı, 5V", "icon": "fas fa-cogs", "image": "assets/components/servo_sg90.svg"},
-            {"name": "10k Ohm Potansiyometre", "qty": "1 Adet", "role": "Açı Ayar Kolu", "spec": "Döner Ayarlı Direnç (Rotary)", "icon": "fas fa-sliders-h", "image": "assets/components/potentiometer.svg"},
-            {"name": "Erkek-Erkek Jumper", "qty": "7 Adet", "role": "Kablolar", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Hareket Kontrolcüsü", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "TowerPro SG90 Mini Servo", "qty": "1 Adet", "role": "Hassas Açılı Aktüatör", "spec": "9g Ağırlık, 180° Dönüş Açısı, 5V", "icon": "fas fa-cogs", "image": "assets/components/servo_sg90.jpg"},
+            {"name": "10k Ohm Potansiyometre", "qty": "1 Adet", "role": "Açı Ayar Kolu", "spec": "Döner Ayarlı Direnç (Rotary)", "icon": "fas fa-sliders-h", "image": "assets/components/potentiometer.jpg"},
+            {"name": "Erkek-Erkek Jumper", "qty": "7 Adet", "role": "Kablolar", "spec": "20cm", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "Potansiyometre 1 & Servo Kırmızı", "desc": "5V Ortak Besleme"},
@@ -185,13 +185,13 @@ projects_meta = {
         "difficulty": "Orta-İleri (Level 7)",
         "duration": "50 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Mesafe Hesaplayıcı", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "HC-SR04 Ultrasonik Sensör", "qty": "1 Adet", "role": "Mesafe Algılayıcı", "spec": "2cm - 400cm Menzil, 40kHz Frekans", "icon": "fas fa-broadcast-tower", "image": "assets/components/ultrasonic_hcsr04.svg"},
-            {"name": "Piezo Buzzer", "qty": "1 Adet", "role": "Sesli Park Uyarısı", "spec": "Sesli Bip İkazı", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.svg"},
-            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Görsel Flaşör Uyarısı", "spec": "Kırmızı İkaz Işığı", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.svg"},
-            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Jumper Kablolar", "qty": "8 Adet", "role": "Kablolar", "spec": "Erkek-Erkek & Erkek-Dişi", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Mesafe Hesaplayıcı", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "HC-SR04 Ultrasonik Sensör", "qty": "1 Adet", "role": "Mesafe Algılayıcı", "spec": "2cm - 400cm Menzil, 40kHz Frekans", "icon": "fas fa-broadcast-tower", "image": "assets/components/ultrasonic_hcsr04.jpg"},
+            {"name": "Piezo Buzzer", "qty": "1 Adet", "role": "Sesli Park Uyarısı", "spec": "Sesli Bip İkazı", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.jpg"},
+            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Görsel Flaşör Uyarısı", "spec": "Kırmızı İkaz Işığı", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "1 Adet", "role": "LED Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Jumper Kablolar", "qty": "8 Adet", "role": "Kablolar", "spec": "Erkek-Erkek & Erkek-Dişi", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "HC-SR04 VCC", "desc": "Sensör Beslemesi"},
@@ -216,11 +216,11 @@ projects_meta = {
         "difficulty": "İleri Orta (Level 8)",
         "duration": "50 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Haberleşme Yöneticisi", "spec": "ATmega328P, I2C Master", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "16x2 Karakter LCD (I2C)", "qty": "1 Adet", "role": "Kullanıcı Bilgi Ekranı", "spec": "HD44780 + PCF8574 I2C Backpack (0x27 Adres)", "icon": "fas fa-desktop", "image": "assets/components/lcd_1602_i2c.svg"},
-            {"name": "Push Buton", "qty": "1 Adet", "role": "Sayaç Artırma Tuşu", "spec": "4 Bacaklı Dokunmatik Düğme", "icon": "fas fa-toggle-on", "image": "assets/components/push_button.svg"},
-            {"name": "Jumper Kablolar", "qty": "6 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Haberleşme Yöneticisi", "spec": "ATmega328P, I2C Master", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "16x2 Karakter LCD (I2C)", "qty": "1 Adet", "role": "Kullanıcı Bilgi Ekranı", "spec": "HD44780 + PCF8574 I2C Backpack (0x27 Adres)", "icon": "fas fa-desktop", "image": "assets/components/lcd_1602_i2c.jpg"},
+            {"name": "Push Buton", "qty": "1 Adet", "role": "Sayaç Artırma Tuşu", "spec": "4 Bacaklı Dokunmatik Düğme", "icon": "fas fa-toggle-on", "image": "assets/components/push_button.jpg"},
+            {"name": "Jumper Kablolar", "qty": "6 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "LCD VCC", "desc": "LCD Beslemesi"},
@@ -247,11 +247,11 @@ projects_meta = {
         "difficulty": "İleri Düzey (Level 9)",
         "duration": "50 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Hava İstasyonu Beyni", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "DHT11 Sensörü", "qty": "1 Adet", "role": "Sıcaklık ve Nem Ölçer", "spec": "0-50°C (±2°C), %20-90 RH (±5%)", "icon": "fas fa-temperature-high", "image": "assets/components/dht11_sensor.svg"},
-            {"name": "16x2 I2C LCD Ekran", "qty": "1 Adet", "role": "Telemetri Göstergesi", "spec": "16 Karakter x 2 Satır Mavi Arka Işık", "icon": "fas fa-desktop", "image": "assets/components/lcd_1602_i2c.svg"},
-            {"name": "Jumper Kablolar", "qty": "8 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Hava İstasyonu Beyni", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "DHT11 Sensörü", "qty": "1 Adet", "role": "Sıcaklık ve Nem Ölçer", "spec": "0-50°C (±2°C), %20-90 RH (±5%)", "icon": "fas fa-temperature-high", "image": "assets/components/dht11_sensor.jpg"},
+            {"name": "16x2 I2C LCD Ekran", "qty": "1 Adet", "role": "Telemetri Göstergesi", "spec": "16 Karakter x 2 Satır Mavi Arka Işık", "icon": "fas fa-desktop", "image": "assets/components/lcd_1602_i2c.jpg"},
+            {"name": "Jumper Kablolar", "qty": "8 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "DHT11 VCC & LCD VCC", "desc": "5V Güç Hattı"},
@@ -279,14 +279,14 @@ projects_meta = {
         "difficulty": "Lise Seviyesi (Level 10)",
         "duration": "50 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Güvenlik Santrali", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "HC-SR501 PIR Sensör", "qty": "1 Adet", "role": "Kızılötesi Hareket Dedektörü", "spec": "120° Açı, 7 Metre Menzil, Fresnel Mercek", "icon": "fas fa-running", "image": "assets/components/pir_sensor.svg"},
-            {"name": "Buzzer", "qty": "1 Adet", "role": "Siren Ses Çıkışı", "spec": "Piezo Siren", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.svg"},
-            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Alarm Işığı", "spec": "Flaşör Kırmızı", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.svg"},
-            {"name": "5mm Yeşil LED", "qty": "1 Adet", "role": "Sistem Hazır Işığı", "spec": "Güvenli Durum Yeşili", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.svg"},
-            {"name": "220 Ohm Direnç", "qty": "2 Adet", "role": "LED Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Jumper Kablolar", "qty": "8 Adet", "role": "Kablolar", "spec": "Erkek-Erkek & Erkek-Dişi", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Güvenlik Santrali", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "HC-SR501 PIR Sensör", "qty": "1 Adet", "role": "Kızılötesi Hareket Dedektörü", "spec": "120° Açı, 7 Metre Menzil, Fresnel Mercek", "icon": "fas fa-running", "image": "assets/components/pir_sensor.jpg"},
+            {"name": "Buzzer", "qty": "1 Adet", "role": "Siren Ses Çıkışı", "spec": "Piezo Siren", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.jpg"},
+            {"name": "5mm Kırmızı LED", "qty": "1 Adet", "role": "Alarm Işığı", "spec": "Flaşör Kırmızı", "icon": "fas fa-lightbulb", "image": "assets/components/led_red.jpg"},
+            {"name": "5mm Yeşil LED", "qty": "1 Adet", "role": "Sistem Hazır Işığı", "spec": "Güvenli Durum Yeşili", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "2 Adet", "role": "LED Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Jumper Kablolar", "qty": "8 Adet", "role": "Kablolar", "spec": "Erkek-Erkek & Erkek-Dişi", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "PIR VCC", "desc": "Sensör Beslemesi"},
@@ -311,12 +311,12 @@ projects_meta = {
         "difficulty": "Lise Seviyesi (Level 11)",
         "duration": "50 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "PWM Üreteci", "spec": "ATmega328P, 6x PWM Kanalı", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "2 Eksenli Joystick (KY-023)", "qty": "1 Adet", "role": "X/Y Analog Girdi", "spec": "Çift Potansiyometre + Buton, 5V", "icon": "fas fa-gamepad", "image": "assets/components/joystick.svg"},
-            {"name": "RGB LED (Ortak Katot)", "qty": "1 Adet", "role": "Renk Tayfı Çıktısı", "spec": "4 Bacaklı Kırmızı-Yeşil-Mavi LED", "icon": "fas fa-palette", "image": "assets/components/led_rgb.svg"},
-            {"name": "220 Ohm Direnç", "qty": "3 Adet", "role": "RGB Bacak Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Jumper Kablolar", "qty": "9 Adet", "role": "Kablolar", "spec": "Erkek-Erkek & Erkek-Dişi", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "PWM Üreteci", "spec": "ATmega328P, 6x PWM Kanalı", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "2 Eksenli Joystick (KY-023)", "qty": "1 Adet", "role": "X/Y Analog Girdi", "spec": "Çift Potansiyometre + Buton, 5V", "icon": "fas fa-gamepad", "image": "assets/components/joystick.jpg"},
+            {"name": "RGB LED (Ortak Katot)", "qty": "1 Adet", "role": "Renk Tayfı Çıktısı", "spec": "4 Bacaklı Kırmızı-Yeşil-Mavi LED", "icon": "fas fa-palette", "image": "assets/components/led_rgb.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "3 Adet", "role": "RGB Bacak Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Jumper Kablolar", "qty": "9 Adet", "role": "Kablolar", "spec": "Erkek-Erkek & Erkek-Dişi", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "Joystick VCC", "desc": "Joystick Beslemesi"},
@@ -343,14 +343,14 @@ projects_meta = {
         "difficulty": "İleri Düzey (Level 12)",
         "duration": "55 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Erişim Kontrol Ünitesi", "spec": "ATmega328P, SPI Master", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "RC522 RFID Modülü", "qty": "1 Adet", "role": "Temassız Kart Okuyucu", "spec": "13.56 MHz, SPI Arayüzü (3.3V Gerilim)", "icon": "fas fa-id-card", "image": "assets/components/rfid_rc522.svg"},
-            {"name": "TowerPro SG90 Servo", "qty": "1 Adet", "role": "Kapı Kilidi Mekanizması", "spec": "9g Açılı Servo Motor", "icon": "fas fa-door-open", "image": "assets/components/servo_sg90.svg"},
-            {"name": "Yeşil & Kırmızı LED", "qty": "2 Adet", "role": "Geçiş Durumu Göstergesi", "spec": "5mm Yetkili/Yetkisiz Işıkları", "icon": "fas fa-traffic-light", "image": "assets/components/led_green.svg"},
-            {"name": "Buzzer", "qty": "1 Adet", "role": "Sesli Doğrulama", "spec": "Onay ve Hata Sesleri", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.svg"},
-            {"name": "220 Ohm Direnç", "qty": "2 Adet", "role": "LED Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Jumper Kablolar", "qty": "10 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "Erişim Kontrol Ünitesi", "spec": "ATmega328P, SPI Master", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "RC522 RFID Modülü", "qty": "1 Adet", "role": "Temassız Kart Okuyucu", "spec": "13.56 MHz, SPI Arayüzü (3.3V Gerilim)", "icon": "fas fa-id-card", "image": "assets/components/rfid_rc522.jpg"},
+            {"name": "TowerPro SG90 Servo", "qty": "1 Adet", "role": "Kapı Kilidi Mekanizması", "spec": "9g Açılı Servo Motor", "icon": "fas fa-door-open", "image": "assets/components/servo_sg90.jpg"},
+            {"name": "Yeşil & Kırmızı LED", "qty": "2 Adet", "role": "Geçiş Durumu Göstergesi", "spec": "5mm Yetkili/Yetkisiz Işıkları", "icon": "fas fa-traffic-light", "image": "assets/components/led_green.jpg"},
+            {"name": "Buzzer", "qty": "1 Adet", "role": "Sesli Doğrulama", "spec": "Onay ve Hata Sesleri", "icon": "fas fa-volume-up", "image": "assets/components/buzzer.jpg"},
+            {"name": "220 Ohm Direnç", "qty": "2 Adet", "role": "LED Koruması", "spec": "1/4W", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Jumper Kablolar", "qty": "10 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "3.3V (DİKKAT!)", "compPin": "RC522 VCC (3.3V)", "desc": "KESİNLİKLE 5V VERİLMEMELİDİR!"},
@@ -384,13 +384,13 @@ projects_meta = {
         "difficulty": "Mezuniyet / Profesyonel (Level 13)",
         "duration": "60 Dakika",
         "components": [
-            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "IoT Ana Kontrolcü", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.svg"},
-            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.svg"},
-            {"name": "HC-05 / HC-06 Bluetooth", "qty": "1 Adet", "role": "Kablosuz SPP İletişim", "spec": "UART Seri Port, 2.4GHz Kablosuz", "icon": "fab fa-bluetooth-b", "image": "assets/components/bluetooth_hc05.svg"},
-            {"name": "5V 1-Kanal Röle Modülü", "qty": "1 Adet", "role": "Yüksek Güç Anahtarlama", "spec": "Optokuplör Korumalı, 10A 250VAC / 30VDC", "icon": "fas fa-bolt", "image": "assets/components/relay_module.svg"},
-            {"name": "Durum LED'i", "qty": "1 Adet", "role": "Görsel Yük Göstergesi", "spec": "5mm Mavi LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.svg"},
-            {"name": "Dirençler (1kΩ & 2kΩ & 220Ω)", "qty": "3 Adet", "role": "Voltaj Bölücü & LED Koruma", "spec": "HC-05 RX koruma dirençleri", "icon": "fas fa-wave-square", "image": "assets/components/resistor.svg"},
-            {"name": "Jumper Kablolar", "qty": "10 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.svg"}
+            {"name": "Arduino Uno R3", "qty": "1 Adet", "role": "IoT Ana Kontrolcü", "spec": "ATmega328P", "icon": "fas fa-microchip", "image": "assets/components/arduino_uno.jpg"},
+            {"name": "Breadboard", "qty": "1 Adet", "role": "Devre Zemini", "spec": "400 Noktalı", "icon": "fas fa-border-all", "image": "assets/components/breadboard.jpg"},
+            {"name": "HC-05 / HC-06 Bluetooth", "qty": "1 Adet", "role": "Kablosuz SPP İletişim", "spec": "UART Seri Port, 2.4GHz Kablosuz", "icon": "fab fa-bluetooth-b", "image": "assets/components/bluetooth_hc05.jpg"},
+            {"name": "5V 1-Kanal Röle Modülü", "qty": "1 Adet", "role": "Yüksek Güç Anahtarlama", "spec": "Optokuplör Korumalı, 10A 250VAC / 30VDC", "icon": "fas fa-bolt", "image": "assets/components/relay_module.jpg"},
+            {"name": "Durum LED'i", "qty": "1 Adet", "role": "Görsel Yük Göstergesi", "spec": "5mm Mavi LED", "icon": "fas fa-lightbulb", "image": "assets/components/led_green.jpg"},
+            {"name": "Dirençler (1kΩ & 2kΩ & 220Ω)", "qty": "3 Adet", "role": "Voltaj Bölücü & LED Koruma", "spec": "HC-05 RX koruma dirençleri", "icon": "fas fa-wave-square", "image": "assets/components/resistor.jpg"},
+            {"name": "Jumper Kablolar", "qty": "10 Adet", "role": "Kablolar", "spec": "Erkek-Dişi & Erkek-Erkek", "icon": "fas fa-bezier-curve", "image": "assets/components/jumper_wires.jpg"}
         ],
         "pinout": [
             {"pin": "5V (Güç)", "compPin": "HC-05 VCC & Röle VCC", "desc": "5V Ortak Güç Hattı"},
@@ -407,11 +407,15 @@ projects_meta = {
     }
 }
 
-# Read code for each project directly from the file
+# Read code and set circuit image paths for each project directly from the file
 for grade_id, meta in projects_meta.items():
     code_path = os.path.join(ARDUINO_DIR, meta["folder"], meta["file"])
     with open(code_path, "r", encoding="utf-8") as f:
         meta["code"] = f.read()
+    cid = "sinif0" if grade_id == "anasinifi" else grade_id
+    meta["circuitImage"] = f"assets/circuits/circuit_{cid}.png"
+    meta["circuitJpg"] = f"assets/circuits/circuit_{cid}.jpg"
+    meta["circuitSvg"] = f"assets/circuits/circuit_{cid}.svg"
 
 # Generate JavaScript file
 js_content = "/**\n"

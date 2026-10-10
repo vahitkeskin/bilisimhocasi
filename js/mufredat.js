@@ -453,8 +453,8 @@
             </div>
           </div>
 
-          <div class="fritzing-diagram-canvas" data-img="${project.circuitImage || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="${t('fritzing.click.zoom', 'Tam ekran büyütmek için tıklayınız')}">
-            <img src="${project.circuitSvg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.svg')}" alt="${project.title} Fritzing Breadboard Devre Şeması" class="fritzing-diagram-img" loading="lazy">
+          <div class="fritzing-diagram-canvas" data-img="${project.circuitImage || project.circuitJpg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" title="${t('fritzing.click.zoom', 'Tam ekran büyütmek için tıklayınız')}">
+            <img src="${project.circuitImage || project.circuitJpg || ('assets/circuits/circuit_' + (grade.id === 'anasinifi' ? 'sinif0' : grade.id) + '.png')}" alt="${project.title} Gerçekçi Devre Fotoğrafı" class="fritzing-diagram-img" loading="lazy">
             <div class="fritzing-zoom-overlay">
               <i class="fas fa-search-plus"></i> ${t('fritzing.click.zoom', 'Tam Ekran İncele')}
             </div>

@@ -1189,9 +1189,9 @@ document.addEventListener('DOMContentLoaded', () => {
               ${arduinoData.objective}
             </p>
             <div style="display:flex; gap:12px; align-items:center; margin-top:6px; background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:10px; border:1px solid rgba(0,151,157,0.25);">
-              <img src="${arduinoData.circuitSvg || arduinoData.circuitImage || 'assets/circuits/circuit_sinif0.svg'}" alt="Fritzing Devre Şeması" style="width:105px; height:70px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
+              <img src="${arduinoData.circuitImage || arduinoData.circuitJpg || ('assets/circuits/circuit_' + (activeGradeKey === 'anasinifi' ? 'sinif0' : activeGradeKey) + '.png')}" alt="Stüdyo Devre Fotoğrafı" style="width:105px; height:70px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.15);" loading="lazy">
               <div style="flex:1;">
-                <div style="font-size:12px; font-weight:700; color:#4DD0E1; margin-bottom:2px;"><i class="fas fa-microchip mr-1"></i> Fritzing Devre Simülasyonu</div>
+                <div style="font-size:12px; font-weight:700; color:#4DD0E1; margin-bottom:2px;"><i class="fas fa-microchip mr-1"></i> Donanım Devre Kurulumu</div>
                 <div style="font-size:11px; color:#A0AAB8;">Breadboard, Arduino Uno ve detaylı port pinout bağlantı şeması.</div>
               </div>
             </div>
